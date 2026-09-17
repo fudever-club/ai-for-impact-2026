@@ -23,6 +23,10 @@
    - **Thư viện SVG Logo**: Toàn bộ logo thương hiệu, ngôn ngữ lập trình, AI framework và công cụ công nghệ được ưu tiên khai thác chuẩn xác từ [Svgl](https://svgl.app/) (được lưu tại `public/icons/`).
    - **Ngôn ngữ**: Giao diện tiếng Việt chuẩn hóa, đã tinh giản bỏ nút chuyển đổi ngôn ngữ.
 
+3. **Nhận diện Thương hiệu & Logo (Competition Brand Invariant)**:
+   - **Cuộc thi này KHÔNG CÓ LOGO CHÍNH THỨC**: Tuyệt đối không tự ý tạo, import, suy đoán hoặc sử dụng file ảnh logo giả lập cho cuộc thi. File cũ `public/images/logo.png` không phải logo cuộc thi và đã bị loại bỏ hoàn toàn khỏi dự án.
+   - **Quy cách nhận diện**: Nhận diện cuộc thi sử dụng thuần túy Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`) kết hợp nhận diện đơn vị chủ trì & đăng cai tổ chức là Trường Đại học FPT Đà Nẵng.
+
 ---
 
 ## 2. Hệ thống Kỹ năng Agent (Active Skills)
