@@ -125,30 +125,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
             </div>
 
             {/* Quick Stats Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-6 border-t border-slate-200/80 w-full">
-              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-brand-orange/40 hover:-translate-y-0.5 transition-all">
-                <span className="block font-mono text-xl sm:text-2xl font-bold text-slate-900">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200/80 w-full">
+              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-brand-orange/40 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+                <span className="block font-display font-black text-lg sm:text-xl text-slate-900 tracking-tight leading-snug">
                   {content.hero.quickStats.teams}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">Quy mô thí sinh</span>
+                <span className="text-xs text-slate-500 font-medium mt-1">Quy mô thí sinh</span>
               </div>
-              <div className="p-3 rounded-xl bg-orange-50/70 border border-orange-200/80 hover:border-brand-orange hover:-translate-y-0.5 transition-all">
-                <span className="block font-mono text-xl sm:text-2xl font-bold text-brand-orange">
+              <div className="p-3 rounded-xl bg-orange-50/70 border border-orange-200/80 hover:border-brand-orange hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+                <span className="block font-display font-black text-lg sm:text-xl text-brand-orange tracking-tight leading-snug">
                   {content.hero.quickStats.duration}
                 </span>
-                <span className="text-xs text-brand-orange font-semibold">Thời lượng thi</span>
+                <span className="text-xs text-brand-orange font-semibold mt-1">Thời lượng thi</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-blue-400 hover:-translate-y-0.5 transition-all">
-                <span className="block font-mono text-xl sm:text-2xl font-bold text-blue-600">
+              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-blue-400 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+                <span className="block font-display font-black text-lg sm:text-xl text-blue-600 tracking-tight leading-snug">
                   {content.hero.quickStats.stages}
                 </span>
-                <span className="text-xs text-slate-500 font-medium">Hành trình</span>
+                <span className="text-xs text-slate-500 font-medium mt-1">Hành trình</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-emerald-400 hover:-translate-y-0.5 transition-all">
-                <span className="block font-mono text-xl sm:text-2xl font-bold text-emerald-600">
+              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-emerald-400 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+                <span className="block font-display font-black text-lg sm:text-xl text-emerald-600 tracking-tight leading-snug">
                   5 Nhóm
                 </span>
-                <span className="text-xs text-slate-500 font-medium">Chủ đề bài toán</span>
+                <span className="text-xs text-slate-500 font-medium mt-1">Chủ đề bài toán</span>
               </div>
             </div>
           </div>
