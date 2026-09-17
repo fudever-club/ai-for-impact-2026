@@ -27,6 +27,7 @@
 - Modify: `MemoryKnowledge/src/config.ts`
 - Modify: `MemoryKnowledge/src/server.ts`
 - Modify: `MemoryKnowledge/src/logger.ts`
+- Modify: `MemoryKnowledge/src/middleware/response-envelope.ts`
 - Create: `MemoryKnowledge/src/__tests__/server-security.test.ts`
 - Modify: `start_memory_hub.ps1`
 - Modify: `start_memory_hub_headless.ps1`
@@ -35,9 +36,9 @@
 - `ServiceConfig.host: string`, default `127.0.0.1`, sourced from `KNOWLEDGE_HOST`.
 - Logger writes every level to stderr.
 
-- [ ] **Step 1: Write failing tests** proving the default host is loopback, an explicit host override is honored, and logger debug/info never write stdout.
+- [ ] **Step 1: Write failing tests** proving the default host is loopback, an explicit host override is honored, logger debug/info never write stdout, and request bodies remain readable by downstream Hono handlers after access logging.
 - [ ] **Step 2: Run the focused Vitest test** and confirm expected failures.
-- [ ] **Step 3: Add `host` to configuration and listener**, preserving the user's direct-entry guard change unless a tested equivalent fixes it.
+- [ ] **Step 3: Add `host` to configuration and listener**, preserving the user's direct-entry guard change unless a tested equivalent fixes it. Repair the existing Hono `bodyCache.text` type/runtime mismatch with the smallest behavior-preserving implementation covered by the request-body test.
 - [ ] **Step 4: Move logger output to stderr** and remove plaintext credentials from both launchers. Launchers inherit `TDAI_LLM_API_KEY`; if absent, they print an actionable warning without echoing a secret.
 - [ ] **Step 5: Run focused/full MemoryKnowledge tests and typecheck**.
 - [ ] **Step 6: Commit only reviewed tracked-source changes**; leave unrelated untracked runtime data uncommitted.
