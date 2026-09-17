@@ -35,19 +35,19 @@ export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content })
         />
 
         {/* Top 3 Podium Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-stretch pt-4">
           {/* 2nd Place */}
           {second && (
-            <div className="glass-card p-8 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover flex flex-col justify-between order-2 md:order-1 hover:-translate-y-1 transition-all bg-gradient-to-b from-slate-50 to-white">
+            <div className="glass-card p-8 rounded-2xl border border-slate-200/90 shadow-card hover:shadow-card-hover flex flex-col justify-between order-2 md:order-1 hover:-translate-y-1 transition-all duration-300 bg-gradient-to-b from-slate-50/80 to-white group">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <Badge variant="cyan">{second.badge}</Badge>
-                  <Medal className="w-8 h-8 text-slate-400" />
+                  <Medal className="w-8 h-8 text-slate-400 group-hover:scale-110 transition-transform" />
                 </div>
                 <h3 className="font-display font-bold text-xl text-slate-900 mb-2">
                   {second.title}
                 </h3>
-                <div className="font-display font-extrabold text-3xl sm:text-4xl text-brand-cyan mb-4">
+                <div className="font-display font-black text-3xl sm:text-4xl text-brand-cyan mb-4">
                   {second.formattedAmount}
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
@@ -62,40 +62,49 @@ export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content })
 
           {/* 1st Place (Champion) - Dominant Center Card */}
           {first && (
-            <div className="glass-card-orange p-8 sm:p-10 rounded-2xl border-2 border-brand-orange shadow-glow-orange flex flex-col justify-between order-1 md:order-2 md:-translate-y-4 hover:-translate-y-5 transition-all bg-gradient-to-b from-orange-50 via-amber-50/60 to-white">
+            <div className="relative glass-card-orange p-8 sm:p-10 rounded-2xl border-2 border-brand-orange shadow-glow-orange-lg flex flex-col justify-between order-1 md:order-2 md:-translate-y-4 hover:-translate-y-5 transition-all duration-300 bg-gradient-to-b from-orange-50 via-amber-50/60 to-white group">
+              {/* Champion Crown Ribbon */}
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-gradient-to-r from-brand-orange via-orange-500 to-amber-500 text-white text-[11px] font-mono font-black uppercase tracking-widest shadow-md flex items-center gap-1.5 whitespace-nowrap">
+                <Sparkles className="w-3.5 h-3.5 animate-spin" style={{ animationDuration: '6s' }} />
+                GIẢI THƯỞNG CAO NHẤT
+              </div>
+
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <Badge variant="orange">{first.badge}</Badge>
-                  <Trophy className="w-10 h-10 text-brand-orange animate-pulse" />
+                <div className="flex items-center justify-between mb-4 pt-1">
+                  <Badge variant="orange" className="shadow-glow-orange-sm">{first.badge}</Badge>
+                  <div className="w-12 h-12 rounded-xl bg-orange-500/15 border border-brand-orange/30 flex items-center justify-center text-brand-orange shadow-glow-orange-sm group-hover:scale-110 transition-transform">
+                    <Trophy className="w-6 h-6 animate-pulse" />
+                  </div>
                 </div>
-                <h3 className="font-display font-extrabold text-2xl text-slate-900 mb-2">
+                <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-900 mb-2">
                   {first.title}
                 </h3>
-                <div className="font-display font-black text-4xl sm:text-5xl text-brand-orange mb-4">
+                <div className="font-display font-black text-4xl sm:text-5xl text-brand-orange mb-4 tracking-tight drop-shadow-xs">
                   {first.formattedAmount}
                 </div>
-                <p className="text-sm text-slate-700 leading-relaxed mb-6">
+                <p className="text-sm text-slate-700 leading-relaxed mb-6 font-medium">
                   {first.description}
                 </p>
               </div>
-              <div className="pt-4 border-t border-orange-200/80 text-xs font-mono text-brand-orange font-semibold">
-                {formatQuantity(locale, first.quantity)}
+              <div className="pt-4 border-t border-orange-200 text-xs font-mono text-brand-orange font-bold flex items-center justify-between">
+                <span>{formatQuantity(locale, first.quantity)}</span>
+                <span className="text-[10px] uppercase tracking-wider bg-brand-orange/10 px-2 py-0.5 rounded">Cúp + Chứng nhận</span>
               </div>
             </div>
           )}
 
           {/* 3rd Place */}
           {third && (
-            <div className="glass-card p-8 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover flex flex-col justify-between order-3 md:order-3 hover:-translate-y-1 transition-all bg-gradient-to-b from-slate-50 to-white">
+            <div className="glass-card p-8 rounded-2xl border border-slate-200/90 shadow-card hover:shadow-card-hover flex flex-col justify-between order-3 md:order-3 hover:-translate-y-1 transition-all duration-300 bg-gradient-to-b from-slate-50/80 to-white group">
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <Badge variant="blue">{third.badge}</Badge>
-                  <Award className="w-8 h-8 text-amber-600" />
+                  <Award className="w-8 h-8 text-amber-600 group-hover:scale-110 transition-transform" />
                 </div>
                 <h3 className="font-display font-bold text-xl text-slate-900 mb-2">
                   {third.title}
                 </h3>
-                <div className="font-display font-extrabold text-3xl sm:text-4xl text-blue-600 mb-4">
+                <div className="font-display font-black text-3xl sm:text-4xl text-blue-600 mb-4">
                   {third.formattedAmount}
                 </div>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">

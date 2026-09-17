@@ -37,14 +37,14 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
           href={`/${locale}`}
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-lg"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-brand-orange p-0.5 flex items-center justify-center shadow-md shadow-brand-orange/15">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange via-orange-500 to-blue-600 p-0.5 flex items-center justify-center shadow-md shadow-brand-orange/25 group-hover:shadow-glow-orange group-hover:scale-105 transition-all duration-300">
             <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-brand-orange group-hover:rotate-12 transition-transform" />
+              <Sparkles className="w-5 h-5 text-brand-orange group-hover:rotate-12 transition-transform duration-300" />
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-extrabold text-base sm:text-lg tracking-wider text-slate-900 leading-tight">
-              AI FOR IMPACT <span className="text-brand-orange">2026</span>
+            <span className="font-display font-black text-base sm:text-lg tracking-wider text-slate-900 leading-tight">
+              AI FOR IMPACT <span className="text-brand-orange drop-shadow-xs">2026</span>
             </span>
             <span className="text-[10px] font-mono font-semibold tracking-widest text-slate-500 uppercase">
               {content.hero.eyebrow}
@@ -52,13 +52,13 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
           </div>
         </Link>
 
-        {/* Desktop Navigation Links */}
-        <nav className="hidden lg:flex items-center gap-6">
+        {/* Desktop Navigation Links with animated Orange Underline */}
+        <nav className="hidden lg:flex items-center gap-7">
           {content.nav.links.map((link) => (
             <a
               key={link.id}
               href={link.href}
-              className="text-sm font-semibold text-slate-600 hover:text-brand-orange transition-colors"
+              className="relative py-1 text-sm font-semibold text-slate-600 hover:text-brand-orange transition-colors duration-200 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-orange hover:after:w-full after:transition-all after:duration-300"
             >
               {link.label}
             </a>

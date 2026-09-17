@@ -43,57 +43,57 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
 
         {/* 4 Metadata Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
-          <div className="glass-card-orange p-6 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0">
+          <div className="glass-card-orange p-6 flex items-start gap-4 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300 group">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-xs">
               <Calendar className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs font-mono text-brand-orange block uppercase font-semibold">
+              <span className="text-xs font-mono text-brand-orange block uppercase font-bold tracking-wider">
                 {meta.date}
               </span>
-              <span className="font-display font-bold text-lg text-slate-900">
+              <span className="font-display font-black text-lg text-slate-900">
                 {meta.dateVal}
               </span>
             </div>
           </div>
 
-          <div className="glass-card-orange p-6 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0">
+          <div className="glass-card-orange p-6 flex items-start gap-4 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300 group">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-xs">
               <Clock className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs font-mono text-brand-orange block uppercase font-semibold">
+              <span className="text-xs font-mono text-brand-orange block uppercase font-bold tracking-wider">
                 {meta.duration}
               </span>
-              <span className="font-display font-bold text-lg text-slate-900">
+              <span className="font-display font-black text-lg text-slate-900">
                 {meta.durationVal}
               </span>
             </div>
           </div>
 
-          <div className="glass-card-orange p-6 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0">
+          <div className="glass-card-orange p-6 flex items-start gap-4 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300 group">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-xs">
               <MapPin className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs font-mono text-brand-orange block uppercase font-semibold">
+              <span className="text-xs font-mono text-brand-orange block uppercase font-bold tracking-wider">
                 {meta.location}
               </span>
-              <span className="font-display font-bold text-lg text-slate-900">
+              <span className="font-display font-black text-lg text-slate-900">
                 {meta.locationVal}
               </span>
             </div>
           </div>
 
-          <div className="glass-card-orange p-6 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0">
+          <div className="glass-card-orange p-6 flex items-start gap-4 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300 group">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-xs">
               <Laptop className="w-6 h-6" />
             </div>
             <div>
-              <span className="text-xs font-mono text-brand-orange block uppercase font-semibold">
+              <span className="text-xs font-mono text-brand-orange block uppercase font-bold tracking-wider">
                 {meta.qualification}
               </span>
-              <span className="font-display font-bold text-lg text-slate-900">
+              <span className="font-display font-black text-lg text-slate-900">
                 {meta.qualificationVal}
               </span>
             </div>

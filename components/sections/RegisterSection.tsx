@@ -34,12 +34,12 @@ export const RegisterSection: React.FC<RegisterSectionProps> = ({ locale, conten
             {content.register.steps.map((step, idx) => (
               <div
                 key={idx}
-                className="bg-white/95 backdrop-blur-sm p-6 rounded-2xl border border-orange-200/80 shadow-card hover:border-orange-400 hover:shadow-card-hover transition-all"
+                className="bg-white/95 backdrop-blur-sm p-6 sm:p-7 rounded-2xl border border-orange-200/80 shadow-card hover:border-brand-orange hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 group"
               >
-                <div className="font-mono text-2xl font-black text-brand-orange mb-2">
+                <div className="w-11 h-11 rounded-xl bg-orange-50 border border-orange-200 flex items-center justify-center font-mono text-base font-black text-brand-orange mb-3.5 group-hover:bg-brand-orange group-hover:text-white transition-all duration-300 shadow-xs">
                   {step.step}
                 </div>
-                <h3 className="font-display font-bold text-base text-slate-900 mb-1.5">
+                <h3 className="font-display font-bold text-lg text-slate-900 mb-2">
                   {step.title}
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -57,13 +57,17 @@ export const RegisterSection: React.FC<RegisterSectionProps> = ({ locale, conten
               href={content.registration.url}
               external
               icon={<ExternalLink className="w-5 h-5" />}
-              className="text-base sm:text-lg px-9 py-4 font-bold shadow-glow-orange"
+              className="text-base sm:text-lg px-10 py-4 font-black shadow-glow-orange-lg tracking-wide hover:scale-105 transition-transform"
             >
               {content.register.ctaText}
             </Button>
 
-            <div className="flex items-center justify-center gap-2 text-xs font-mono text-slate-600 font-medium">
-              <Clock className="w-4 h-4 text-brand-orange" />
+            <div className="flex items-center justify-center gap-2 text-xs font-mono text-slate-700 font-semibold bg-orange-50/70 border border-orange-200/80 py-1.5 px-4 rounded-full max-w-fit mx-auto shadow-xs">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-orange" />
+              </span>
+              <Clock className="w-3.5 h-3.5 text-brand-orange" />
               <span>{content.register.deadlineNotice}</span>
             </div>
           </div>

@@ -25,10 +25,10 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
           {content.evaluation.weights.map((w, idx) => (
             <div
               key={idx}
-              className="glass-card p-7 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-blue-400 transition-all text-center flex flex-col justify-between"
+              className="glass-card p-7 rounded-2xl border border-slate-200/90 shadow-card hover:shadow-card-hover hover:border-brand-orange/50 hover:-translate-y-1 transition-all duration-300 text-center flex flex-col justify-between group"
             >
               <div>
-                <span className="font-display font-black text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-brand-cyan block mb-2">
+                <span className="font-display font-black text-4xl sm:text-5xl text-transparent bg-clip-text bg-gradient-to-r from-brand-orange to-amber-500 block mb-2 group-hover:scale-105 transition-transform duration-300">
                   {w.percent}
                 </span>
                 <h3 className="font-display font-bold text-base sm:text-lg text-slate-900 mb-3">

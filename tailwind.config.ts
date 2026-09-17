@@ -58,8 +58,10 @@ const config: Config = {
       },
       boxShadow: {
         card: '0 2px 10px -2px rgba(15, 23, 42, 0.05), 0 1px 3px -1px rgba(15, 23, 42, 0.03)',
-        'card-hover': '0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04)',
+        'card-hover': '0 12px 32px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04)',
         'glow-orange': '0 8px 24px -4px rgba(255, 107, 0, 0.35)',
+        'glow-orange-lg': '0 16px 40px -6px rgba(255, 107, 0, 0.45)',
+        'glow-orange-sm': '0 2px 10px -1px rgba(255, 107, 0, 0.25)',
         'glow-blue': '0 8px 24px -4px rgba(37, 99, 235, 0.25)',
         'glow-cyan': '0 8px 24px -4px rgba(2, 132, 199, 0.2)',
       },
@@ -74,13 +76,28 @@ const config: Config = {
         },
         pulseGlow: {
           '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
-          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+          '50%': { opacity: '0.85', transform: 'scale(1.06)' },
+        },
+        pulseGlowOrange: {
+          '0%, 100%': { opacity: '0.5', transform: 'scale(1)' },
+          '50%': { opacity: '0.9', transform: 'scale(1.08)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
+        shimmer: {
+          '0%': { backgroundPosition: '-200% 0' },
+          '100%': { backgroundPosition: '200% 0' },
         },
       },
       animation: {
         'accordion-down': 'accordion-down 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
         'accordion-up': 'accordion-up 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
         'pulse-glow': 'pulseGlow 4s ease-in-out infinite',
+        'pulse-glow-orange': 'pulseGlowOrange 3s ease-in-out infinite',
+        float: 'float 5s ease-in-out infinite',
+        shimmer: 'shimmer 3s ease-in-out infinite',
       },
     },
   },

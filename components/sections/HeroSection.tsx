@@ -38,10 +38,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
           {/* Left Column: Hero Copy */}
           <div className="lg:col-span-7 flex flex-col items-start text-left space-y-6">
             {/* Endorsement & Eyebrow */}
-            <div className="flex flex-wrap items-center gap-2.5">
-              <Badge variant="orange">{content.hero.eyebrow}</Badge>
-              <div className="text-xs font-mono tracking-wider text-slate-600 uppercase flex items-center gap-1.5 font-medium">
-                <span className="w-2 h-2 rounded-full bg-brand-orange" />
+            <div className="flex flex-wrap items-center gap-3">
+              <Badge variant="orange" className="shadow-glow-orange-sm">
+                {content.hero.eyebrow}
+              </Badge>
+              <div className="text-xs font-mono tracking-wider text-slate-700 uppercase flex items-center gap-2 font-semibold bg-orange-50/80 border border-orange-200/80 px-3 py-1 rounded-full shadow-xs">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-orange opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-orange" />
+                </span>
                 {content.hero.endorsement}
               </div>
             </div>
@@ -50,7 +55,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
             <div className="space-y-2">
               <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
                 AI FOR <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-brand-orange">IMPACT</span>
-                <span className="block text-brand-orange text-3xl sm:text-5xl lg:text-6xl mt-1">2026</span>
+                <span className="block text-brand-orange text-3xl sm:text-5xl lg:text-6xl mt-1 drop-shadow-sm font-black tracking-tight">2026</span>
               </h1>
               <p className="font-display text-xl sm:text-2xl font-semibold text-slate-700 tracking-wide">
                 {content.hero.tagline}
@@ -63,13 +68,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
             </p>
 
             {/* Registration Countdown & Status Card */}
-            <div className="w-full max-w-lg glass-card p-4 rounded-xl border border-slate-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-card">
+            <div className="w-full max-w-lg glass-card-orange p-4 sm:p-5 rounded-2xl border-2 border-brand-orange/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-card hover:shadow-card-hover transition-all duration-300">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-orange-50 border border-orange-200 flex items-center justify-center text-brand-orange shrink-0 shadow-xs">
-                  <Clock className="w-5 h-5" />
+                <div className="w-11 h-11 rounded-xl bg-brand-orange text-white flex items-center justify-center shrink-0 shadow-md shadow-brand-orange/30">
+                  <Clock className="w-5 h-5 animate-pulse" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono font-bold uppercase text-brand-orange block">
+                  <span className="text-xs font-mono font-bold uppercase text-brand-orange block tracking-wider">
                     {statusText}
                   </span>
                   <span className="text-xs text-slate-500 font-medium">
@@ -79,20 +84,20 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
               </div>
 
               {countdown.status === 'open' && (
-                <div className="flex items-center gap-2 font-mono font-bold text-lg text-slate-900">
-                  <div className="bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200 text-center">
-                    <span>{countdown.daysRemaining}</span>
-                    <span className="text-[10px] text-slate-500 block font-normal">NGÀY</span>
+                <div className="flex items-center gap-1.5 font-mono font-black text-lg text-slate-900">
+                  <div className="bg-white px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[54px]">
+                    <span className="text-brand-orange font-black text-xl">{countdown.daysRemaining}</span>
+                    <span className="text-[9px] text-slate-500 block font-bold tracking-wider">NGÀY</span>
                   </div>
-                  <span className="text-slate-400">:</span>
-                  <div className="bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200 text-center">
-                    <span>{String(countdown.hoursRemaining).padStart(2, '0')}</span>
-                    <span className="text-[10px] text-slate-500 block font-normal">GIỜ</span>
+                  <span className="text-brand-orange font-bold">:</span>
+                  <div className="bg-white px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[54px]">
+                    <span className="text-slate-900 font-bold text-xl">{String(countdown.hoursRemaining).padStart(2, '0')}</span>
+                    <span className="text-[9px] text-slate-500 block font-bold tracking-wider">GIỜ</span>
                   </div>
-                  <span className="text-slate-400">:</span>
-                  <div className="bg-slate-100 px-2.5 py-1 rounded-lg border border-slate-200 text-center">
-                    <span>{String(countdown.minutesRemaining).padStart(2, '0')}</span>
-                    <span className="text-[10px] text-slate-500 block font-normal">PHÚT</span>
+                  <span className="text-brand-orange font-bold">:</span>
+                  <div className="bg-white px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[54px]">
+                    <span className="text-slate-900 font-bold text-xl">{String(countdown.minutesRemaining).padStart(2, '0')}</span>
+                    <span className="text-[9px] text-slate-500 block font-bold tracking-wider">PHÚT</span>
                   </div>
                 </div>
               )}
@@ -120,30 +125,30 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
             </div>
 
             {/* Quick Stats Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-200 w-full">
-              <div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-6 border-t border-slate-200/80 w-full">
+              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-brand-orange/40 hover:-translate-y-0.5 transition-all">
                 <span className="block font-mono text-xl sm:text-2xl font-bold text-slate-900">
                   {content.hero.quickStats.teams}
                 </span>
-                <span className="text-xs text-slate-500">Quy mô thí sinh</span>
+                <span className="text-xs text-slate-500 font-medium">Quy mô thí sinh</span>
               </div>
-              <div>
+              <div className="p-3 rounded-xl bg-orange-50/70 border border-orange-200/80 hover:border-brand-orange hover:-translate-y-0.5 transition-all">
                 <span className="block font-mono text-xl sm:text-2xl font-bold text-brand-orange">
                   {content.hero.quickStats.duration}
                 </span>
-                <span className="text-xs text-slate-500">Thời lượng thi</span>
+                <span className="text-xs text-brand-orange font-semibold">Thời lượng thi</span>
               </div>
-              <div>
+              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-blue-400 hover:-translate-y-0.5 transition-all">
                 <span className="block font-mono text-xl sm:text-2xl font-bold text-blue-600">
                   {content.hero.quickStats.stages}
                 </span>
-                <span className="text-xs text-slate-500">Hành trình</span>
+                <span className="text-xs text-slate-500 font-medium">Hành trình</span>
               </div>
-              <div>
+              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-emerald-400 hover:-translate-y-0.5 transition-all">
                 <span className="block font-mono text-xl sm:text-2xl font-bold text-emerald-600">
                   5 Nhóm
                 </span>
-                <span className="text-xs text-slate-500">Chủ đề bài toán</span>
+                <span className="text-xs text-slate-500 font-medium">Chủ đề bài toán</span>
               </div>
             </div>
           </div>

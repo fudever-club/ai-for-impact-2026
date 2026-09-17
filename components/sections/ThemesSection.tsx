@@ -31,7 +31,7 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
           {content.themes.items.map((item, idx) => (
             <div
               key={item.id}
-              className={`glass-card p-7 sm:p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 border border-slate-200 shadow-card hover:shadow-card-hover flex flex-col justify-between ${
+              className={`glass-card p-7 sm:p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/50 border border-slate-200/90 shadow-card hover:shadow-card-hover flex flex-col justify-between ${
                 idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
             >

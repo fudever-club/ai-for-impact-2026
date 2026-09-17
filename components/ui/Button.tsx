@@ -37,12 +37,12 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600 hover:shadow-glow-orange shadow-md shadow-orange-500/20 border border-orange-400/40',
+      'btn-shimmer bg-gradient-to-r from-orange-500 via-brand-orange to-amber-500 text-white hover:from-orange-600 hover:to-amber-600 hover:shadow-glow-orange-lg shadow-md shadow-orange-500/25 border border-orange-400/40 hover:-translate-y-0.5 transition-all duration-200',
     secondary:
-      'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-glow-blue shadow-md shadow-blue-600/15 border border-blue-500/30',
+      'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-glow-blue shadow-md shadow-blue-600/15 border border-blue-500/30 hover:-translate-y-0.5 transition-all duration-200',
     outline:
-      'bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-sm hover:border-orange-500/40 hover:text-orange-600',
-    ghost: 'text-slate-600 hover:text-slate-900 hover:bg-slate-100',
+      'bg-white hover:bg-orange-50/40 text-slate-800 border border-slate-200 shadow-sm hover:border-brand-orange hover:text-brand-orange hover:-translate-y-0.5 transition-all duration-200',
+    ghost: 'text-slate-600 hover:text-brand-orange hover:bg-orange-50/50 transition-colors',
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

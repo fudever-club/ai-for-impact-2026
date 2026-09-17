@@ -24,7 +24,7 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
           {content.organizers.items.map((org) => (
             <div
               key={org.id}
-              className="glass-card p-6 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-blue-300 transition-all flex flex-col justify-between"
+              className="glass-card p-6 rounded-2xl border border-slate-200/90 shadow-card hover:shadow-card-hover hover:border-brand-orange/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 {/* Logo or Typographic Badge */}

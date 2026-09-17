@@ -46,13 +46,16 @@ export const JourneyPath: React.FC<JourneyPathProps> = ({ stages }) => {
             >
               {/* Timeline node icon */}
               <div className="absolute left-6 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 z-10 flex items-center justify-center">
+                {isTechnical && (
+                  <div className="absolute -inset-1 rounded-full bg-brand-orange/30 animate-ping pointer-events-none" style={{ animationDuration: '3s' }} />
+                )}
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center font-mono font-bold text-xs shadow-md transition-transform duration-300 hover:scale-110 ${
+                  className={`relative w-11 h-11 rounded-full flex items-center justify-center font-mono font-black text-xs shadow-md transition-all duration-300 hover:scale-110 cursor-default ${
                     isTechnical
-                      ? 'bg-brand-orange text-white shadow-glow-orange'
+                      ? 'bg-gradient-to-br from-brand-orange to-orange-600 text-white shadow-glow-orange'
                       : isTraining
-                      ? 'bg-brand-cyan text-white shadow-glow-cyan'
-                      : 'bg-brand-blue text-white shadow-glow-blue'
+                      ? 'bg-gradient-to-br from-sky-500 to-blue-600 text-white shadow-glow-cyan'
+                      : 'bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-glow-blue'
                   }`}
                 >
                   0{stage.sequence}

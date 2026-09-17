@@ -61,17 +61,42 @@ export const AgentNetworkVisual: React.FC = () => {
         <line x1="120" y1="280" x2="165" y2="235" stroke="rgba(203, 213, 225, 0.4)" strokeWidth="1" />
         <line x1="280" y1="280" x2="235" y2="235" stroke="rgba(255, 107, 0, 0.3)" strokeWidth="1" />
 
-        {/* Moving data packets on axes */}
-        <circle cx="200" cy="120" r="3" fill="#2563EB" className="animate-ping" style={{ animationDuration: '2.5s' }} />
-        <circle cx="120" cy="200" r="3" fill="#2563EB" className="animate-ping" style={{ animationDuration: '3s' }} />
-        <circle cx="280" cy="200" r="3" fill="#0284C7" className="animate-ping" style={{ animationDuration: '2.2s' }} />
-        <circle cx="200" cy="280" r="4" fill="#FF6B00" className="animate-ping" style={{ animationDuration: '1.8s' }} />
+        {/* Moving data packets on axes - smooth continuous SVG animation */}
+        {/* Top -> Agent */}
+        <circle r="3.5" fill="#2563EB">
+          <animate attributeName="cx" values="200;200" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="cy" from="90" to="155" dur="2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.1;1;1;0" dur="2s" repeatCount="indefinite" />
+        </circle>
+        {/* Left -> Agent */}
+        <circle r="3.5" fill="#2563EB">
+          <animate attributeName="cx" from="90" to="155" dur="2.4s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="200;200" dur="2.4s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.1;1;1;0" dur="2.4s" repeatCount="indefinite" />
+        </circle>
+        {/* Right -> Agent */}
+        <circle r="3.5" fill="#0284C7">
+          <animate attributeName="cx" from="310" to="245" dur="2.2s" repeatCount="indefinite" />
+          <animate attributeName="cy" values="200;200" dur="2.2s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.1;1;1;0" dur="2.2s" repeatCount="indefinite" />
+        </circle>
+        {/* Agent -> IMPACT (Signature FPT Orange stream) */}
+        <circle r="4.5" fill="#FF6B00">
+          <animate attributeName="cx" values="200;200" dur="1.6s" repeatCount="indefinite" />
+          <animate attributeName="cy" from="245" to="310" dur="1.6s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.2;1;1;0" dur="1.6s" repeatCount="indefinite" />
+        </circle>
+        <circle r="3" fill="#F59E0B">
+          <animate attributeName="cx" values="200;200" dur="1.6s" begin="0.8s" repeatCount="indefinite" />
+          <animate attributeName="cy" from="245" to="310" dur="1.6s" begin="0.8s" repeatCount="indefinite" />
+          <animate attributeName="opacity" values="0.2;1;1;0" dur="1.6s" begin="0.8s" repeatCount="indefinite" />
+        </circle>
       </svg>
 
       {/* HTML overlay nodes for crisp icons and labels */}
       {/* 1. TOP NODE: DATA */}
-      <div className="absolute top-4 left-1/2 -translate-x-1/2 flex flex-col items-center">
-        <div className="w-12 h-12 rounded-xl bg-white border border-blue-200 shadow-card flex items-center justify-center text-blue-600">
+      <div className="absolute top-4 left-1/2 -translate-x-1/2 flex flex-col items-center group cursor-pointer">
+        <div className="w-12 h-12 rounded-xl bg-white border border-blue-200 shadow-card flex items-center justify-center text-blue-600 group-hover:scale-110 group-hover:border-blue-400 group-hover:shadow-card-hover transition-all duration-300">
           <Database className="w-5 h-5" />
         </div>
         <span className="mt-1.5 text-[11px] font-mono tracking-wider font-bold text-blue-700">
@@ -80,8 +105,8 @@ export const AgentNetworkVisual: React.FC = () => {
       </div>
 
       {/* 2. LEFT NODE: TOOL */}
-      <div className="absolute left-2 top-1/2 -translate-y-1/2 flex flex-col items-center">
-        <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-card flex items-center justify-center text-slate-700">
+      <div className="absolute left-2 top-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer">
+        <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-card flex items-center justify-center text-slate-700 group-hover:scale-110 group-hover:border-slate-400 group-hover:shadow-card-hover transition-all duration-300">
           <Wrench className="w-5 h-5" />
         </div>
         <span className="mt-1.5 text-[11px] font-mono tracking-wider font-bold text-slate-600">
@@ -90,8 +115,8 @@ export const AgentNetworkVisual: React.FC = () => {
       </div>
 
       {/* 3. RIGHT NODE: API */}
-      <div className="absolute right-2 top-1/2 -translate-y-1/2 flex flex-col items-center">
-        <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-card flex items-center justify-center text-slate-700">
+      <div className="absolute right-2 top-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer">
+        <div className="w-12 h-12 rounded-xl bg-white border border-slate-200 shadow-card flex items-center justify-center text-slate-700 group-hover:scale-110 group-hover:border-slate-400 group-hover:shadow-card-hover transition-all duration-300">
           <Globe className="w-5 h-5" />
         </div>
         <span className="mt-1.5 text-[11px] font-mono tracking-wider font-bold text-slate-600">
@@ -99,24 +124,31 @@ export const AgentNetworkVisual: React.FC = () => {
         </span>
       </div>
 
-      {/* 4. BOTTOM NODE: IMPACT (Orange accent) */}
-      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center">
-        <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-orange-50 to-amber-50 border-2 border-brand-orange shadow-glow-orange flex items-center justify-center text-brand-orange animate-bounce" style={{ animationDuration: '3s' }}>
-          <Flame className="w-7 h-7" />
+      {/* 4. BOTTOM NODE: IMPACT (Dominant Signature Orange Node) */}
+      <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex flex-col items-center group cursor-pointer">
+        <div className="relative">
+          <div className="absolute -inset-1.5 rounded-2xl bg-brand-orange opacity-40 blur-md animate-pulse-glow-orange pointer-events-none" />
+          <div className="relative w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-orange to-amber-500 shadow-glow-orange-lg flex items-center justify-center text-white animate-float group-hover:scale-110 transition-transform duration-300">
+            <Flame className="w-7 h-7 fill-white/20" />
+          </div>
         </div>
-        <span className="mt-1 text-xs font-mono tracking-wider font-bold text-brand-orange">
+        <span className="mt-1.5 text-xs font-mono tracking-widest font-black text-brand-orange drop-shadow-xs">
           IMPACT
         </span>
       </div>
 
       {/* 5. CENTER DOMINANT NODE: AGENT */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-        <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-blue-600 via-indigo-600 to-brand-orange p-0.5 shadow-xl shadow-blue-500/15">
-          <div className="w-full h-full bg-white rounded-[14px] flex flex-col items-center justify-center text-slate-900 shadow-inner">
-            <Cpu className="w-8 h-8 sm:w-10 sm:h-10 text-blue-600 mb-1 animate-pulse" />
-            <span className="text-xs font-mono font-extrabold tracking-widest text-slate-900">
-              AGENT
-            </span>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center group cursor-pointer">
+        <div className="relative">
+          {/* Animated Glow Aura */}
+          <div className="absolute -inset-2.5 rounded-3xl bg-gradient-to-r from-brand-orange via-amber-500 to-blue-600 opacity-30 blur-lg animate-pulse pointer-events-none" />
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-gradient-to-br from-brand-orange via-amber-500 to-blue-600 p-0.5 shadow-glow-orange group-hover:scale-105 transition-transform duration-300">
+            <div className="w-full h-full bg-white rounded-[14px] flex flex-col items-center justify-center text-slate-900 shadow-inner">
+              <Cpu className="w-8 h-8 sm:w-10 sm:h-10 text-brand-orange mb-1 animate-pulse" />
+              <span className="text-xs font-mono font-black tracking-widest text-slate-900">
+                AGENT
+              </span>
+            </div>
           </div>
         </div>
       </div>

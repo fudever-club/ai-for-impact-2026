@@ -37,9 +37,9 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ locale, content }) =
           {content.about.pillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-blue-400 transition-all duration-300 group hover:-translate-y-1"
+              className="glass-card p-8 rounded-2xl border border-slate-200/90 shadow-card hover:shadow-card-hover hover:border-brand-orange/50 transition-all duration-300 group hover:-translate-y-1"
             >
-              <div className="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xs">
+              <div className="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:border-brand-orange/30 transition-all shadow-xs">
                 {iconMap[pillar.icon] || <Cpu className="w-6 h-6 text-brand-cyan" />}
               </div>
               <h3 className="font-display font-bold text-xl text-slate-900 mb-3">
