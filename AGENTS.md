@@ -79,3 +79,37 @@ Tra cứu lịch sử ngữ cảnh khi cần:
 ```bash
 node c:/Users/ADMIN/_Project/agent-memory-hub/connectors/memory_cli.mjs recall "<Nội dung tra cứu>" aiforimpact
 ```
+
+---
+
+## 5. Quy chuẩn Vệ sinh Kho lưu trữ (Spotless Repo Hygiene)
+
+1. **Tuyệt đối giữ sạch thư mục gốc (Root Directory)**:
+   - Không lưu trữ các file Word (`.docx`), file ảnh chụp tạm (`.jpg`), file ghi chú thô (`.txt`) hay tài liệu nháp (`.md`) trực tiếp tại thư mục gốc.
+   - Cấu trúc lưu trữ chuẩn:
+     - `docs/references/raw_materials/`: Chứa tài liệu đề án, thể lệ gốc (.docx, .pdf), ghi chú thô và ảnh tư liệu tham chiếu.
+     - `docs/archive/scratch/`: Chứa các tài liệu phân tích kỹ thuật, scratchpad nháp của các phiên làm việc trước.
+2. **Loại bỏ Dead Code & Dead Imports**:
+   - Khi tái cấu trúc hoặc tinh giản tính năng, bắt buộc xóa bỏ các file không còn sử dụng (như `LanguageSwitcher.tsx` khi chỉ dùng tiếng Việt).
+   - Dọn sạch các import thừa trong JSX/TSX để giữ mã nguồn gọn gàng.
+3. **Chuẩn Cấu hình Kiểm thử**:
+   - File cấu hình Vitest bắt buộc là `vitest.config.mts` (ESM mode với `import.meta.url`) để loại bỏ hoàn toàn cảnh báo `configLoader: 'native'`. Duy trì 100% 52 bài kiểm thử tự động.
+
+---
+
+## 6. Quy chuẩn Thương hiệu Đơn vị Phát triển (FU-DEVER Brand Invariants)
+
+1. **Đơn vị Phát triển Nền tảng**:
+   - Nền tảng website do **Câu Lạc Bộ Lập Trình FU-DEVER (FPT University Da Nang)** nghiên cứu, thiết kế và phát triển.
+2. **Thông tin Nhận diện Chính thức (Locked Facts)**:
+   - **Tên miền chính thức**: [`https://fudever.com`](https://fudever.com) *(Tuyệt đối không dùng domain tạm `vercel.app`)*.
+   - **Fanpage chính thức**: `https://www.facebook.com/FPTUDever`
+   - **GitHub Organization**: `https://github.com/fudever-club`
+   - **Email liên hệ**: `club.dever@gmail.com`
+   - **Slogan**: *"Work hard, Play hard" • EST. 2018*
+   - **Linh vật**: Bọ cánh cam **Buggy** 🐞 cùng Biệt đội những người bạn (`run()`, Teamwork, Commit & Chill).
+3. **Quy cách Logo DEVER trên Tài liệu (README & Footer)**:
+   - Sử dụng Logo Master chuẩn (`logodever-01.png` / `public/brand/logo-dever.png`).
+   - Bắt buộc hiển thị logo tại phần giới thiệu CLB và phần footer kết tài liệu `README.md`.
+   - Footer website tích hợp huy hiệu *"Developed by FU-DEVER"* trỏ trực tiếp về `https://fudever.com`.
+
