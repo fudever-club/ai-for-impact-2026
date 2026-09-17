@@ -144,6 +144,15 @@ AIforImpact/
 
 ## 🐞 Về Đơn vị Phát triển — CLB Lập Trình FU-DEVER
 
+<div align="center">
+  <a href="https://github.com/fudever-club" target="_blank" rel="noopener noreferrer">
+    <img src="./public/brand/logo-dever.png" alt="CLB Lập Trình FU-DEVER Logo" width="140" />
+  </a>
+  <br />
+  <p><strong>CÂU LẠC BỘ LẬP TRÌNH FU-DEVER — TRƯỜNG ĐẠI HỌC FPT ĐÀ NẴNG</strong></p>
+  <p><i>"Work hard, Play hard" • EST. 2018</i></p>
+</div>
+
 **Câu Lạc Bộ Lập Trình FU-DEVER** là tổ chức học thuật chuyên sâu về Kỹ thuật Phần mềm và Trí tuệ Nhân tạo trực thuộc **Trường Đại học FPT Đà Nẵng**.
 
 - **Sứ mệnh**: Kiến tạo môi trường học thuật đỉnh cao, đồng hành cùng sinh viên từ tư duy giải thuật thi đấu (Competitive Programming) đến phát triển các hệ thống phần mềm quy mô lớn tạo tác động xã hội thực tế.
@@ -160,5 +169,9 @@ AIforImpact/
 ---
 
 <div align="center">
+  <a href="https://github.com/fudever-club" target="_blank" rel="noopener noreferrer">
+    <img src="./public/brand/logo-dever.png" alt="FU-DEVER Logo" width="90" />
+  </a>
+  <br />
   <sub>Crafted with passion & precision by <strong>CLB Lập Trình FU-DEVER</strong> © 2026. All rights reserved.</sub>
 </div>
