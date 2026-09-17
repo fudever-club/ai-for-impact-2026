@@ -46,3 +46,4 @@ next-env.d.ts
 /CodeMosaic-main/
 /CodeMosaic-main.zip
 
+.env*

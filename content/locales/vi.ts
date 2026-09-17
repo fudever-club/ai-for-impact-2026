@@ -33,7 +33,7 @@ export const viContent: CompetitionContent = {
     title: 'AI FOR IMPACT 2026',
     tagline: 'Từ tư duy đến giải pháp tạo tác động',
     subTagline:
-      'Chuyển từ "biết sử dụng AI" sang "kiến tạo tác động bằng AI Agent". Rèn luyện tư duy thuật toán đỉnh cao, làm chủ harness engineering và xây dựng sản phẩm giải quyết bài toán xã hội thực tế.',
+      'Chuyển từ "người dùng AI thụ động" sang "nhà kiến tạo giải pháp với AI Agent". Trui rèn tư duy giải thuật chuẩn mực, làm chủ kỹ nghệ harness engineering và xây dựng sản phẩm công nghệ tạo giá trị thực tiễn cho cộng đồng.',
     statusBadge: {
       upcoming: 'Sắp mở cổng đăng ký',
       open: 'Đang mở đơn đăng ký toàn thành phố',
@@ -53,7 +53,7 @@ export const viContent: CompetitionContent = {
     badge: 'TÔN CHỈ CUỘC THI',
     title: 'Chuyển từ "Biết dùng AI" sang "Kiến tạo tác động bằng AI"',
     subtitle:
-      'AI for Impact 2026 không tìm kiếm những bài thuyết trình ý tưởng suông hay mã nguồn sao chép. Chúng tôi tìm kiếm những kỹ sư trẻ biết làm chủ AI Agent một cách tin cậy và có trách nhiệm.',
+      'AI for Impact 2026 không tìm kiếm những bản thuyết trình ý tưởng trên giấy hay mã nguồn sao chép. Cuộc thi tìm kiếm những kỹ sư công nghệ bản lĩnh, biết làm chủ và kiểm soát AI Agent một cách an toàn, tin cậy và có trách nhiệm.',
     description: [
       'AI for Impact 2026 mở ra sân chơi học thuật chuyên sâu, đón đầu làn sóng công nghệ mới: Agentic AI và Kỹ nghệ Harness Engineering.',
       'Thí sinh trải qua hành trình tôi luyện toàn diện: khởi đầu bằng bài thi tư duy giải thuật khắt khe theo chuẩn quốc tế, tiếp nối bằng huấn luyện chuyên sâu cùng chuyên gia doanh nghiệp, đối đầu với thử thách sửa lỗi Agent trong môi trường kiểm thử tự động, và bứt phá tại vòng Chung kết với ràng buộc bất ngờ.',
@@ -63,19 +63,19 @@ export const viContent: CompetitionContent = {
       {
         title: 'Nền tảng thuật toán vững chắc',
         description:
-          'Khởi đầu với vòng thi lập trình chuẩn ICPC Global 2024 để sàng lọc tư duy logic, cấu trúc dữ liệu và giải thuật tối ưu.',
+          'Thử thách lập trình theo chuẩn mực ICPC Global 2024, trui rèn tư duy logic sắc bén, cấu trúc dữ liệu và khả năng tối ưu hóa thuật toán.',
         icon: 'Code2',
       },
       {
         title: 'Làm chủ Harness Engineering',
         description:
-          'Học cách xây dựng rào chắn an toàn (guardrails), quản lý ngữ cảnh (context), kiểm thử tự động và tự phục hồi khi Agent gặp lỗi.',
+          'Thiết lập rào chắn an toàn (guardrails), điều phối ngữ cảnh (context), kiểm thử tự động và xây dựng cơ chế tự phục hồi khi hệ thống phát sinh sự cố.',
         icon: 'Cpu',
       },
       {
         title: 'Tác động cộng đồng đo lường được',
         description:
-          'Sản phẩm đầu ra là MVP hoạt động thực tế trên dữ liệu thật, hướng tới người thụ hưởng cụ thể và đo lường bằng số liệu minh bạch.',
+          'Sản phẩm đầu ra là MVP vận hành thực tế trên dữ liệu kiểm thử, giải quyết trực diện bài toán của người thụ hưởng với các chỉ số đo lường minh bạch.',
         icon: 'Sparkles',
       },
     ],
