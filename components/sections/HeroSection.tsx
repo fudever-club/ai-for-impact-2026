@@ -19,9 +19,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
   );
 
   useEffect(() => {
+    // Immediate sync upon client mount
+    setCountdown(getRegistrationCountdown(undefined, content));
+
+    // Real-time live countdown ticking every second
     const timer = setInterval(() => {
       setCountdown(getRegistrationCountdown(undefined, content));
-    }, 60000);
+    }, 1000);
     return () => clearInterval(timer);
   }, [content]);
 
@@ -68,7 +72,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
             </p>
 
             {/* Registration Countdown & Status Card */}
-            <div className="w-full max-w-lg glass-card-orange p-4 sm:p-5 rounded-2xl border-2 border-brand-orange/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+            <div className="w-full max-w-xl glass-card-orange p-4 sm:p-5 rounded-2xl border-2 border-brand-orange/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-card hover:shadow-card-hover transition-all duration-300">
               <div className="flex items-center gap-3">
                 <div className="w-11 h-11 rounded-xl bg-brand-orange text-white flex items-center justify-center shrink-0 shadow-md shadow-brand-orange/30">
                   <Clock className="w-5 h-5 animate-pulse" />
@@ -84,20 +88,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
               </div>
 
               {countdown.status === 'open' && (
-                <div className="flex items-center gap-1.5 font-mono font-black text-lg text-slate-900">
-                  <div className="bg-white px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[54px]">
-                    <span className="text-brand-orange font-black text-xl">{countdown.daysRemaining}</span>
+                <div className="flex items-center gap-1 sm:gap-1.5 font-mono font-black text-slate-900">
+                  <div className="bg-white px-2 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[46px] sm:min-w-[52px]">
+                    <span className="text-brand-orange font-black text-lg sm:text-xl block leading-tight">{countdown.daysRemaining}</span>
                     <span className="text-[9px] text-slate-500 block font-bold tracking-wider">NGÀY</span>
                   </div>
-                  <span className="text-brand-orange font-bold">:</span>
-                  <div className="bg-white px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[54px]">
-                    <span className="text-slate-900 font-bold text-xl">{String(countdown.hoursRemaining).padStart(2, '0')}</span>
+                  <span className="text-brand-orange font-bold text-base sm:text-lg">:</span>
+                  <div className="bg-white px-2 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[46px] sm:min-w-[52px]">
+                    <span className="text-slate-900 font-bold text-lg sm:text-xl block leading-tight">{String(countdown.hoursRemaining).padStart(2, '0')}</span>
                     <span className="text-[9px] text-slate-500 block font-bold tracking-wider">GIỜ</span>
                   </div>
-                  <span className="text-brand-orange font-bold">:</span>
-                  <div className="bg-white px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[54px]">
-                    <span className="text-slate-900 font-bold text-xl">{String(countdown.minutesRemaining).padStart(2, '0')}</span>
+                  <span className="text-brand-orange font-bold text-base sm:text-lg">:</span>
+                  <div className="bg-white px-2 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[46px] sm:min-w-[52px]">
+                    <span className="text-slate-900 font-bold text-lg sm:text-xl block leading-tight">{String(countdown.minutesRemaining).padStart(2, '0')}</span>
                     <span className="text-[9px] text-slate-500 block font-bold tracking-wider">PHÚT</span>
+                  </div>
+                  <span className="text-brand-orange font-bold text-base sm:text-lg">:</span>
+                  <div className="bg-white px-2 sm:px-3 py-1.5 rounded-xl border border-orange-300 shadow-xs text-center min-w-[46px] sm:min-w-[52px] ring-1 ring-brand-orange/20">
+                    <span className="text-brand-orange font-black text-lg sm:text-xl block leading-tight">{String(countdown.secondsRemaining).padStart(2, '0')}</span>
+                    <span className="text-[9px] text-brand-orange block font-bold tracking-wider">GIÂY</span>
                   </div>
                 </div>
               )}

@@ -15,6 +15,8 @@ describe('Registration Countdown & Date Utilities', () => {
     const countdown = getRegistrationCountdown(duringReg);
     expect(countdown.status).toBe('open');
     expect(countdown.daysRemaining).toBeGreaterThanOrEqual(0);
+    expect(countdown.secondsRemaining).toBeGreaterThanOrEqual(0);
+    expect(countdown.secondsRemaining).toBeLessThan(60);
   });
 
   it('should return closed after registration deadline', () => {

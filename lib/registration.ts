@@ -6,6 +6,7 @@ export interface RegistrationCountdown {
   daysRemaining: number;
   hoursRemaining: number;
   minutesRemaining: number;
+  secondsRemaining: number;
   targetDate: string;
 }
 
@@ -36,16 +37,18 @@ export function getRegistrationCountdown(
   }
 
   const diff = Math.max(0, targetTime - now);
-  const totalMinutes = Math.floor(diff / (1000 * 60));
-  const daysRemaining = Math.floor(totalMinutes / (60 * 24));
-  const hoursRemaining = Math.floor((totalMinutes % (60 * 24)) / 60);
-  const minutesRemaining = totalMinutes % 60;
+  const totalSeconds = Math.floor(diff / 1000);
+  const daysRemaining = Math.floor(totalSeconds / (3600 * 24));
+  const hoursRemaining = Math.floor((totalSeconds % (3600 * 24)) / 3600);
+  const minutesRemaining = Math.floor((totalSeconds % 3600) / 60);
+  const secondsRemaining = totalSeconds % 60;
 
   return {
     status,
     daysRemaining,
     hoursRemaining,
     minutesRemaining,
+    secondsRemaining,
     targetDate: new Date(targetTime).toISOString(),
   };
 }
