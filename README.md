@@ -160,7 +160,7 @@ AIforImpact/
 - **Biệt đội hỗ trợ**: Kiến Runner (`run()`), Ong Teamwork, Sâu Commit & Chill, Ếch Striker, Bướm Flow State, Ốc Sên Take it easy.
 
 ### Kết nối với FU-DEVER
-- 🌐 **Website Chính thức:** [fu-dever-landingpage-v2.vercel.app](https://fu-dever-landingpage-v2.vercel.app/)
+- 🌐 **Website Chính thức:** [fudever.com](https://fudever.com)
 - 📘 **Fanpage Chính thức:** [facebook.com/FPTUDever](https://www.facebook.com/FPTUDever)
 - 🐙 **GitHub Organization:** [github.com/fudever-club](https://github.com/fudever-club)
 - ✉️ **Email Liên hệ:** `club.dever@gmail.com`

@@ -1083,7 +1083,7 @@ export const enContent: CompetitionContent = {
       text: 'Developed by',
       teamName: 'FU-DEVER',
       logoUrl: '/brand/logo-dever.png',
-      url: 'https://github.com/fudever-club',
+      url: 'https://fudever.com',
     },
     links: {
       handbook: 'Contestant Handbook & Rules',
