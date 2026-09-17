@@ -53,9 +53,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
 
             {/* Main Event Title Lockup */}
             <div className="space-y-2">
-              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 leading-[1.08]">
-                AI FOR <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-600 to-brand-orange">IMPACT</span>
-                <span className="block text-brand-orange text-3xl sm:text-5xl lg:text-6xl mt-1 drop-shadow-sm font-black tracking-tight">2026</span>
+              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.08]">
+                AI FOR <span className="text-blue-600">IMPACT</span>
+                <span className="block text-brand-orange text-3xl sm:text-5xl lg:text-6xl mt-1 tracking-tight">2026</span>
               </h1>
               <p className="font-display text-xl sm:text-2xl font-semibold text-slate-700 tracking-wide">
                 {content.hero.tagline}

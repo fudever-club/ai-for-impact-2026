@@ -171,7 +171,7 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
                             <img
                               src={iconSrc}
                               alt={lang.name}
-                              className="w-4 h-4 object-contain group-hover:scale-110 transition-transform"
+                              className="w-4 h-4 object-contain"
                             />
                           )}
                           <span className="font-bold text-brand-cyan text-sm">{lang.name}</span>
