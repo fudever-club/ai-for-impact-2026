@@ -30,6 +30,16 @@
 - Create: `content/view-model.ts`
 - Modify: `content/locales/vi.ts`
 - Modify: `content/locales/en.ts`
+- Modify: `app/[locale]/page.tsx`
+- Modify: `components/layout/SiteFooter.tsx`
+- Modify: `components/sections/HeroSection.tsx`
+- Modify: `components/sections/JourneySection.tsx`
+- Modify: `components/sections/ProgrammingChallengeSection.tsx`
+- Modify: `components/sections/EvaluationSection.tsx`
+- Modify: `components/sections/PrizesSection.tsx`
+- Modify: `components/sections/RegisterSection.tsx`
+- Modify: `components/sections/OrganizersSection.tsx`
+- Modify: `components/visuals/JourneyPath.tsx`
 - Test: `tests/content-model.test.ts`
 
 **Interfaces:**
@@ -40,7 +50,7 @@
 - [ ] **Step 1: Write failing tests** proving malformed offset timestamps, duplicate stage IDs/sequences, negative/fractional prize values, missing locale fields, and duplicated operational fields are rejected. Assert that withheld prizes and disputed facts do not enter the returned view-model.
 - [ ] **Step 2: Run `npm test -- tests/content-model.test.ts`** and verify failures are caused by missing validation/view-model behavior.
 - [ ] **Step 3: Implement the minimal model**. Shared stage records contain IDs, sequence, timestamps, theme, and approval state; locale records contain keyed titles/summaries/outputs only. Format dates with `Intl.DateTimeFormat` and currency with `Intl.NumberFormat`.
-- [ ] **Step 4: Remove operational duplication** from locale dictionaries and make document links/prizes conditional on approval. Keep the current disputed values in shared config only as `withheld`, never in rendered output.
+- [ ] **Step 4: Remove operational duplication and migrate every consumer** to the validated view-model. Make document links/prizes conditional on approval. Keep the current disputed values in shared config only as `withheld`, never in rendered output. The application must build and all existing routes must render at the end of this task.
 - [ ] **Step 5: Run the focused test and all Vitest tests**; refactor only after green.
 - [ ] **Step 6: Commit** with `feat(content): enforce validated release gates`.
 
