@@ -94,30 +94,56 @@ function formatCurrency(amount: number, currency: string, locale: Locale): strin
   }).format(amount);
 }
 
-function formatDuration(startsAt: string, endsAt: string | undefined, locale: Locale): string {
-  if (!endsAt) return '';
+function formatDuration(startsAt: string | undefined, endsAt: string | undefined, locale: Locale): string {
+  if (!startsAt || !endsAt) return '';
   const minutes = Math.round((Date.parse(endsAt) - Date.parse(startsAt)) / 60_000);
   return locale === 'vi' ? `${minutes} phút` : `${minutes} minutes`;
 }
 
-function buildStages(locale: Locale, content: CompetitionContent): CompetitionStage[] {
-  return siteConfig.stages
+function formatAdjectiveDuration(
+  startsAt: string | undefined,
+  endsAt: string | undefined,
+  locale: Locale
+): string {
+  if (!startsAt || !endsAt) return '';
+  const minutes = Math.round((Date.parse(endsAt) - Date.parse(startsAt)) / 60_000);
+  return locale === 'vi' ? `${minutes} phút` : `${minutes}-minute`;
+}
+
+function interpolate(text: string, vars: Record<string, string>): string {
+  return text.replace(/\{(\w+)\}/g, (_, key) => vars[key] ?? `{${key}}`);
+}
+
+function buildStages(locale: Locale, content: CompetitionContent, config: SiteConfig): CompetitionStage[] {
+  const programmingStageConfig = config.stages.find((stage) => stage.id === 'stage-2');
+  const duration = programmingStageConfig
+    ? formatAdjectiveDuration(programmingStageConfig.startsAt, programmingStageConfig.endsAt, locale)
+    : '';
+  const qualifiedTeams = String(config.programmingChallenge.qualifiedTeams);
+  const vars = { duration, qualifiedTeams };
+
+  return config.stages
     .filter((stage) => stage.approval === 'approved')
     .sort((left, right) => left.sequence - right.sequence)
-    .map(({ approval: _approval, scheduleApproval, startsAt, endsAt, ...stage }) => ({
-      ...stage,
-      ...(scheduleApproval === 'approved'
-        ? {
-            startDate: startsAt,
-            ...(endsAt ? { endDate: endsAt } : {}),
-          }
-        : {}),
-      displayDate:
-        scheduleApproval === 'approved'
-          ? formatStageDate(startsAt, endsAt, locale)
-          : content.journey.schedulePending,
-      ...content.journey.stages[stage.id],
-    }));
+    .map(({ approval: _approval, scheduleApproval, startsAt, endsAt, ...stage }) => {
+      const stageContent = content.journey.stages[stage.id];
+      return {
+        ...stage,
+        ...(scheduleApproval === 'approved'
+          ? {
+              startDate: startsAt,
+              ...(endsAt ? { endDate: endsAt } : {}),
+            }
+          : {}),
+        displayDate:
+          scheduleApproval === 'approved'
+            ? formatStageDate(startsAt, endsAt, locale)
+            : content.journey.schedulePending,
+        ...stageContent,
+        summary: interpolate(stageContent.summary, vars),
+        output: interpolate(stageContent.output, vars),
+      };
+    });
 }
 
 function buildPrizes(locale: Locale, content: CompetitionContent): PrizeItem[] {
@@ -142,7 +168,7 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
   const content = locales[locale];
   if (!content) throw new Error(`Unsupported locale: ${locale}`);
 
-  const stages = buildStages(locale, content);
+  const stages = buildStages(locale, content, config);
   const programmingStage = stages.find((stage) => stage.id === 'stage-2');
   if (!programmingStage?.startDate) throw new Error('Approved programming stage schedule is required');
 
@@ -247,6 +273,20 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
         ? { totalPool: formatCurrency(totalPrizeAmount, prizes[0].currency, locale) }
         : {}),
       items: prizes,
+    },
+    faq: {
+      ...content.faq,
+      items: content.faq.items.map((item) => ({
+        ...item,
+        answer: interpolate(item.answer, {
+          duration: formatAdjectiveDuration(
+            programmingStage.startDate,
+            programmingStage.endDate,
+            locale
+          ),
+          qualifiedTeams: String(config.programmingChallenge.qualifiedTeams),
+        }),
+      })),
     },
     register: {
       ...content.register,

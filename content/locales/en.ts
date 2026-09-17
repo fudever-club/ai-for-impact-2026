@@ -100,8 +100,8 @@ export const enContent: CompetitionContent = {
         title: 'Qualification – Programming Thinking Challenge',
         shortTitle: 'Algorithmic Challenge',
         summary:
-          'A 240-minute in-person algorithmic contest adhering to ICPC Global 2024 standards. Exactly 1 laptop per team. Automated scoring on hidden/public tests.',
-        output: 'Real-time live scoreboard. Top 24 teams qualify for the Training phase and Technical Round.',
+          'A {duration} in-person algorithmic contest adhering to ICPC Global 2024 standards. Exactly 1 laptop per team. Automated scoring on hidden/public tests.',
+        output: 'Real-time live scoreboard. Top {qualifiedTeams} teams qualify for the Training phase and Technical Round.',
       },
       'stage-3': {
         title: 'Intensive Training & Workshop Series',
@@ -341,7 +341,7 @@ export const enContent: CompetitionContent = {
         id: 'faq-5',
         question: 'What is the 1-Laptop Rule in Stage 2 (Thinking Challenge)?',
         answer:
-          'To cultivate team synergy and tactical role distribution similar to international ICPC contests, each team may operate only 1 active laptop during the 240-minute contest. One standby backup machine is permitted on site if certified by a proctor.',
+          'To cultivate team synergy and tactical role distribution similar to international ICPC contests, each team may operate only 1 active laptop during the {duration} contest. One standby backup machine is permitted on site if certified by a proctor.',
       },
       {
         id: 'faq-6',

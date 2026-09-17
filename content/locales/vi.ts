@@ -99,8 +99,8 @@ export const viContent: CompetitionContent = {
         title: 'Vòng loại – Tư duy lập trình',
         shortTitle: 'Thi Tư duy lập trình',
         summary:
-          'Thử thách giải thuật 240 phút trực tiếp tại trường theo chuẩn ICPC Global 2024. Mỗi đội sử dụng đúng 01 laptop duy nhất. Chấm tự động qua test ẩn/hiện.',
-        output: 'Xếp hạng Scoreboard trực tiếp. Ban Giám khảo chọn ra Top 24 đội xuất sắc nhất bước tiếp.',
+          'Thử thách giải thuật {duration} trực tiếp tại trường theo chuẩn ICPC Global 2024. Mỗi đội sử dụng đúng 01 laptop duy nhất. Chấm tự động qua test ẩn/hiện.',
+        output: 'Xếp hạng Scoreboard trực tiếp. Ban Giám khảo chọn ra Top {qualifiedTeams} đội xuất sắc nhất bước tiếp.',
       },
       'stage-3': {
         title: 'Giai đoạn Huấn luyện chuyên sâu',
@@ -340,7 +340,7 @@ export const viContent: CompetitionContent = {
         id: 'faq-5',
         question: 'Quy tắc 1 Laptop ở Vòng 2 (Thi Tư duy lập trình) là như thế nào?',
         answer:
-          'Để rèn luyện tinh thần làm việc nhóm và phân chia chiến thuật giải thuật như các kỳ thi quốc tế ICPC, mỗi đội chỉ được sử dụng duy nhất 01 máy tính xách tay trong 240 phút thi đấu. Đội được khuyến khích mang thêm 01 máy dự phòng nhưng chỉ được bật khi máy chính gặp sự cố phần cứng có giám thị xác nhận.',
+          'Để rèn luyện tinh thần làm việc nhóm và phân chia chiến thuật giải thuật như các kỳ thi quốc tế ICPC, mỗi đội chỉ được sử dụng duy nhất 01 máy tính xách tay trong {duration} thi đấu. Đội được khuyến khích mang thêm 01 máy dự phòng nhưng chỉ được bật khi máy chính gặp sự cố phần cứng có giám thị xác nhận.',
       },
       {
         id: 'faq-6',

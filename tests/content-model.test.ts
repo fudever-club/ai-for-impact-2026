@@ -343,4 +343,67 @@ describe('production competition view-model', () => {
     expect(enProgramming.displayDate).toContain('10/02/2026');
     expect(viProgramming.displayDate).not.toBe(enProgramming.displayDate);
   });
+
+  it('derives qualified-team and stage-2 duration dynamically in prose without locale drift', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    // 1. Locale dictionaries must not hardcode operational values
+    expect(JSON.stringify({ viContent, enContent })).not.toMatch(/Top\s*24\b|240\s*phút|240-minute/i);
+
+    // 2. Base view model has current values derived
+    const viBase = viewModelModule.getCompetitionViewModel('vi');
+    const enBase = viewModelModule.getCompetitionViewModel('en');
+    const viStage2 = viBase.journey.stages.find((s: UnknownRecord) => s.id === 'stage-2');
+    const enStage2 = enBase.journey.stages.find((s: UnknownRecord) => s.id === 'stage-2');
+    const viFaq5 = viBase.faq.items.find((i: UnknownRecord) => i.id === 'faq-5');
+    const enFaq5 = enBase.faq.items.find((i: UnknownRecord) => i.id === 'faq-5');
+
+    expect(viStage2.summary).toContain('240 phút');
+    expect(enStage2.summary).toContain('240-minute');
+    expect(viStage2.output).toContain('Top 24');
+    expect(enStage2.output).toContain('Top 24');
+    expect(viFaq5.answer).toContain('240 phút');
+    expect(enFaq5.answer).toContain('240-minute');
+
+    // 3. Mutate qualifiedTeams and stage-2 duration
+    const originalQualified = siteConfig.programmingChallenge.qualifiedTeams;
+    const stage2 = siteConfig.stages.find((s) => s.id === 'stage-2')!;
+    const originalEndsAt = stage2.endsAt;
+
+    try {
+      siteConfig.programmingChallenge.qualifiedTeams = 32;
+      stage2.endsAt = '2026-10-02T11:00:00+07:00'; // 180 minutes
+
+      const viMutated = viewModelModule.getCompetitionViewModel('vi');
+      const enMutated = viewModelModule.getCompetitionViewModel('en');
+      const viMutStage2 = viMutated.journey.stages.find((s: UnknownRecord) => s.id === 'stage-2');
+      const enMutStage2 = enMutated.journey.stages.find((s: UnknownRecord) => s.id === 'stage-2');
+      const viMutFaq5 = viMutated.faq.items.find((i: UnknownRecord) => i.id === 'faq-5');
+      const enMutFaq5 = enMutated.faq.items.find((i: UnknownRecord) => i.id === 'faq-5');
+
+      expect(viMutStage2.summary).toContain('180 phút');
+      expect(enMutStage2.summary).toContain('180-minute');
+      expect(viMutStage2.summary).not.toContain('240');
+      expect(enMutStage2.summary).not.toContain('240');
+
+      expect(viMutStage2.output).toContain('Top 32');
+      expect(enMutStage2.output).toContain('Top 32');
+      expect(viMutStage2.output).not.toContain('Top 24');
+      expect(enMutStage2.output).not.toContain('Top 24');
+
+      expect(viMutFaq5.answer).toContain('180 phút');
+      expect(enMutFaq5.answer).toContain('180-minute');
+      expect(viMutFaq5.answer).not.toContain('240');
+      expect(enMutFaq5.answer).not.toContain('240');
+
+      expect(viMutated.programmingChallenge.metaCards.durationVal).toBe('180 phút');
+      expect(enMutated.programmingChallenge.metaCards.durationVal).toBe('180 minutes');
+      expect(viMutated.programmingChallenge.metaCards.qualificationVal).toBe('Top 32 đội');
+      expect(enMutated.programmingChallenge.metaCards.qualificationVal).toBe('Top 32 teams');
+    } finally {
+      siteConfig.programmingChallenge.qualifiedTeams = originalQualified;
+      stage2.endsAt = originalEndsAt;
+    }
 });
