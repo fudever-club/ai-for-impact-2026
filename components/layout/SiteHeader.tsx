@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Locale, CompetitionViewModel } from '../../content/types';
-import { LanguageSwitcher } from './LanguageSwitcher';
 import { Button } from '../ui/Button';
 import { Menu, X, Sparkles, ExternalLink } from 'lucide-react';
 
@@ -66,9 +65,8 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
           ))}
         </nav>
 
-        {/* Header Actions (Language Switcher & Register CTA) */}
+        {/* Header Actions (Register CTA) */}
         <div className="hidden sm:flex items-center gap-3.5">
-          <LanguageSwitcher currentLocale={locale} />
           <Button
             variant="primary"
             size="sm"
@@ -81,8 +79,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
         </div>
 
         {/* Mobile controls */}
-        <div className="flex items-center gap-2 sm:hidden">
-          <LanguageSwitcher currentLocale={locale} />
+        <div className="flex items-center sm:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
