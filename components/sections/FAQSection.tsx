@@ -12,7 +12,7 @@ interface FAQSectionProps {
 
 export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
   return (
-    <section id="faq" className="py-24 relative bg-navy-950/60 border-t border-brand-blue/15">
+    <section id="faq" className="py-24 relative bg-slate-50/50 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={content.faq.badge}
@@ -26,14 +26,14 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
 
         {/* Contact Help Bar */}
         <div className="mt-16 text-center space-y-3">
-          <p className="text-sm text-brand-muted">{content.faq.moreHelp}</p>
+          <p className="text-sm text-slate-600">{content.faq.moreHelp}</p>
           <div className="flex items-center justify-center gap-3">
             <Button
               variant="outline"
               size="md"
               href={content.contact.fanpageUrl}
               external
-              icon={<MessageCircle className="w-4 h-4 text-brand-cyan" />}
+              icon={<MessageCircle className="w-4 h-4 text-blue-600" />}
             >
               {content.faq.contactBtn}
             </Button>

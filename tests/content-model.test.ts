@@ -406,4 +406,5 @@ describe('production competition view-model', () => {
       siteConfig.programmingChallenge.qualifiedTeams = originalQualified;
       stage2.endsAt = originalEndsAt;
     }
+  });
 });

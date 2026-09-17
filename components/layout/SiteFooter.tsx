@@ -10,17 +10,17 @@ interface SiteFooterProps {
 
 export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
   return (
-    <footer id="footer" className="bg-navy-950 border-t border-brand-blue/20 pt-16 pb-12">
+    <footer id="footer" className="bg-slate-50 border-t border-slate-200 pt-16 pb-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
           {/* Brand Info */}
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <span className="font-display font-bold text-xl tracking-wider text-brand-offwhite">
+              <span className="font-display font-bold text-xl tracking-wider text-slate-900">
                 AI FOR IMPACT <span className="text-brand-orange">2026</span>
               </span>
             </div>
-            <p className="text-sm text-brand-muted max-w-md leading-relaxed">
+            <p className="text-sm text-slate-600 max-w-md leading-relaxed">
               {content.footer.disclaimer}
             </p>
             <div className="flex items-center gap-4 pt-2">
@@ -28,14 +28,14 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
                 href={content.contact.fanpageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-xs font-mono text-brand-cyan hover:text-white transition-colors bg-navy-850 px-3 py-1.5 rounded-lg border border-white/10"
+                className="flex items-center gap-2 text-xs font-mono text-slate-700 hover:text-blue-600 transition-colors bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs"
               >
-                <Facebook className="w-3.5 h-3.5 text-blue-400" />
+                <Facebook className="w-3.5 h-3.5 text-blue-600" />
                 Fanpage chính thức
               </a>
               <a
                 href={`mailto:${content.contact.email}`}
-                className="flex items-center gap-2 text-xs font-mono text-brand-muted hover:text-white transition-colors bg-navy-850 px-3 py-1.5 rounded-lg border border-white/10"
+                className="flex items-center gap-2 text-xs font-mono text-slate-700 hover:text-brand-orange transition-colors bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs"
               >
                 <Mail className="w-3.5 h-3.5 text-brand-orange" />
                 {content.contact.email}
@@ -45,20 +45,20 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
 
           {/* Document Links */}
           <div>
-            <h4 className="font-display font-semibold text-sm text-brand-offwhite uppercase tracking-wider mb-4">
+            <h4 className="font-display font-semibold text-sm text-slate-900 uppercase tracking-wider mb-4">
               Tài liệu chính thức
             </h4>
-            <ul className="space-y-2.5 text-sm text-brand-muted">
+            <ul className="space-y-2.5 text-sm text-slate-600">
               {content.footer.links.map((link) => (
                 <li key={link.id}>
                   <a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-brand-cyan transition-colors inline-flex items-center gap-1.5 group"
+                    className="hover:text-brand-orange transition-colors inline-flex items-center gap-1.5 group font-medium"
                   >
                     <span>{link.label}</span>
-                    <ExternalLink className="w-3 h-3 text-brand-muted group-hover:text-brand-cyan" />
+                    <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-brand-orange" />
                   </a>
                 </li>
               ))}
@@ -67,14 +67,14 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
 
           {/* Organizers list */}
           <div>
-            <h4 className="font-display font-semibold text-sm text-brand-offwhite uppercase tracking-wider mb-4">
+            <h4 className="font-display font-semibold text-sm text-slate-900 uppercase tracking-wider mb-4">
               Đơn vị chủ trì
             </h4>
-            <ul className="space-y-2 text-xs text-brand-muted">
+            <ul className="space-y-2 text-xs text-slate-600">
               {content.organizers.items.map((org) => (
                 <li key={org.id} className="flex flex-col">
-                  <span className="font-medium text-brand-offwhite">{org.name}</span>
-                  <span className="text-[11px] text-brand-cyan/80">{org.role}</span>
+                  <span className="font-medium text-slate-800">{org.name}</span>
+                  <span className="text-[11px] text-slate-500">{org.role}</span>
                 </li>
               ))}
             </ul>
@@ -82,9 +82,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-brand-muted">
+        <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <p>{content.footer.copyright}</p>
-          <div className="flex items-center gap-2 font-mono text-[11px] text-brand-cyan/70">
+          <div className="flex items-center gap-2 font-mono text-[11px] text-slate-600">
             <ShieldCheck className="w-3.5 h-3.5 text-brand-orange" />
             <span>{content.event.domain} • Single Source of Truth</span>
           </div>

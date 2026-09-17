@@ -14,10 +14,10 @@ export const JourneyPath: React.FC<JourneyPathProps> = ({ stages }) => {
   return (
     <div className="relative w-full max-w-5xl mx-auto">
       {/* Desktop central vertical timeline connector */}
-      <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-brand-cyan/20 via-brand-blue/40 to-brand-orange/40" />
+      <div className="hidden md:block absolute left-1/2 top-8 bottom-8 w-0.5 -translate-x-1/2 bg-gradient-to-b from-blue-200 via-blue-400 to-orange-400" />
 
       {/* Mobile vertical line */}
-      <div className="md:hidden absolute left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-brand-cyan/30 via-brand-blue/40 to-brand-orange/40" />
+      <div className="md:hidden absolute left-6 top-6 bottom-6 w-0.5 bg-gradient-to-b from-blue-200 via-blue-400 to-orange-400" />
 
       <div className="space-y-8 sm:space-y-12">
         {stages.map((stage, idx) => {
@@ -32,10 +32,10 @@ export const JourneyPath: React.FC<JourneyPathProps> = ({ stages }) => {
             : 'blue';
 
           const cardBorder = isTechnical
-            ? 'border-brand-orange/40 hover:border-brand-orange/80 shadow-glow-orange/10'
+            ? 'border-orange-200/90 hover:border-orange-400 shadow-card hover:shadow-card-hover'
             : isTraining
-            ? 'border-brand-cyan/30 hover:border-brand-cyan/60'
-            : 'border-brand-blue/30 hover:border-brand-blue/60';
+            ? 'border-cyan-200/90 hover:border-cyan-400 shadow-card hover:shadow-card-hover'
+            : 'border-blue-200/90 hover:border-blue-400 shadow-card hover:shadow-card-hover';
 
           return (
             <div
@@ -47,11 +47,11 @@ export const JourneyPath: React.FC<JourneyPathProps> = ({ stages }) => {
               {/* Timeline node icon */}
               <div className="absolute left-6 -translate-x-1/2 md:left-1/2 md:-translate-x-1/2 z-10 flex items-center justify-center">
                 <div
-                  className={`w-10 h-10 rounded-full flex items-center justify-center font-mono font-bold text-xs shadow-lg transition-transform duration-300 hover:scale-110 ${
+                  className={`w-10 h-10 rounded-full flex items-center justify-center font-mono font-bold text-xs shadow-md transition-transform duration-300 hover:scale-110 ${
                     isTechnical
                       ? 'bg-brand-orange text-white shadow-glow-orange'
                       : isTraining
-                      ? 'bg-brand-cyan text-navy-950 shadow-glow-cyan'
+                      ? 'bg-brand-cyan text-white shadow-glow-cyan'
                       : 'bg-brand-blue text-white shadow-glow-blue'
                   }`}
                 >
@@ -68,28 +68,28 @@ export const JourneyPath: React.FC<JourneyPathProps> = ({ stages }) => {
                     <Badge variant={badgeVariant}>
                       STAGE 0{stage.sequence} • {stage.theme.toUpperCase()}
                     </Badge>
-                    <div className="flex items-center gap-1.5 text-xs font-mono text-brand-muted">
-                      <Calendar className="w-3.5 h-3.5 text-brand-cyan" />
+                    <div className="flex items-center gap-1.5 text-xs font-mono text-slate-500">
+                      <Calendar className="w-3.5 h-3.5 text-brand-orange" />
                       <span>{stage.displayDate}</span>
                     </div>
                   </div>
 
-                  <h3 className="font-display text-lg sm:text-xl font-bold text-brand-offwhite mb-2">
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900 mb-2">
                     {stage.title}
                   </h3>
 
-                  <p className="text-sm text-brand-muted leading-relaxed mb-4">
+                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
                     {stage.summary}
                   </p>
 
-                  <div className="bg-navy-900/80 rounded-xl p-3.5 border border-white/5 flex items-start gap-2.5">
+                  <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-200/80 flex items-start gap-2.5">
                     <CheckCircle2
                       className={`w-4 h-4 shrink-0 mt-0.5 ${
                         isTechnical ? 'text-brand-orange' : 'text-brand-cyan'
                       }`}
                     />
-                    <div className="text-xs text-brand-offwhite/90 leading-normal">
-                      <span className="font-semibold text-brand-muted block mb-0.5">
+                    <div className="text-xs text-slate-800 leading-normal">
+                      <span className="font-semibold text-slate-500 block mb-0.5">
                         Sản phẩm đầu ra / Kết quả:
                       </span>
                       {stage.output}

@@ -33,14 +33,14 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLocal
   };
 
   return (
-    <div className="inline-flex items-center rounded-lg p-0.5 bg-navy-800/80 border border-brand-cyan/20">
+    <div className="inline-flex items-center rounded-lg p-0.5 bg-slate-100 border border-slate-200 shadow-xs">
       <button
         type="button"
         onClick={() => switchLocale('vi')}
-        className={`px-2.5 py-1 rounded-md text-xs font-mono font-semibold transition-all ${
+        className={`px-2.5 py-1 rounded-md text-xs font-mono font-bold transition-all ${
           currentLocale === 'vi'
-            ? 'bg-brand-blue text-white shadow-sm'
-            : 'text-brand-muted hover:text-white'
+            ? 'bg-white text-brand-orange shadow-xs border border-slate-200/80'
+            : 'text-slate-600 hover:text-slate-900'
         }`}
         aria-label="Chuyển sang tiếng Việt"
       >
@@ -49,10 +49,10 @@ export const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({ currentLocal
       <button
         type="button"
         onClick={() => switchLocale('en')}
-        className={`px-2.5 py-1 rounded-md text-xs font-mono font-semibold transition-all ${
+        className={`px-2.5 py-1 rounded-md text-xs font-mono font-bold transition-all ${
           currentLocale === 'en'
-            ? 'bg-brand-blue text-white shadow-sm'
-            : 'text-brand-muted hover:text-white'
+            ? 'bg-white text-brand-orange shadow-xs border border-slate-200/80'
+            : 'text-slate-600 hover:text-slate-900'
         }`}
         aria-label="Switch to English"
       >

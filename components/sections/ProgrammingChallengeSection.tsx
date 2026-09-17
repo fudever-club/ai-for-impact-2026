@@ -28,10 +28,10 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
   return (
     <section
       id="challenge"
-      className="py-24 relative bg-gradient-to-b from-navy-950 via-navy-900 to-navy-950 border-y border-brand-orange/20"
+      className="py-24 relative bg-slate-50/70 border-y border-slate-200/80"
     >
       {/* Background ambient orange lighting */}
-      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-brand-orange/10 rounded-full blur-[150px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-10 w-[500px] h-[500px] bg-orange-100/50 rounded-full blur-[150px] pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
@@ -44,56 +44,56 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
         {/* 4 Metadata Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-14">
           <div className="glass-card-orange p-6 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center text-brand-orange shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0">
               <Calendar className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-mono text-brand-orange block uppercase font-semibold">
                 {meta.date}
               </span>
-              <span className="font-display font-bold text-lg text-brand-offwhite">
+              <span className="font-display font-bold text-lg text-slate-900">
                 {meta.dateVal}
               </span>
             </div>
           </div>
 
           <div className="glass-card-orange p-6 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center text-brand-orange shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0">
               <Clock className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-mono text-brand-orange block uppercase font-semibold">
                 {meta.duration}
               </span>
-              <span className="font-display font-bold text-lg text-brand-offwhite">
+              <span className="font-display font-bold text-lg text-slate-900">
                 {meta.durationVal}
               </span>
             </div>
           </div>
 
           <div className="glass-card-orange p-6 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center text-brand-orange shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0">
               <MapPin className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-mono text-brand-orange block uppercase font-semibold">
                 {meta.location}
               </span>
-              <span className="font-display font-bold text-lg text-brand-offwhite">
+              <span className="font-display font-bold text-lg text-slate-900">
                 {meta.locationVal}
               </span>
             </div>
           </div>
 
           <div className="glass-card-orange p-6 flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center text-brand-orange shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 border border-orange-500/20 flex items-center justify-center text-brand-orange shrink-0">
               <Laptop className="w-6 h-6" />
             </div>
             <div>
               <span className="text-xs font-mono text-brand-orange block uppercase font-semibold">
                 {meta.qualification}
               </span>
-              <span className="font-display font-bold text-lg text-brand-offwhite">
+              <span className="font-display font-bold text-lg text-slate-900">
                 {meta.qualificationVal}
               </span>
             </div>
@@ -104,12 +104,12 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Rules & Topics */}
           <div className="lg:col-span-7 space-y-8">
-            <div className="glass-card p-7 sm:p-8 rounded-2xl border border-brand-orange/30">
-              <h3 className="font-display text-xl font-bold text-brand-offwhite mb-4 flex items-center gap-2.5">
+            <div className="glass-card p-7 sm:p-8 rounded-2xl border border-orange-200/80 shadow-card">
+              <h3 className="font-display text-xl font-bold text-slate-900 mb-4 flex items-center gap-2.5">
                 <Terminal className="w-5 h-5 text-brand-orange" />
                 Quy chế thi đấu & Quy tắc 1 Laptop
               </h3>
-              <ul className="space-y-3 text-sm sm:text-base text-brand-muted leading-relaxed">
+              <ul className="space-y-3 text-sm sm:text-base text-slate-600 leading-relaxed">
                 {content.programmingChallenge.rulesList.map((rule, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-brand-orange shrink-0 mt-1" />
@@ -120,8 +120,8 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
             </div>
 
             {/* 10 Topic Chips */}
-            <div className="glass-card p-7 rounded-2xl">
-              <h3 className="font-display text-lg font-bold text-brand-offwhite mb-4">
+            <div className="glass-card p-7 rounded-2xl border border-slate-200 shadow-card">
+              <h3 className="font-display text-lg font-bold text-slate-900 mb-4">
                 {content.programmingChallenge.topicsTitle}
               </h3>
               <div className="flex flex-wrap gap-2.5">
@@ -136,18 +136,18 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
 
           {/* Supported Languages Terminal Box */}
           <div className="lg:col-span-5">
-            <div className="rounded-2xl bg-navy-950 border border-white/15 overflow-hidden shadow-2xl">
+            <div className="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl">
               {/* Terminal Titlebar */}
-              <div className="bg-navy-900/90 px-4 py-3 border-b border-white/10 flex items-center justify-between">
+              <div className="bg-slate-950/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-red-500/80" />
                   <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
                   <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                  <span className="ml-2 font-mono text-xs text-brand-muted">
+                  <span className="ml-2 font-mono text-xs text-slate-400">
                     icpc-global-2024.env
                   </span>
                 </div>
-                <span className="text-[11px] font-mono text-brand-orange">ONLINE JUDGE</span>
+                <span className="text-[11px] font-mono text-brand-orange font-semibold">ONLINE JUDGE</span>
               </div>
 
               {/* Compiler Specs */}
@@ -155,13 +155,13 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
                 {content.programmingChallenge.languages.map((lang, idx) => (
                   <div
                     key={idx}
-                    className="p-3 rounded-xl bg-navy-900/60 border border-white/5 space-y-1 hover:border-brand-orange/30 transition-colors"
+                    className="p-3 rounded-xl bg-slate-800/70 border border-slate-700/60 space-y-1 hover:border-brand-orange/40 transition-colors"
                   >
                     <div className="flex items-center justify-between">
                       <span className="font-bold text-brand-cyan text-sm">{lang.name}</span>
-                      <span className="text-[11px] text-brand-muted">{lang.version}</span>
+                      <span className="text-[11px] text-slate-400">{lang.version}</span>
                     </div>
-                    <div className="text-[11px] text-brand-offwhite/75 overflow-x-auto whitespace-nowrap py-0.5">
+                    <div className="text-[11px] text-slate-200 overflow-x-auto whitespace-nowrap py-0.5">
                       $ {lang.compiler}
                     </div>
                   </div>
@@ -169,13 +169,13 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
               </div>
 
               {content.documents.rulesUrl && (
-                <div className="p-4 bg-navy-900/80 border-t border-white/10 text-center">
+                <div className="p-4 bg-slate-950/80 border-t border-slate-800 text-center">
                   <Button
                     variant="outline"
                     size="sm"
                     href={content.documents.rulesUrl}
                     external
-                    className="w-full justify-center"
+                    className="w-full justify-center text-slate-200 border-slate-700 hover:bg-slate-800"
                     icon={<FileCode2 className="w-4 h-4 text-brand-orange" />}
                   >
                     {content.programmingChallenge.handbookCta}

@@ -11,9 +11,9 @@ interface ThemesSectionProps {
 export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content }) => {
   const iconMap: Record<string, React.ReactNode> = {
     GraduationCap: <GraduationCap className="w-7 h-7 text-brand-cyan" />,
-    HeartPulse: <HeartPulse className="w-7 h-7 text-rose-400" />,
-    Compass: <Compass className="w-7 h-7 text-amber-400" />,
-    Leaf: <Leaf className="w-7 h-7 text-emerald-400" />,
+    HeartPulse: <HeartPulse className="w-7 h-7 text-rose-500" />,
+    Compass: <Compass className="w-7 h-7 text-amber-500" />,
+    Leaf: <Leaf className="w-7 h-7 text-emerald-500" />,
     Briefcase: <Briefcase className="w-7 h-7 text-brand-orange" />,
   };
 
@@ -31,38 +31,38 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
           {content.themes.items.map((item, idx) => (
             <div
               key={item.id}
-              className={`glass-card p-7 sm:p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-cyan/40 hover:shadow-glow-cyan/15 flex flex-col justify-between ${
+              className={`glass-card p-7 sm:p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-blue-400 border border-slate-200 shadow-card hover:shadow-card-hover flex flex-col justify-between ${
                 idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
             >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-navy-900/90 border border-white/10 flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-xs flex items-center justify-center mb-6">
                   {iconMap[item.icon] || <Sparkles className="w-7 h-7 text-brand-cyan" />}
                 </div>
 
-                <div className="text-xs font-mono text-brand-cyan uppercase tracking-wider mb-2">
+                <div className="text-xs font-mono text-blue-600 font-semibold uppercase tracking-wider mb-2">
                   CHỦ ĐỀ 0{idx + 1}
                 </div>
 
-                <h3 className="font-display text-xl font-bold text-brand-offwhite mb-3 leading-snug">
+                <h3 className="font-display text-xl font-bold text-slate-900 mb-3 leading-snug">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-brand-muted leading-relaxed mb-6">
+                <p className="text-sm text-slate-600 leading-relaxed mb-6">
                   {item.description}
                 </p>
               </div>
 
               {item.examples && (
-                <div className="pt-4 border-t border-white/10 space-y-2">
-                  <span className="text-xs font-mono text-brand-muted block">
+                <div className="pt-4 border-t border-slate-100 space-y-2">
+                  <span className="text-xs font-mono text-slate-500 block">
                     Gợi ý hướng bài toán:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {item.examples.map((ex, exIdx) => (
                       <span
                         key={exIdx}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-sans bg-navy-950 text-brand-offwhite/90 border border-white/5"
+                        className="px-2.5 py-1 rounded-md text-[11px] font-sans bg-slate-50 text-slate-700 border border-slate-200/80 font-medium"
                       >
                         • {ex}
                       </span>

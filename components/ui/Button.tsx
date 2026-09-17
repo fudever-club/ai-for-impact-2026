@@ -37,12 +37,12 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      'bg-brand-orange text-white hover:bg-brand-orange-hover hover:shadow-glow-orange border border-orange-400/30',
+      'bg-gradient-to-r from-orange-500 to-amber-500 text-white hover:from-orange-600 hover:to-amber-600 hover:shadow-glow-orange shadow-md shadow-orange-500/20 border border-orange-400/40',
     secondary:
-      'bg-brand-blue text-white hover:bg-blue-600 hover:shadow-glow-blue border border-blue-400/30',
+      'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-glow-blue shadow-md shadow-blue-600/15 border border-blue-500/30',
     outline:
-      'bg-navy-800/60 hover:bg-navy-700/80 text-brand-offwhite border border-brand-cyan/25 hover:border-brand-cyan/60 hover:shadow-glow-cyan',
-    ghost: 'text-brand-muted hover:text-white hover:bg-white/10',
+      'bg-white hover:bg-slate-50 text-slate-800 border border-slate-200 shadow-sm hover:border-orange-500/40 hover:text-orange-600',
+    ghost: 'text-slate-600 hover:text-slate-900 hover:bg-slate-100',
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

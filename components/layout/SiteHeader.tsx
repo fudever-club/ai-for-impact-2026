@@ -28,26 +28,26 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'glass-header py-3 shadow-lg'
-          : 'bg-gradient-to-b from-navy-950/90 to-transparent py-5'
+          ? 'glass-header py-3 shadow-sm'
+          : 'bg-white/80 backdrop-blur-md py-4 border-b border-slate-200/60'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Lockup */}
         <Link
           href={`/${locale}`}
-          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue rounded-lg"
+          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-lg"
         >
-          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-blue to-brand-orange p-0.5 flex items-center justify-center shadow-glow-blue/50">
-            <div className="w-full h-full bg-navy-900 rounded-[10px] flex items-center justify-center">
-              <Sparkles className="w-4 h-4 text-brand-cyan group-hover:rotate-12 transition-transform" />
+          <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-blue-600 to-brand-orange p-0.5 flex items-center justify-center shadow-md shadow-brand-orange/15">
+            <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+              <Sparkles className="w-4 h-4 text-brand-orange group-hover:rotate-12 transition-transform" />
             </div>
           </div>
           <div className="flex flex-col">
-            <span className="font-display font-bold text-base sm:text-lg tracking-wider text-brand-offwhite leading-tight">
+            <span className="font-display font-extrabold text-base sm:text-lg tracking-wider text-slate-900 leading-tight">
               AI FOR IMPACT <span className="text-brand-orange">2026</span>
             </span>
-            <span className="text-[10px] font-mono tracking-widest text-brand-cyan uppercase">
+            <span className="text-[10px] font-mono font-semibold tracking-widest text-slate-500 uppercase">
               {content.hero.eyebrow}
             </span>
           </div>
@@ -59,7 +59,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
             <a
               key={link.id}
               href={link.href}
-              className="text-sm font-medium text-brand-muted hover:text-brand-cyan transition-colors"
+              className="text-sm font-semibold text-slate-600 hover:text-brand-orange transition-colors"
             >
               {link.label}
             </a>
@@ -86,7 +86,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="p-2 rounded-lg bg-navy-800/80 text-brand-offwhite hover:text-brand-cyan border border-white/10"
+            className="p-2 rounded-lg bg-slate-100 text-slate-700 hover:text-brand-orange border border-slate-200"
             aria-label={mobileMenuOpen ? 'Đóng menu' : 'Mở menu'}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -96,27 +96,25 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden glass-header border-b border-white/10 px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top-2">
+        <div className="lg:hidden glass-header border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 animate-in slide-in-from-top-2">
           <nav className="flex flex-col space-y-2.5">
             {content.nav.links.map((link) => (
               <a
                 key={link.id}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-3 py-2 rounded-lg text-sm font-medium text-brand-offwhite hover:bg-navy-800/60 transition-colors"
+                className="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-100 hover:text-brand-orange transition-colors"
               >
                 {link.label}
               </a>
             ))}
           </nav>
-          <div className="pt-2 border-t border-white/10 flex flex-col gap-2">
+          <div className="pt-2 border-t border-slate-200 flex flex-col gap-2">
             <Button
               variant="primary"
               size="md"
               href={content.registration.url}
               external
-              className="w-full justify-center"
-              icon={<ExternalLink className="w-4 h-4" />}
             >
               {content.nav.registerCta}
             </Button>

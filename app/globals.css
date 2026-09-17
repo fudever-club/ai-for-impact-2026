@@ -10,40 +10,54 @@
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
-  background-color: #061A3A;
-  color: #F8FAFC;
+  background-color: #FFFFFF;
+  color: #0F172A;
   font-family: var(--font-inter);
   overflow-x: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Glassmorphism surfaces */
+/* Glassmorphism surfaces for Clean Tech Light */
 .glass-card {
-  background: rgba(11, 42, 91, 0.55);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(86, 199, 255, 0.16);
+  border: 1px solid rgba(226, 232, 240, 0.85);
   border-radius: 1rem;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  box-shadow: 0 12px 30px -4px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
 }
 
 .glass-card-orange {
-  background: rgba(243, 112, 33, 0.05);
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(243, 112, 33, 0.28);
+  border: 1.5px solid rgba(255, 107, 0, 0.28);
   border-radius: 1rem;
+  box-shadow: 0 8px 24px -4px rgba(255, 107, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-orange:hover {
+  border-color: rgba(255, 107, 0, 0.45);
+  box-shadow: 0 16px 36px -6px rgba(255, 107, 0, 0.18);
 }
 
 .glass-header {
-  background: rgba(6, 26, 58, 0.85);
+  background: rgba(255, 255, 255, 0.88);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(86, 199, 255, 0.12);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.85);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.03);
 }
 
 /* Custom subtle scrollbar */
@@ -51,26 +65,26 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #061A3A;
+  background: #F8FAFC;
 }
 ::-webkit-scrollbar-thumb {
-  background: #113A78;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #1D8CFF;
+  background: #FF6B00;
 }
 
 /* Focus visibility for accessibility */
 *:focus-visible {
-  outline: 2px solid #1D8CFF;
+  outline: 2px solid #FF6B00;
   outline-offset: 2px;
 }
 
 /* Selection highlight */
 ::selection {
-  background: rgba(243, 112, 33, 0.4);
-  color: #FFFFFF;
+  background: rgba(255, 107, 0, 0.25);
+  color: #0F172A;
 }
 
 /* Reduced motion support */

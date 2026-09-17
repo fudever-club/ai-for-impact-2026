@@ -16,7 +16,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ locale, content }) =
   };
 
   return (
-    <section id="about" className="py-24 relative bg-navy-950/60 border-t border-brand-blue/10">
+    <section id="about" className="py-24 relative bg-slate-50/50 border-t border-slate-200/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={content.about.badge}
@@ -26,7 +26,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ locale, content }) =
         />
 
         {/* Narrative Description */}
-        <div className="max-w-4xl mx-auto space-y-4 text-base sm:text-lg text-brand-muted leading-relaxed mb-16 text-center">
+        <div className="max-w-4xl mx-auto space-y-4 text-base sm:text-lg text-slate-600 leading-relaxed mb-16 text-center">
           {content.about.description.map((para, idx) => (
             <p key={idx}>{para}</p>
           ))}
@@ -37,15 +37,15 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ locale, content }) =
           {content.about.pillars.map((pillar, idx) => (
             <div
               key={idx}
-              className="glass-card p-8 rounded-2xl hover:border-brand-cyan/40 transition-all duration-300 group hover:-translate-y-1"
+              className="glass-card p-8 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-blue-400 transition-all duration-300 group hover:-translate-y-1"
             >
-              <div className="w-14 h-14 rounded-xl bg-navy-900 border border-white/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-xs">
                 {iconMap[pillar.icon] || <Cpu className="w-6 h-6 text-brand-cyan" />}
               </div>
-              <h3 className="font-display font-bold text-xl text-brand-offwhite mb-3">
+              <h3 className="font-display font-bold text-xl text-slate-900 mb-3">
                 {pillar.title}
               </h3>
-              <p className="text-sm text-brand-muted leading-relaxed">
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {pillar.description}
               </p>
             </div>

@@ -27,11 +27,11 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
           <Badge variant={badgeVariant}>{badge}</Badge>
         </div>
       )}
-      <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-brand-offwhite leading-tight">
+      <h2 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-base sm:text-lg text-brand-muted max-w-2xl leading-relaxed">
+        <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed">
           {subtitle}
         </p>
       )}

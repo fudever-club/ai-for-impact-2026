@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
-import { Building2, ShieldCheck } from 'lucide-react';
+import { Building2 } from 'lucide-react';
 
 interface OrganizersSectionProps {
   locale: Locale;
@@ -11,7 +11,7 @@ interface OrganizersSectionProps {
 
 export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, content }) => {
   return (
-    <section id="organization" className="py-20 relative bg-navy-950/80 border-t border-white/5">
+    <section id="organization" className="py-20 relative bg-slate-50/70 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={content.organizers.badge}
@@ -24,7 +24,7 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
           {content.organizers.items.map((org) => (
             <div
               key={org.id}
-              className="glass-card p-6 rounded-2xl border border-white/10 hover:border-brand-cyan/40 transition-all flex flex-col justify-between"
+              className="glass-card p-6 rounded-2xl border border-slate-200 shadow-card hover:shadow-card-hover hover:border-blue-300 transition-all flex flex-col justify-between"
             >
               <div>
                 {/* Logo or Typographic Badge */}
@@ -35,23 +35,23 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
                         src={org.logo}
                         alt={org.name}
                         fill
-                        className="object-contain object-left filter brightness-110"
+                        className="object-contain object-left"
                       />
                     </div>
                   ) : (
-                    <div className="px-3.5 py-2 rounded-xl bg-navy-900 border border-brand-cyan/30 text-brand-cyan font-mono font-bold text-xs flex items-center gap-2">
+                    <div className="px-3.5 py-2 rounded-xl bg-blue-50 border border-blue-200/80 text-blue-700 font-mono font-bold text-xs flex items-center gap-2">
                       <Building2 className="w-4 h-4 text-brand-orange" />
                       {org.shortName}
                     </div>
                   )}
                 </div>
 
-                <h3 className="font-display font-bold text-base text-brand-offwhite mb-1.5">
+                <h3 className="font-display font-bold text-base text-slate-900 mb-1.5">
                   {org.name}
                 </h3>
               </div>
 
-              <div className="pt-3 border-t border-white/5 text-xs text-brand-muted">
+              <div className="pt-3 border-t border-slate-100 text-xs text-slate-500 font-medium">
                 {org.role}
               </div>
             </div>
