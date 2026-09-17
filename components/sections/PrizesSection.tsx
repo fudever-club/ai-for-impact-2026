@@ -9,6 +9,11 @@ interface PrizesSectionProps {
   content: CompetitionViewModel;
 }
 
+function formatQuantity(locale: Locale, quantity: number): string {
+  if (locale === 'vi') return `Số lượng: ${quantity} đội thi`;
+  return `Quantity: ${quantity} ${quantity === 1 ? 'team' : 'teams'}`;
+}
+
 export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content }) => {
   const topThree = content.prizes.items.filter((p) =>
     ['first', 'second', 'third'].includes(p.id)
@@ -51,7 +56,7 @@ export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content })
                 </p>
               </div>
               <div className="pt-4 border-t border-white/10 text-xs font-mono text-brand-muted">
-                Số lượng: 01 Đội thi
+                {formatQuantity(locale, topThree[1].quantity)}
               </div>
             </div>
           )}
@@ -75,7 +80,7 @@ export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content })
                 </p>
               </div>
               <div className="pt-4 border-t border-brand-orange/30 text-xs font-mono text-brand-orange font-semibold">
-                Quán quân Toàn thành phố • Số lượng: 01 Đội
+                {formatQuantity(locale, topThree[0].quantity)}
               </div>
             </div>
           )}
@@ -99,7 +104,7 @@ export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content })
                 </p>
               </div>
               <div className="pt-4 border-t border-white/10 text-xs font-mono text-brand-muted">
-                Số lượng: 01 Đội thi
+                {formatQuantity(locale, topThree[2].quantity)}
               </div>
             </div>
           )}
@@ -126,6 +131,9 @@ export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content })
                 </div>
                 <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
                   {sp.description}
+                </p>
+                <p className="text-xs font-mono text-brand-muted">
+                  {formatQuantity(locale, sp.quantity)}
                 </p>
               </div>
             </div>

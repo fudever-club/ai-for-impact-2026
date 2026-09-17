@@ -12,7 +12,7 @@ describe('Bilingual Content Parity & Completeness', () => {
     expect(Object.keys(enContent.journey.stages).sort()).toEqual(sharedStageIds);
   });
 
-  it('returns only approved stages in shared sequence order', () => {
+  it('returns every published stage in shared sequence order', () => {
     const expectedIds = siteConfig.stages
       .filter((stage) => stage.approval === 'approved')
       .sort((left, right) => left.sequence - right.sequence)
@@ -24,6 +24,7 @@ describe('Bilingual Content Parity & Completeness', () => {
     expect(getCompetitionViewModel('en').journey.stages.map((stage) => stage.id)).toEqual(
       expectedIds
     );
+    expect(expectedIds).toEqual(['stage-1', 'stage-2', 'stage-3', 'stage-4', 'stage-5']);
   });
 
   it('has matching theme records', () => {

@@ -3,13 +3,12 @@ import { CompetitionContent } from '../types';
 export const enContent: CompetitionContent = {
   locale: 'en',
   meta: {
-    title: 'AI for Impact 2026 | Agentic Innovation Challenge – FPT University Da Nang',
+    title: 'AI for Impact 2026 | Agentic Innovation Challenge',
     description:
-      'Premier academic AI Agent competition hosted by FPT University Da Nang. From algorithmic programming to building real-world AI Agent solutions creating tangible social impact.',
+      'Premier academic AI Agent challenge. From algorithmic programming to building real-world AI Agent solutions creating tangible social impact.',
     keywords: [
       'AI for Impact',
       'AI Agent',
-      'FPT University Da Nang',
       'AI Competition',
       'Harness Engineering',
       'ICPC',
@@ -30,7 +29,7 @@ export const enContent: CompetitionContent = {
     registerCta: 'Register Now',
   },
   hero: {
-    endorsement: 'FPT UNIVERSITY DA NANG • ICPDP & SOFTWARE ENGINEERING DEPT',
+    endorsement: 'AGENTIC AI INNOVATION CHALLENGE 2026',
     eyebrow: 'AGENTIC INNOVATION CHALLENGE 2026',
     title: 'AI FOR IMPACT 2026',
     tagline: 'From Prompting to Building Impactful Solutions',
@@ -57,7 +56,7 @@ export const enContent: CompetitionContent = {
     subtitle:
       'AI for Impact 2026 is not about superficial slide decks or copied code. We look for young engineers capable of building reliable, verifiable, and responsible AI Agents.',
     description: [
-      'FPT University Da Nang hosts AI for Impact 2026 to provide an intensive academic playground for students to master the newest wave of technology: Agentic AI and Harness Engineering.',
+      'AI for Impact 2026 provides an intensive academic playground for students to master the newest wave of technology: Agentic AI and Harness Engineering.',
       'Participants embark on a comprehensive engineering journey: starting with rigorous algorithmic qualification following international ICPC standards, followed by intensive training workshops with industry leaders, fixing real faulty agent harnesses under automated evaluation, and culminating in a sprint with surprise live constraints.',
       'Every project must address 1 of 5 urgent societal problem domains, identifying concrete beneficiaries and verifiable impact metrics.',
     ],
@@ -87,6 +86,7 @@ export const enContent: CompetitionContent = {
     title: '5 Stages from Conception to Grand Finale',
     subtitle:
       'At each milestone, teams receive resources and deliver concrete outputs.',
+    schedulePending: 'Schedule pending organizer confirmation',
     ctaText: 'Read the Complete Participant Handbook',
     stages: {
       'stage-1': {
@@ -272,21 +272,21 @@ export const enContent: CompetitionContent = {
     badge: 'PRIZES & OPPORTUNITIES',
     title: 'Rewarding Excellence & Fostering Innovation',
     subtitle:
-      'Cash awards combined with direct incubation opportunities at FPT University Startup Incubator.',
+      'Cash awards combined with direct project-incubation opportunities.',
     items: {
       first: {
         title: '1st Place Winner',
-        description: 'Championship Trophy + FPT University Certificate + Startup Incubation Grant',
+        description: 'Championship Trophy + Certificate + Startup Incubation Grant',
         badge: 'Champion',
       },
       second: {
         title: '2nd Place Winner',
-        description: 'Medal + FPT University Certificate + Tech Hardware Gifts',
+        description: 'Medal + Certificate + Tech Hardware Gifts',
         badge: 'Runner-up',
       },
       third: {
         title: '3rd Place Winner',
-        description: 'Medal + FPT University Certificate',
+        description: 'Medal + Certificate',
         badge: 'Third Place',
       },
       impact: {
@@ -301,7 +301,7 @@ export const enContent: CompetitionContent = {
       },
     },
     additionalBenefits: [
-      'Official FPT University Da Nang Certificates of Participation awarded to all finalists.',
+      'Official Certificates of Participation awarded to all finalists.',
       'Direct interview and internship connection opportunities with leading technology enterprises in Da Nang.',
       'High-potential projects receive faculty mentorship for Research-Based Learning (RBL) or Graduation Capstone Theses.',
     ],
@@ -317,7 +317,7 @@ export const enContent: CompetitionContent = {
         id: 'faq-1',
         question: 'Who is eligible to participate in AI for Impact 2026?',
         answer:
-          'All university and college students across Da Nang city are eligible. Priority is given to Information Technology, Software Engineering, and AI disciplines. Multidisciplinary teams combining tech with Business, Media, or Design are highly encouraged.',
+          'All university and college students across Da Nang city are eligible. Priority is given to Information Technology, Software Development, and AI disciplines. Multidisciplinary teams combining tech with Business, Media, or Design are highly encouraged.',
       },
       {
         id: 'faq-2',
@@ -359,7 +359,7 @@ export const enContent: CompetitionContent = {
         id: 'faq-8',
         question: 'Where can I read the full Participant Handbook and Regulations?',
         answer:
-          'All authoritative documents (Official Plan, Participant Handbook, Technical Regulations) are accessible via the top navigation bar links on this website.',
+          'The Participant Handbook and Technical Regulations will be published after the official content is confirmed.',
       },
     ],
   },
@@ -367,7 +367,7 @@ export const enContent: CompetitionContent = {
     badge: 'JOIN TODAY',
     title: 'Ready to Tackle the AI Agent Challenge?',
     subtitle:
-      'Form your team today and embark on a transformative 7-week journey at FPT University Da Nang.',
+      'Form your team today and embark on a transformative 7-week journey.',
     steps: [
       {
         step: '01',
@@ -388,14 +388,14 @@ export const enContent: CompetitionContent = {
     ctaText: 'Open Official Registration Form',
   },
   organizers: {
-    badge: 'ORGANIZING COMMITTEE',
-    title: 'Steering Committee & Faculty Boards',
-    subtitle: 'Collaboration between University Administration, Engineering Faculty, and Tech Community',
+    badge: 'ORGANIZER INFORMATION',
+    title: 'Information pending confirmation',
+    subtitle: 'Organizer names and roles will be published after approval.',
   },
   footer: {
-    copyright: '© 2026 AI for Impact. FPT University Da Nang. All rights reserved.',
+    copyright: '© 2026 AI for Impact. All rights reserved.',
     disclaimer:
-      'AI for Impact 2026 is an official academic competition jointly organized by ICPDP, Software Engineering Department, and CF Department at FPT University Da Nang.',
+      'AI for Impact 2026 is an academic Agentic AI challenge. Organizer information will be published after approval.',
     links: {
       handbook: 'Participant Handbook',
       rules: 'Official Rules',

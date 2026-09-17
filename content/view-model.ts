@@ -104,11 +104,18 @@ function buildStages(locale: Locale, content: CompetitionContent): CompetitionSt
   return siteConfig.stages
     .filter((stage) => stage.approval === 'approved')
     .sort((left, right) => left.sequence - right.sequence)
-    .map(({ approval: _approval, startsAt, endsAt, ...stage }) => ({
+    .map(({ approval: _approval, scheduleApproval, startsAt, endsAt, ...stage }) => ({
       ...stage,
-      startDate: startsAt,
-      ...(endsAt ? { endDate: endsAt } : {}),
-      displayDate: formatStageDate(startsAt, endsAt, locale),
+      ...(scheduleApproval === 'approved'
+        ? {
+            startDate: startsAt,
+            ...(endsAt ? { endDate: endsAt } : {}),
+          }
+        : {}),
+      displayDate:
+        scheduleApproval === 'approved'
+          ? formatStageDate(startsAt, endsAt, locale)
+          : content.journey.schedulePending,
       ...content.journey.stages[stage.id],
     }));
 }
@@ -137,7 +144,7 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
 
   const stages = buildStages(locale, content);
   const programmingStage = stages.find((stage) => stage.id === 'stage-2');
-  if (!programmingStage) throw new Error('Approved programming stage is required');
+  if (!programmingStage?.startDate) throw new Error('Approved programming stage schedule is required');
 
   const prizes = buildPrizes(locale, content);
   const totalPrizeAmount = prizes.reduce(
@@ -184,17 +191,30 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
     .filter((organizer) => organizer.approval === 'approved')
     .map(({ approval: _approval, ...organizer }) => organizer);
 
-  const approvedStageDates = stages.map((stage) => stage.startDate);
+  const approvedStageDates = stages.flatMap((stage) =>
+    stage.startDate ? [stage.startDate] : []
+  );
+
+  const navLinks = content.nav.links.filter((link) => {
+    if (link.href === '#prizes') return prizes.length > 0;
+    if (link.href === '#organization') return approvedOrganizers.length > 0;
+    return true;
+  });
 
   return {
     ...content,
     event: {
       name: config.eventName,
       domain: config.domain,
+      location: config.eventLocation,
       startDate: config.registration.opensAt,
       endDate: approvedStageDates[approvedStageDates.length - 1],
     },
     registration: config.registration,
+    nav: {
+      ...content.nav,
+      links: navLinks,
+    },
     contact: {
       email: config.contactEmail,
       fanpageUrl: config.fanpageUrl,
@@ -210,7 +230,7 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
         ...content.programmingChallenge.metaCards,
         dateVal: formatDate(programmingStage.startDate, locale),
         durationVal: formatDuration(programmingStage.startDate, programmingStage.endDate, locale),
-        locationVal: config.programmingChallenge.location,
+        locationVal: config.eventLocation,
         qualificationVal:
           locale === 'vi'
             ? `Top ${config.programmingChallenge.qualifiedTeams} đội`

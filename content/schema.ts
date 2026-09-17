@@ -4,10 +4,56 @@ export const ApprovalStateSchema = z.enum(['approved', 'withheld']);
 export const StageThemeSchema = z.enum(['impact', 'technical', 'training']);
 export const RegistrationStatusSchema = z.enum(['upcoming', 'open', 'closed', 'finished']);
 
+const OFFSET_TIMESTAMP_PATTERN =
+  /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.\d{3})?[+-](\d{2}):(\d{2})$/;
+
+function isValidOffsetTimestamp(value: string): boolean {
+  const match = OFFSET_TIMESTAMP_PATTERN.exec(value);
+  if (!match) return false;
+
+  const [, yearValue, monthValue, dayValue, hourValue, minuteValue, secondValue, offsetHourValue, offsetMinuteValue] =
+    match;
+  const year = Number(yearValue);
+  const month = Number(monthValue);
+  const day = Number(dayValue);
+  const hour = Number(hourValue);
+  const minute = Number(minuteValue);
+  const second = Number(secondValue);
+  const offsetHour = Number(offsetHourValue);
+  const offsetMinute = Number(offsetMinuteValue);
+  const leapYear = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+  const daysInMonth = [31, leapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  return (
+    month >= 1 &&
+    month <= 12 &&
+    day >= 1 &&
+    day <= daysInMonth[month - 1] &&
+    hour <= 23 &&
+    minute <= 59 &&
+    second <= 59 &&
+    offsetHour <= 23 &&
+    offsetMinute <= 59 &&
+    Number.isFinite(Date.parse(value))
+  );
+}
+
 const OffsetTimestampSchema = z
   .string()
-  .regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?[+-]\d{2}:\d{2}$/)
-  .refine((value) => Number.isFinite(Date.parse(value)), 'Invalid offset timestamp');
+  .refine(isValidOffsetTimestamp, 'Invalid offset timestamp');
+
+function isHttpsUrl(value: string): boolean {
+  try {
+    return new URL(value).protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+const HttpsUrlSchema = z
+  .string()
+  .url()
+  .refine(isHttpsUrl, 'Public URL must use HTTPS');
 
 const NonEmptyString = z.string().min(1);
 const StringArray = z.array(NonEmptyString);
@@ -20,6 +66,7 @@ export const CompetitionStageSchema = z
     endsAt: OffsetTimestampSchema.optional(),
     theme: StageThemeSchema,
     approval: ApprovalStateSchema,
+    scheduleApproval: ApprovalStateSchema,
   })
   .strict()
   .refine(
@@ -86,7 +133,7 @@ export const NavAnchorSchema = z
 
 const ApprovedUrlSchema = z
   .object({
-    url: z.string().url(),
+    url: HttpsUrlSchema,
     approval: ApprovalStateSchema,
   })
   .strict();
@@ -102,11 +149,12 @@ export const SiteConfigSchema = z
   .object({
     eventName: NonEmptyString,
     domain: NonEmptyString,
+    eventLocation: NonEmptyString,
     contactEmail: z.string().email(),
-    fanpageUrl: z.string().url(),
+    fanpageUrl: HttpsUrlSchema,
     registration: z
       .object({
-        url: z.string().url(),
+        url: HttpsUrlSchema,
         opensAt: OffsetTimestampSchema,
         closesAt: OffsetTimestampSchema,
       })
@@ -125,7 +173,6 @@ export const SiteConfigSchema = z
     stages: z.array(CompetitionStageSchema).min(1),
     programmingChallenge: z
       .object({
-        location: NonEmptyString,
         qualifiedTeams: z.number().int().positive(),
       })
       .strict(),
@@ -238,6 +285,7 @@ export const CompetitionContentSchema = z
         badge: NonEmptyString,
         title: NonEmptyString,
         subtitle: NonEmptyString,
+        schedulePending: NonEmptyString,
         stages: z.record(NonEmptyString, LocalizedStageContentSchema),
         ctaText: NonEmptyString,
       })

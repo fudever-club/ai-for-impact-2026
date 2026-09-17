@@ -3,18 +3,16 @@ import { CompetitionContent } from '../types';
 export const viContent: CompetitionContent = {
   locale: 'vi',
   meta: {
-    title: 'AI for Impact 2026 | Agentic Innovation Challenge – Trường Đại học FPT Đà Nẵng',
+    title: 'AI for Impact 2026 | Agentic Innovation Challenge',
     description:
-      'Cuộc thi học thuật quy mô lớn về AI Agent tại Trường Đại học FPT Đà Nẵng. Từ tư duy lập trình thuật toán đến xây dựng giải pháp AI Agent thực chiến tạo tác động xã hội thực tế.',
+      'Thử thách học thuật quy mô lớn về AI Agent. Từ tư duy lập trình thuật toán đến xây dựng giải pháp AI Agent thực chiến tạo tác động xã hội thực tế.',
     keywords: [
       'AI for Impact',
       'AI Agent',
-      'FPT University Da Nang',
       'Cuộc thi AI',
       'Harness Engineering',
       'ICPC',
       'Agentic AI',
-      'Đại học FPT Đà Nẵng',
     ],
   },
   nav: {
@@ -30,7 +28,7 @@ export const viContent: CompetitionContent = {
     registerCta: 'Đăng ký ngay',
   },
   hero: {
-    endorsement: 'TRƯỜNG ĐẠI HỌC FPT ĐÀ NẴNG • PHÒNG ICPDP & BỘ MÔN SE, CF',
+    endorsement: 'THỬ THÁCH ĐỔI MỚI SÁNG TẠO AGENTIC AI 2026',
     eyebrow: 'AGENTIC INNOVATION CHALLENGE 2026',
     title: 'AI FOR IMPACT 2026',
     tagline: 'Từ tư duy đến giải pháp tạo tác động',
@@ -57,7 +55,7 @@ export const viContent: CompetitionContent = {
     subtitle:
       'AI for Impact 2026 không tìm kiếm những bài thuyết trình ý tưởng suông hay mã nguồn sao chép. Chúng tôi tìm kiếm những kỹ sư trẻ biết làm chủ AI Agent một cách tin cậy và có trách nhiệm.',
     description: [
-      'Trường Đại học FPT Đà Nẵng tổ chức AI for Impact 2026 nhằm tạo sân chơi học thuật chuyên sâu, giúp sinh viên làm quen với làn sóng công nghệ mới nhất: Agentic AI và Harness Engineering.',
+      'AI for Impact 2026 tạo sân chơi học thuật chuyên sâu, giúp sinh viên làm quen với làn sóng công nghệ mới nhất: Agentic AI và Harness Engineering.',
       'Thí sinh trải qua hành trình tôi luyện toàn diện: khởi đầu bằng bài thi tư duy giải thuật khắt khe theo chuẩn quốc tế, tiếp nối bằng huấn luyện chuyên sâu cùng chuyên gia doanh nghiệp, đối đầu với thử thách sửa lỗi Agent trong môi trường kiểm thử tự động, và bứt phá tại vòng Chung kết với ràng buộc bất ngờ.',
       'Mỗi sản phẩm đều gắn liền với 1 trong 5 nhóm vấn đề cấp thiết của xã hội, có đối tượng thụ hưởng cụ thể và chỉ số đo lường tác động rõ ràng.',
     ],
@@ -87,6 +85,7 @@ export const viContent: CompetitionContent = {
     title: '5 Chặng thử thách từ Ý tưởng đến Chung kết',
     subtitle:
       'Trong mỗi chặng, thí sinh nhận tài nguyên và hoàn thành sản phẩm đầu ra tương ứng.',
+    schedulePending: 'Lịch sẽ được công bố sau khi Ban Tổ chức xác nhận',
     ctaText: 'Xem tài liệu Sổ tay thí sinh chi tiết',
     stages: {
       'stage-1': {
@@ -107,7 +106,7 @@ export const viContent: CompetitionContent = {
         title: 'Giai đoạn Huấn luyện chuyên sâu',
         shortTitle: 'Training chuyên sâu',
         summary:
-          '3 buổi Workshop cùng Giảng viên BM SE và chuyên gia doanh nghiệp: Hiểu & sửa Agent baseline, Đánh giá – Bảo mật – Phục hồi, Mock run thử nghiệm.',
+          '3 buổi Workshop cùng giảng viên và chuyên gia doanh nghiệp: Hiểu & sửa Agent baseline, Đánh giá – Bảo mật – Phục hồi, Mock run thử nghiệm.',
         output: '08 test cases, 02 ca bảo mật, 01 ca timeout, báo cáo trace và 01 bản demo trực tuyến truy cập được.',
       },
       'stage-4': {
@@ -272,21 +271,21 @@ export const viContent: CompetitionContent = {
     badge: 'CƠ CẤU GIẢI THƯỞNG',
     title: 'Tôn vinh nỗ lực & Khơi nguồn khởi nghiệp',
     subtitle:
-      'Tổng giá trị giải thưởng tiền mặt cùng cơ hội ươm mầm dự án tại Vườn ươm Khởi nghiệp Đại học FPT.',
+      'Tổng giá trị giải thưởng tiền mặt cùng cơ hội ươm mầm dự án.',
     items: {
       first: {
-        title: '01 Giải Nhất',
-        description: 'Cúp vô địch + Giấy khen ĐH FPT + Học bổng ươm tạo dự án',
+        title: 'Giải Nhất',
+        description: 'Cúp vô địch + Giấy khen + Học bổng ươm tạo dự án',
         badge: 'Quán quân',
       },
       second: {
-        title: '01 Giải Nhì',
-        description: 'Kỷ niệm chương + Giấy khen ĐH FPT + Quà tặng công nghệ',
+        title: 'Giải Nhì',
+        description: 'Kỷ niệm chương + Giấy khen + Quà tặng công nghệ',
         badge: 'Á quân',
       },
       third: {
-        title: '01 Giải Ba',
-        description: 'Kỷ niệm chương + Giấy khen ĐH FPT',
+        title: 'Giải Ba',
+        description: 'Kỷ niệm chương + Giấy khen',
         badge: 'Quý quân',
       },
       impact: {
@@ -301,7 +300,7 @@ export const viContent: CompetitionContent = {
       },
     },
     additionalBenefits: [
-      'Toàn bộ thành viên các đội lọt vào vòng Chung kết được cấp Giấy chứng nhận chính thức của Trường Đại học FPT Đà Nẵng.',
+      'Toàn bộ thành viên các đội lọt vào vòng Chung kết được cấp Giấy chứng nhận chính thức.',
       'Cơ hội kết nối thực tập và tuyển dụng trực tiếp với các doanh nghiệp công nghệ hàng đầu tại Đà Nẵng.',
       'Sản phẩm tiềm năng được tài trợ cố vấn để phát triển thành Đề tài Nghiên cứu khoa học (RBL) hoặc Khóa luận Tốt nghiệp (KLTN).',
     ],
@@ -317,7 +316,7 @@ export const viContent: CompetitionContent = {
         id: 'faq-1',
         question: 'Ai có thể đăng ký tham gia AI for Impact 2026?',
         answer:
-          'Tất cả sinh viên các trường Đại học, Cao đẳng trên địa bàn Thành phố Đà Nẵng đều có thể đăng ký tham gia. Ưu tiên sinh viên khối ngành Công nghệ Thông tin, Kỹ thuật Phần mềm, Trí tuệ Nhân tạo. Ban Tổ chức đặc biệt khuyến khích các đội có thành viên liên ngành (kết hợp CNTT với Kinh tế, Truyền thông, Thiết kế).',
+          'Tất cả sinh viên các trường Đại học, Cao đẳng trên địa bàn Thành phố Đà Nẵng đều có thể đăng ký tham gia. Ưu tiên sinh viên khối ngành Công nghệ Thông tin, Phát triển Phần mềm, Trí tuệ Nhân tạo. Ban Tổ chức đặc biệt khuyến khích các đội có thành viên liên ngành (kết hợp CNTT với Kinh tế, Truyền thông, Thiết kế).',
       },
       {
         id: 'faq-2',
@@ -359,7 +358,7 @@ export const viContent: CompetitionContent = {
         id: 'faq-8',
         question: 'Làm thế nào để truy cập Sổ tay thí sinh và Thể lệ đầy đủ?',
         answer:
-          'Tất cả tài liệu chính thức (Kế hoạch sự kiện, Sổ tay thí sinh, Thể lệ thi đấu) được lưu trữ trên hệ thống tài liệu mở của Ban Tổ chức và gắn link trực tiếp trên thanh điều hướng của website này.',
+          'Sổ tay thí sinh và Thể lệ thi đấu sẽ được công bố sau khi nội dung chính thức được xác nhận.',
       },
     ],
   },
@@ -367,7 +366,7 @@ export const viContent: CompetitionContent = {
     badge: 'THAM GIA NGAY',
     title: 'Sẵn sàng bước vào thử thách AI Agent?',
     subtitle:
-      'Đăng ký đội thi ngay hôm nay để bước vào hành trình 7 tuần đầy bứt phá tại Trường Đại học FPT Đà Nẵng.',
+      'Đăng ký đội thi ngay hôm nay để bước vào hành trình 7 tuần đầy bứt phá.',
     steps: [
       {
         step: '01',
@@ -388,14 +387,14 @@ export const viContent: CompetitionContent = {
     ctaText: 'Điền form đăng ký tham gia ngay',
   },
   organizers: {
-    badge: 'ĐƠN VỊ TỔ CHỨC',
-    title: 'Ban Chỉ đạo & Hội đồng Chuyên môn',
-    subtitle: 'Sự kết hợp giữa Nhà trường, Bộ môn Kỹ thuật và Cộng đồng Công nghệ',
+    badge: 'THÔNG TIN TỔ CHỨC',
+    title: 'Thông tin đang chờ xác nhận',
+    subtitle: 'Danh sách đơn vị và vai trò sẽ được công bố sau khi phê duyệt.',
   },
   footer: {
-    copyright: '© 2026 AI for Impact. Trường Đại học FPT Đà Nẵng. Bản quyền thuộc về Ban Tổ chức.',
+    copyright: '© 2026 AI for Impact. Bản quyền thuộc về Ban Tổ chức.',
     disclaimer:
-      'AI for Impact 2026 là cuộc thi học thuật chính thức do Phòng ICPDP và Bộ môn Kỹ thuật Phần mềm (BM SE), Bộ môn CF - Trường Đại học FPT Đà Nẵng phối hợp tổ chức.',
+      'AI for Impact 2026 là một thử thách học thuật về Agentic AI. Thông tin đơn vị tổ chức sẽ được công bố sau khi phê duyệt.',
     links: {
       handbook: 'Sổ tay thí sinh',
       rules: 'Thể lệ cuộc thi',

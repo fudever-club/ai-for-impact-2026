@@ -86,7 +86,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
           <p>{content.footer.copyright}</p>
           <div className="flex items-center gap-2 font-mono text-[11px] text-brand-cyan/70">
             <ShieldCheck className="w-3.5 h-3.5 text-brand-orange" />
-            <span>AI.Impact.fptu.vn • Single Source of Truth</span>
+            <span>{content.event.domain} • Single Source of Truth</span>
           </div>
         </div>
       </div>

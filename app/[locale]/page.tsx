@@ -77,7 +77,7 @@ export default function LocalePage({ params }: LocalePageProps) {
     eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
     location: {
       '@type': 'Place',
-      name: 'Trường Đại học FPT Đà Nẵng',
+      name: content.event.location,
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Đà Nẵng',

@@ -3,6 +3,7 @@ import { SiteConfig } from './types';
 export const siteConfig: SiteConfig = {
   eventName: 'AI for Impact 2026 – Agentic Innovation Challenge',
   domain: 'AI.Impact.fptu.vn',
+  eventLocation: 'Trường Đại học FPT Đà Nẵng',
   contactEmail: 'icpdp.dn@fe.edu.vn',
   fanpageUrl: 'https://www.facebook.com/profile.php?id=61565495577626',
   registration: {
@@ -28,6 +29,7 @@ export const siteConfig: SiteConfig = {
       endsAt: '2026-09-23T23:59:00+07:00',
       theme: 'impact',
       approval: 'approved',
+      scheduleApproval: 'approved',
     },
     {
       id: 'stage-2',
@@ -36,6 +38,7 @@ export const siteConfig: SiteConfig = {
       endsAt: '2026-10-02T12:00:00+07:00',
       theme: 'technical',
       approval: 'approved',
+      scheduleApproval: 'approved',
     },
     {
       id: 'stage-3',
@@ -43,7 +46,8 @@ export const siteConfig: SiteConfig = {
       startsAt: '2026-10-07T14:00:00+07:00',
       endsAt: '2026-10-09T17:00:00+07:00',
       theme: 'training',
-      approval: 'withheld',
+      approval: 'approved',
+      scheduleApproval: 'withheld',
     },
     {
       id: 'stage-4',
@@ -52,6 +56,7 @@ export const siteConfig: SiteConfig = {
       endsAt: '2026-10-17T12:00:00+07:00',
       theme: 'technical',
       approval: 'approved',
+      scheduleApproval: 'approved',
     },
     {
       id: 'stage-5',
@@ -59,10 +64,10 @@ export const siteConfig: SiteConfig = {
       startsAt: '2026-10-31T08:00:00+07:00',
       theme: 'impact',
       approval: 'approved',
+      scheduleApproval: 'approved',
     },
   ],
   programmingChallenge: {
-    location: 'Trường Đại học FPT Đà Nẵng',
     qualifiedTeams: 24,
   },
   disputedFacts: {

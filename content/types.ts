@@ -18,10 +18,11 @@ export interface CompetitionStageConfig {
   endsAt?: string;
   theme: StageTheme;
   approval: ApprovalState;
+  scheduleApproval: ApprovalState;
 }
 
-export interface CompetitionStage extends Omit<CompetitionStageConfig, 'approval' | 'startsAt' | 'endsAt'> {
-  startDate: string;
+export interface CompetitionStage extends Omit<CompetitionStageConfig, 'approval' | 'scheduleApproval' | 'startsAt' | 'endsAt'> {
+  startDate?: string;
   endDate?: string;
   displayDate: string;
   title: string;
@@ -80,6 +81,7 @@ export interface NavAnchor {
 export interface SiteConfig {
   eventName: string;
   domain: string;
+  eventLocation: string;
   contactEmail: string;
   fanpageUrl: string;
   registration: {
@@ -93,7 +95,6 @@ export interface SiteConfig {
   };
   stages: CompetitionStageConfig[];
   programmingChallenge: {
-    location: string;
     qualifiedTeams: number;
   };
   disputedFacts: {
@@ -163,6 +164,7 @@ export interface CompetitionContent {
     badge: string;
     title: string;
     subtitle: string;
+    schedulePending: string;
     stages: Record<string, LocalizedStageContent>;
     ctaText: string;
   };
@@ -247,6 +249,7 @@ export interface CompetitionViewModel
   event: {
     name: string;
     domain: string;
+    location: string;
     startDate: string;
     endDate: string;
   };
