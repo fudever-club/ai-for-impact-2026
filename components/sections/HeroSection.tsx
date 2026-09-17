@@ -6,7 +6,7 @@ import { getRegistrationCountdown, RegistrationCountdown } from '../../lib/regis
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { AgentNetworkVisual } from '../visuals/AgentNetworkVisual';
-import { ArrowRight, Clock, Users, Trophy, Layers, Sparkles, ExternalLink } from 'lucide-react';
+import { ArrowRight, Clock, ExternalLink } from 'lucide-react';
 
 interface HeroSectionProps {
   locale: Locale;

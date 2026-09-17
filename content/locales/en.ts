@@ -1081,9 +1081,9 @@ export const enContent: CompetitionContent = {
       'AI for Impact 2026 is an academic Agentic AI challenge. All competition rules, technical standards, and procedures are officially published in the Participant Handbook.',
     developerCredit: {
       text: 'Developed by',
-      teamName: 'FU-DEVER team',
+      teamName: 'FU-DEVER',
       logoUrl: '/brand/logo-dever.png',
-      url: 'https://fudever.com',
+      url: 'https://github.com/fudever-club',
     },
     links: {
       handbook: 'Contestant Handbook & Rules',

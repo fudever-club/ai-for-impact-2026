@@ -1,115 +1,164 @@
 # AI for Impact 2026 🚀
 
-> **Agentic Innovation Challenge – Từ tư duy thuật toán đến giải pháp tạo tác động xã hội**  
-> **Đơn vị chỉ đạo & đăng cai tổ chức:** Trường Đại học FPT Đà Nẵng  
-> **Tên miền chính thức:** [`AI.Impact.fptu.vn`](https://ai.impact.fptu.vn)  
+<div align="center">
 
-Trang web sự kiện chính thức cho cuộc thi học thuật quy mô lớn **AI for Impact 2026** tại Trường Đại học FPT Đà Nẵng, được xây dựng với kiến trúc tĩnh Next.js 14, thiết kế Clean Tech Light hiện đại và quản trị dữ liệu vận hành tập trung (Single Source of Truth).
+![FU-DEVER Badge](https://img.shields.io/badge/DEVELOPED%20BY-FU--DEVER-FF6B00?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+[![Next.js](https://img.shields.io/badge/Next.js-13.5_App_Router-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Strict_Mode-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4_Clean_Tech-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![Vitest](https://img.shields.io/badge/Vitest-52%2F52_Pass-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)](https://vitest.dev/)
+[![TencentDB Memory](https://img.shields.io/badge/TencentDB-Agent_Memory_Hub-0052D9?style=for-the-badge&logo=tencentqq&logoColor=white)](http://127.0.0.1:8420)
+
+<br />
+
+**Agentic Innovation Challenge – Từ tư duy thuật toán đến giải pháp tạo tác động xã hội**  
+*Nền tảng trang web sự kiện chính thức do **CLB Lập Trình FU-DEVER** nghiên cứu, thiết kế và phát triển.*
+
+[**Khám phá Sự kiện**](https://ai.impact.fptu.vn) · [**Sổ tay Thí sinh**](./public/docs/So_tay_thi_sinh_AI-for-Impact-2026_V4.docx) · [**Quy chuẩn Kiến trúc**](./docs/ARCHITECTURE.md) · [**Về FU-DEVER**](#-về-đơn-vị-phát-triển--clb-lập-trình-fu-dever)
+
+</div>
+
+---
+
+## 📌 Tổng quan Dự án
+
+Trang web chính thức của cuộc thi học thuật quy mô lớn **AI for Impact 2026**:
+- **Đơn vị chỉ đạo & đăng cai tổ chức:** Trường Đại học FPT Đà Nẵng
+- **Đơn vị bảo trợ công nghệ & phát triển hệ thống:** [Câu Lạc Bộ Lập Trình FU-DEVER](https://github.com/fudever-club) (FPT University Da Nang)
+- **Tên miền chính thức:** [`AI.Impact.fptu.vn`](https://ai.impact.fptu.vn)
+
+Hệ thống được xây dựng trên nền tảng **Next.js 14 App Router** với kiến trúc xuất bản tĩnh toàn phần (**Static Export First**), tuân thủ nguyên lý quản trị dữ liệu tập trung **Single Source of Truth (SSOT)** và vận hành hệ thống thiết kế hiện đại **Clean Tech Light**.
 
 ---
 
 ## 🌟 Tính năng Nổi bật
 
-- 🎨 **Clean Tech Light Design System**: Nền trắng tinh khôi kết hợp các lớp kính mờ `.glass-card` phủ sương cao cấp, điểm xuyết sắc cam FPT (`#FF6B00`) rực rỡ và xanh công nghệ hiện đại.
-- ⚡ **Single Source of Truth (SSOT)**: 100% sự thật vận hành (lịch trình 5 chặng, hạn đăng ký, Top 24, cơ cấu giải thưởng) được quản lý tập trung tại `content/site-config.ts` với khả năng tự động nội suy chuỗi qua token biến mẫu `{qualifiedTeams}`, `{duration}`.
-- 💻 **Developer Console Terminal**: Khu vực ICPC Compiler Specs (`bg-slate-900`) hiển thị cấu hình C++, Java, Python với cú pháp chuẩn xác và vector logo chính hãng từ [Svgl](https://svgl.app/).
-- ✨ **Hệ thống Animation Mượt mà**: Button Shimmer Sweep quét phản quang, Agent Network SVG Streaming với các luồng dữ liệu hạt liên tục, radar pulse trực quan.
-- 🛡️ **Kiểm định Nghiêm ngặt**: 42 unit & parity tests Vitest, kiểm soát chặt chẽ approval gates giải thưởng và ban tổ chức.
-- 🧠 **TencentDB Central Memory Hub**: Kết nối bộ nhớ dài hạn của agent tại cổng `:8420`, lưu trữ toàn bộ quyết định kiến trúc và bất biến dự án.
-- 📦 **Static Export First**: Biên dịch xuất bản tĩnh 100% mã nguồn (`output: 'export'`), First Load JS siêu nhẹ (~79.8 kB), tải tức thì trên mọi CDN.
+- 🎨 **Clean Tech Light Design System**: Nền trắng tinh khôi kết hợp các lớp kính mờ `.glass-card` phủ sương sang trọng, điểm xuyết sắc cam FPT rực rỡ (`#FF6B00`) và xanh công nghệ hiện đại (`#2563EB`).
+- ⚡ **Single Source of Truth (SSOT)**: 100% sự thật vận hành (lịch trình 5 chặng, hạn nộp hồ sơ, Top 24, cơ cấu giải thưởng) được quy tụ tại [`content/site-config.ts`](./content/site-config.ts), tự động nội suy token mẫu qua [`content/view-model.ts`](./content/view-model.ts). Tuyệt đối không hardcode văn bản.
+- 💻 **Developer Console Terminal**: Khu vực cấu hình môi trường lập trình ICPC (`bg-slate-900`) hiển thị compiler specs (C++20, Java 21, Python 3.12) sắc nét với bộ SVG vector từ [Svgl](https://svgl.app/).
+- ⏳ **Bộ đếm Ngược Realtime (Countdown)**: Đồng bộ tự động thời hạn đóng cổng đăng ký, tự động chuyển đổi trạng thái khi hết hạn mà không cần can thiệp mã nguồn.
+- 🛡️ **Kiểm định Chất lượng Nghiêm ngặt**: 52 unit tests bao phủ 100% logic ngày tháng, tính toàn vẹn SSOT, nội suy token và cấu trúc giải thưởng.
+- 🧠 **TencentDB Agent Memory Central Hub**: Tích hợp bộ nhớ dài hạn L0–L3 cho AI Agents (`http://127.0.0.1:8420`, tenant `aiforimpact`), bảo toàn vĩnh viễn các quyết định kiến trúc và ngữ cảnh dự án.
+- 📦 **Static Export Siêu Nhẹ**: Tối ưu hóa bundle First Load JS chỉ ~79 kB, tốc độ tải tức thì, dễ dàng triển khai trên mọi hạ tầng tĩnh (Cloudflare Pages, Vercel, GitHub Pages).
 
 ---
 
 ## 🛠️ Công nghệ Sử dụng
 
-- **Framework**: [Next.js 14](https://nextjs.org/) (App Router, Static Export)
-- **Ngôn ngữ**: [TypeScript](https://www.typescriptlang.org/) (Strict Mode)
-- **Styling**: [Tailwind CSS 3.4](https://tailwindcss.com/)
-- **Chuyển động & Hiệu ứng**: CSS Animations (GPU-accelerated), Canvas / SVG Streams
-- **Icons**: [Lucide React](https://lucide.dev/) + [Svgl](https://svgl.app/) SVG Vectors
-- **Kiểm thử**: [Vitest](https://vitest.dev/) (Unit, Parity, Date & Mutation Tests)
-- **Bộ nhớ Agent**: TencentDB Agent Memory Hub (`http://127.0.0.1:8420`)
+| Phân tầng | Công nghệ | Mục đích |
+| :--- | :--- | :--- |
+| **Framework** | [Next.js 14](https://nextjs.org/) (App Router, `output: 'export'`) | Nền tảng web tĩnh hiệu năng cao |
+| **Ngôn ngữ** | [TypeScript](https://www.typescriptlang.org/) (Strict Mode) | Bảo đảm an toàn kiểu dữ liệu 100% |
+| **Giao diện** | [Tailwind CSS 3.4](https://tailwindcss.com/) | Hệ thống utility classes Clean Tech Light |
+| **Biểu tượng** | [Lucide React](https://lucide.dev/) & [Svgl](https://svgl.app/) | Bộ icons vector chuẩn mực |
+| **Kiểm thử** | [Vitest](https://vitest.dev/) (`vitest.config.mts`) | Chạy 52/52 unit tests tự động |
+| **Bộ nhớ Agent** | TencentDB Agent Memory Hub | Quản lý kiến trúc & ngữ cảnh AI đa agent |
+| **Tổ chức** | [CLB FU-DEVER](https://github.com/fudever-club) | Đơn vị phát triển & bảo trì giải pháp |
 
 ---
 
-## 🚀 Khởi chạy Dự án
+## 🚀 Hướng dẫn Khởi chạy & Phát triển
 
 ### Yêu cầu Tiên quyết
-- Node.js 18.17+ hoặc 20+
-- npm (hoặc pnpm / yarn)
+- **Node.js**: Phiên bản 18.17+ hoặc 20+ (Khuyến nghị 20 LTS)
+- **Package Manager**: `npm` (hoặc `pnpm` / `yarn`)
 
 ### 1. Cài đặt Thư viện
 ```bash
 npm install
 ```
 
-### 2. Chạy Môi trường Phát triển (Development)
+### 2. Khởi chạy Server Môi trường Phát triển (Development)
 ```bash
 npm run dev
 ```
-Mở trình duyệt tại: `http://localhost:3000` (hoặc `http://localhost:3000/vi`)
+Mở trình duyệt tại: [`http://localhost:3000`](http://localhost:3000)
 
-### 3. Kiểm định Chất lượng Toàn diện (Verification Pipeline)
+### 3. Quy trình Kiểm định Toàn diện (4-Step Verification Pipeline)
+Trước khi tạo Pull Request hoặc xuất bản, toàn bộ 4 bước kiểm định bắt buộc phải vượt qua:
+
 ```bash
-# 1. Kiểm tra kiểu TypeScript
+# Bước 1: Kiểm tra kiểu dữ liệu TypeScript (0 lỗi)
 npm run typecheck
 
-# 2. Kiểm tra chuẩn mã nguồn ESLint
+# Bước 2: Kiểm tra chuẩn mã nguồn ESLint (0 warnings / errors)
 npm run lint
 
-# 3. Chạy 42 unit & mutation tests
+# Bước 3: Chạy toàn bộ 52 bài kiểm thử tự động
 npm test
 
-# 4. Biên dịch xuất bản tĩnh Next.js Static Export
+# Bước 4: Biên dịch tĩnh Next.js Static Export
 npm run build
 ```
 
-Sau khi build tĩnh thành công, sản phẩm sẵn sàng triển khai tại thư mục `out/`.
+Sau khi hoàn tất, bản phân phối tĩnh sẽ được đóng gói toàn diện tại thư mục `out/`.
 
 ---
 
-## 📁 Cấu trúc Thư mục
+## 📁 Cấu trúc Thư mục Chuẩn mực
 
 ```
 AIforImpact/
 ├── app/                           # Next.js 14 App Router
-│   ├── [locale]/page.tsx          # Trang đích chính thức
-│   ├── globals.css                # Biến màu, glassmorphism & shimmer keyframes
-│   └── layout.tsx                 # Root layout & Google Fonts
-├── components/                    # Thành phần Giao diện
+│   ├── [locale]/page.tsx          # Trang đích chính thức (Tiếng Việt)
+│   ├── globals.css                # Biến màu Clean Tech, glassmorphism & keyframes
+│   └── layout.tsx                 # Root layout & Google Fonts (Inter, Plus Jakarta Sans)
+├── components/                    # Hệ thống Thành phần Giao diện
 │   ├── layout/                    # SiteHeader, SiteFooter
-│   ├── sections/                  # 9 Sections (Hero, Journey, Challenge, Themes, ...)
-│   ├── ui/                        # Button, Card, Badge
-│   └── visuals/                   # AgentNetworkVisual, JourneyPath
-├── content/                       # Trung tâm Sự thật Vận hành (SSOT)
-│   ├── site-config.ts             # Dữ liệu thực (Ngày, Link form, Top 24, Thể lệ)
+│   ├── sections/                  # 12 Sections (Hero, Journey, Challenge, Themes, ...)
+│   ├── ui/                        # Button, Card, Badge, Accordion
+│   └── visuals/                   # AgentNetworkVisual, JourneyPath SVG streams
+├── content/                       # Trung tâm Sự thật Vận hành (Single Source of Truth)
+│   ├── site-config.ts             # Dữ liệu sự kiện gốc (Ngày tháng, Form link, Thể lệ)
+│   ├── view-model.ts              # Xử lý nội suy token {qualifiedTeams}, {duration}
 │   ├── schema.ts                  # Zod validation schema
-│   ├── types.ts                   # TypeScript interfaces
-│   └── view-model.ts              # Xử lý nội suy token & prize podium
-├── docs/                          # Tài liệu Kỹ thuật
-│   ├── decisions/                 # Architecture Decision Records (ADR-001, ADR-002)
+│   └── types.ts                   # Định nghĩa TypeScript contracts
+├── docs/                          # Kho Tài liệu Kỹ thuật & Lưu trữ
 │   ├── ARCHITECTURE.md            # Tài liệu Kiến trúc Hệ thống chi tiết
-│   └── CODE_AUDIT.md              # Báo cáo kiểm định chất lượng 5 trục
+│   ├── CODE_AUDIT.md              # Báo cáo kiểm định chất lượng 5 trục
+│   ├── decisions/                 # Architecture Decision Records (ADR-001, ADR-002)
+│   ├── references/raw_materials/  # Tài liệu kế hoạch gốc, thể lệ Word (.docx) & ghi chú
+│   └── archive/scratch/           # Lưu trữ tài liệu phân tích kỹ thuật
 ├── public/                        # Tài nguyên Tĩnh & SVG Icons (Svgl)
-├── tests/                         # Vitest Test Suites (42 tests pass 100%)
-└── AGENTS.md                      # Chỉ thị Bất biến & Quy chuẩn Vận hành Agent
+│   ├── brand/                     # Logo FU-DEVER, FPT University, Posters
+│   ├── docs/                      # Sổ tay thí sinh chính thức (.docx)
+│   └── icons/                     # Vector SVGL (Python, Java, C++, Claude, OpenAI)
+├── tests/                         # Vitest Test Suites (52 tests passed 100%)
+├── AGENTS.md                      # Chỉ thị Bất biến & Quy chuẩn Vận hành Agent
+├── README.md                      # Tài liệu dự án (Tài liệu này)
+├── tailwind.config.ts             # Cấu hình Clean Tech Light Theme Tokens
+└── vitest.config.mts              # Cấu hình kiểm thử Vitest ESM chuẩn
 ```
 
 ---
 
-## 📐 Quy chuẩn Thương hiệu & Bất biến (Brand Invariants)
+## 📐 Quy chuẩn Nhận diện & Bất biến Dự án
 
 1. **Cuộc thi KHÔNG CÓ LOGO CHÍNH THỨC**:
-   - Không tạo hoặc sử dụng ảnh logo giả lập cho cuộc thi.
-   - Nhận diện cuộc thi sử dụng thuần túy **Brand Lockup dạng chữ (`AI FOR IMPACT 2026`)** kết hợp logo đơn vị chủ trì là **Trường Đại học FPT Đà Nẵng**.
-2. **Ngôn ngữ Giao diện**: Giao diện tiếng Việt chuẩn hóa, đã tinh giản bỏ nút chuyển đổi ngôn ngữ để tối ưu trải nghiệm tập trung.
+   - Tuyệt đối không tự ý tạo, import, suy đoán hoặc sử dụng file ảnh logo giả lập cho cuộc thi.
+   - Nhận diện cuộc thi sử dụng thuần túy **Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`)** kết hợp nhận diện đơn vị chủ trì là **Trường Đại học FPT Đà Nẵng** và đơn vị công nghệ **CLB FU-DEVER**.
+2. **Ngôn ngữ Giao diện**: Giao diện tiếng Việt chuẩn hóa, đã tinh giản bỏ nút chuyển đổi ngôn ngữ để tạo trải nghiệm tập trung.
+3. **Bảo tồn Dữ liệu (SSOT)**: Không hardcode bất kỳ con số vận hành nào trực tiếp trong JSX; toàn bộ phải đi qua `site-config.ts`.
 
 ---
 
-## 📚 Tài liệu Tham khảo
+## 🐞 Về Đơn vị Phát triển — CLB Lập Trình FU-DEVER
 
-- [Tài liệu Kiến trúc Hệ thống](file:///docs/ARCHITECTURE.md)
-- [Báo cáo Kiểm định Mã nguồn](file:///docs/CODE_AUDIT.md)
-- [ADR-001: Clean Tech Light & SSOT Architecture](file:///docs/decisions/0001-clean-tech-light-and-ssot-architecture.md)
-- [ADR-002: TencentDB Central Memory Hub](file:///docs/decisions/0002-memory-hub-and-agent-workflow.md)
-- [Chỉ thị Vận hành Agent (AGENTS.md)](file:///AGENTS.md)
+**Câu Lạc Bộ Lập Trình FU-DEVER** là tổ chức học thuật chuyên sâu về Kỹ thuật Phần mềm và Trí tuệ Nhân tạo trực thuộc **Trường Đại học FPT Đà Nẵng**.
+
+- **Sứ mệnh**: Kiến tạo môi trường học thuật đỉnh cao, đồng hành cùng sinh viên từ tư duy giải thuật thi đấu (Competitive Programming) đến phát triển các hệ thống phần mềm quy mô lớn tạo tác động xã hội thực tế.
+- **Linh vật**: Bọ cánh cam **Buggy** 🐞 — biểu tượng gánh team, kiên cường diệt bug và tiếp lửa đam mê lập trình cho các thế hệ lập trình viên.
+- **Biệt đội hỗ trợ**: Kiến Runner (`run()`), Ong Teamwork, Sâu Commit & Chill, Ếch Striker, Bướm Flow State, Ốc Sên Take it easy.
+
+### Kết nối với FU-DEVER
+- 🌐 **Website Chính thức:** [fu-dever-landingpage-v2.vercel.app](https://fu-dever-landingpage-v2.vercel.app/)
+- 📘 **Fanpage Chính thức:** [facebook.com/FPTUDever](https://www.facebook.com/FPTUDever)
+- 🐙 **GitHub Organization:** [github.com/fudever-club](https://github.com/fudever-club)
+- ✉️ **Email Liên hệ:** `club.dever@gmail.com`
+- 📍 **Địa chỉ:** Tòa nhà FPT University, Khu đô thị FPT City, Phường Hòa Hải, Quận Ngũ Hành Sơn, TP. Đà Nẵng
+
+---
+
+<div align="center">
+  <sub>Crafted with passion & precision by <strong>CLB Lập Trình FU-DEVER</strong> © 2026. All rights reserved.</sub>
+</div>

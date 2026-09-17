@@ -1078,9 +1078,9 @@ export const viContent: CompetitionContent = {
       'AI for Impact 2026 là một thử thách học thuật về Agentic AI. Toàn bộ thể lệ, chuẩn kỹ thuật và quy chế thi đấu được công bố chính thức trong Sổ tay thí sinh.',
     developerCredit: {
       text: 'Developed by',
-      teamName: 'FU-DEVER team',
+      teamName: 'FU-DEVER',
       logoUrl: '/brand/logo-dever.png',
-      url: 'https://fudever.com',
+      url: 'https://github.com/fudever-club',
     },
     links: {
       handbook: 'Sổ tay Thí sinh & Thể lệ',
