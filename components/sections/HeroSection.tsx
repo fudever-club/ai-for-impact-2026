@@ -1,8 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
-import { siteConfig } from '../../content/site-config';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { getRegistrationCountdown, RegistrationCountdown } from '../../lib/registration';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
@@ -11,20 +10,20 @@ import { ArrowRight, Clock, Users, Trophy, Layers, Sparkles, ExternalLink } from
 
 interface HeroSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => {
   const [countdown, setCountdown] = useState<RegistrationCountdown>(() =>
-    getRegistrationCountdown()
+    getRegistrationCountdown(undefined, content)
   );
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCountdown(getRegistrationCountdown());
+      setCountdown(getRegistrationCountdown(undefined, content));
     }, 60000);
     return () => clearInterval(timer);
-  }, []);
+  }, [content]);
 
   const statusText = content.hero.statusBadge[countdown.status];
 
@@ -104,7 +103,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
               <Button
                 variant="primary"
                 size="lg"
-                href={siteConfig.registrationUrl}
+                href={content.registration.url}
                 external
                 icon={<ExternalLink className="w-4 h-4" />}
               >
@@ -127,12 +126,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
                   {content.hero.quickStats.teams}
                 </span>
                 <span className="text-xs text-brand-muted">Quy mô thí sinh</span>
-              </div>
-              <div>
-                <span className="block font-mono text-xl sm:text-2xl font-bold text-brand-orange">
-                  {content.hero.quickStats.prizePool}
-                </span>
-                <span className="text-xs text-brand-muted">Cơ cấu thưởng</span>
               </div>
               <div>
                 <span className="block font-mono text-xl sm:text-2xl font-bold text-brand-cyan">

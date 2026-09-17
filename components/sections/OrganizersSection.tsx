@@ -1,13 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
-import { Locale, CompetitionContent } from '../../content/types';
-import { siteConfig } from '../../content/site-config';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Building2, ShieldCheck } from 'lucide-react';
 
 interface OrganizersSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, content }) => {
@@ -22,7 +21,7 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {siteConfig.organizers.map((org) => (
+          {content.organizers.items.map((org) => (
             <div
               key={org.id}
               className="glass-card p-6 rounded-2xl border border-white/10 hover:border-brand-cyan/40 transition-all flex flex-col justify-between"

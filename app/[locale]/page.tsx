@@ -3,9 +3,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { Locale } from '../../content/types';
 import { isSupportedLocale } from '../../lib/locale';
-import { viContent } from '../../content/locales/vi';
-import { enContent } from '../../content/locales/en';
-import { siteConfig } from '../../content/site-config';
+import { getCompetitionViewModel } from '../../content/view-model';
 import { SiteHeader } from '../../components/layout/SiteHeader';
 import { HeroSection } from '../../components/sections/HeroSection';
 import { AboutSection } from '../../components/sections/AboutSection';
@@ -27,7 +25,7 @@ interface LocalePageProps {
 
 export function generateMetadata({ params }: LocalePageProps): Metadata {
   if (!isSupportedLocale(params.locale)) return {};
-  const content = params.locale === 'vi' ? viContent : enContent;
+  const content = getCompetitionViewModel(params.locale);
 
   return {
     title: content.meta.title,
@@ -65,16 +63,16 @@ export default function LocalePage({ params }: LocalePageProps) {
   }
 
   const locale = params.locale as Locale;
-  const content = locale === 'vi' ? viContent : enContent;
+  const content = getCompetitionViewModel(locale);
 
   // JSON-LD Structured Data for Event SEO
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Event',
-    name: siteConfig.eventName,
+    name: content.event.name,
     description: content.meta.description,
-    startDate: siteConfig.keyDates.registrationStart,
-    endDate: siteConfig.keyDates.finalRound,
+    startDate: content.event.startDate,
+    endDate: content.event.endDate,
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
     location: {
@@ -85,11 +83,6 @@ export default function LocalePage({ params }: LocalePageProps) {
         addressLocality: 'Đà Nẵng',
         addressCountry: 'VN',
       },
-    },
-    organizer: {
-      '@type': 'Organization',
-      name: 'Trường Đại học FPT Đà Nẵng',
-      url: 'https://ai.impact.fptu.vn',
     },
   };
 
@@ -107,10 +100,14 @@ export default function LocalePage({ params }: LocalePageProps) {
         <ProgrammingChallengeSection locale={locale} content={content} />
         <ThemesSection locale={locale} content={content} />
         <EvaluationSection locale={locale} content={content} />
-        <PrizesSection locale={locale} content={content} />
+        {content.prizes.items.length > 0 && (
+          <PrizesSection locale={locale} content={content} />
+        )}
         <FAQSection locale={locale} content={content} />
         <RegisterSection locale={locale} content={content} />
-        <OrganizersSection locale={locale} content={content} />
+        {content.organizers.items.length > 0 && (
+          <OrganizersSection locale={locale} content={content} />
+        )}
       </main>
       <SiteFooter locale={locale} content={content} />
     </>

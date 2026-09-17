@@ -1,11 +1,11 @@
 import React from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { GraduationCap, HeartPulse, Compass, Leaf, Briefcase, Sparkles } from 'lucide-react';
 
 interface ThemesSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content }) => {

@@ -1,54 +1,61 @@
-import { describe, it, expect } from 'vitest';
-import { viContent } from '../content/locales/vi';
+import { describe, expect, it } from 'vitest';
 import { enContent } from '../content/locales/en';
+import { viContent } from '../content/locales/vi';
 import { siteConfig } from '../content/site-config';
+import { getCompetitionViewModel } from '../content/view-model';
 
 describe('Bilingual Content Parity & Completeness', () => {
-  it('should have matching number of stages (exactly 5)', () => {
-    expect(viContent.journey.stages.length).toBe(5);
-    expect(enContent.journey.stages.length).toBe(5);
+  it('keys localized stage copy by every shared stage ID', () => {
+    const sharedStageIds = siteConfig.stages.map((stage) => stage.id).sort();
+
+    expect(Object.keys(viContent.journey.stages).sort()).toEqual(sharedStageIds);
+    expect(Object.keys(enContent.journey.stages).sort()).toEqual(sharedStageIds);
   });
 
-  it('should have identical stage IDs and sequences', () => {
-    viContent.journey.stages.forEach((viStage, index) => {
-      const enStage = enContent.journey.stages[index];
-      expect(viStage.id).toBe(enStage.id);
-      expect(viStage.sequence).toBe(enStage.sequence);
-      expect(viStage.theme).toBe(enStage.theme);
-    });
+  it('returns only approved stages in shared sequence order', () => {
+    const expectedIds = siteConfig.stages
+      .filter((stage) => stage.approval === 'approved')
+      .sort((left, right) => left.sequence - right.sequence)
+      .map((stage) => stage.id);
+
+    expect(getCompetitionViewModel('vi').journey.stages.map((stage) => stage.id)).toEqual(
+      expectedIds
+    );
+    expect(getCompetitionViewModel('en').journey.stages.map((stage) => stage.id)).toEqual(
+      expectedIds
+    );
   });
 
-  it('should have matching number of themes (exactly 5)', () => {
+  it('has matching theme records', () => {
     expect(viContent.themes.items.length).toBe(5);
-    expect(enContent.themes.items.length).toBe(5);
-    viContent.themes.items.forEach((viTheme, idx) => {
-      expect(viTheme.id).toBe(enContent.themes.items[idx].id);
+    expect(enContent.themes.items.length).toBe(viContent.themes.items.length);
+    viContent.themes.items.forEach((viTheme, index) => {
+      expect(viTheme.id).toBe(enContent.themes.items[index].id);
     });
   });
 
-  it('should have matching prize items and amounts', () => {
-    expect(viContent.prizes.items.length).toBe(enContent.prizes.items.length);
-    viContent.prizes.items.forEach((viPrize, idx) => {
-      const enPrize = enContent.prizes.items[idx];
-      expect(viPrize.id).toBe(enPrize.id);
-      expect(viPrize.amount).toBe(enPrize.amount);
-    });
+  it('keys localized prize copy by every shared prize ID', () => {
+    const sharedPrizeIds = Object.keys(siteConfig.prizes).sort();
+
+    expect(Object.keys(viContent.prizes.items).sort()).toEqual(sharedPrizeIds);
+    expect(Object.keys(enContent.prizes.items).sort()).toEqual(sharedPrizeIds);
   });
 
-  it('should have matching navigation anchors', () => {
+  it('has matching navigation anchors', () => {
     expect(viContent.nav.links.length).toBe(enContent.nav.links.length);
-    viContent.nav.links.forEach((viNav, idx) => {
-      expect(viNav.id).toBe(enContent.nav.links[idx].id);
-      expect(viNav.href).toBe(enContent.nav.links[idx].href);
+    viContent.nav.links.forEach((viNav, index) => {
+      expect(viNav.id).toBe(enContent.nav.links[index].id);
+      expect(viNav.href).toBe(enContent.nav.links[index].href);
     });
   });
 
-  it('should have non-empty FAQ items', () => {
+  it('has complete FAQ translations', () => {
     expect(viContent.faq.items.length).toBeGreaterThanOrEqual(8);
     expect(enContent.faq.items.length).toBe(viContent.faq.items.length);
   });
 
-  it('should use single source of truth registration link', () => {
-    expect(siteConfig.registrationUrl).toContain('docs.google.com/forms');
+  it('uses the shared registration destination in each production view-model', () => {
+    expect(getCompetitionViewModel('vi').registration.url).toBe(siteConfig.registration.url);
+    expect(getCompetitionViewModel('en').registration.url).toBe(siteConfig.registration.url);
   });
 });

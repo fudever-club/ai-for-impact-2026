@@ -1,12 +1,12 @@
 import React from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
 import { Scale, AlertCircle, Bot, CheckCircle2 } from 'lucide-react';
 
 interface EvaluationSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, content }) => {
@@ -62,24 +62,26 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
         {/* 2 Important Governance Notices */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Baseline Freeze Notice */}
-          <div className="glass-card-orange p-6 sm:p-7 rounded-2xl flex items-start gap-4">
-            <div className="w-12 h-12 rounded-xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center text-brand-orange shrink-0 mt-1">
-              <AlertCircle className="w-6 h-6" />
-            </div>
-            <div className="space-y-2">
-              <div className="flex flex-wrap items-center gap-2">
-                <h4 className="font-display font-bold text-base text-brand-offwhite">
-                  {content.evaluation.baselineRuleNotice.title}
-                </h4>
-                <Badge variant="orange">
-                  Hạn chót: {content.evaluation.baselineRuleNotice.deadline}
-                </Badge>
+          {content.evaluation.baselineRuleNotice && (
+            <div className="glass-card-orange p-6 sm:p-7 rounded-2xl flex items-start gap-4">
+              <div className="w-12 h-12 rounded-xl bg-brand-orange/20 border border-brand-orange/40 flex items-center justify-center text-brand-orange shrink-0 mt-1">
+                <AlertCircle className="w-6 h-6" />
               </div>
-              <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
-                {content.evaluation.baselineRuleNotice.content}
-              </p>
+              <div className="space-y-2">
+                <div className="flex flex-wrap items-center gap-2">
+                  <h4 className="font-display font-bold text-base text-brand-offwhite">
+                    {content.evaluation.baselineRuleNotice.title}
+                  </h4>
+                  <Badge variant="orange">
+                    Hạn chót: {content.evaluation.baselineRuleNotice.deadline}
+                  </Badge>
+                </div>
+                <p className="text-xs sm:text-sm text-brand-muted leading-relaxed">
+                  {content.evaluation.baselineRuleNotice.content}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* AI Tools Policy Notice */}
           <div className="glass-card p-6 sm:p-7 rounded-2xl flex items-start gap-4 border border-brand-blue/30">

@@ -1,13 +1,12 @@
 import React from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
-import { siteConfig } from '../../content/site-config';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
 import { ExternalLink, Clock, Sparkles } from 'lucide-react';
 
 interface RegisterSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const RegisterSection: React.FC<RegisterSectionProps> = ({ locale, content }) => {
@@ -58,7 +57,7 @@ export const RegisterSection: React.FC<RegisterSectionProps> = ({ locale, conten
             <Button
               variant="primary"
               size="lg"
-              href={siteConfig.registrationUrl}
+              href={content.registration.url}
               external
               icon={<ExternalLink className="w-5 h-5" />}
               className="text-base sm:text-lg px-9 py-4 font-bold shadow-glow-orange"

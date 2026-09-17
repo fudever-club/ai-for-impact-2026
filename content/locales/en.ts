@@ -47,7 +47,6 @@ export const enContent: CompetitionContent = {
     journeyCta: 'Explore the 5 Stages',
     quickStats: {
       teams: '40–50 Teams',
-      prizePool: '12,000,000+ VND',
       duration: '7 Weeks Journey',
       stages: '5 Milestones',
     },
@@ -59,7 +58,7 @@ export const enContent: CompetitionContent = {
       'AI for Impact 2026 is not about superficial slide decks or copied code. We look for young engineers capable of building reliable, verifiable, and responsible AI Agents.',
     description: [
       'FPT University Da Nang hosts AI for Impact 2026 to provide an intensive academic playground for students to master the newest wave of technology: Agentic AI and Harness Engineering.',
-      'Participants embark on a comprehensive engineering journey: starting with rigorous algorithmic qualification following international ICPC standards, followed by 3 intensive training workshops with industry leaders, fixing real faulty agent harnesses under automated evaluation, and culminating in a 2-hour sprint with surprise live constraints.',
+      'Participants embark on a comprehensive engineering journey: starting with rigorous algorithmic qualification following international ICPC standards, followed by intensive training workshops with industry leaders, fixing real faulty agent harnesses under automated evaluation, and culminating in a sprint with surprise live constraints.',
       'Every project must address 1 of 5 urgent societal problem domains, identifying concrete beneficiaries and verifiable impact metrics.',
     ],
     pillars: [
@@ -87,75 +86,45 @@ export const enContent: CompetitionContent = {
     badge: 'COMPETITION JOURNEY',
     title: '5 Stages from Conception to Grand Finale',
     subtitle:
-      'A 7-week intensive journey (14/09 – 31/10/2026). At each milestone, teams receive resources and deliver concrete outputs.',
+      'At each milestone, teams receive resources and deliver concrete outputs.',
     ctaText: 'Read the Complete Participant Handbook',
-    stages: [
-      {
-        id: 'stage-1',
-        sequence: 1,
-        startDate: '2026-09-14T00:00:00+07:00',
-        endDate: '2026-09-23T23:59:00+07:00',
-        displayDate: '14/09 – 23/09/2026',
-        theme: 'impact',
+    stages: {
+      'stage-1': {
         title: 'Registration & Idea Proposal',
         shortTitle: 'Registration & Idea',
         summary:
-          'Teams register (3–5 members) via the official Google Form and submit an idea pitch video (≤ 3 minutes) before the final deadline of 28/09/2026.',
+          'Teams register via the official Google Form and prepare an idea pitch video following organizer guidance.',
         output: 'Team Profile + 1 Video Pitch ≤ 3 min (Problem, Target Users, AI Architecture, Social Impact).',
       },
-      {
-        id: 'stage-2',
-        sequence: 2,
-        startDate: '2026-10-02T08:00:00+07:00',
-        endDate: '2026-10-02T12:00:00+07:00',
-        displayDate: 'Friday, 02/10/2026 (08:00 – 12:00)',
-        theme: 'technical',
+      'stage-2': {
         title: 'Qualification – Programming Thinking Challenge',
         shortTitle: 'Algorithmic Challenge',
         summary:
           'A 240-minute in-person algorithmic contest adhering to ICPC Global 2024 standards. Exactly 1 laptop per team. Automated scoring on hidden/public tests.',
         output: 'Real-time live scoreboard. Top 24 teams qualify for the Training phase and Technical Round.',
       },
-      {
-        id: 'stage-3',
-        sequence: 3,
-        startDate: '2026-10-07T14:00:00+07:00',
-        endDate: '2026-10-09T17:00:00+07:00',
-        displayDate: '07/10, 08/10 & 09/10/2026',
-        theme: 'training',
+      'stage-3': {
         title: 'Intensive Training & Workshop Series',
         shortTitle: 'Intensive Training',
         summary:
           '3 hands-on workshops with university faculty and enterprise mentors: Baseline Agent debugging, Evaluation & Security, Mock Run & Deployment.',
         output: '8 test cases, 2 security tests, 1 timeout test, trace report, and 1 deployed accessible online demo.',
       },
-      {
-        id: 'stage-4',
-        sequence: 4,
-        startDate: '2026-10-17T08:00:00+07:00',
-        endDate: '2026-10-17T12:00:00+07:00',
-        displayDate: 'Saturday, 17/10/2026',
-        theme: 'technical',
+      'stage-4': {
         title: 'Technical Round – Harness Engineering Challenge',
         shortTitle: 'Harness Engineering',
         summary:
           'Student Support Resolution Agent challenge: Fix context leaks, security flaws, and approval gates in a faulty baseline agent repository.',
-        output: '70% automated test score + 30% Engineering Review. Top 15 advance; baseline freeze at 23:59 on 28/10.',
+        output: 'Automated test results and the Engineering Review determine which teams advance to the Grand Finale.',
       },
-      {
-        id: 'stage-5',
-        sequence: 5,
-        startDate: '2026-10-31T08:00:00+07:00',
-        endDate: '2026-10-31T17:00:00+07:00',
-        displayDate: 'Saturday, 31/10/2026',
-        theme: 'impact',
-        title: 'Grand Finale – 2-Hour Build Sprint & Demo Day',
+      'stage-5': {
+        title: 'Grand Finale – Build Sprint & Demo Day',
         shortTitle: 'Grand Finale & Demo Day',
         summary:
-          'A 2-hour on-site sprint on top of frozen baseline with live surprise constraints, followed by afternoon Demo Day pitches and award ceremony.',
+          'An on-site sprint on top of a frozen baseline with live surprise constraints, followed by Demo Day pitches and the award ceremony.',
         output: 'Functional production MVP, impact report, AI evaluation artifacts, video demo, pitch deck & awards.',
       },
-    ],
+    },
   },
   programmingChallenge: {
     badge: 'STAGE 2: ALGORITHMIC SPOTLIGHT',
@@ -166,13 +135,9 @@ export const enContent: CompetitionContent = {
       'High-performance AI Agents cannot be engineered without rock-solid algorithmic competence. This round directly evaluates logical deduction, data structures, and computational optimization under strict time limits.',
     metaCards: {
       date: 'Contest Date',
-      dateVal: 'Friday, 02/10/2026',
       duration: 'Duration',
-      durationVal: '240 minutes (08:00 – 12:00)',
       location: 'Venue',
-      locationVal: 'FPT University Da Nang Campus',
       qualification: 'Advancement Threshold',
-      qualificationVal: 'Top 24 Highest-Ranked Teams',
     },
     rulesList: [
       'In-person participation on campus, 3–5 members per team.',
@@ -294,9 +259,8 @@ export const enContent: CompetitionContent = {
     ],
     baselineRuleNotice: {
       title: 'Mandatory Baseline Freeze Protocol',
-      deadline: '23:59 on 28/10/2026',
       content:
-        'Finalist teams may develop foundations at home but must freeze and push all code to official repositories labeled "baseline" by 23:59 on 28/10/2026. On 31/10 morning, a surprise live constraint is revealed. Judges inspect Git diffs to award the dedicated 20/100 points for on-site execution.',
+        'The baseline freeze deadline and source-comparison procedure will be published after organizer confirmation.',
     },
     allowedToolsNotice: {
       title: 'AI Coding Agent Regulations',
@@ -309,59 +273,33 @@ export const enContent: CompetitionContent = {
     title: 'Rewarding Excellence & Fostering Innovation',
     subtitle:
       'Cash awards combined with direct incubation opportunities at FPT University Startup Incubator.',
-    totalPool: 'Total Cash Prize Pool: 12,000,000 VND',
-    items: [
-      {
-        id: 'first',
+    items: {
+      first: {
         title: '1st Place Winner',
-        amount: 5000000,
-        currency: 'VND',
-        formattedAmount: '5,000,000 VND',
-        quantity: 1,
         description: 'Championship Trophy + FPT University Certificate + Startup Incubation Grant',
         badge: 'Champion',
       },
-      {
-        id: 'second',
+      second: {
         title: '2nd Place Winner',
-        amount: 3000000,
-        currency: 'VND',
-        formattedAmount: '3,000,000 VND',
-        quantity: 1,
         description: 'Medal + FPT University Certificate + Tech Hardware Gifts',
         badge: 'Runner-up',
       },
-      {
-        id: 'third',
+      third: {
         title: '3rd Place Winner',
-        amount: 2000000,
-        currency: 'VND',
-        formattedAmount: '2,000,000 VND',
-        quantity: 1,
         description: 'Medal + FPT University Certificate',
         badge: 'Third Place',
       },
-      {
-        id: 'impact',
+      impact: {
         title: 'Best "AI for Impact" Award',
-        amount: 1000000,
-        currency: 'VND',
-        formattedAmount: '1,000,000 VND',
-        quantity: 1,
         description: 'Honoring the most impressive and measurable social community impact',
         badge: 'Social Impact',
       },
-      {
-        id: 'best-agent',
+      'best-agent': {
         title: 'Best Agent Engineering Award',
-        amount: 1000000,
-        currency: 'VND',
-        formattedAmount: '1,000,000 VND',
-        quantity: 1,
         description: 'Honoring the most sophisticated Agent & Harness architecture design',
         badge: 'Engineering Excellence',
       },
-    ],
+    },
     additionalBenefits: [
       'Official FPT University Da Nang Certificates of Participation awarded to all finalists.',
       'Direct interview and internship connection opportunities with leading technology enterprises in Da Nang.',
@@ -409,13 +347,13 @@ export const enContent: CompetitionContent = {
         id: 'faq-6',
         question: 'How does the Technical Round differ from the Grand Finale?',
         answer:
-          'In the Technical Round (17/10), you DO NOT build your own project. You receive a buggy benchmark agent created by the organizers and must diagnose and fix its harness. In the Grand Finale (31/10), you build and pitch your own team project.',
+          'In the Technical Round, you DO NOT build your own project. You receive a buggy benchmark agent created by the organizers and must diagnose and fix its harness. In the Grand Finale, you build and pitch your own team project.',
       },
       {
         id: 'faq-7',
         question: 'How does the Baseline Freeze work for the Grand Finale?',
         answer:
-          'The Finale lasts 2 continuous hours. To ensure fairness, teams push pre-built frameworks to official Git repos labeled "baseline" before 23:59 on 28/10. On contest morning, surprise constraints are revealed, and judges review diff logs to score the 20/100 on-site component.',
+          'The organizer will publish the baseline freeze deadline and source-comparison procedure after the official details are confirmed.',
       },
       {
         id: 'faq-8',
@@ -444,11 +382,10 @@ export const enContent: CompetitionContent = {
       {
         step: '03',
         title: 'Submit Video Pitch',
-        desc: 'Record a concise video (≤ 3 min) pitching problem, user group, and AI concept before 28/09.',
+        desc: 'Record a concise video pitching the problem, user group, and AI concept according to the official guidance.',
       },
     ],
     ctaText: 'Open Official Registration Form',
-    deadlineNotice: 'Registration closes at 23:59 on 23/09/2026',
   },
   organizers: {
     badge: 'ORGANIZING COMMITTEE',
@@ -459,11 +396,11 @@ export const enContent: CompetitionContent = {
     copyright: '© 2026 AI for Impact. FPT University Da Nang. All rights reserved.',
     disclaimer:
       'AI for Impact 2026 is an official academic competition jointly organized by ICPDP, Software Engineering Department, and CF Department at FPT University Da Nang.',
-    links: [
-      { label: 'Participant Handbook', href: 'https://docs.google.com/document/d/e/2PACX-1vT-AIForImpact2026-Handbook/pub' },
-      { label: 'Official Rules', href: 'https://docs.google.com/document/d/e/2PACX-1vT-AIForImpact2026-Rules/pub' },
-      { label: 'Registration Form', href: 'https://docs.google.com/forms/d/e/1FAIpQLSfWys6lCg430a08f7vWUai4fPlv8EaN966XmC5f5LQbR2fAsA/viewform' },
-      { label: 'Official Fanpage', href: 'https://www.facebook.com/profile.php?id=61565495577626' },
-    ],
+    links: {
+      handbook: 'Participant Handbook',
+      rules: 'Official Rules',
+      registration: 'Registration Form',
+      fanpage: 'Official Fanpage',
+    },
   },
 };

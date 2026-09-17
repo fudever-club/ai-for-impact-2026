@@ -1,5 +1,5 @@
-import { siteConfig } from '../content/site-config';
-import { RegistrationStatus } from '../content/types';
+import { getCompetitionViewModel } from '../content/view-model';
+import { CompetitionViewModel, RegistrationStatus } from '../content/types';
 
 export interface RegistrationCountdown {
   status: RegistrationStatus;
@@ -9,11 +9,14 @@ export interface RegistrationCountdown {
   targetDate: string;
 }
 
-export function getRegistrationCountdown(currentTime?: Date): RegistrationCountdown {
+export function getRegistrationCountdown(
+  currentTime?: Date,
+  schedule: Pick<CompetitionViewModel, 'registration' | 'event'> = getCompetitionViewModel('vi')
+): RegistrationCountdown {
   const now = currentTime ? currentTime.getTime() : Date.now();
-  const regStart = new Date(siteConfig.keyDates.registrationStart).getTime();
-  const regEnd = new Date(siteConfig.keyDates.registrationEnd).getTime();
-  const finalEnd = new Date(siteConfig.keyDates.finalRound).getTime();
+  const regStart = new Date(schedule.registration.opensAt).getTime();
+  const regEnd = new Date(schedule.registration.closesAt).getTime();
+  const finalEnd = new Date(schedule.event.endDate).getTime();
 
   let status: RegistrationStatus = 'closed';
   let targetTime = regEnd;

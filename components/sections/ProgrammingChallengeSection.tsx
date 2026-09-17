@@ -1,6 +1,5 @@
 import React from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
-import { siteConfig } from '../../content/site-config';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
 import { Button } from '../ui/Button';
@@ -17,7 +16,7 @@ import {
 
 interface ProgrammingChallengeSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionProps> = ({
@@ -169,18 +168,20 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
                 ))}
               </div>
 
-              <div className="p-4 bg-navy-900/80 border-t border-white/10 text-center">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  href={siteConfig.rulesUrl}
-                  external
-                  className="w-full justify-center"
-                  icon={<FileCode2 className="w-4 h-4 text-brand-orange" />}
-                >
-                  {content.programmingChallenge.handbookCta}
-                </Button>
-              </div>
+              {content.documents.rulesUrl && (
+                <div className="p-4 bg-navy-900/80 border-t border-white/10 text-center">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    href={content.documents.rulesUrl}
+                    external
+                    className="w-full justify-center"
+                    icon={<FileCode2 className="w-4 h-4 text-brand-orange" />}
+                  >
+                    {content.programmingChallenge.handbookCta}
+                  </Button>
+                </div>
+              )}
             </div>
           </div>
         </div>

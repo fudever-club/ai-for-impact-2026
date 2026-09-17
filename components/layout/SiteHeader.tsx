@@ -2,15 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Locale, CompetitionContent } from '../../content/types';
-import { siteConfig } from '../../content/site-config';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { Button } from '../ui/Button';
 import { Menu, X, Sparkles, ExternalLink } from 'lucide-react';
 
 interface SiteHeaderProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
@@ -73,7 +72,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
           <Button
             variant="primary"
             size="sm"
-            href={siteConfig.registrationUrl}
+            href={content.registration.url}
             external
             icon={<ExternalLink className="w-3.5 h-3.5" />}
           >
@@ -114,7 +113,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
             <Button
               variant="primary"
               size="md"
-              href={siteConfig.registrationUrl}
+              href={content.registration.url}
               external
               className="w-full justify-center"
               icon={<ExternalLink className="w-4 h-4" />}

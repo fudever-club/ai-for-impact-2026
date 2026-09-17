@@ -1,12 +1,12 @@
 import React from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
 import { Trophy, Award, Medal, Star, Sparkles, CheckCircle2 } from 'lucide-react';
 
 interface PrizesSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content }) => {

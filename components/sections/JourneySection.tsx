@@ -1,6 +1,5 @@
 import React from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
-import { siteConfig } from '../../content/site-config';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { JourneyPath } from '../visuals/JourneyPath';
 import { Button } from '../ui/Button';
@@ -8,7 +7,7 @@ import { BookOpen, ExternalLink } from 'lucide-react';
 
 interface JourneySectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content }) => {
@@ -29,17 +28,19 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
         <JourneyPath stages={content.journey.stages} />
 
         {/* CTA to Full Participant Handbook */}
-        <div className="mt-16 text-center">
-          <Button
-            variant="outline"
-            size="lg"
-            href={siteConfig.handbookUrl}
-            external
-            icon={<BookOpen className="w-5 h-5 text-brand-orange" />}
-          >
-            {content.journey.ctaText}
-          </Button>
-        </div>
+        {content.documents.handbookUrl && (
+          <div className="mt-16 text-center">
+            <Button
+              variant="outline"
+              size="lg"
+              href={content.documents.handbookUrl}
+              external
+              icon={<BookOpen className="w-5 h-5 text-brand-orange" />}
+            >
+              {content.journey.ctaText}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
-import { siteConfig } from '../../content/site-config';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Accordion } from '../ui/Accordion';
 import { Button } from '../ui/Button';
@@ -8,7 +7,7 @@ import { MessageCircle, Mail } from 'lucide-react';
 
 interface FAQSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
@@ -32,7 +31,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
             <Button
               variant="outline"
               size="md"
-              href={siteConfig.fanpageUrl}
+              href={content.contact.fanpageUrl}
               external
               icon={<MessageCircle className="w-4 h-4 text-brand-cyan" />}
             >
@@ -41,10 +40,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
             <Button
               variant="ghost"
               size="md"
-              href={`mailto:${siteConfig.contactEmail}`}
+              href={`mailto:${content.contact.email}`}
               icon={<Mail className="w-4 h-4 text-brand-orange" />}
             >
-              {siteConfig.contactEmail}
+              {content.contact.email}
             </Button>
           </div>
         </div>

@@ -1,38 +1,57 @@
 export type Locale = 'vi' | 'en';
 
+export type ApprovalState = 'approved' | 'withheld';
+
 export type StageTheme = 'impact' | 'technical' | 'training';
 
 export type RegistrationStatus = 'upcoming' | 'open' | 'closed' | 'finished';
 
-export interface CompetitionStage {
+export interface ApprovedUrl {
+  url: string;
+  approval: ApprovalState;
+}
+
+export interface CompetitionStageConfig {
   id: string;
   sequence: number;
+  startsAt: string;
+  endsAt?: string;
+  theme: StageTheme;
+  approval: ApprovalState;
+}
+
+export interface CompetitionStage extends Omit<CompetitionStageConfig, 'approval' | 'startsAt' | 'endsAt'> {
   startDate: string;
   endDate?: string;
   displayDate: string;
-  theme: StageTheme;
   title: string;
   shortTitle: string;
   summary: string;
   output: string;
-  detailUrl?: string;
 }
 
-export interface Organizer {
+export interface OrganizerConfig {
   id: string;
   name: string;
   shortName: string;
   role: string;
   logo?: string;
+  approval: ApprovalState;
 }
 
-export interface PrizeItem {
-  id: string;
-  title: string;
+export type Organizer = Omit<OrganizerConfig, 'approval'>;
+
+export interface PrizeConfig {
   amount: number;
   currency: string;
-  formattedAmount: string;
   quantity: number;
+  approval: ApprovalState;
+}
+
+export interface PrizeItem extends Omit<PrizeConfig, 'approval'> {
+  id: string;
+  title: string;
+  formattedAmount: string;
   description: string;
   badge?: string;
 }
@@ -61,29 +80,44 @@ export interface NavAnchor {
 export interface SiteConfig {
   eventName: string;
   domain: string;
-  registrationUrl: string;
-  handbookUrl: string;
-  rulesUrl: string;
   contactEmail: string;
   fanpageUrl: string;
-  keyDates: {
-    registrationStart: string;
-    registrationEnd: string;
-    videoProposalEnd: string;
-    programmingRound: string;
-    trainingDates: string[];
-    harnessRound: string;
-    baselineFreeze: string;
-    finalRound: string;
+  registration: {
+    url: string;
+    opensAt: string;
+    closesAt: string;
   };
-  prizes: {
-    first: { amount: number; quantity: number };
-    second: { amount: number; quantity: number };
-    third: { amount: number; quantity: number };
-    impact: { amount: number; quantity: number };
-    bestAgent: { amount: number; quantity: number };
+  documents: {
+    handbook: ApprovedUrl;
+    rules: ApprovedUrl;
   };
-  organizers: Organizer[];
+  stages: CompetitionStageConfig[];
+  programmingChallenge: {
+    location: string;
+    qualifiedTeams: number;
+  };
+  disputedFacts: {
+    videoProposalEnd: { value: string; approval: 'withheld' };
+    finalistTeamCount: { value: number; approval: 'withheld' };
+    finalDurationHours: { value: number; approval: 'withheld' };
+    baselineFreeze: { value: string; approval: 'withheld' };
+    trainingDates: { value: string[]; approval: 'withheld' };
+  };
+  prizes: Record<string, PrizeConfig>;
+  organizers: OrganizerConfig[];
+}
+
+export interface LocalizedStageContent {
+  title: string;
+  shortTitle: string;
+  summary: string;
+  output: string;
+}
+
+export interface LocalizedPrizeContent {
+  title: string;
+  description: string;
+  badge?: string;
 }
 
 export interface CompetitionContent {
@@ -114,7 +148,6 @@ export interface CompetitionContent {
     journeyCta: string;
     quickStats: {
       teams: string;
-      prizePool: string;
       duration: string;
       stages: string;
     };
@@ -124,17 +157,13 @@ export interface CompetitionContent {
     title: string;
     subtitle: string;
     description: string[];
-    pillars: {
-      title: string;
-      description: string;
-      icon: string;
-    }[];
+    pillars: { title: string; description: string; icon: string }[];
   };
   journey: {
     badge: string;
     title: string;
     subtitle: string;
-    stages: CompetitionStage[];
+    stages: Record<string, LocalizedStageContent>;
     ctaText: string;
   };
   programmingChallenge: {
@@ -144,23 +173,15 @@ export interface CompetitionContent {
     description: string;
     metaCards: {
       date: string;
-      dateVal: string;
       duration: string;
-      durationVal: string;
       location: string;
-      locationVal: string;
       qualification: string;
-      qualificationVal: string;
     };
     rulesList: string[];
     topicsTitle: string;
     topics: string[];
     languagesTitle: string;
-    languages: {
-      name: string;
-      version: string;
-      compiler: string;
-    }[];
+    languages: { name: string; version: string; compiler: string }[];
     handbookCta: string;
   };
   themes: {
@@ -174,31 +195,16 @@ export interface CompetitionContent {
     badge: string;
     title: string;
     subtitle: string;
-    weights: {
-      stage: string;
-      percent: string;
-      summary: string;
-    }[];
-    principles: {
-      title: string;
-      description: string;
-    }[];
-    baselineRuleNotice: {
-      title: string;
-      content: string;
-      deadline: string;
-    };
-    allowedToolsNotice: {
-      title: string;
-      content: string;
-    };
+    weights: { stage: string; percent: string; summary: string }[];
+    principles: { title: string; description: string }[];
+    baselineRuleNotice: { title: string; content: string };
+    allowedToolsNotice: { title: string; content: string };
   };
   prizes: {
     badge: string;
     title: string;
     subtitle: string;
-    totalPool: string;
-    items: PrizeItem[];
+    items: Record<string, LocalizedPrizeContent>;
     additionalBenefits: string[];
   };
   faq: {
@@ -213,13 +219,8 @@ export interface CompetitionContent {
     badge: string;
     title: string;
     subtitle: string;
-    steps: {
-      step: string;
-      title: string;
-      desc: string;
-    }[];
+    steps: { step: string; title: string; desc: string }[];
     ctaText: string;
-    deadlineNotice: string;
   };
   organizers: {
     badge: string;
@@ -230,8 +231,61 @@ export interface CompetitionContent {
     copyright: string;
     disclaimer: string;
     links: {
-      label: string;
-      href: string;
-    }[];
+      handbook: string;
+      rules: string;
+      registration: string;
+      fanpage: string;
+    };
+  };
+}
+
+export interface CompetitionViewModel
+  extends Omit<
+    CompetitionContent,
+    'journey' | 'programmingChallenge' | 'evaluation' | 'prizes' | 'register' | 'organizers' | 'footer'
+  > {
+  event: {
+    name: string;
+    domain: string;
+    startDate: string;
+    endDate: string;
+  };
+  registration: SiteConfig['registration'];
+  contact: {
+    email: string;
+    fanpageUrl: string;
+  };
+  documents: {
+    handbookUrl?: string;
+    rulesUrl?: string;
+  };
+  journey: Omit<CompetitionContent['journey'], 'stages'> & {
+    stages: CompetitionStage[];
+  };
+  programmingChallenge: Omit<CompetitionContent['programmingChallenge'], 'metaCards'> & {
+    metaCards: CompetitionContent['programmingChallenge']['metaCards'] & {
+      dateVal: string;
+      durationVal: string;
+      locationVal: string;
+      qualificationVal: string;
+    };
+  };
+  evaluation: Omit<CompetitionContent['evaluation'], 'baselineRuleNotice'> & {
+    baselineRuleNotice?: CompetitionContent['evaluation']['baselineRuleNotice'] & {
+      deadline: string;
+    };
+  };
+  prizes: Omit<CompetitionContent['prizes'], 'items'> & {
+    totalPool?: string;
+    items: PrizeItem[];
+  };
+  register: CompetitionContent['register'] & {
+    deadlineNotice: string;
+  };
+  organizers: CompetitionContent['organizers'] & {
+    items: Organizer[];
+  };
+  footer: Omit<CompetitionContent['footer'], 'links'> & {
+    links: { id: string; label: string; href: string }[];
   };
 }

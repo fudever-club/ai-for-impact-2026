@@ -1,12 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import { Locale, CompetitionContent } from '../../content/types';
-import { siteConfig } from '../../content/site-config';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { ExternalLink, ShieldCheck, Mail, Facebook } from 'lucide-react';
 
 interface SiteFooterProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
@@ -26,7 +25,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
             </p>
             <div className="flex items-center gap-4 pt-2">
               <a
-                href={siteConfig.fanpageUrl}
+                href={content.contact.fanpageUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs font-mono text-brand-cyan hover:text-white transition-colors bg-navy-850 px-3 py-1.5 rounded-lg border border-white/10"
@@ -35,11 +34,11 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
                 Fanpage chính thức
               </a>
               <a
-                href={`mailto:${siteConfig.contactEmail}`}
+                href={`mailto:${content.contact.email}`}
                 className="flex items-center gap-2 text-xs font-mono text-brand-muted hover:text-white transition-colors bg-navy-850 px-3 py-1.5 rounded-lg border border-white/10"
               >
                 <Mail className="w-3.5 h-3.5 text-brand-orange" />
-                {siteConfig.contactEmail}
+                {content.contact.email}
               </a>
             </div>
           </div>
@@ -50,8 +49,8 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
               Tài liệu chính thức
             </h4>
             <ul className="space-y-2.5 text-sm text-brand-muted">
-              {content.footer.links.map((link, idx) => (
-                <li key={idx}>
+              {content.footer.links.map((link) => (
+                <li key={link.id}>
                   <a
                     href={link.href}
                     target="_blank"
@@ -72,7 +71,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
               Đơn vị chủ trì
             </h4>
             <ul className="space-y-2 text-xs text-brand-muted">
-              {siteConfig.organizers.map((org) => (
+              {content.organizers.items.map((org) => (
                 <li key={org.id} className="flex flex-col">
                   <span className="font-medium text-brand-offwhite">{org.name}</span>
                   <span className="text-[11px] text-brand-cyan/80">{org.role}</span>

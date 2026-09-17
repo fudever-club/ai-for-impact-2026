@@ -1,11 +1,11 @@
 import React from 'react';
-import { Locale, CompetitionContent } from '../../content/types';
+import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Code2, Cpu, Sparkles } from 'lucide-react';
 
 interface AboutSectionProps {
   locale: Locale;
-  content: CompetitionContent;
+  content: CompetitionViewModel;
 }
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ locale, content }) => {

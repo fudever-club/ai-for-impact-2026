@@ -47,7 +47,6 @@ export const viContent: CompetitionContent = {
     journeyCta: 'Khám phá 5 chặng thi',
     quickStats: {
       teams: '40–50 Đội thi',
-      prizePool: '12.000.000 VNĐ+',
       duration: '7 Tuần thực chiến',
       stages: '5 Chặng bứt phá',
     },
@@ -59,7 +58,7 @@ export const viContent: CompetitionContent = {
       'AI for Impact 2026 không tìm kiếm những bài thuyết trình ý tưởng suông hay mã nguồn sao chép. Chúng tôi tìm kiếm những kỹ sư trẻ biết làm chủ AI Agent một cách tin cậy và có trách nhiệm.',
     description: [
       'Trường Đại học FPT Đà Nẵng tổ chức AI for Impact 2026 nhằm tạo sân chơi học thuật chuyên sâu, giúp sinh viên làm quen với làn sóng công nghệ mới nhất: Agentic AI và Harness Engineering.',
-      'Thí sinh trải qua hành trình tôi luyện toàn diện: khởi đầu bằng bài thi tư duy giải thuật khắt khe theo chuẩn quốc tế, tiếp nối bằng 3 buổi huấn luyện chuyên sâu cùng chuyên gia doanh nghiệp, đối đầu với thử thách sửa lỗi Agent trong môi trường kiểm thử tự động, và bứt phá tại vòng Chung kết 2 giờ với ràng buộc bất ngờ.',
+      'Thí sinh trải qua hành trình tôi luyện toàn diện: khởi đầu bằng bài thi tư duy giải thuật khắt khe theo chuẩn quốc tế, tiếp nối bằng huấn luyện chuyên sâu cùng chuyên gia doanh nghiệp, đối đầu với thử thách sửa lỗi Agent trong môi trường kiểm thử tự động, và bứt phá tại vòng Chung kết với ràng buộc bất ngờ.',
       'Mỗi sản phẩm đều gắn liền với 1 trong 5 nhóm vấn đề cấp thiết của xã hội, có đối tượng thụ hưởng cụ thể và chỉ số đo lường tác động rõ ràng.',
     ],
     pillars: [
@@ -87,75 +86,45 @@ export const viContent: CompetitionContent = {
     badge: 'HÀNH TRÌNH CUỘC THI',
     title: '5 Chặng thử thách từ Ý tưởng đến Chung kết',
     subtitle:
-      'Cuộc thi kéo dài gần 7 tuần (14/09 – 31/10/2026). Mỗi chặng thí sinh nhận tài nguyên và hoàn thành sản phẩm đầu ra tương ứng.',
+      'Trong mỗi chặng, thí sinh nhận tài nguyên và hoàn thành sản phẩm đầu ra tương ứng.',
     ctaText: 'Xem tài liệu Sổ tay thí sinh chi tiết',
-    stages: [
-      {
-        id: 'stage-1',
-        sequence: 1,
-        startDate: '2026-09-14T00:00:00+07:00',
-        endDate: '2026-09-23T23:59:00+07:00',
-        displayDate: '14/09 – 23/09/2026',
-        theme: 'impact',
+    stages: {
+      'stage-1': {
         title: 'Đăng ký & Đề xuất ý tưởng',
         shortTitle: 'Đăng ký & Ý tưởng',
         summary:
-          'Các đội đăng ký thành viên (3–5 người) qua Google Form và gửi video đề xuất ý tưởng giải pháp (≤ 3 phút) trước hạn chót 28/09/2026.',
+          'Các đội đăng ký thành viên qua Google Form và chuẩn bị video đề xuất ý tưởng giải pháp theo hướng dẫn của Ban Tổ chức.',
         output: 'Hồ sơ đội thi + 01 Video ý tưởng ≤ 3 phút (Vấn đề, Giải pháp, Kiến trúc AI, Tác động xã hội).',
       },
-      {
-        id: 'stage-2',
-        sequence: 2,
-        startDate: '2026-10-02T08:00:00+07:00',
-        endDate: '2026-10-02T12:00:00+07:00',
-        displayDate: 'Thứ Sáu, 02/10/2026 (08:00 – 12:00)',
-        theme: 'technical',
+      'stage-2': {
         title: 'Vòng loại – Tư duy lập trình',
         shortTitle: 'Thi Tư duy lập trình',
         summary:
           'Thử thách giải thuật 240 phút trực tiếp tại trường theo chuẩn ICPC Global 2024. Mỗi đội sử dụng đúng 01 laptop duy nhất. Chấm tự động qua test ẩn/hiện.',
         output: 'Xếp hạng Scoreboard trực tiếp. Ban Giám khảo chọn ra Top 24 đội xuất sắc nhất bước tiếp.',
       },
-      {
-        id: 'stage-3',
-        sequence: 3,
-        startDate: '2026-10-07T14:00:00+07:00',
-        endDate: '2026-10-09T17:00:00+07:00',
-        displayDate: '07/10, 08/10 & 09/10/2026',
-        theme: 'training',
+      'stage-3': {
         title: 'Giai đoạn Huấn luyện chuyên sâu',
         shortTitle: 'Training chuyên sâu',
         summary:
           '3 buổi Workshop cùng Giảng viên BM SE và chuyên gia doanh nghiệp: Hiểu & sửa Agent baseline, Đánh giá – Bảo mật – Phục hồi, Mock run thử nghiệm.',
         output: '08 test cases, 02 ca bảo mật, 01 ca timeout, báo cáo trace và 01 bản demo trực tuyến truy cập được.',
       },
-      {
-        id: 'stage-4',
-        sequence: 4,
-        startDate: '2026-10-17T08:00:00+07:00',
-        endDate: '2026-10-17T12:00:00+07:00',
-        displayDate: 'Thứ Bảy, 17/10/2026',
-        theme: 'technical',
+      'stage-4': {
         title: 'Vòng Kỹ thuật – Harness Engineering',
         shortTitle: 'Vòng Kỹ thuật',
         summary:
           'Bài toán "Student Support Resolution Agent". Các đội nhận Agent mẫu còn lỗi, tiến hành sửa context/tools, vá rò rỉ bảo mật và tối ưu trace.',
-        output: '70% điểm máy chấm tự động + 30% phỏng vấn Engineering Review. Chọn Top 15 vào Chung kết; chốt bản nền 23:59 ngày 28/10.',
+        output: 'Kết quả chấm tự động và Engineering Review được dùng để chọn các đội bước vào Chung kết.',
       },
-      {
-        id: 'stage-5',
-        sequence: 5,
-        startDate: '2026-10-31T08:00:00+07:00',
-        endDate: '2026-10-31T17:00:00+07:00',
-        displayDate: 'Thứ Bảy, 31/10/2026',
-        theme: 'impact',
-        title: 'Vòng Chung kết – Build Sprint 2H & Demo Day',
+      'stage-5': {
+        title: 'Vòng Chung kết – Build Sprint & Demo Day',
         shortTitle: 'Chung kết & Demo Day',
         summary:
-          'Build Sprint 2 giờ tại chỗ trên nền bản baseline đã chốt, tích hợp ràng buộc bổ sung công bố bất ngờ đầu giờ thi. Chiều cùng ngày là Demo Day và Trao giải.',
+          'Build Sprint tại chỗ trên nền bản baseline đã chốt, tích hợp ràng buộc bổ sung công bố bất ngờ đầu giờ thi, tiếp nối bởi Demo Day và Trao giải.',
         output: 'MVP hoạt động thực tế, báo cáo tác động, minh chứng dữ liệu AI, video demo, slide thuyết trình & Trao giải.',
       },
-    ],
+    },
   },
   programmingChallenge: {
     badge: 'CHẶNG 2: THỬ THÁCH GIẢI THUẬT',
@@ -166,13 +135,9 @@ export const viContent: CompetitionContent = {
       'Một AI Agent xuất sắc không thể được xây dựng bởi những kỹ sư thiếu nền tảng thuật toán. Vòng thi kiểm tra trực tiếp khả năng phân tích, giải quyết bài toán phức tạp, tối ưu hóa độ phức tạp thời gian và không gian dưới áp lực thời gian.',
     metaCards: {
       date: 'Ngày thi đấu',
-      dateVal: 'Thứ Sáu, 02/10/2026',
       duration: 'Thời lượng',
-      durationVal: '240 phút (08:00 – 12:00)',
       location: 'Địa điểm',
-      locationVal: 'Trường Đại học FPT Đà Nẵng',
       qualification: 'Chỉ tiêu đi tiếp',
-      qualificationVal: 'Top 24 đội xuất sắc nhất',
     },
     rulesList: [
       'Thi trực tiếp tại trường, mỗi đội từ 3–5 thành viên.',
@@ -294,9 +259,8 @@ export const viContent: CompetitionContent = {
     ],
     baselineRuleNotice: {
       title: 'Quy tắc chốt bản nền (Baseline Freeze) – Bắt buộc',
-      deadline: '23h59 ngày 28/10/2026',
       content:
-        'Các đội vào Chung kết được phép chuẩn bị mã nguồn tại nhà nhưng phải đẩy toàn bộ code lên repository của BTC và gắn nhãn baseline trước 23h59 ngày 28/10/2026. Sáng 31/10, BTC công bố ràng buộc bổ sung bất ngờ. Ban Giám khảo sẽ đối chiếu diff code để chấm riêng 20 điểm phần làm tại chỗ.',
+        'Mốc chốt bản nền và quy trình đối chiếu mã nguồn sẽ được công bố sau khi Ban Tổ chức xác nhận nội dung chính thức.',
     },
     allowedToolsNotice: {
       title: 'Quy định về việc sử dụng AI Coding Tools',
@@ -309,59 +273,33 @@ export const viContent: CompetitionContent = {
     title: 'Tôn vinh nỗ lực & Khơi nguồn khởi nghiệp',
     subtitle:
       'Tổng giá trị giải thưởng tiền mặt cùng cơ hội ươm mầm dự án tại Vườn ươm Khởi nghiệp Đại học FPT.',
-    totalPool: 'Tổng giải thưởng tiền mặt: 12.000.000 VNĐ',
-    items: [
-      {
-        id: 'first',
+    items: {
+      first: {
         title: '01 Giải Nhất',
-        amount: 5000000,
-        currency: 'VNĐ',
-        formattedAmount: '5.000.000 VNĐ',
-        quantity: 1,
         description: 'Cúp vô địch + Giấy khen ĐH FPT + Học bổng ươm tạo dự án',
         badge: 'Quán quân',
       },
-      {
-        id: 'second',
+      second: {
         title: '01 Giải Nhì',
-        amount: 3000000,
-        currency: 'VNĐ',
-        formattedAmount: '3.000.000 VNĐ',
-        quantity: 1,
         description: 'Kỷ niệm chương + Giấy khen ĐH FPT + Quà tặng công nghệ',
         badge: 'Á quân',
       },
-      {
-        id: 'third',
+      third: {
         title: '01 Giải Ba',
-        amount: 2000000,
-        currency: 'VNĐ',
-        formattedAmount: '2.000.000 VNĐ',
-        quantity: 1,
         description: 'Kỷ niệm chương + Giấy khen ĐH FPT',
         badge: 'Quý quân',
       },
-      {
-        id: 'impact',
+      impact: {
         title: 'Giải "AI for Impact"',
-        amount: 1000000,
-        currency: 'VNĐ',
-        formattedAmount: '1.000.000 VNĐ',
-        quantity: 1,
         description: 'Dành cho sản phẩm có tác động cộng đồng ấn tượng nhất',
         badge: 'Tác động xã hội',
       },
-      {
-        id: 'best-agent',
+      'best-agent': {
         title: 'Giải "Best Agent Engineering"',
-        amount: 1000000,
-        currency: 'VNĐ',
-        formattedAmount: '1.000.000 VNĐ',
-        quantity: 1,
         description: 'Dành cho giải pháp kiến trúc Agent và Harness xuất sắc nhất',
         badge: 'Kỹ thuật xuất sắc',
       },
-    ],
+    },
     additionalBenefits: [
       'Toàn bộ thành viên các đội lọt vào vòng Chung kết được cấp Giấy chứng nhận chính thức của Trường Đại học FPT Đà Nẵng.',
       'Cơ hội kết nối thực tập và tuyển dụng trực tiếp với các doanh nghiệp công nghệ hàng đầu tại Đà Nẵng.',
@@ -409,13 +347,13 @@ export const viContent: CompetitionContent = {
         id: 'faq-6',
         question: 'Vòng Kỹ thuật khác gì so với Vòng Chung kết?',
         answer:
-          'Ở Vòng Kỹ thuật (17/10), bạn KHÔNG tự làm sản phẩm của mình. Bạn nhận một AI Agent mẫu do BTC chuẩn bị sẵn có ít nhất 6 lỗi cố ý, nhiệm vụ là tìm lỗi, sửa lớp điều khiển (harness) và chứng minh bằng dữ liệu. Đến Vòng Chung kết (31/10), bạn mới hoàn thiện sản phẩm theo ý tưởng riêng của đội mình.',
+          'Ở Vòng Kỹ thuật, bạn KHÔNG tự làm sản phẩm của mình. Bạn nhận một AI Agent mẫu do BTC chuẩn bị sẵn có các lỗi cố ý, nhiệm vụ là tìm lỗi, sửa lớp điều khiển (harness) và chứng minh bằng dữ liệu. Đến Vòng Chung kết, bạn mới hoàn thiện sản phẩm theo ý tưởng riêng của đội mình.',
       },
       {
         id: 'faq-7',
         question: 'Quy định chốt bản nền (Baseline Freeze) tại Vòng Chung kết hoạt động ra sao?',
         answer:
-          'Vòng Chung kết diễn ra trong 2 giờ liên tục. Để bảo đảm công bằng, các đội phải chốt và đẩy toàn bộ mã nguồn lên repository BTC trước 23h59 ngày 28/10. Khi thi, BTC sẽ đưa ra ràng buộc mới tại chỗ và BGK sẽ so sánh bản diff code giữa bản nền và bản nộp cuối để chấm riêng 20/100 điểm.',
+          'Ban Tổ chức sẽ công bố mốc chốt bản nền và quy trình đối chiếu mã nguồn sau khi nội dung chính thức được xác nhận.',
       },
       {
         id: 'faq-8',
@@ -444,11 +382,10 @@ export const viContent: CompetitionContent = {
       {
         step: '03',
         title: 'Gửi video ý tưởng',
-        desc: 'Chuẩn bị video ngắn ≤ 3 phút mô tả bài toán và giải pháp dự kiến trước 28/09.',
+        desc: 'Chuẩn bị video ngắn mô tả bài toán và giải pháp dự kiến theo hướng dẫn chính thức.',
       },
     ],
     ctaText: 'Điền form đăng ký tham gia ngay',
-    deadlineNotice: 'Hạn chót tiếp nhận đơn đăng ký: 23h59 ngày 23/09/2026',
   },
   organizers: {
     badge: 'ĐƠN VỊ TỔ CHỨC',
@@ -459,11 +396,11 @@ export const viContent: CompetitionContent = {
     copyright: '© 2026 AI for Impact. Trường Đại học FPT Đà Nẵng. Bản quyền thuộc về Ban Tổ chức.',
     disclaimer:
       'AI for Impact 2026 là cuộc thi học thuật chính thức do Phòng ICPDP và Bộ môn Kỹ thuật Phần mềm (BM SE), Bộ môn CF - Trường Đại học FPT Đà Nẵng phối hợp tổ chức.',
-    links: [
-      { label: 'Sổ tay thí sinh', href: 'https://docs.google.com/document/d/e/2PACX-1vT-AIForImpact2026-Handbook/pub' },
-      { label: 'Thể lệ cuộc thi', href: 'https://docs.google.com/document/d/e/2PACX-1vT-AIForImpact2026-Rules/pub' },
-      { label: 'Biểu mẫu đăng ký', href: 'https://docs.google.com/forms/d/e/1FAIpQLSfWys6lCg430a08f7vWUai4fPlv8EaN966XmC5f5LQbR2fAsA/viewform' },
-      { label: 'Fanpage chính thức', href: 'https://www.facebook.com/profile.php?id=61565495577626' },
-    ],
+    links: {
+      handbook: 'Sổ tay thí sinh',
+      rules: 'Thể lệ cuộc thi',
+      registration: 'Biểu mẫu đăng ký',
+      fanpage: 'Fanpage chính thức',
+    },
   },
 };
