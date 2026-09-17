@@ -1,0 +1,75 @@
+
+THỂ LỆ CUỘC THI CODE MOSAIC 2025
+
+1.	Dạng đề bài và cách thức đánh giá
+
+1.1.	Thời gian và hình thức làm bài
+●	Tổng thời gian làm bài: 4 tiếng liên tục (240 phút).
+●	Mỗi đội từ 3-5 thành viên.
+●	Mỗi đội chỉ sử dụng 1 laptop duy nhất đã được cài đặt sẵn công cụ lập trình và trình duyệt web (Chrome, Firefox, hoặc Edge).
+●	Khuyến khích mang theo máy dự phòng phòng trường hợp hỏng hóc.
+1.2.	Nội dung đề thi
+●	Nội dung bao gồm nhiều chủ đề, cụ thể:
+
+STT	Chủ đề	Ghi chú
+1	Sắp xếp	
+2	Tìm kiếm	
+3	Phương pháp tính	
+4	Quy hoạch động	
+5	Cây	
+6	Lý thuyết đồ thị	
+7	Số học	
+8	Hình học	
+9	Thuật toán tham lam	
+10	Lý thuyết trò chơi	
+
+●	Ngoài ra, có thể xuất hiện các bài toán mở rộng/chuyên sâu gợi ý theo các hướng công nghệ như:
+
+o	Pathfinding (A*, Dijkstra)
+o	Grid Map, Obstacle Avoidance
+o	PWM/PID Control
+o	Assignment Strategy, Line-following 
+o	Landmark detection, Load Balancing 
+o	QR/Color/Tag Recognition
+o	Evolutionary Algorithms (Genetic, Simulated Annealing)
+
+1.3.	Hình thức chấm điểm
+●	Hệ thống tự động chấm bài dựa trên bộ test case ẩn và hiện.
+●	Một bài chỉ được tính điểm khi vượt qua toàn bộ test cases.
+●	Nếu bất kỳ test nào sai, bài sẽ được tính 0 điểm.
+2.	Danh sách ngôn ngữ lập trình và phiên bản hỗ trợ
+
+Theo chuẩn ICPC Global 2024, các ngôn ngữ và trình biên dịch được hỗ trợ như sau:
+
+Ngôn ngữ	Phiên bản	Trình biên dịch	Lệnh compile
+C	gcc 14.2.0	gcc	gcc -std=c99 -Wall -DONLINE_JUDGE -O2 -lm -fmax-errors=5 - march=native -s
+C++	g++ 14.2.0	g++	g++ -std=c++20 -Wall -DONLINE_JUDGE -O2 -lm -fmax-errors=5
+-march=native -s
+Java 8	javac 1.8.0	javac8	javac8 -encoding UTF-8 -profile compact1
+Java 19	javac 19.0.2	javac19	javac19 -encoding UTF-8
+Python 3	3.12.6	python3	python3 -m compileall –q
+
+3.	Quy tắc chấm điểm
+
+3.1.	Tính điểm
+●	Mỗi bài đúng toàn bộ test sẽ được 1 điểm. 
+●	Hệ thống sẽ lấy kết quả tốt nhất trong các lần nộp.
+●	Các bài nộp lỗi, sai hoặc không qua đủ test đều không có điểm.
+3.2.	Phân định xếp hạng
+●	Các đội cùng điểm sẽ được phân hạng dựa trên tổng thời gian giải quyết 
+●	Nếu vẫn bằng nhau:
+o	So sánh thời gian, số lần nộp của lần nộp có điểm cuối cùng .
+o	Đội có thời gian và số lần nộp ít hơn sẽ xếp hạng cao hơn.
+4.	Xếp hạng và công bố kết quả
+●	Sau khi hệ thống tính toán điểm và thời gian, các đội sẽ được xếp hạng tự động theo điểm.
+●	Đội nào có điểm cao hơn xếp hạng cao hơn.
+●	Nếu bằng điểm, đội có tổng thời gian thấp hơn sẽ xếp trên.
+●	Scoreboard tổng hợp từ hệ thống là căn cứ duy nhất để BTC công bố giải thưởng và xếp hạng chính thức.
+
+💬 Lưu ý quan trọng:
+
+Mọi thí sinh tham gia cần đọc kỹ, hiểu, tuân thủ, chuẩn bị sẵn sàng các thể lệ nêu trên. BTC không chịu trách nhiệm với các kết quả sai sót do đội không đọc kỹ quy chế và thể lệ dự thi.
+
+Những thông tin về hướng dẫn nộp bài và thi thử sẽ được triển khai trong buổi training.
+
+- HẾT -

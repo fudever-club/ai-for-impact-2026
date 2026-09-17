@@ -1,0 +1,217 @@
+TRƯỜNG ĐẠI HỌC FPT ĐÀ NẴNG 
+PHÒNG HỢP TÁC QUỐC TẾ &  
+PHÁT TRIỂN CÁ NHÂN 
+KẾ HOẠCH CHƯƠNG TRÌNH 
+CodeMosaic 2025 
+Đà Nẵng, ngày 25 tháng 9 năm 2025 
+Cuộc thi CodeMosaic là một sân chơi trí tuệ dành cho học sinh, sinh viên và những bạn trẻ 
+đam mê công nghệ thông tin. Mục tiêu chính của cuộc thi là: 
+● Khơi gợi niềm đam mê: Giúp các bạn trẻ rèn luyện tư duy logic, khả năng giải quyết 
+vấn đề và sáng tạo trong lập trình. 
+● Cọ xát, học hỏi: Là nơi giao lưu, trao đổi kinh nghiệm giữa những người có chung sở 
+thích, từ đó mở rộng kiến thức và kỹ năng. 
+● Ứng dụng thực tế: Các bài toán trong cuộc thi thường gắn liền với những vấn đề thực 
+tiễn, giúp người tham gia rèn luyện kỹ năng phân tích, tối ưu và vận dụng thuật toán. 
+● Phát hiện tài năng: Đây là dịp để phát hiện, ươm mầm và bồi dưỡng những nhân tài 
+trong lĩnh vực công nghệ thông tin, hướng đến các cuộc thi cấp quốc gia và quốc tế. 
+Với slogan “Piece by Piece, Build the Perfect Solution” cuộc thi không chỉ dừng lại ở kết quả 
+hay giải thưởng, mà còn nằm ở quá trình rèn luyện tư duy, tinh thần kiên trì và sự hợp tác trong 
+cộng đồng lập trình. 
+I. 
+GIÁ TRỊ, MỤC ĐÍCH, Ý NGHĨA 
+1. Giá trị 
+● Học thuật: Tạo môi trường rèn luyện, nâng cao kỹ năng lập trình, giải thuật, thiết kế 
+hệ thống – những năng lực then chốt của ngành CNTT. 
+● Cạnh tranh lành mạnh: Thúc đẩy tinh thần thi đua, khẳng định năng lực bản thân 
+trong cộng đồng sinh viên. 
+● Xây dựng đội ngũ: Là sân chơi để phát hiện và đào tạo sinh viên tài năng, chuẩn bị 
+cho các kỳ thi ICPC. 
+2. Mục đích 
+● Khuyến khích học tập, nghiên cứu: Thúc đẩy sinh viên say mê lập trình, coi lập 
+trình như một công cụ sáng tạo. 
+● Kết nối cộng đồng: Tạo điều kiện giao lưu giữa sinh viên. 
+● Tìm kiếm nhân tài: Phát hiện những gương mặt xuất sắc để bồi dưỡng, giới thiệu 
+cho các chương trình, tổ chức, doanh nghiệp CNTT. 
+3. Ý nghĩa 
+● Góp phần nâng cao chất lượng đào tạo CNTT trong nhà trường. 
+● Nhiều sinh viên từ sân chơi này có nhiều kiến thức, kinh nghiệm, cọ xát thực tế. 
+● Cổ vũ tinh thần học hỏi, hợp tác và hỗ trợ lẫn nhau trong giới trẻ yêu thích lập trình. 
+II. 
+NỘI DUNG CHI TIẾT - Thời gian: Chung kết ngày 18/10/2025  - Địa điểm: Sảnh Gamma, Đại học FPT Đà Nẵng 
+- Đối tượng tham gia: Sinh viên thuộc khối ngành Công nghệ Thông tin – Đại học FPT 
+Đà Nẵng - Số lượng tham gia: Dự kiến ~150 sinh viên  
+III. KẾ HOẠCH CHI TIẾT 
+     1.    Cuộc thi CodeMosaic 2025 - Phần 1: Đăng ký diễn ra từ 25/9 đến 10/10/2025 
+o Thời gian họp Ban chuyên môn ra đề (dự kiến): 26/9/2025 
+o Tổ chức thi thử và test hệ thống ngày 12/10/2025 - Phần 2: Tổ chức thi CodeMosaic diễn ra vào ngày 18/10/2025 
+2.    Timeline sự kiện  
+Phần 1: Đăng ký 
+STT Thời gian Nội dung Đơn vị thực hiện 
+1 25/09/2025 Đăng bài và thực hiện truyền thông tới 
+sinh viên + tiếp nhận đăng ký ICPDP 
+2 11/10/2025 Chuyển danh sách dự thi tới Bộ môn 
+Công nghệ thông tin ICPDP 
+3 11/10 – 12/10/2025 Lọc danh sách tham gia và lên kế hoạch 
+tổ chức kỳ thi BM CNTT 
+Test hệ thống: Giúp các nhóm làm quen với hệ thống thi và chấm điểm 
+Thời gian test hệ thống: 8h-12h ngày 12/10/2025 
+Phần 2: Tổ chức cuộc thi (ngày 18/10/2025): 
+STT Nội dung 
+công việc Thời gian Chi tiết công việc 
+Chuẩn bị 
+1 Chuẩn bị 
+trang thiết bị 06h00 - 07h00 
+*Kỹ thuật: Kiểm tra các dụng cụ, thiết bị máy móc đảm 
+bảo hoạt động bình thường - Máy tính (theo số lượng thí sinh) - Micro (thuyết trình) - check pin, độ ổn định - Băng-rôn phân loại thí sinh - Bàn + ghế cho thí sinh và BGK - Bảng tên (cho nhóm và BGK) 
+*MC: Check mic và tập dượt lại 1 lần 
+2 
+Chuẩn bị 
+Teabreak 
+(nếu có) 
+06h30 - 07h00 Chuẩn bị đồ ăn, đồ uống và trái cây ăn nhẹ cho BGK trong 
+quá trình thí sinh làm bài thi 
+3 Đón tiếp thí 
+sinh/người 07h00 - 07h15 02 CTV hướng dẫn và sắp xếp vị trí ngồi cho các thí sinh 
+cũng như người tham dự (ưu tiên ngồi từ trên xuống) 
+tham dự 
+4 Phân chia 
+nhóm thí sinh 07h15 - 07h30 - Tuỳ thuộc vào số lượng sẽ phân chia (dự kiến 10-15 
+người/nhóm) - Mỗi nhóm sẽ chủ động phân chia các task cho các thành 
+viên 
+*MC: thông báo thí sinh ổn định chỗ ngồi để chuẩn bị khai 
+mạc cuộc thi công nghệ thông tin năm 2025 
+Khai mạc 
+5 
+Khai mạc 
+cuộc thi 
+CodeMosaic 
+07h30 - 07h50 - 01 tiết mục văn nghệ nhỏ (có thể do CLB biểu diễn) 
+6 Giới thiệu 
+Ban tổ chức 
+Ban Giám khảo bao gồm: 
+ 
+7 
+Hướng dẫn 
+thí sinh về 
+quy định 
+cuộc thi 
+MC nếu quy định của cuộc thi và giải đáp thắc mắc của thí 
+sinh (nếu có) 
+8 
+Tiến hành 
+vòng thi lập 
+trình 
+08h00 - 12h00 Trong quá trình thi có thể chuẩn bị Teabreak cho BGK ở 
+phía bên ngoài 
+Bế mạc 
+9 
+Ban tổ chức 
+chấm điểm 
+và công bố 
+kết quả 
+12h00 - 12h15 Chuẩn bị 1-2 micro cho BTC 
+10 
+Trao giải cho 
+đội thắng 
+cuộc 
+12h15 - 12h30 - CB phụ trách chủ động sắp xếp phần thưởng theo thứ tự - MC mời BTC lên sân khấu trao giải cho các đội - 01 bạn CTV đem phần quà cho các đội từ phía cánh gà 
+lên sân khấu. - 01 CB phụ trách chụp ảnh và quay video trong quá trình 
+trao giải. 
+11 Bế mạc cuộc 
+thi 12h30 - 12h40 - MC thông báo kết thúc cuộc thi - 5 phút cho các đội thi chụp ảnh cùng bạn bè 
+ 
+ 
+ 
+ 
+3.    Kế hoạch truyền thông  
+Kế hoạch truyền thông Cuộc thi CodeMosaic 2025 
+STT 
+Nội dung 
+Thời điểm 
+Người thực hiện 
+Truyền thông trước sự kiện 
+1 
+Giới thiệu về “Cuộc thi CodeMosaic 
+2025” 
+26/09/2025 
+ICPDP 
+Truyền thông sau sự kiện 
+2 
+[Recap] Kết thúc chương trình “Cuộc 
+thi CodeMosaic 2025” 
+19/10/2025 
+4.    Bảng dự trù kinh phí 
+STT 
+Nội dung 
+ICPDP 
+ĐVT Số lượng Đơn giá (VNĐ) 
+1 
+Chi phí in ấn 
+Gói 
+1 
+Thành tiền 
+(VNĐ) 
+2.000.000 
+2 
+Chi phí Giải thưởng 
+Gói 
+1 
+2.000.000 
+8.000.000 
+3 
+Chi phí CTV (hỗ trợ sự 
+kiện, truyền thông) 
+Gói 
+1 
+8.000.000 
+5.000.000 
+4 
+Chi phí hỗ trợ GV 
+(Training và ra đề thi) 
+Gói 
+5.000.000 
+1 
+5 
+Chi phí phát sinh 
+Gói 
+1 
+5.000.000 
+3.000.000 
+5.000.000 
+Tổng cộng 
+3.000.000 
+(Bằng chữ: Hai mươi ba triệu đồng chẵn)   
+23.000.000 
+IV. 
+V. 
+CƠ CẤU GIẢI THƯỞNG: 
+01 Giải nhất: 4.000.000 đồng 
+01 Giải nhì: 2.000.000 đồng 
+01 Giải ba: 1.000.000 đồng 
+01 Giải khuyến khích: 500.000 đồng 
+01 Giải cho đội giải câu hỏi nhanh nhất: 500.000 đồng 
+TỔ CHỨC THỰC HIỆN  
+1. Phòng Hợp tác quốc tế & Phát triển cá nhân  - - 
+Xây dựng kế hoạch và lập dự trù các vấn đề liên quan đến tổ chức cuộc thi 
+Triển khai kế hoạch truyền thông, tổ chức chương trình đến sinh viên. 
+- 
+Phân công nhân sự liên quan 
+2. Bộ môn CF - - - 
+Phối hợp giảng viên Bộ môn CNTT lên kế hoạch và tổ chức cuộc thi theo Kế hoạch; 
+Phối hợp với Bộ môn CNTT kết nối doanh nghiệp và mời đại diện doanh nghiệp tài trợ 
+và tham gia cuộc thi. 
+Phiếu khảo sát đánh giá cuộc thi. 
+3. Phòng hành chính - - 
+Chuẩn bị cơ sở vật chất: bàn ghế, ổ cắm điện, âm thanh, ánh sáng hỗ trợ cuộc thi 
+Trang trí bàn nước cho lễ khai mạc và bế mạc cuộc thi 
+4. Phòng IT - - - 
+Đảm bảo Internet ổn định trong thời gian tổ chức thi 
+Đảm bảo máy chủ (Server) chấm điểm an toàn trong suốt quá trình thi 
+Cử cán bộ tham gia hỗ trợ cuộc thi 
+Người phê duyệt 
+Lanhdaoky 
+Trần Ngọc Tuấn 
+Người kiểm tra 
+Võ Thị Thùy Linh 
+Người lập 
+Đinh Thị 
