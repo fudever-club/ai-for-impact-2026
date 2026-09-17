@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI for Impact 2026 | FPT University Da Nang',
-    description: 'Cuộc thi học thuật AI Agent tại Đại học FPT Đà Nẵng',
+    title: 'AI for Impact 2026',
+    description: 'AI for Impact 2026 – Agentic Innovation Challenge',
     images: ['/brand/hero-banner.jpg'],
   },
   robots: {

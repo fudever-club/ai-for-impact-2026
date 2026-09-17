@@ -2,6 +2,7 @@ import React from 'react';
 import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
+import { selectPrizePodium } from './prize-podium';
 import { Trophy, Award, Medal, Star, Sparkles, CheckCircle2 } from 'lucide-react';
 
 interface PrizesSectionProps {
@@ -15,9 +16,7 @@ function formatQuantity(locale: Locale, quantity: number): string {
 }
 
 export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content }) => {
-  const topThree = content.prizes.items.filter((p) =>
-    ['first', 'second', 'third'].includes(p.id)
-  );
+  const { first, second, third } = selectPrizePodium(content.prizes.items);
   const specialPrizes = content.prizes.items.filter((p) =>
     ['impact', 'best-agent'].includes(p.id)
   );
@@ -38,73 +37,73 @@ export const PrizesSection: React.FC<PrizesSectionProps> = ({ locale, content })
         {/* Top 3 Podium Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 items-stretch">
           {/* 2nd Place */}
-          {topThree[1] && (
+          {second && (
             <div className="glass-card p-8 rounded-2xl border border-brand-cyan/30 flex flex-col justify-between order-2 md:order-1 hover:-translate-y-1 transition-all">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <Badge variant="cyan">{topThree[1].badge}</Badge>
+                  <Badge variant="cyan">{second.badge}</Badge>
                   <Medal className="w-8 h-8 text-slate-300" />
                 </div>
                 <h3 className="font-display font-bold text-xl text-brand-offwhite mb-2">
-                  {topThree[1].title}
+                  {second.title}
                 </h3>
                 <div className="font-display font-extrabold text-3xl sm:text-4xl text-brand-cyan mb-4">
-                  {topThree[1].formattedAmount}
+                  {second.formattedAmount}
                 </div>
                 <p className="text-xs sm:text-sm text-brand-muted leading-relaxed mb-6">
-                  {topThree[1].description}
+                  {second.description}
                 </p>
               </div>
               <div className="pt-4 border-t border-white/10 text-xs font-mono text-brand-muted">
-                {formatQuantity(locale, topThree[1].quantity)}
+                {formatQuantity(locale, second.quantity)}
               </div>
             </div>
           )}
 
           {/* 1st Place (Champion) - Dominant Center Card */}
-          {topThree[0] && (
+          {first && (
             <div className="glass-card-orange p-8 sm:p-10 rounded-2xl border-2 border-brand-orange shadow-glow-orange flex flex-col justify-between order-1 md:order-2 md:-translate-y-4 hover:-translate-y-5 transition-all">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <Badge variant="orange">{topThree[0].badge}</Badge>
+                  <Badge variant="orange">{first.badge}</Badge>
                   <Trophy className="w-10 h-10 text-brand-orange animate-pulse" />
                 </div>
                 <h3 className="font-display font-extrabold text-2xl text-brand-offwhite mb-2">
-                  {topThree[0].title}
+                  {first.title}
                 </h3>
                 <div className="font-display font-black text-4xl sm:text-5xl text-brand-orange mb-4">
-                  {topThree[0].formattedAmount}
+                  {first.formattedAmount}
                 </div>
                 <p className="text-sm text-brand-offwhite/90 leading-relaxed mb-6">
-                  {topThree[0].description}
+                  {first.description}
                 </p>
               </div>
               <div className="pt-4 border-t border-brand-orange/30 text-xs font-mono text-brand-orange font-semibold">
-                {formatQuantity(locale, topThree[0].quantity)}
+                {formatQuantity(locale, first.quantity)}
               </div>
             </div>
           )}
 
           {/* 3rd Place */}
-          {topThree[2] && (
+          {third && (
             <div className="glass-card p-8 rounded-2xl border border-brand-blue/30 flex flex-col justify-between order-3 md:order-3 hover:-translate-y-1 transition-all">
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <Badge variant="blue">{topThree[2].badge}</Badge>
+                  <Badge variant="blue">{third.badge}</Badge>
                   <Award className="w-8 h-8 text-amber-600" />
                 </div>
                 <h3 className="font-display font-bold text-xl text-brand-offwhite mb-2">
-                  {topThree[2].title}
+                  {third.title}
                 </h3>
                 <div className="font-display font-extrabold text-3xl sm:text-4xl text-brand-blue mb-4">
-                  {topThree[2].formattedAmount}
+                  {third.formattedAmount}
                 </div>
                 <p className="text-xs sm:text-sm text-brand-muted leading-relaxed mb-6">
-                  {topThree[2].description}
+                  {third.description}
                 </p>
               </div>
               <div className="pt-4 border-t border-white/10 text-xs font-mono text-brand-muted">
-                {formatQuantity(locale, topThree[2].quantity)}
+                {formatQuantity(locale, third.quantity)}
               </div>
             </div>
           )}

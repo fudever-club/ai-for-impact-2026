@@ -48,7 +48,7 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
               AI FOR IMPACT <span className="text-brand-orange">2026</span>
             </span>
             <span className="text-[10px] font-mono tracking-widest text-brand-cyan uppercase">
-              FPT University Đà Nẵng
+              {content.hero.eyebrow}
             </span>
           </div>
         </Link>

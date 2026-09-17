@@ -240,6 +240,34 @@ describe('production competition view-model', () => {
     expect(footerSource).not.toContain('AI.Impact.fptu.vn');
   });
 
+  it('sources neutral SiteHeader attribution from localized view-model content', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    expect(viewModelModule.getCompetitionViewModel('en').hero.eyebrow).toBe(
+      'AGENTIC INNOVATION CHALLENGE 2026'
+    );
+    const headerSource = readFileSync(
+      path.join(process.cwd(), 'components/layout/SiteHeader.tsx'),
+      'utf8'
+    );
+    expect(headerSource).toContain('{content.hero.eyebrow}');
+    expect(headerSource).not.toContain('FPT University Đà Nẵng');
+  });
+
+  it('uses neutral AI for Impact wording in root Twitter metadata', () => {
+    const layoutSource = readFileSync(path.join(process.cwd(), 'app/layout.tsx'), 'utf8');
+    const twitterBlock = layoutSource.slice(
+      layoutSource.indexOf('twitter:'),
+      layoutSource.indexOf('robots:')
+    );
+
+    expect(twitterBlock).toContain("title: 'AI for Impact 2026'");
+    expect(twitterBlock).toContain('AI for Impact 2026 – Agentic Innovation Challenge');
+    expect(twitterBlock).not.toMatch(/FPT|Đại học/i);
+  });
+
   it('renders localized prize quantities from PrizeItem.quantity', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
@@ -266,6 +294,34 @@ describe('production competition view-model', () => {
       );
     } finally {
       siteConfig.prizes.first = originalPrize;
+    }
+  });
+
+  it('does not promote a sparse approved second prize into the champion slot', async () => {
+    const viewModelModule = await loadViewModelModule();
+    const podiumModule = await import('../components/sections/prize-podium').catch(
+      () => undefined
+    );
+    expect(viewModelModule).toBeDefined();
+    expect(podiumModule).toBeDefined();
+    if (!viewModelModule || !podiumModule) return;
+
+    const originalPrizes = clone(siteConfig.prizes);
+    try {
+      Object.values(siteConfig.prizes).forEach((prize) => {
+        prize.approval = 'withheld';
+      });
+      siteConfig.prizes.second.approval = 'approved';
+
+      const items = viewModelModule.getCompetitionViewModel('en').prizes.items;
+      const podium = podiumModule.selectPrizePodium(items);
+
+      expect(items.map((prize: UnknownRecord) => prize.id)).toEqual(['second']);
+      expect(podium.first).toBeUndefined();
+      expect(podium.second?.id).toBe('second');
+      expect(podium.third).toBeUndefined();
+    } finally {
+      Object.assign(siteConfig.prizes, originalPrizes);
     }
   });
 
