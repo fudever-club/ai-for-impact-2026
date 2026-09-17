@@ -20,6 +20,7 @@
    - **Điểm nhấn thương hiệu**: Sắc cam FPT rực rỡ (`#FF6B00`, hover `#EA580C`) và xanh công nghệ hiện đại (`#2563EB`).
    - **Thẻ bề mặt**: Kính mờ trắng phủ sương `.glass-card` (`rgba(255, 255, 255, 0.92)` kèm viền `border-slate-200` và bóng đa tầng `shadow-card`, `shadow-card-hover`). Thẻ giải Vô địch và CTA Đăng ký dùng gradient ấm `.glass-card-orange`.
    - **Khu vực Kỹ thuật**: Developer Console Terminal (`bg-slate-900`) hiển thị cấu hình compiler ICPC với syntax highlight sắc nét.
+   - **Thư viện SVG Logo**: Toàn bộ logo thương hiệu, ngôn ngữ lập trình, AI framework và công cụ công nghệ được ưu tiên khai thác chuẩn xác từ [Svgl](https://svgl.app/) (được lưu tại `public/icons/`).
    - **Ngôn ngữ**: Giao diện tiếng Việt chuẩn hóa, đã tinh giản bỏ nút chuyển đổi ngôn ngữ.
 
 ---
