@@ -204,8 +204,7 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
       label: content.footer.links.handbook,
       href: documents.handbookUrl,
     });
-  }
-  if (documents.rulesUrl) {
+  } else if (documents.rulesUrl && content.footer.links.rules) {
     footerLinks.unshift({
       id: 'rules',
       label: content.footer.links.rules,
@@ -288,6 +287,31 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
         }),
       })),
     },
+    caseStudy: {
+      ...content.caseStudy,
+      data: {
+        ...content.caseStudy.data,
+        milestones: content.caseStudy.data.milestones.map((m) => ({
+          ...m,
+          action: interpolate(m.action, {
+            duration: formatAdjectiveDuration(
+              programmingStage.startDate,
+              programmingStage.endDate,
+              locale
+            ),
+            qualifiedTeams: String(config.programmingChallenge.qualifiedTeams),
+          }),
+          outcome: interpolate(m.outcome, {
+            duration: formatAdjectiveDuration(
+              programmingStage.startDate,
+              programmingStage.endDate,
+              locale
+            ),
+            qualifiedTeams: String(config.programmingChallenge.qualifiedTeams),
+          }),
+        })),
+      },
+    },
     register: {
       ...content.register,
       deadlineNotice:
@@ -302,6 +326,7 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
     footer: {
       copyright: content.footer.copyright,
       disclaimer: content.footer.disclaimer,
+      developerCredit: content.footer.developerCredit,
       links: footerLinks,
     },
   };

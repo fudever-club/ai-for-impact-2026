@@ -131,9 +131,22 @@ export const NavAnchorSchema = z
   })
   .strict();
 
+function isSafeDocumentUrl(value: string): boolean {
+  if (value.startsWith('/docs/') && !value.includes('..')) return true;
+  try {
+    return new URL(value).protocol === 'https:';
+  } catch {
+    return false;
+  }
+}
+
+const SafeDocumentUrlSchema = z
+  .string()
+  .refine(isSafeDocumentUrl, 'Document URL must use HTTPS or be a relative /docs/ path');
+
 const ApprovedUrlSchema = z
   .object({
-    url: HttpsUrlSchema,
+    url: SafeDocumentUrlSchema,
     approval: ApprovalStateSchema,
   })
   .strict();
@@ -232,6 +245,152 @@ const LocalizedPrizeContentSchema = z
     title: NonEmptyString,
     description: NonEmptyString,
     badge: NonEmptyString.optional(),
+  })
+  .strict();
+
+const StageComparisonRowSchema = z
+  .object({
+    aspect: NonEmptyString,
+    technicalRound: NonEmptyString,
+    finalRound: NonEmptyString,
+  })
+  .strict();
+
+const AgentLayerSchema = z
+  .object({
+    layerNumber: z.number().int().positive(),
+    name: NonEmptyString,
+    roleQuestion: NonEmptyString,
+    description: NonEmptyString,
+    deliverable: NonEmptyString,
+  })
+  .strict();
+
+const MvpConditionSchema = z
+  .object({
+    title: NonEmptyString,
+    description: NonEmptyString,
+  })
+  .strict();
+
+const NonProductRuleSchema = z
+  .object({
+    title: NonEmptyString,
+    description: NonEmptyString,
+  })
+  .strict();
+
+const FinalDeliverableItemSchema = z
+  .object({
+    id: NonEmptyString,
+    name: NonEmptyString,
+    specification: NonEmptyString,
+    format: NonEmptyString,
+  })
+  .strict();
+
+const TeamRoleGuideSchema = z
+  .object({
+    role: NonEmptyString,
+    focus: NonEmptyString,
+    keyQuestion: NonEmptyString,
+  })
+  .strict();
+
+const ScoringCriterionSchema = z
+  .object({
+    name: NonEmptyString,
+    points: z.number().int().positive(),
+    description: NonEmptyString,
+  })
+  .strict();
+
+const ScoringRoundBreakdownSchema = z
+  .object({
+    roundId: NonEmptyString,
+    title: NonEmptyString,
+    weight: NonEmptyString,
+    totalPoints: z.number().int().positive(),
+    criteria: z.array(ScoringCriterionSchema),
+    notes: NonEmptyString.optional(),
+  })
+  .strict();
+
+const CaseStudyMilestoneSchema = z
+  .object({
+    stage: NonEmptyString,
+    action: NonEmptyString,
+    outcome: NonEmptyString,
+  })
+  .strict();
+
+const CaseStudyDataSchema = z
+  .object({
+    teamName: NonEmptyString,
+    topic: NonEmptyString,
+    targetUsers: NonEmptyString,
+    problem: NonEmptyString,
+    proposal: NonEmptyString,
+    questions: z.array(z.object({ q: NonEmptyString, isKey: z.boolean() }).strict()),
+    milestones: z.array(CaseStudyMilestoneSchema),
+    academicOutcome: NonEmptyString,
+  })
+  .strict();
+
+const ProposalQuestionSchema = z
+  .object({
+    id: NonEmptyString,
+    order: NonEmptyString,
+    question: NonEmptyString,
+    intent: NonEmptyString,
+    scoringTip: NonEmptyString,
+  })
+  .strict();
+
+const TrainingWorkshopDetailSchema = z
+  .object({
+    session: NonEmptyString,
+    dateStr: NonEmptyString,
+    title: NonEmptyString,
+    instructor: NonEmptyString,
+    focus: NonEmptyString,
+    deliverables: StringArray,
+  })
+  .strict();
+
+const Stage4ChallengeDetailSchema = z
+  .object({
+    badge: NonEmptyString,
+    title: NonEmptyString,
+    targetAgent: NonEmptyString,
+    baselineScore: NonEmptyString,
+    description: NonEmptyString,
+    intentionalFlaws: z.array(
+      z
+        .object({
+          id: NonEmptyString,
+          name: NonEmptyString,
+          risk: NonEmptyString,
+          resolution: NonEmptyString,
+        })
+        .strict()
+    ),
+    liveIncident: z
+      .object({
+        title: NonEmptyString,
+        scenario: NonEmptyString,
+        evaluationCriteria: NonEmptyString,
+      })
+      .strict(),
+  })
+  .strict();
+
+const Stage5ScheduleItemSchema = z
+  .object({
+    time: NonEmptyString,
+    activity: NonEmptyString,
+    details: NonEmptyString,
+    highlight: z.boolean().optional(),
   })
   .strict();
 
@@ -373,20 +532,154 @@ export const CompetitionContentSchema = z
         steps: z.array(
           z.object({ step: NonEmptyString, title: NonEmptyString, desc: NonEmptyString }).strict()
         ),
+        proposalQuestionsCard: z
+          .object({
+            badge: NonEmptyString,
+            title: NonEmptyString,
+            subtitle: NonEmptyString,
+            questions: z.array(ProposalQuestionSchema),
+          })
+          .strict()
+          .optional(),
         ctaText: NonEmptyString,
       })
       .strict(),
+    trainingDetails: z
+      .object({
+        badge: NonEmptyString,
+        title: NonEmptyString,
+        subtitle: NonEmptyString,
+        workshops: z.array(TrainingWorkshopDetailSchema),
+        mentoringCheckpoint: z
+          .object({
+            dateStr: NonEmptyString,
+            title: NonEmptyString,
+            desc: NonEmptyString,
+          })
+          .strict(),
+      })
+      .strict()
+      .optional(),
+    stage4Challenge: Stage4ChallengeDetailSchema.optional(),
+    stage5RunOfShow: z
+      .object({
+        badge: NonEmptyString,
+        title: NonEmptyString,
+        subtitle: NonEmptyString,
+        timeline: z.array(Stage5ScheduleItemSchema),
+      })
+      .strict()
+      .optional(),
     organizers: z
       .object({ badge: NonEmptyString, title: NonEmptyString, subtitle: NonEmptyString })
+      .strict(),
+    philosophyQuote: z
+      .object({
+        quote: NonEmptyString,
+        subMotto: NonEmptyString,
+        author: NonEmptyString,
+      })
+      .strict(),
+    stageComparison: z
+      .object({
+        badge: NonEmptyString,
+        title: NonEmptyString,
+        subtitle: NonEmptyString,
+        intro: NonEmptyString,
+        columns: z
+          .object({
+            aspect: NonEmptyString,
+            technicalRound: NonEmptyString,
+            finalRound: NonEmptyString,
+          })
+          .strict(),
+        rows: z.array(StageComparisonRowSchema),
+        conclusion: NonEmptyString,
+      })
+      .strict(),
+    agentAnatomy: z
+      .object({
+        badge: NonEmptyString,
+        title: NonEmptyString,
+        subtitle: NonEmptyString,
+        analogy: NonEmptyString,
+        layers: z.array(AgentLayerSchema),
+        mvpDefinition: z
+          .object({
+            badge: NonEmptyString,
+            title: NonEmptyString,
+            description: NonEmptyString,
+            conditions: z.array(MvpConditionSchema),
+          })
+          .strict(),
+        nonProducts: z
+          .object({
+            badge: NonEmptyString,
+            title: NonEmptyString,
+            rules: z.array(NonProductRuleSchema),
+          })
+          .strict(),
+        finalDeliverables: z
+          .object({
+            badge: NonEmptyString,
+            title: NonEmptyString,
+            items: z.array(FinalDeliverableItemSchema),
+          })
+          .strict(),
+      })
+      .strict(),
+    teamStructure: z
+      .object({
+        badge: NonEmptyString,
+        title: NonEmptyString,
+        subtitle: NonEmptyString,
+        warningNote: NonEmptyString,
+        roles: z.array(TeamRoleGuideSchema),
+        fifthMemberNote: NonEmptyString,
+        mockDataPrinciple: z
+          .object({
+            title: NonEmptyString,
+            description: NonEmptyString,
+          })
+          .strict(),
+      })
+      .strict(),
+    caseStudy: z
+      .object({
+        badge: NonEmptyString,
+        title: NonEmptyString,
+        subtitle: NonEmptyString,
+        data: CaseStudyDataSchema,
+      })
+      .strict(),
+    comprehensiveScoring: z
+      .object({
+        badge: NonEmptyString,
+        title: NonEmptyString,
+        subtitle: NonEmptyString,
+        formula: NonEmptyString,
+        rounds: z.array(ScoringRoundBreakdownSchema),
+        principles: z.array(
+          z.object({ title: NonEmptyString, description: NonEmptyString }).strict()
+        ),
+      })
       .strict(),
     footer: z
       .object({
         copyright: NonEmptyString,
         disclaimer: NonEmptyString,
+        developerCredit: z
+          .object({
+            text: NonEmptyString,
+            teamName: NonEmptyString,
+            logoUrl: NonEmptyString,
+            url: NonEmptyString.optional(),
+          })
+          .optional(),
         links: z
           .object({
             handbook: NonEmptyString,
-            rules: NonEmptyString,
+            rules: NonEmptyString.optional(),
             registration: NonEmptyString,
             fanpage: NonEmptyString,
           })

@@ -8,8 +8,11 @@ import { SiteHeader } from '../../components/layout/SiteHeader';
 import { HeroSection } from '../../components/sections/HeroSection';
 import { AboutSection } from '../../components/sections/AboutSection';
 import { JourneySection } from '../../components/sections/JourneySection';
+import { StageComparisonSection } from '../../components/sections/StageComparisonSection';
+import { AgentAnatomySection } from '../../components/sections/AgentAnatomySection';
 import { ProgrammingChallengeSection } from '../../components/sections/ProgrammingChallengeSection';
 import { ThemesSection } from '../../components/sections/ThemesSection';
+import { TeamRolesSection } from '../../components/sections/TeamRolesSection';
 import { EvaluationSection } from '../../components/sections/EvaluationSection';
 import { PrizesSection } from '../../components/sections/PrizesSection';
 import { FAQSection } from '../../components/sections/FAQSection';
@@ -98,13 +101,16 @@ export default function LocalePage({ params }: LocalePageProps) {
         <AboutSection locale={locale} content={content} />
         <JourneySection locale={locale} content={content} />
         <ProgrammingChallengeSection locale={locale} content={content} />
+        <StageComparisonSection locale={locale} content={content} />
+        <AgentAnatomySection locale={locale} content={content} />
         <ThemesSection locale={locale} content={content} />
+        <TeamRolesSection locale={locale} content={content} />
         <EvaluationSection locale={locale} content={content} />
         {content.prizes.items.length > 0 && (
           <PrizesSection locale={locale} content={content} />
         )}
-        <FAQSection locale={locale} content={content} />
         <RegisterSection locale={locale} content={content} />
+        <FAQSection locale={locale} content={content} />
         {content.organizers.items.length > 0 && (
           <OrganizersSection locale={locale} content={content} />
         )}

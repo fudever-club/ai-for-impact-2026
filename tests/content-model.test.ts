@@ -137,7 +137,10 @@ describe('production competition view-model', () => {
     const serialized = JSON.stringify(viewModel);
 
     expect(viewModel.prizes.items).toEqual([]);
-    expect(viewModel.documents).toEqual({});
+    expect(viewModel.documents).toEqual({
+      handbookUrl: '/docs/So_tay_thi_sinh_AI-for-Impact-2026_V4.docx',
+      rulesUrl: '/docs/So_tay_thi_sinh_AI-for-Impact-2026_V4.docx',
+    });
     expect(viewModel.journey.stages.map((stage: UnknownRecord) => stage.id)).toEqual([
       'stage-1',
       'stage-2',
@@ -407,4 +410,124 @@ describe('production competition view-model', () => {
       stage2.endsAt = originalEndsAt;
     }
   });
+
+  it('exposes comprehensive 5-layer agent anatomy and deliverable standards', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    for (const locale of ['vi', 'en'] as const) {
+      const viewModel = viewModelModule.getCompetitionViewModel(locale);
+      expect(viewModel.agentAnatomy.layers).toHaveLength(5);
+      expect(viewModel.agentAnatomy.layers.map((l: UnknownRecord) => l.layerNumber)).toEqual([1, 2, 3, 4, 5]);
+      expect(viewModel.agentAnatomy.mvpDefinition.conditions).toHaveLength(5);
+      expect(viewModel.agentAnatomy.nonProducts.rules).toHaveLength(5);
+      expect(viewModel.agentAnatomy.finalDeliverables.items).toHaveLength(4);
+    }
+  });
+
+  it('provides structured stage comparison between stage-4 and stage-5', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    for (const locale of ['vi', 'en'] as const) {
+      const viewModel = viewModelModule.getCompetitionViewModel(locale);
+      expect(viewModel.stageComparison.rows.length).toBeGreaterThanOrEqual(5);
+      expect(viewModel.stageComparison.rows.some((r: UnknownRecord) => r.aspect.toLowerCase().includes('bài toán') || r.aspect.toLowerCase().includes('problem'))).toBe(true);
+    }
+  });
+
+  it('provides team roles and interview questions playbook with 4 roles', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    for (const locale of ['vi', 'en'] as const) {
+      const viewModel = viewModelModule.getCompetitionViewModel(locale);
+      expect(viewModel.teamStructure.roles).toHaveLength(4);
+      viewModel.teamStructure.roles.forEach((r: UnknownRecord) => {
+        expect(r.keyQuestion).toBeTruthy();
+      });
+    }
+  });
+
+  it('provides comprehensive scoring rubric with formula and 3 rounds', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    for (const locale of ['vi', 'en'] as const) {
+      const viewModel = viewModelModule.getCompetitionViewModel(locale);
+      expect(viewModel.comprehensiveScoring.rounds).toHaveLength(3);
+      expect(viewModel.comprehensiveScoring.formula).toContain('15%');
+      expect(viewModel.comprehensiveScoring.formula).toContain('70%');
+    }
+  });
+
+  it('derives case-study milestone values dynamically from config', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    const viModel = viewModelModule.getCompetitionViewModel('vi');
+    const stage2Milestone = viModel.caseStudy.data.milestones.find((m: UnknownRecord) => m.stage.includes('Chặng 2'));
+    expect(stage2Milestone?.action).toContain('240 phút');
+    expect(stage2Milestone?.outcome).toContain('Top 24');
+  });
+
+  it('provides 6 core questions for video proposals in both locales', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    for (const locale of ['vi', 'en'] as const) {
+      const viewModel = viewModelModule.getCompetitionViewModel(locale);
+      expect(viewModel.register.proposalQuestionsCard).toBeDefined();
+      expect(viewModel.register.proposalQuestionsCard?.questions).toHaveLength(6);
+      viewModel.register.proposalQuestionsCard?.questions.forEach((q: UnknownRecord) => {
+        expect(q.scoringTip).toBeTruthy();
+        expect(q.intent).toBeTruthy();
+      });
+    }
+  });
+
+  it('provides 3 training workshops with instructors and deliverables', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    for (const locale of ['vi', 'en'] as const) {
+      const viewModel = viewModelModule.getCompetitionViewModel(locale);
+      expect(viewModel.trainingDetails).toBeDefined();
+      expect(viewModel.trainingDetails?.workshops).toHaveLength(3);
+      expect(viewModel.trainingDetails?.mentoringCheckpoint).toBeDefined();
+    }
+  });
+
+  it('provides stage-4 challenge details with 6 intentional flaws and live incident', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    for (const locale of ['vi', 'en'] as const) {
+      const viewModel = viewModelModule.getCompetitionViewModel(locale);
+      expect(viewModel.stage4Challenge).toBeDefined();
+      expect(viewModel.stage4Challenge?.intentionalFlaws).toHaveLength(6);
+      expect(viewModel.stage4Challenge?.liveIncident).toBeDefined();
+    }
+  });
+
+  it('provides stage-5 run-of-show timeline for October 31', async () => {
+    const viewModelModule = await loadViewModelModule();
+    expect(viewModelModule).toBeDefined();
+    if (!viewModelModule) return;
+
+    for (const locale of ['vi', 'en'] as const) {
+      const viewModel = viewModelModule.getCompetitionViewModel(locale);
+      expect(viewModel.stage5RunOfShow).toBeDefined();
+      expect(viewModel.stage5RunOfShow?.timeline.length).toBeGreaterThanOrEqual(6);
+    }
+  });
 });
+

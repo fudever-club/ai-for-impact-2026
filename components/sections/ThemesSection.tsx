@@ -1,6 +1,7 @@
 import React from 'react';
 import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
+import { Badge } from '../ui/Badge';
 import { GraduationCap, HeartPulse, Compass, Leaf, Briefcase, Sparkles } from 'lucide-react';
 
 interface ThemesSectionProps {
@@ -73,6 +74,109 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
             </div>
           ))}
         </div>
+
+        {/* Realistic Case Study: Team Đi Cùng */}
+        {content.caseStudy && (
+          <div className="mt-16 glass-card p-8 sm:p-10 rounded-2xl border border-slate-200 shadow-card bg-gradient-to-b from-slate-50/70 via-white to-orange-50/20">
+            <div className="max-w-3xl mb-8">
+              <Badge variant="orange" className="mb-2">
+                {content.caseStudy.badge}
+              </Badge>
+              <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 mb-2">
+                {content.caseStudy.title}
+              </h3>
+              <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                {content.caseStudy.subtitle}
+              </p>
+            </div>
+
+            {/* Problem & Proposal Card */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="p-5 rounded-xl bg-white border border-slate-200/80 shadow-xs space-y-2">
+                <span className="text-[11px] font-mono font-bold text-slate-400 uppercase block">
+                  Vấn đề thực tiễn (Pain Point)
+                </span>
+                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+                  {content.caseStudy.data.problem}
+                </p>
+              </div>
+
+              <div className="p-5 rounded-xl bg-orange-50/50 border border-orange-200/70 shadow-xs space-y-2">
+                <span className="text-[11px] font-mono font-bold text-brand-orange uppercase block">
+                  Giải pháp AI Agent đề xuất
+                </span>
+                <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">
+                  {content.caseStudy.data.proposal}
+                </p>
+              </div>
+            </div>
+
+            {/* 6 Core Video Questions */}
+            <div className="mb-8 p-6 rounded-xl bg-white border border-slate-200 shadow-xs">
+              <h4 className="font-display font-bold text-sm text-slate-900 mb-3 flex items-center justify-between">
+                <span>6 Câu hỏi cốt lõi đội phải trả lời trong Video Chặng 1</span>
+                <span className="text-xs font-normal text-slate-500 font-mono">Thời lượng ≤ 3 phút</span>
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {content.caseStudy.data.questions.map((q, qIdx) => (
+                  <div
+                    key={qIdx}
+                    className={`p-3 rounded-lg border text-xs flex items-start gap-2.5 ${
+                      q.isKey
+                        ? 'bg-orange-50/60 border-brand-orange/40 text-slate-900 font-medium'
+                        : 'bg-slate-50 border-slate-150 text-slate-600'
+                    }`}
+                  >
+                    <span className="font-mono font-bold text-slate-400 shrink-0 mt-0.5">
+                      0{qIdx + 1}.
+                    </span>
+                    <div className="space-y-0.5">
+                      <span>{q.q}</span>
+                      {q.isKey && (
+                        <span className="text-[10px] font-mono text-brand-orange font-bold block">
+                          ★ Câu ăn điểm – Hội đồng đánh giá cao ranh giới công cụ
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 5-Stage Journey Progress */}
+            <div className="space-y-3 mb-6">
+              <h4 className="font-display font-bold text-sm text-slate-900 mb-2">
+                Hành trình tôi luyện qua 5 chặng của đội
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+                {content.caseStudy.data.milestones.map((m, mIdx) => (
+                  <div
+                    key={mIdx}
+                    className="p-4 rounded-xl bg-white border border-slate-200 shadow-xs flex flex-col justify-between"
+                  >
+                    <div>
+                      <span className="text-[11px] font-mono font-bold text-blue-600 block mb-1">
+                        {m.stage}
+                      </span>
+                      <p className="text-xs text-slate-700 font-medium leading-snug mb-2">
+                        {m.action}
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-slate-100 text-[11px] text-slate-500 italic">
+                      ✓ {m.outcome}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Final Outcome Banner */}
+            <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-xs sm:text-sm text-emerald-800 font-medium flex items-center gap-2">
+              <span>🎓</span>
+              <span>{content.caseStudy.data.academicOutcome}</span>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );

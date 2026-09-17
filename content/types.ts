@@ -121,6 +121,118 @@ export interface LocalizedPrizeContent {
   badge?: string;
 }
 
+export interface StageComparisonRow {
+  aspect: string;
+  technicalRound: string;
+  finalRound: string;
+}
+
+export interface AgentLayer {
+  layerNumber: number;
+  name: string;
+  roleQuestion: string;
+  description: string;
+  deliverable: string;
+}
+
+export interface MvpCondition {
+  title: string;
+  description: string;
+}
+
+export interface NonProductRule {
+  title: string;
+  description: string;
+}
+
+export interface FinalDeliverableItem {
+  id: string;
+  name: string;
+  specification: string;
+  format: string;
+}
+
+export interface TeamRoleGuide {
+  role: string;
+  focus: string;
+  keyQuestion: string;
+}
+
+export interface ScoringCriterion {
+  name: string;
+  points: number;
+  description: string;
+}
+
+export interface ScoringRoundBreakdown {
+  roundId: string;
+  title: string;
+  weight: string;
+  totalPoints: number;
+  criteria: ScoringCriterion[];
+  notes?: string;
+}
+
+export interface CaseStudyMilestone {
+  stage: string;
+  action: string;
+  outcome: string;
+}
+
+export interface CaseStudyData {
+  teamName: string;
+  topic: string;
+  targetUsers: string;
+  problem: string;
+  proposal: string;
+  questions: { q: string; isKey: boolean }[];
+  milestones: CaseStudyMilestone[];
+  academicOutcome: string;
+}
+
+export interface ProposalQuestion {
+  id: string;
+  order: string;
+  question: string;
+  intent: string;
+  scoringTip: string;
+}
+
+export interface TrainingWorkshopDetail {
+  session: string;
+  dateStr: string;
+  title: string;
+  instructor: string;
+  focus: string;
+  deliverables: string[];
+}
+
+export interface Stage4ChallengeDetail {
+  badge: string;
+  title: string;
+  targetAgent: string;
+  baselineScore: string;
+  description: string;
+  intentionalFlaws: {
+    id: string;
+    name: string;
+    risk: string;
+    resolution: string;
+  }[];
+  liveIncident: {
+    title: string;
+    scenario: string;
+    evaluationCriteria: string;
+  };
+}
+
+export interface Stage5ScheduleItem {
+  time: string;
+  activity: string;
+  details: string;
+  highlight?: boolean;
+}
+
 export interface CompetitionContent {
   locale: Locale;
   meta: {
@@ -222,19 +334,112 @@ export interface CompetitionContent {
     title: string;
     subtitle: string;
     steps: { step: string; title: string; desc: string }[];
+    proposalQuestionsCard?: {
+      badge: string;
+      title: string;
+      subtitle: string;
+      questions: ProposalQuestion[];
+    };
     ctaText: string;
+  };
+  trainingDetails?: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    workshops: TrainingWorkshopDetail[];
+    mentoringCheckpoint: {
+      dateStr: string;
+      title: string;
+      desc: string;
+    };
+  };
+  stage4Challenge?: Stage4ChallengeDetail;
+  stage5RunOfShow?: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    timeline: Stage5ScheduleItem[];
   };
   organizers: {
     badge: string;
     title: string;
     subtitle: string;
   };
+  philosophyQuote: {
+    quote: string;
+    subMotto: string;
+    author: string;
+  };
+  stageComparison: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    intro: string;
+    columns: { aspect: string; technicalRound: string; finalRound: string };
+    rows: StageComparisonRow[];
+    conclusion: string;
+  };
+  agentAnatomy: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    analogy: string;
+    layers: AgentLayer[];
+    mvpDefinition: {
+      badge: string;
+      title: string;
+      description: string;
+      conditions: MvpCondition[];
+    };
+    nonProducts: {
+      badge: string;
+      title: string;
+      rules: NonProductRule[];
+    };
+    finalDeliverables: {
+      badge: string;
+      title: string;
+      items: FinalDeliverableItem[];
+    };
+  };
+  teamStructure: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    warningNote: string;
+    roles: TeamRoleGuide[];
+    fifthMemberNote: string;
+    mockDataPrinciple: {
+      title: string;
+      description: string;
+    };
+  };
+  caseStudy: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    data: CaseStudyData;
+  };
+  comprehensiveScoring: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    formula: string;
+    rounds: ScoringRoundBreakdown[];
+    principles: { title: string; description: string }[];
+  };
   footer: {
     copyright: string;
     disclaimer: string;
+    developerCredit?: {
+      text: string;
+      teamName: string;
+      logoUrl: string;
+      url?: string;
+    };
     links: {
       handbook: string;
-      rules: string;
+      rules?: string;
       registration: string;
       fanpage: string;
     };

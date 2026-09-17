@@ -13,12 +13,12 @@ export const siteConfig: SiteConfig = {
   },
   documents: {
     handbook: {
-      url: 'https://docs.google.com/document/d/e/2PACX-1vT-AIForImpact2026-Handbook/pub',
-      approval: 'withheld',
+      url: '/docs/So_tay_thi_sinh_AI-for-Impact-2026_V4.docx',
+      approval: 'approved',
     },
     rules: {
-      url: 'https://docs.google.com/document/d/e/2PACX-1vT-AIForImpact2026-Rules/pub',
-      approval: 'withheld',
+      url: '/docs/So_tay_thi_sinh_AI-for-Impact-2026_V4.docx',
+      approval: 'approved',
     },
   },
   stages: [

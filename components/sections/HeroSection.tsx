@@ -160,6 +160,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
                 <span className="text-xs text-slate-500 font-medium mt-1">Chủ đề bài toán</span>
               </div>
             </div>
+
+            {/* Core Philosophy Banner */}
+            {content.philosophyQuote && (
+              <div className="w-full p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-orange-50/70 via-white to-amber-50/50 border border-orange-200/80 shadow-xs flex items-start gap-3.5 text-left">
+                <div className="w-8 h-8 rounded-xl bg-orange-100/80 border border-orange-200 flex items-center justify-center shrink-0 mt-0.5 font-serif font-black text-lg text-brand-orange shadow-xs">
+                  “
+                </div>
+                <div className="space-y-1.5 flex-1 min-w-0">
+                  <p className="text-xs sm:text-sm text-slate-800 italic font-medium leading-relaxed">
+                    {content.philosophyQuote.quote}
+                  </p>
+                  <div className="flex flex-wrap items-center justify-between gap-2 pt-1 text-xs font-mono">
+                    <span className="text-brand-orange font-bold">{content.philosophyQuote.subMotto}</span>
+                    <span className="text-slate-500 font-medium">— {content.philosophyQuote.author}</span>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Right Column: Interactive Agent Network Topology Visual */}

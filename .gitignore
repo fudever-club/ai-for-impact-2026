@@ -38,7 +38,11 @@ next-env.d.ts
 # agent implementation workspaces
 /.worktrees/
 /.superpowers/
+/scratch/
+/.tempmediaStorage/
+*.log
 
 # retained legacy source archive (not part of the production app)
 /CodeMosaic-main/
 /CodeMosaic-main.zip
+

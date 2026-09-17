@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
@@ -11,7 +13,8 @@ import {
   CheckCircle2,
   Terminal,
   FileCode2,
-  ExternalLink,
+  Copy,
+  Check,
 } from 'lucide-react';
 
 interface ProgrammingChallengeSectionProps {
@@ -24,6 +27,15 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
   content,
 }) => {
   const meta = content.programmingChallenge.metaCards;
+  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
+
+  const handleCopy = (compiler: string, idx: number) => {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+      navigator.clipboard.writeText(compiler);
+      setCopiedIdx(idx);
+      setTimeout(() => setCopiedIdx(null), 2000);
+    }
+  };
 
   return (
     <section
@@ -134,24 +146,28 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
             </div>
           </div>
 
-          {/* Supported Languages Terminal Box */}
+          {/* Supported Languages Clean Tech Light IDE Box */}
           <div className="lg:col-span-5">
-            <div className="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-2xl">
-              {/* Terminal Titlebar */}
-              <div className="bg-slate-950/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
+            <div className="rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200/90 overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300">
+              {/* IDE Window Titlebar */}
+              <div className="bg-slate-100/90 px-4 py-3 border-b border-slate-200/80 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                  <div className="w-3 h-3 rounded-full bg-green-500/80" />
-                  <span className="ml-2 font-mono text-xs text-slate-400">
-                    icpc-global-2024.env
-                  </span>
+                  <div className="w-3 h-3 rounded-full bg-red-400/90 border border-red-500/30" />
+                  <div className="w-3 h-3 rounded-full bg-amber-400/90 border border-amber-500/30" />
+                  <div className="w-3 h-3 rounded-full bg-emerald-400/90 border border-emerald-500/30" />
+                  <div className="flex items-center gap-1.5 ml-2 font-mono text-xs text-slate-600 font-semibold">
+                    <Terminal className="w-3.5 h-3.5 text-brand-orange" />
+                    <span>icpc-global-2024.env</span>
+                  </div>
                 </div>
-                <span className="text-[11px] font-mono text-brand-orange font-semibold">ONLINE JUDGE</span>
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-orange-100/80 text-brand-orange border border-orange-200/80 text-[10px] font-mono font-bold tracking-wider">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <span>ONLINE JUDGE</span>
+                </div>
               </div>
 
               {/* Compiler Specs with official Svgl language icons */}
-              <div className="p-5 space-y-3.5 font-mono text-xs">
+              <div className="p-5 space-y-3 font-mono text-xs">
                 {content.programmingChallenge.languages.map((lang, idx) => {
                   const iconSrc =
                     lang.name.includes('C++') ? '/icons/cpp.svg' :
@@ -162,24 +178,49 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
                   return (
                     <div
                       key={idx}
-                      className="p-3 rounded-xl bg-slate-800/70 border border-slate-700/60 space-y-1 hover:border-brand-orange/50 transition-colors group"
+                      className="p-3 rounded-xl bg-slate-50/80 hover:bg-orange-50/20 border border-slate-200/80 hover:border-orange-300/80 transition-all duration-200 shadow-2xs group"
                     >
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
-                          {iconSrc && (
+                          {iconSrc ? (
                             /* eslint-disable-next-line @next/next/no-img-element */
                             <img
                               src={iconSrc}
                               alt={lang.name}
                               className="w-4 h-4 object-contain"
                             />
+                          ) : (
+                            <div className="w-4 h-4 rounded bg-slate-200 flex items-center justify-center font-bold text-[10px] text-slate-700">
+                              C
+                            </div>
                           )}
-                          <span className="font-bold text-brand-cyan text-sm">{lang.name}</span>
+                          <span className="font-bold text-slate-900 text-sm group-hover:text-brand-orange transition-colors">
+                            {lang.name}
+                          </span>
                         </div>
-                        <span className="text-[11px] text-slate-400">{lang.version}</span>
+                        <span className="text-[11px] text-slate-500 bg-slate-200/60 px-2 py-0.5 rounded-md font-medium">
+                          {lang.version}
+                        </span>
                       </div>
-                      <div className="text-[11px] text-slate-200 overflow-x-auto whitespace-nowrap py-0.5 font-mono">
-                        $ {lang.compiler}
+
+                      <div className="mt-2 px-2.5 py-1.5 rounded-lg bg-white border border-slate-200/80 text-slate-700 text-[11px] flex items-center justify-between gap-2 shadow-2xs group-hover:border-slate-300 transition-colors">
+                        <div className="overflow-x-auto whitespace-nowrap py-0.5 flex items-center gap-1.5 scrollbar-thin">
+                          <span className="text-brand-orange font-bold select-none">$</span>
+                          <span className="text-slate-800">{lang.compiler}</span>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => handleCopy(lang.compiler, idx)}
+                          aria-label={`Copy ${lang.name} compiler flags`}
+                          title="Sao chép lệnh biên dịch"
+                          className="shrink-0 p-1 text-slate-400 hover:text-brand-orange hover:bg-orange-50 rounded transition-colors"
+                        >
+                          {copiedIdx === idx ? (
+                            <Check className="w-3.5 h-3.5 text-emerald-600" />
+                          ) : (
+                            <Copy className="w-3.5 h-3.5" />
+                          )}
+                        </button>
                       </div>
                     </div>
                   );
@@ -187,13 +228,13 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
               </div>
 
               {content.documents.rulesUrl && (
-                <div className="p-4 bg-slate-950/80 border-t border-slate-800 text-center">
+                <div className="p-4 bg-slate-50/90 border-t border-slate-200/80 text-center">
                   <Button
                     variant="outline"
                     size="sm"
                     href={content.documents.rulesUrl}
                     external
-                    className="w-full justify-center text-slate-200 border-slate-700 hover:bg-slate-800"
+                    className="w-full justify-center text-slate-700 bg-white border-slate-200/90 hover:bg-orange-50 hover:text-brand-orange hover:border-orange-300 shadow-xs transition-all font-medium"
                     icon={<FileCode2 className="w-4 h-4 text-brand-orange" />}
                   >
                     {content.programmingChallenge.handbookCta}

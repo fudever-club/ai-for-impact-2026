@@ -1,8 +1,10 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
-import { AlertCircle, Bot, CheckCircle2 } from 'lucide-react';
+import { AlertCircle, Bot, CheckCircle2, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface EvaluationSectionProps {
   locale: Locale;
@@ -10,6 +12,8 @@ interface EvaluationSectionProps {
 }
 
 export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, content }) => {
+  const [showDetailedRubric, setShowDetailedRubric] = useState(false);
+
   return (
     <section id="evaluation" className="py-24 relative bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,6 +45,95 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
             </div>
           ))}
         </div>
+
+        {/* Formula Banner */}
+        {content.comprehensiveScoring && (
+          <div className="mb-8 text-center max-w-3xl mx-auto p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-orange-50/80 via-white to-amber-50/60 border border-orange-200/90 shadow-card">
+            <span className="text-xs font-mono uppercase tracking-widest text-brand-orange font-bold block mb-2">
+              CÔNG THỨC ĐIỂM TỔNG CUỘC THI
+            </span>
+            <div className="font-mono font-black text-base sm:text-xl text-slate-900 tracking-wide">
+              {content.comprehensiveScoring.formula}
+            </div>
+          </div>
+        )}
+
+        {/* Toggle Detailed Rubric Button */}
+        {content.comprehensiveScoring && (
+          <div className="text-center mb-12">
+            <button
+              type="button"
+              onClick={() => setShowDetailedRubric(!showDetailedRubric)}
+              className="inline-flex items-center gap-2.5 px-6 py-3 rounded-2xl bg-slate-100 hover:bg-orange-50/80 border border-slate-200 hover:border-brand-orange/40 text-xs sm:text-sm font-display font-bold text-slate-700 hover:text-brand-orange transition-all shadow-xs hover:shadow-card group cursor-pointer"
+            >
+              <span>
+                {showDetailedRubric
+                  ? 'Thu gọn bảng phân rã điểm chi tiết'
+                  : 'Xem phân rã barem điểm chi tiết 3 vòng (15 tiêu chí)'}
+              </span>
+              {showDetailedRubric ? (
+                <ChevronUp className="w-4 h-4 text-brand-orange group-hover:-translate-y-0.5 transition-transform" />
+              ) : (
+                <ChevronDown className="w-4 h-4 text-brand-orange group-hover:translate-y-0.5 transition-transform" />
+              )}
+            </button>
+          </div>
+        )}
+
+        {/* Detailed Scoring Rubric: 3 Rounds (Collapsible) */}
+        {content.comprehensiveScoring && (
+          <div className={`space-y-8 mb-14 ${showDetailedRubric ? 'block' : 'hidden'}`}>
+            {content.comprehensiveScoring.rounds.map((round) => (
+              <div
+                key={round.roundId}
+                className="glass-card rounded-2xl border border-slate-200/90 shadow-card overflow-hidden"
+              >
+                <div className="p-5 sm:p-6 bg-slate-50/80 border-b border-slate-200/80 flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <Badge variant="blue">{round.weight}</Badge>
+                      <span className="text-xs font-mono text-slate-500 font-bold">
+                        Thang điểm: {round.totalPoints}đ
+                      </span>
+                    </div>
+                    <h3 className="font-display font-bold text-lg sm:text-xl text-slate-900">
+                      {round.title}
+                    </h3>
+                  </div>
+                  {round.notes && (
+                    <p className="text-xs text-slate-600 max-w-md italic leading-relaxed">
+                      📌 {round.notes}
+                    </p>
+                  )}
+                </div>
+
+                <div className="divide-y divide-slate-100">
+                  {round.criteria.map((crit, cIdx) => (
+                    <div
+                      key={cIdx}
+                      className="p-4 sm:p-5 grid grid-cols-12 gap-4 hover:bg-slate-50/50 transition-colors items-center"
+                    >
+                      <div className="col-span-12 sm:col-span-5 font-display font-bold text-sm text-slate-900 flex items-start gap-2">
+                        <span className="text-xs font-mono text-slate-400 mt-0.5">
+                          0{cIdx + 1}.
+                        </span>
+                        <span>{crit.name}</span>
+                      </div>
+                      <div className="col-span-9 sm:col-span-5 text-xs text-slate-600 leading-relaxed">
+                        {crit.description}
+                      </div>
+                      <div className="col-span-3 sm:col-span-2 text-right">
+                        <span className="inline-block px-3 py-1 rounded-lg bg-orange-50 border border-brand-orange/30 text-brand-orange font-mono font-bold text-xs sm:text-sm">
+                          {crit.points}đ
+                        </span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {/* 3 Core Principles */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">

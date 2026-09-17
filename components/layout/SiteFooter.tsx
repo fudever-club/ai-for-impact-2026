@@ -53,8 +53,9 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
                 <li key={link.id}>
                   <a
                     href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    target={link.href.startsWith('http') ? '_blank' : undefined}
+                    rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    download={link.href.endsWith('.docx') ? 'So_tay_thi_sinh_AI-for-Impact-2026_V4.docx' : undefined}
                     className="hover:text-brand-orange transition-colors inline-flex items-center gap-1.5 group font-medium"
                   >
                     <span>{link.label}</span>
@@ -83,7 +84,34 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <p>{content.footer.copyright}</p>
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3">
+            <p>{content.footer.copyright}</p>
+            {content.footer.developerCredit && (
+              <>
+                <span className="hidden sm:inline text-slate-300">•</span>
+                <a
+                  href={content.footer.developerCredit.url || 'https://fudever.com'}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-2.5 py-1 rounded-lg bg-white border border-slate-200/80 shadow-xs hover:border-blue-400 hover:shadow-card hover:-translate-y-0.5 transition-all group"
+                  title="FU-DEVER Club"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={content.footer.developerCredit.logoUrl}
+                    alt={content.footer.developerCredit.teamName}
+                    className="w-5 h-5 object-contain group-hover:scale-105 transition-transform"
+                  />
+                  <span className="font-mono text-[11px] font-semibold text-slate-700 group-hover:text-blue-600 transition-colors">
+                    {content.footer.developerCredit.text}{' '}
+                    <span className="text-blue-600 font-bold">
+                      {content.footer.developerCredit.teamName}
+                    </span>
+                  </span>
+                </a>
+              </>
+            )}
+          </div>
           <div className="flex items-center gap-2 font-mono text-[11px] text-slate-600">
             <ShieldCheck className="w-3.5 h-3.5 text-brand-orange" />
             <span>{content.event.domain} • Single Source of Truth</span>
