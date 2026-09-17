@@ -150,22 +150,40 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
                 <span className="text-[11px] font-mono text-brand-orange font-semibold">ONLINE JUDGE</span>
               </div>
 
-              {/* Compiler Specs */}
-              <div className="p-5 space-y-4 font-mono text-xs">
-                {content.programmingChallenge.languages.map((lang, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3 rounded-xl bg-slate-800/70 border border-slate-700/60 space-y-1 hover:border-brand-orange/40 transition-colors"
-                  >
-                    <div className="flex items-center justify-between">
-                      <span className="font-bold text-brand-cyan text-sm">{lang.name}</span>
-                      <span className="text-[11px] text-slate-400">{lang.version}</span>
+              {/* Compiler Specs with official Svgl language icons */}
+              <div className="p-5 space-y-3.5 font-mono text-xs">
+                {content.programmingChallenge.languages.map((lang, idx) => {
+                  const iconSrc =
+                    lang.name.includes('C++') ? '/icons/cpp.svg' :
+                    lang.name.includes('Java') ? '/icons/java.svg' :
+                    lang.name.includes('Python') || lang.name.includes('PyPy') ? '/icons/python.svg' :
+                    null;
+
+                  return (
+                    <div
+                      key={idx}
+                      className="p-3 rounded-xl bg-slate-800/70 border border-slate-700/60 space-y-1 hover:border-brand-orange/50 transition-colors group"
+                    >
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-2">
+                          {iconSrc && (
+                            /* eslint-disable-next-line @next/next/no-img-element */
+                            <img
+                              src={iconSrc}
+                              alt={lang.name}
+                              className="w-4 h-4 object-contain group-hover:scale-110 transition-transform"
+                            />
+                          )}
+                          <span className="font-bold text-brand-cyan text-sm">{lang.name}</span>
+                        </div>
+                        <span className="text-[11px] text-slate-400">{lang.version}</span>
+                      </div>
+                      <div className="text-[11px] text-slate-200 overflow-x-auto whitespace-nowrap py-0.5 font-mono">
+                        $ {lang.compiler}
+                      </div>
                     </div>
-                    <div className="text-[11px] text-slate-200 overflow-x-auto whitespace-nowrap py-0.5">
-                      $ {lang.compiler}
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {content.documents.rulesUrl && (

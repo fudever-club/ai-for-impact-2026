@@ -83,18 +83,31 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
             </div>
           )}
 
-          {/* AI Tools Policy Notice */}
-          <div className="glass-card p-6 sm:p-7 rounded-2xl flex items-start gap-4 border border-blue-200/80 shadow-card">
+          {/* AI Tools Policy Notice with Svgl icons */}
+          <div className="glass-card p-6 sm:p-7 rounded-2xl flex items-start gap-4 border border-blue-200/80 shadow-card hover:shadow-card-hover hover:border-blue-400 transition-all">
             <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0 mt-1 shadow-xs">
               <Bot className="w-6 h-6" />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-2.5">
               <h4 className="font-display font-bold text-base text-slate-900">
                 {content.evaluation.allowedToolsNotice.title}
               </h4>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {content.evaluation.allowedToolsNotice.content}
               </p>
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <span className="text-[11px] font-mono text-slate-500 font-medium">Hỗ trợ tự do:</span>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/icons/openai.svg" alt="OpenAI" className="w-3.5 h-3.5 object-contain" />
+                  <span>OpenAI / ChatGPT</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/icons/claude.svg" alt="Claude" className="w-3.5 h-3.5 object-contain" />
+                  <span>Anthropic Claude</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
