@@ -57,6 +57,16 @@ export function generateMetadata({ params }: LocalePageProps): Metadata {
       locale: params.locale === 'vi' ? 'vi_VN' : 'en_US',
       type: 'website',
     },
+    icons: {
+      icon: [
+        { url: '/favicon.ico', sizes: 'any' },
+        { url: '/icon.svg', type: 'image/svg+xml' },
+        { url: '/icon.png', type: 'image/png', sizes: '64x64' },
+      ],
+      apple: [
+        { url: '/apple-touch-icon.png', sizes: '256x256' },
+      ],
+    },
   };
 }
 

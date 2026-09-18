@@ -50,6 +50,16 @@ export const metadata: Metadata = {
     description: 'AI for Impact 2026 – Agentic Innovation Challenge',
     images: ['/brand/hero-banner.jpg'],
   },
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon.png', type: 'image/png', sizes: '64x64' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '256x256' },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
