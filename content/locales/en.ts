@@ -311,7 +311,7 @@ export const enContent: CompetitionContent = {
     title: 'Frequently Asked Questions',
     subtitle: 'Everything you need to know before registering for the challenge',
     moreHelp: 'Need personal assistance?',
-    contactBtn: 'Contact Organizers',
+    contactBtn: 'Join Zalo Support Group',
     items: [
       {
         id: 'faq-1',
@@ -323,7 +323,7 @@ export const enContent: CompetitionContent = {
         id: 'faq-2',
         question: 'What is the team size? Can I apply individually?',
         answer:
-          'Each team must have 3 to 5 official members, nominating 1 team leader as the primary contact. If you do not have a team yet, join the competition Discord/Facebook community to connect and match with fellow peers.',
+          'Each team must have 3 to 5 official members, nominating 1 team leader as the primary contact. If you do not have a team yet, join the competition Zalo support group to connect and match with fellow peers.',
       },
       {
         id: 'faq-3',
@@ -451,7 +451,7 @@ export const enContent: CompetitionContent = {
     workshops: [
       {
         session: 'Workshop 1',
-        dateStr: '14:00 – 17:00 | Wednesday, Oct 07, 2026',
+        dateStr: 'October 07, 2026',
         title: 'Deconstructing and Repairing an AI Agent',
         instructor: 'MSc. Tran Thi To Tam',
         focus:
@@ -463,7 +463,7 @@ export const enContent: CompetitionContent = {
       },
       {
         session: 'Workshop 2',
-        dateStr: '14:00 – 17:00 | Thursday, Oct 08, 2026',
+        dateStr: 'October 08, 2026',
         title: 'Evaluation, Security & Incident Recovery',
         instructor: 'Technical Advisory Board (learnharness.org)',
         focus:
@@ -477,7 +477,7 @@ export const enContent: CompetitionContent = {
       },
       {
         session: 'Workshop 3',
-        dateStr: '14:00 – 17:00 | Friday, Oct 09, 2026',
+        dateStr: 'October 09, 2026',
         title: 'Mock Run & Cloud Deployment',
         instructor: 'MSc. Le Thien Nhat Quang & Mentorship Team',
         focus:
@@ -1088,6 +1088,7 @@ export const enContent: CompetitionContent = {
     links: {
       handbook: 'Contestant Handbook & Rules',
       registration: 'Registration Form',
+      supportGroup: 'Zalo Support Group',
       fanpage: 'Official Fanpage',
     },
   },

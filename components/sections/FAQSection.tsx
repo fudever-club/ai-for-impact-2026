@@ -31,7 +31,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
             <Button
               variant="outline"
               size="md"
-              href={content.contact.fanpageUrl}
+              href={content.contact.supportGroupUrl}
               external
               icon={<MessageCircle className="w-4 h-4 text-blue-600" />}
             >

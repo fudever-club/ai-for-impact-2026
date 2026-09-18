@@ -134,13 +134,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
             </div>
 
             {/* Quick Stats Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-slate-200/80 w-full">
-              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-brand-orange/40 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
-                <span className="block font-display font-black text-lg sm:text-xl text-slate-900 tracking-tight leading-snug">
-                  {content.hero.quickStats.teams}
-                </span>
-                <span className="text-xs text-slate-500 font-medium mt-1">Quy mô thí sinh</span>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-200/80 w-full">
               <div className="p-3 rounded-xl bg-orange-50/70 border border-orange-200/80 hover:border-brand-orange hover:-translate-y-0.5 transition-all flex flex-col justify-between">
                 <span className="block font-display font-black text-lg sm:text-xl text-brand-orange tracking-tight leading-snug">
                   {content.hero.quickStats.duration}

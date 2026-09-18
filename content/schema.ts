@@ -164,7 +164,8 @@ export const SiteConfigSchema = z
     domain: NonEmptyString,
     eventLocation: NonEmptyString,
     contactEmail: z.string().email(),
-    fanpageUrl: HttpsUrlSchema,
+    supportGroupUrl: HttpsUrlSchema,
+    fanpageUrl: HttpsUrlSchema.optional(),
     registration: z
       .object({
         url: HttpsUrlSchema,
@@ -681,7 +682,8 @@ export const CompetitionContentSchema = z
             handbook: NonEmptyString,
             rules: NonEmptyString.optional(),
             registration: NonEmptyString,
-            fanpage: NonEmptyString,
+            supportGroup: NonEmptyString.optional(),
+            fanpage: NonEmptyString.optional(),
           })
           .strict(),
       })

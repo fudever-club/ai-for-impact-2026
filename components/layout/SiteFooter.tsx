@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Locale, CompetitionViewModel } from '../../content/types';
-import { ExternalLink, ShieldCheck, Mail, Facebook } from 'lucide-react';
+import { ExternalLink, ShieldCheck, Mail, MessageCircle } from 'lucide-react';
 
 interface SiteFooterProps {
   locale: Locale;
@@ -25,13 +25,13 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
             </p>
             <div className="flex items-center gap-4 pt-2">
               <a
-                href={content.contact.fanpageUrl}
+                href={content.contact.supportGroupUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-xs font-mono text-slate-700 hover:text-blue-600 transition-colors bg-white px-3 py-1.5 rounded-lg border border-slate-200 shadow-xs"
               >
-                <Facebook className="w-3.5 h-3.5 text-blue-600" />
-                Fanpage chính thức
+                <MessageCircle className="w-3.5 h-3.5 text-blue-600" />
+                Nhóm Zalo hỗ trợ
               </a>
               <a
                 href={`mailto:${content.contact.email}`}

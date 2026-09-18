@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CompetitionStage } from '../../content/types';
 import { Badge } from '../ui/Badge';
-import { Calendar, Award, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 
 interface JourneyPathProps {
   stages: CompetitionStage[];
@@ -81,23 +81,9 @@ export const JourneyPath: React.FC<JourneyPathProps> = ({ stages }) => {
                     {stage.title}
                   </h3>
 
-                  <p className="text-sm text-slate-600 leading-relaxed mb-4">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {stage.summary}
                   </p>
-
-                  <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-200/80 flex items-start gap-2.5">
-                    <CheckCircle2
-                      className={`w-4 h-4 shrink-0 mt-0.5 ${
-                        isTechnical ? 'text-brand-orange' : 'text-brand-cyan'
-                      }`}
-                    />
-                    <div className="text-xs text-slate-800 leading-normal">
-                      <span className="font-semibold text-slate-500 block mb-0.5">
-                        Sản phẩm đầu ra / Kết quả:
-                      </span>
-                      {stage.output}
-                    </div>
-                  </div>
                 </div>
               </div>
 

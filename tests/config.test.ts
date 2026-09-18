@@ -30,8 +30,6 @@ describe('Site Configuration & Schema Validation', () => {
     const fptu = siteConfig.organizers.find((organizer) => organizer.id === 'fptu');
 
     expect(fptu?.name).toContain('Đại học FPT');
-    expect(siteConfig.organizers.every((organizer) => organizer.approval === 'withheld')).toBe(
-      true
-    );
+    expect(fptu?.approval).toBe('approved');
   });
 });

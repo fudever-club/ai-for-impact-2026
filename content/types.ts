@@ -83,7 +83,8 @@ export interface SiteConfig {
   domain: string;
   eventLocation: string;
   contactEmail: string;
-  fanpageUrl: string;
+  supportGroupUrl: string;
+  fanpageUrl?: string;
   registration: {
     url: string;
     opensAt: string;
@@ -441,7 +442,8 @@ export interface CompetitionContent {
       handbook: string;
       rules?: string;
       registration: string;
-      fanpage: string;
+      supportGroup?: string;
+      fanpage?: string;
     };
   };
 }
@@ -461,7 +463,8 @@ export interface CompetitionViewModel
   registration: SiteConfig['registration'];
   contact: {
     email: string;
-    fanpageUrl: string;
+    supportGroupUrl: string;
+    fanpageUrl?: string;
   };
   documents: {
     handbookUrl?: string;

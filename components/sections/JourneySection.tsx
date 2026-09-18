@@ -129,7 +129,7 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
                         </span>
                         <div className="flex items-center gap-1.5 text-[11px] font-mono text-slate-500">
                           <Calendar className="w-3 h-3 text-brand-orange" />
-                          <span>{ws.dateStr.split('|')[0].trim()}</span>
+                          <span>{ws.dateStr}</span>
                         </div>
                       </div>
 

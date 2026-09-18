@@ -160,7 +160,7 @@ describe('production competition view-model', () => {
     expect(serialized).not.toContain('disputedFacts');
   });
 
-  it('removes navigation for unavailable prize and organizer sections', async () => {
+  it('removes navigation for unavailable prize section and unlisted organizer anchor', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
     if (!viewModelModule) return;
@@ -190,7 +190,7 @@ describe('production competition view-model', () => {
     expect(enFaq.answer).not.toMatch(/accessible via|top navigation|links on this website/i);
   });
 
-  it('keeps withheld organizer attribution out of public copy', async () => {
+  it('keeps withheld organizer attribution out of public copy while exposing approved host', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
     if (!viewModelModule) return;
@@ -205,14 +205,22 @@ describe('production competition view-model', () => {
           disclaimer: viewModel.footer.disclaimer,
         },
       });
-      expect(viewModel.organizers.items).toEqual([]);
+      expect(viewModel.organizers.items).toEqual([
+        {
+          id: 'fptu',
+          name: 'Trường Đại học FPT Đà Nẵng',
+          shortName: 'FPT University Đà Nẵng',
+          role: 'Đơn vị chỉ đạo & đăng cai tổ chức',
+          logo: '/brand/fpt-university.png',
+        },
+      ]);
       expect(publicAttributionCopy).not.toMatch(
-        /FPT|ICPDP|Kỹ thuật Phần mềm|Software Engineering|BM SE|BM CF|CF Department/i
+        /ICPDP|Kỹ thuật Phần mềm|Software Engineering|BM SE|BM CF|CF Department/i
       );
     }
 
     expect(JSON.stringify({ viContent, enContent })).not.toMatch(
-      /FPT|ICPDP|Kỹ thuật Phần mềm|Software Engineering|BM SE|BM CF|CF Department/i
+      /ICPDP|Kỹ thuật Phần mềm|Software Engineering|BM SE|BM CF|CF Department/i
     );
   });
 

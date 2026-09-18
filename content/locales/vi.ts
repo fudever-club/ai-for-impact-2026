@@ -310,7 +310,7 @@ export const viContent: CompetitionContent = {
     title: 'Câu hỏi thường gặp',
     subtitle: 'Mọi điều bạn cần biết trước khi nộp đơn tham gia cuộc thi',
     moreHelp: 'Bạn còn thắc mắc cần hỗ trợ trực tiếp?',
-    contactBtn: 'Liên hệ Ban Tổ chức',
+    contactBtn: 'Tham gia nhóm Zalo hỗ trợ',
     items: [
       {
         id: 'faq-1',
@@ -322,7 +322,7 @@ export const viContent: CompetitionContent = {
         id: 'faq-2',
         question: 'Quy mô đội thi là bao nhiêu người? Chưa có đội có đăng ký được không?',
         answer:
-          'Mỗi đội thi gồm từ 3 đến 5 thành viên chính thức, trong đó cử ra 01 đội trưởng đại diện liên lạc. Nếu bạn chưa có đội, hãy tham gia nhóm cộng đồng của cuộc thi hoặc liên hệ fanpage để được hỗ trợ ghép đội với các bạn có cùng chí hướng.',
+          'Mỗi đội thi gồm từ 3 đến 5 thành viên chính thức, trong đó cử ra 01 đội trưởng đại diện liên lạc. Nếu bạn chưa có đội, hãy tham gia nhóm Zalo hỗ trợ của cuộc thi để được hỗ trợ ghép đội với các bạn có cùng chí hướng.',
       },
       {
         id: 'faq-3',
@@ -455,7 +455,7 @@ export const viContent: CompetitionContent = {
     workshops: [
       {
         session: 'Buổi 1',
-        dateStr: '14h00 – 17h00 | Thứ Tư, 07/10/2026',
+        dateStr: 'Ngày 07/10',
         title: 'Hiểu và Sửa một AI Agent',
         instructor: 'ThS. Trần Thị Tố Tâm',
         focus:
@@ -467,7 +467,7 @@ export const viContent: CompetitionContent = {
       },
       {
         session: 'Buổi 2',
-        dateStr: '14h00 – 17h00 | Thứ Năm, 08/10/2026',
+        dateStr: 'Ngày 08/10',
         title: 'Evaluation, Security và Recovery',
         instructor: 'Hội đồng Chuyên môn Kỹ thuật (learnharness.org)',
         focus:
@@ -481,7 +481,7 @@ export const viContent: CompetitionContent = {
       },
       {
         session: 'Buổi 3',
-        dateStr: '14h00 – 17h00 | Thứ Sáu, 09/10/2026',
+        dateStr: 'Ngày 09/10',
         title: 'Mock Run & Deployment',
         instructor: 'ThS. Lê Thiện Nhật Quang & Đội ngũ Mentors',
         focus:
@@ -1085,6 +1085,7 @@ export const viContent: CompetitionContent = {
     links: {
       handbook: 'Sổ tay Thí sinh & Thể lệ',
       registration: 'Biểu mẫu đăng ký',
+      supportGroup: 'Nhóm Zalo hỗ trợ',
       fanpage: 'Fanpage chính thức',
     },
   },

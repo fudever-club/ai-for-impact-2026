@@ -20,7 +20,13 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
           subtitle={content.organizers.subtitle}
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          className={
+            content.organizers.items.length === 1
+              ? 'max-w-lg mx-auto'
+              : 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6'
+          }
+        >
           {content.organizers.items.map((org) => (
             <div
               key={org.id}
@@ -30,7 +36,7 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
                 {/* Logo or Typographic Badge */}
                 <div className="h-16 flex items-center justify-start mb-4">
                   {org.logo ? (
-                    <div className="relative h-12 w-36">
+                    <div className="relative h-14 w-48">
                       <Image
                         src={org.logo}
                         alt={org.name}

@@ -192,11 +192,23 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
       label: content.footer.links.registration,
       href: config.registration.url,
     },
-    {
-      id: 'fanpage',
-      label: content.footer.links.fanpage,
-      href: config.fanpageUrl,
-    },
+    ...(config.supportGroupUrl
+      ? [
+          {
+            id: 'supportGroup',
+            label: content.footer.links.supportGroup ?? 'Nhóm Zalo hỗ trợ',
+            href: config.supportGroupUrl,
+          },
+        ]
+      : config.fanpageUrl
+        ? [
+            {
+              id: 'fanpage',
+              label: content.footer.links.fanpage ?? 'Fanpage chính thức',
+              href: config.fanpageUrl,
+            },
+          ]
+        : []),
   ];
   if (documents.handbookUrl) {
     footerLinks.unshift({
@@ -242,6 +254,7 @@ export function getCompetitionViewModel(locale: Locale): CompetitionViewModel {
     },
     contact: {
       email: config.contactEmail,
+      supportGroupUrl: config.supportGroupUrl,
       fanpageUrl: config.fanpageUrl,
     },
     documents,
