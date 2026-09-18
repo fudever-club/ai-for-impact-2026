@@ -16,9 +16,9 @@ Specialized development, design, and verification workflow for the official **AI
 
 2. **Brand & Identity Invariants**:
    - **No Unofficial Competition Logo**: The contest does not possess a graphic emblem. Use strictly the typographic Brand Lockup (`AI FOR IMPACT 2026`).
-   - **Official FPT 3-Color Vector Symbol**: The header brand lockup features [`components/icons/FptSymbol.tsx`](file:///c:/Users/ADMIN/_Project/AIforImpact/components/icons/FptSymbol.tsx) inside a frosted gradient-bordered tile representing the host institution (Trường Đại học FPT Đà Nẵng).
+   - **Official FPT 3-Color Vector Symbol & Favicon Suite**: The header brand lockup features [`components/icons/FptSymbol.tsx`](file:///c:/Users/ADMIN/_Project/AIforImpact/components/icons/FptSymbol.tsx). The browser favicon and app icons are strictly generated via `scripts/build-favicons.mjs` producing multi-resolution FPT 3-color icons (`app/favicon.ico`, `app/icon.svg`, `public/icon.svg`, `public/apple-touch-icon.png`).
    - **Developer Credit & FU-DEVER Brand**: Website footer must include the official *"Developed by FU-DEVER"* badge linking directly to [`https://fudever.com`](https://fudever.com).
-   - **Organizers Display**: Official FPT University Da Nang logo (`/brand/fpt-university.png`) represents the directing & organizing body.
+   - **Organizers Display (`#organization`)**: Clean, dignified centered institution card (`max-w-2xl mx-auto`) featuring official FPT University Da Nang logo (`/brand/fpt-university.png`) without cliché filler cards.
 
 3. **Design System (Clean Tech Light)**:
    - **Backgrounds**: Crisp white (`#FFFFFF`) and layered porcelain slate (`#F8FAFC`, `#F1F5F9`).

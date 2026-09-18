@@ -26,6 +26,8 @@
 3. **Nhận diện Thương hiệu & Logo (Competition Brand Invariant)**:
    - **Cuộc thi này KHÔNG CÓ LOGO CHÍNH THỨC**: Tuyệt đối không tự ý tạo, import, suy đoán hoặc sử dụng file ảnh logo giả lập cho cuộc thi. File cũ `public/images/logo.png` không phải logo cuộc thi và đã bị loại bỏ hoàn toàn khỏi dự án.
    - **Quy cách nhận diện**: Nhận diện cuộc thi sử dụng thuần túy Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`) kết hợp **Biểu tượng FPT 3 màu vector chuẩn nhận diện** (`FptSymbol.tsx`) tại Header, logo Trường Đại học FPT Đà Nẵng tại mục Đơn vị chủ trì, và huy hiệu bản quyền CLB FU-DEVER ([`fudever.com`](https://fudever.com)) tại Footer.
+   - **Biểu tượng Favicon & Tab Trình duyệt**: Bắt buộc dùng bộ biểu tượng FPT 3 màu vector (`#08509F`, `#F27123`, `#51B748`) trên nền squircle trắng (`app/favicon.ico`, `app/icon.svg`, `public/icon.svg`, `public/apple-touch-icon.png`) do `scripts/build-favicons.mjs` biên dịch. Tuyệt đối không để sót favicon CodeMosaic cũ hay file ảnh tùy tiện.
+   - **Khu vực Đơn vị Tổ chức (`#organization`)**: Hiển thị thẻ trung tâm đối xứng (`max-w-2xl mx-auto`), trang trọng, rõ ràng (Huy hiệu vai trò, Logo FPTU, Tên trường, Campus Đà Nẵng). Tuyệt đối không chèn các thẻ phụ tiếp thị sáo rỗng (cliché).
 
 ---
 

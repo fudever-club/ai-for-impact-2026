@@ -116,13 +116,20 @@ AIforImpact/
 ├── docs/                          # Kho Tài liệu Kỹ thuật & Lưu trữ
 │   ├── ARCHITECTURE.md            # Tài liệu Kiến trúc Hệ thống chi tiết
 │   ├── CODE_AUDIT.md              # Báo cáo kiểm định chất lượng 5 trục
-│   ├── decisions/                 # Architecture Decision Records (ADR-001, ADR-002, ADR-003)
+│   ├── LOCKED_FACTS.md            # Hồ sơ khóa dữ liệu thực tế cuộc thi
+│   ├── decisions/                 # Architecture Decision Records (ADR-001, ADR-002, ADR-003, ADR-004)
 │   ├── references/raw_materials/  # Tài liệu kế hoạch gốc, thể lệ Word (.docx) & ghi chú
 │   └── archive/scratch/           # Lưu trữ tài liệu phân tích kỹ thuật
 ├── public/                        # Tài nguyên Tĩnh & SVG Icons (Svgl)
+│   ├── apple-touch-icon.png       # Apple Touch Icon 256x256
+│   ├── favicon.ico                # Favicon FPT 3 màu (12.7 KB)
+│   ├── icon.svg                   # Vector SVG icon
+│   ├── icon.png                   # PNG icon
 │   ├── brand/                     # Logo FU-DEVER, FPT University, Posters
 │   ├── docs/                      # Sổ tay thí sinh chính thức (.docx)
 │   └── icons/                     # Vector SVGL (C, C++, Java, Python, Gemini, DeepSeek, Claude, OpenAI, Docker, Zalo)
+├── scripts/                       # Kịch bản tự động hóa
+│   └── build-favicons.mjs         # Trình biên dịch đa kích thước Favicon FPT (@resvg/resvg-js)
 ├── tests/                         # Vitest Test Suites (52 tests passed 100%)
 ├── AGENTS.md                      # Chỉ thị Bất biến & Quy chuẩn Vận hành Agent
 ├── README.md                      # Tài liệu dự án (Tài liệu này)
@@ -137,8 +144,12 @@ AIforImpact/
 1. **Cuộc thi KHÔNG CÓ LOGO CHÍNH THỨC**:
    - Tuyệt đối không tự ý tạo, import, suy đoán hoặc sử dụng file ảnh logo giả lập cho cuộc thi.
    - Nhận diện cuộc thi sử dụng thuần túy **Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`)** kết hợp **Biểu tượng FPT 3 màu vector chuẩn nhận diện** tại Header, logo chính thức **Trường Đại học FPT Đà Nẵng** và đơn vị bảo trợ công nghệ **CLB Lập Trình FU-DEVER** ([`fudever.com`](https://fudever.com)).
-2. **Ngôn ngữ Giao diện**: Giao diện tiếng Việt chuẩn hóa, đã tinh giản bỏ nút chuyển đổi ngôn ngữ để tạo trải nghiệm tập trung.
-3. **Bảo tồn Dữ liệu (SSOT)**: Không hardcode bất kỳ con số vận hành nào trực tiếp trong JSX; toàn bộ phải đi qua `site-config.ts`.
+2. **Biểu tượng Favicon & Tab Trình duyệt**:
+   - Sử dụng bộ biểu tượng vector FPT 3 màu chuẩn nhận diện (`app/favicon.ico`, `app/icon.svg`, `public/icon.svg`, `public/apple-touch-icon.png`) do `scripts/build-favicons.mjs` biên dịch, xóa bỏ hoàn toàn tàn dư CodeMosaic.
+3. **Khu vực Đơn vị Tổ chức (`#organization`)**:
+   - Hiển thị dưới dạng **Thẻ trung tâm đối xứng (`max-w-2xl mx-auto`)**, trang trọng, rõ ràng. Không sử dụng các thẻ phụ tiếp thị sáo rỗng (cliché).
+4. **Ngôn ngữ Giao diện**: Giao diện tiếng Việt chuẩn hóa, đã tinh giản bỏ nút chuyển đổi ngôn ngữ để tạo trải nghiệm tập trung.
+5. **Bảo tồn Dữ liệu (SSOT)**: Không hardcode bất kỳ con số vận hành nào trực tiếp trong JSX; toàn bộ phải đi qua `site-config.ts`.
 
 ---
 

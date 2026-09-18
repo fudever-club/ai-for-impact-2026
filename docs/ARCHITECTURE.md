@@ -52,7 +52,8 @@ flowchart TD
         Prizes["PrizesSection (Podium Quán quân + Withheld Gates)"]
         FAQ["FAQSection (Accordion tiếp cận a11y)"]
         Register["RegisterSection (Quy trình 3 bước + CTA)"]
-        Footer["SiteFooter (Liên hệ BTC + Tài liệu)"]
+        Organizers["OrganizersSection (Thẻ FPTU Đối xứng max-w-2xl)"]
+        Footer["SiteFooter (Huy hiệu FU-DEVER + Liên kết SSOT)"]
 
         Page --> Header
         Page --> Hero
@@ -61,8 +62,9 @@ flowchart TD
         Page --> Themes
         Page --> Evaluation
         Page --> Prizes
-        Page --> FAQ
         Page --> Register
+        Page --> FAQ
+        Page --> Organizers
         Page --> Footer
     end
 ```
@@ -77,22 +79,29 @@ AIforImpact/
 │   ├── [locale]/
 │   │   ├── layout.tsx             # Locale-aware layout wrapper
 │   │   └── page.tsx               # Trang đích chính (Server Component)
-│   ├── favicon.ico                # Favicon chính thức
+│   ├── favicon.ico                # Favicon nhị phân đa độ phân giải FPT 3 màu (12.7 KB)
+│   ├── icon.svg                   # Vector SVG icon chính thức
+│   ├── icon.png                   # PNG icon 64x64
 │   ├── globals.css                # CSS Variables, Utility Classes, Shimmer keyframes
 │   └── layout.tsx                 # Root layout (Fonts Google: Inter, Space Grotesk, JetBrains Mono)
 ├── components/                    # Thành phần Giao diện
+│   ├── icons/                     # Vector icons nội bộ (FptSymbol.tsx)
 │   ├── layout/                    # Thành phần Khung (SiteHeader, SiteFooter)
-│   ├── sections/                  # 9 Khối nội dung chính của landing page
+│   ├── sections/                  # Các khối nội dung chính của landing page
 │   │   ├── HeroSection.tsx        # Hero với Countdown & CTA Shimmer
 │   │   ├── AboutSection.tsx       # Bối cảnh & Mục tiêu AI for Impact
 │   │   ├── JourneySection.tsx     # 5 Chặng thi tuần tự
-│   │   ├── ProgrammingChallengeSection.tsx # Terminal ICPC Compiler Specs
+│   │   ├── ProgrammingChallengeSection.tsx # Terminal ICPC Compiler Specs & Svgl
+│   │   ├── StageComparisonSection.tsx      # Bảng đối soát Vòng Kỹ thuật vs Chung kết
+│   │   ├── AgentAnatomySection.tsx         # 4 Lớp giải phẫu AI Agent & Ranh giới MVP
 │   │   ├── ThemesSection.tsx      # 5 Lĩnh vực bài toán tác động xã hội
+│   │   ├── TeamRolesSection.tsx   # Phân vai chiến thuật đội hình 4-5 thành viên
 │   │   ├── EvaluationSection.tsx  # Cơ cấu chấm điểm (15-15-70)
 │   │   ├── PrizesSection.tsx      # Bục trao giải thưởng
+│   │   ├── RegisterSection.tsx    # Hướng dẫn đăng ký & 6 câu hỏi video ý tưởng
 │   │   ├── FAQSection.tsx         # Câu hỏi thường gặp
-│   │   └── RegisterSection.tsx    # Hướng dẫn đăng ký & CTA
-│   ├── ui/                        # Các nguyên tử UI dùng chung (Button, Card, Badge)
+│   │   └── OrganizersSection.tsx  # Thẻ FPTU Đối xứng max-w-2xl (Clean Centered Showcase)
+│   ├── ui/                        # Các nguyên tử UI dùng chung (Button, Card, Badge, Accordion)
 │   └── visuals/                   # Đồ họa chuyên sâu (AgentNetworkVisual, JourneyPath)
 ├── content/                       # Quản lý Nội dung & SSOT
 │   ├── locales/                   # Bản dịch (vi.ts, en.ts)
@@ -101,13 +110,20 @@ AIforImpact/
 │   ├── types.ts                   # TypeScript interfaces định nghĩa cấu trúc dữ liệu
 │   └── view-model.ts              # Xử lý nội suy dữ liệu và logic bục giải thưởng
 ├── docs/                          # Tài liệu Kỹ thuật & ADR
-│   ├── decisions/                 # Architecture Decision Records (ADR-001, ADR-002)
+│   ├── decisions/                 # Architecture Decision Records (ADR-001, 002, 003, 004)
 │   ├── ARCHITECTURE.md            # Tài liệu Kiến trúc Hệ thống này
-│   └── CODE_AUDIT.md              # Báo cáo kiểm định chất lượng mã nguồn
+│   ├── CODE_AUDIT.md              # Báo cáo kiểm định chất lượng mã nguồn
+│   └── LOCKED_FACTS.md            # Hồ sơ khóa dữ liệu thực tế cuộc thi
 ├── public/                        # Tài nguyên tĩnh
-│   ├── brand/                     # Logo đơn vị tổ chức (FPT University, ICPDP)
-│   └── icons/                     # SVG Icons chuẩn hóa từ Svgl (C++, Java, Python, AI)
-├── tests/                         # Bộ kiểm thử tự động Vitest
+│   ├── apple-touch-icon.png       # Apple Touch Icon 256x256
+│   ├── favicon.ico                # Favicon FPT 3 màu (12.7 KB)
+│   ├── icon.svg                   # Vector SVG icon
+│   ├── icon.png                   # PNG icon
+│   ├── brand/                     # Logo Trường ĐH FPT Đà Nẵng, FU-DEVER, Posters
+│   └── icons/                     # SVG Icons chuẩn hãng từ Svgl (C, C++, Java, Python, Gemini, DeepSeek, Docker, Zalo)
+├── scripts/                       # Kịch bản tự động hóa
+│   └── build-favicons.mjs         # Trình biên dịch đa kích thước Favicon FPT (@resvg/resvg-js)
+├── tests/                         # Bộ kiểm thử tự động Vitest (52/52 pass 100%)
 │   ├── config.test.ts             # Kiểm thử toàn vẹn SSOT
 │   ├── content-model.test.ts      # Kiểm thử nội suy biến mẫu & mutation
 │   ├── dates.test.ts              # Kiểm thử định dạng thời gian & múi giờ

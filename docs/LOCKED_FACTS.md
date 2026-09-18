@@ -21,12 +21,14 @@
 | **Địa điểm tổ chức** | Trường Đại học FPT Đà Nẵng | Kế hoạch V6 (dòng 1, 17) |
 | **Thời gian tổng thể** | Gần 7 tuần: Từ **14/09/2026** đến **31/10/2026** | Sổ tay V4 (dòng 6), Kế hoạch V6 (dòng 16) |
 | **Quy chuẩn Logo** | **KHÔNG CÓ LOGO CHÍNH THỨC** (chỉ dùng Typographic Brand Lockup `AI FOR IMPACT 2026` + Biểu tượng FPT vector 3 màu + Logo Trường Đại học FPT Đà Nẵng) | Quyết định BTC & Invariant |
+| **Favicon & App Icon** | **Biểu tượng FPT 3 màu vector** (`#08509F`, `#F27123`, `#51B748`) trên nền squircle trắng (`app/favicon.ico`, `app/icon.svg`, `public/icon.svg`, `public/apple-touch-icon.png`). Đã loại bỏ hoàn toàn favicon CodeMosaic cũ. | Quyết định BTC & ADR-0004 |
 
 ---
 
 ## 2. Đơn vị Chỉ đạo & Tổ chức (Organizing Bodies)
 
 1. **Đơn vị chỉ đạo & Đăng cai:** Trường Đại học FPT Đà Nẵng (Logo chính thức: `/brand/fpt-university.png`).
+   - **Quy chuẩn hiển thị trên giao diện:** Hiển thị dưới dạng **Thẻ Trưng bày Trung tâm Đối xứng** (`max-w-2xl mx-auto`), gồm: Huy hiệu vai trò `Đơn vị chỉ đạo & đăng cai tổ chức`, Logo chính thức kích thước lớn, Tên trường trang trọng và Định vị địa chỉ `Campus Đà Nẵng • Khu đô thị FPT City, Q. Ngũ Hành Sơn, TP. Đà Nẵng`. Tuyệt đối không thêm các thẻ phụ tiếp thị sáo rỗng (cliché).
 2. **Đơn vị điều phối & Thường trực:** Phòng Hợp tác Quốc tế & Phát triển Cá nhân (ICPDP FPTU Đà Nẵng).
    - Email: `icpdp.dn@fe.edu.vn`
    - Kênh hỗ trợ thí sinh chính thức (Zalo): `https://zalo.me/g/ukzv6t0i6ctyj16lfrum`
@@ -180,3 +182,15 @@ Theo Kế hoạch Sự kiện V6 (dòng 425–449):
 3. **Agent Loop:** Vòng lặp nhận yêu cầu, phân tích, gọi công cụ, kiểm tra kết quả và quyết định bước tiếp theo.
 4. **Harness:** Vô lăng, phanh, cảm biến – lọc tài liệu hết hạn, chặn prompt injection, bắt buộc xác nhận trước khi ghi dữ liệu, cơ chế retry có giới hạn, ghi log đầy đủ.
 5. **Evaluation:** Bộ ca kiểm thử tự động, chạy so sánh trước và sau khi tối ưu.
+
+---
+
+## 10. Nhật ký Điều chỉnh & Cập nhật Hồ sơ (Locked Facts Revision History)
+
+| Phiên bản | Ngày cập nhật | Nội dung điều chỉnh chính | Căn cứ chỉ đạo |
+| :---: | :---: | :--- | :--- |
+| **v1.0** | 17/09/2026 | Khởi tạo bảng khóa dữ liệu từ Sổ tay Thí sinh V4 và Kế hoạch Sự kiện V6. Khóa 5 chặng thi, 5 chủ đề, cơ cấu giải thưởng 5 bậc. | Tài liệu gốc Nhà trường |
+| **v1.1** | 18/09/2026 | Gia hạn đăng ký đến 23:59:59 ngày 25/09/2026; tích hợp link Nhóm Zalo hỗ trợ (`zalo.me`); cập nhật lịch training 07/10, 08/10, 09/10; ẩn quy mô và ghi chú sản phẩm đầu ra; ánh xạ CNAME `AI.Impact.fptu.vn`. | Chỉ đạo trực tiếp từ BTC |
+| **v1.2** | 18/09/2026 | Bổ sung Biểu tượng FPT 3 màu vector tại Header; tích hợp bộ SVG Svgl chuẩn hãng (C, Gemini, DeepSeek, HuggingFace, Docker, Zalo). | Quyết định BTC & ADR-0003 |
+| **v1.3** | 18/09/2026 | Tái cấu trúc khu vực Đơn vị Tổ chức thành thẻ trung tâm đối xứng (`max-w-2xl mx-auto`), loại bỏ các thẻ phụ cliché; thay thế toàn bộ favicon CodeMosaic bằng bộ icon FPT 3 màu đa độ phân giải (`scripts/build-favicons.mjs`); xóa bỏ dead code `lib/i18n.ts`. | Quyết định BTC & ADR-0004 |
+
