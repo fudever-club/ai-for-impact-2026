@@ -444,8 +444,9 @@ export const viContent: CompetitionContent = {
   },
   organizers: {
     badge: 'ĐƠN VỊ TỔ CHỨC',
-    title: 'Đơn vị Chỉ đạo, Thường trực & Ban Chuyên môn',
-    subtitle: 'Sự đồng hành của các đơn vị uy tín tạo nên chuẩn mực học thuật và bảo chứng chất lượng cuộc thi.',
+    title: 'Đơn vị Chỉ đạo & Đăng cai Tổ chức',
+    subtitle:
+      'Trường Đại học FPT Đà Nẵng khởi xướng, bảo chứng chất lượng học thuật và đăng cai tổ chức cuộc thi AI for Impact 2026.',
   },
   trainingDetails: {
     badge: 'CHƯƠNG TRÌNH HUẤN LUYỆN CHUYÊN SÂU',

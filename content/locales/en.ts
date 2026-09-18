@@ -606,9 +606,10 @@ export const enContent: CompetitionContent = {
     ],
   },
   organizers: {
-    badge: 'ORGANIZING BODIES',
-    title: 'Governing, Executive & Academic Board',
-    subtitle: 'Institutional partnerships ensuring academic rigor, transparency, and high competition standards.',
+    badge: 'ORGANIZING BODY',
+    title: 'Directing & Host Institution',
+    subtitle:
+      'FPT University Da Nang directs academic standards and hosts the AI for Impact 2026 competition.',
   },
   philosophyQuote: {
     quote:
