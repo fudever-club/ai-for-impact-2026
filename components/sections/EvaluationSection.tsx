@@ -2,7 +2,7 @@ import React from 'react';
 import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Badge } from '../ui/Badge';
-import { Bot, CheckCircle2, Download, ExternalLink, FileText, Headphones, MessageCircle } from 'lucide-react';
+import { Bot, CheckCircle2, Download, ExternalLink, FileText, Headphones } from 'lucide-react';
 
 interface EvaluationSectionProps {
   locale: Locale;
@@ -71,9 +71,14 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
                   href={content.contact.supportGroupUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-brand-orange text-white font-display font-bold text-xs sm:text-sm hover:bg-orange-600 shadow-sm hover:shadow-card hover:-translate-y-0.5 transition-all duration-200"
+                  className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-brand-orange text-white font-display font-bold text-xs sm:text-sm hover:bg-orange-600 shadow-sm hover:shadow-card hover:-translate-y-0.5 transition-all duration-200 group"
                 >
-                  <MessageCircle className="w-4 h-4" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/icons/zalo.svg"
+                    alt="Zalo"
+                    className="w-4 h-4 object-contain rounded-xs shadow-2xs group-hover:scale-105 transition-transform"
+                  />
                   <span>{locale === 'vi' ? 'Tham gia Nhóm Zalo Hỗ trợ' : 'Join Zalo Support Group'}</span>
                   <ExternalLink className="w-3.5 h-3.5 opacity-80" />
                 </a>
