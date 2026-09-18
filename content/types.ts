@@ -355,6 +355,12 @@ export interface CompetitionContent {
     };
   };
   stage4Challenge?: Stage4ChallengeDetail;
+  stage4RunOfShow?: {
+    badge: string;
+    title: string;
+    subtitle: string;
+    timeline: Stage5ScheduleItem[];
+  };
   stage5RunOfShow?: {
     badge: string;
     title: string;
@@ -371,7 +377,7 @@ export interface CompetitionContent {
     subMotto: string;
     author: string;
   };
-  stageComparison: {
+  stageComparison?: {
     badge: string;
     title: string;
     subtitle: string;

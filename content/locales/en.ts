@@ -19,7 +19,7 @@ export const enContent: CompetitionContent = {
   nav: {
     links: [
       { id: 'about', label: 'About', href: '#about' },
-      { id: 'journey', label: '5-Stage Journey', href: '#journey' },
+      { id: 'journey', label: '4-Stage Journey', href: '#journey' },
       { id: 'challenge', label: 'Thinking Challenge', href: '#challenge' },
       { id: 'themes', label: 'Themes', href: '#themes' },
       { id: 'evaluation', label: 'Evaluation', href: '#evaluation' },
@@ -43,11 +43,11 @@ export const enContent: CompetitionContent = {
     },
     daysLeftText: 'Time remaining to apply',
     registerCta: 'Register Your Team',
-    journeyCta: 'Explore the 5 Stages',
+    journeyCta: 'Explore the 4 Stages',
     quickStats: {
       teams: '40–50 Teams',
       duration: '7 Weeks Journey',
-      stages: '5 Milestones',
+      stages: '4 Milestones',
     },
   },
   about: {
@@ -83,7 +83,7 @@ export const enContent: CompetitionContent = {
   },
   journey: {
     badge: 'COMPETITION JOURNEY',
-    title: '5 Stages from Conception to Grand Finale',
+    title: '4 Stages from Conception to Grand Finale',
     subtitle:
       'At each milestone, teams receive resources and deliver concrete outputs.',
     schedulePending: 'Schedule pending organizer confirmation',
@@ -93,15 +93,15 @@ export const enContent: CompetitionContent = {
         title: 'Registration & Idea Proposal',
         shortTitle: 'Registration & Idea',
         summary:
-          'Teams register via the official Google Form and prepare an idea pitch video following organizer guidance.',
-        output: 'Team Profile + 1 Video Pitch ≤ 3 min (Problem, Target Users, AI Architecture, Social Impact).',
+          'Teams register via the official Google Form and prepare idea proposal documentation following organizer guidance.',
+        output: 'Team Profile + Solution Proposal Document (Problem, Target Users, AI Architecture, Social Impact).',
       },
       'stage-2': {
         title: 'Qualification – Programming Thinking Challenge',
         shortTitle: 'Algorithmic Challenge',
         summary:
           'A {duration} in-person algorithmic contest adhering to ICPC Global 2024 standards. Exactly 1 laptop per team. Automated scoring on hidden/public tests.',
-        output: 'Real-time live scoreboard. Top {qualifiedTeams} teams qualify for the Training phase and Technical Round.',
+        output: 'Real-time live scoreboard. Top {qualifiedTeams} teams qualify for the Training phase and Grand Finale.',
       },
       'stage-3': {
         title: 'Intensive Training & Workshop Series',
@@ -111,18 +111,11 @@ export const enContent: CompetitionContent = {
         output: '8 test cases, 2 security tests, 1 timeout test, trace report, and 1 deployed accessible online demo.',
       },
       'stage-4': {
-        title: 'Technical Round – Harness Engineering Challenge',
-        shortTitle: 'Harness Engineering',
-        summary:
-          'Student Support Resolution Agent challenge: Fix context leaks, security flaws, and approval gates in a faulty baseline agent repository.',
-        output: 'Automated test results and the Engineering Review determine which teams advance to the Grand Finale.',
-      },
-      'stage-5': {
         title: 'Grand Finale – Build Sprint & Demo Day',
         shortTitle: 'Grand Finale & Demo Day',
         summary:
-          'An on-site sprint on top of a frozen baseline with live surprise constraints, followed by Demo Day pitches and the award ceremony.',
-        output: 'Functional production MVP, impact report, AI evaluation artifacts, video demo, pitch deck & awards.',
+          'An on-site sprint on top of a prepared baseline with live surprise constraints, followed by Demo Day pitches and the award ceremony.',
+        output: 'Functional production MVP, impact report, AI evaluation artifacts, pitch deck & awards.',
       },
     },
   },
@@ -226,25 +219,20 @@ export const enContent: CompetitionContent = {
     weights: [
       {
         stage: 'Stage 1: Idea Proposal',
-        percent: '15%',
-        summary: 'Problem urgency, solution originality, proposed AI architecture, and pitch video clarity.',
+        percent: '30%',
+        summary: 'Problem urgency, solution originality, proposed AI architecture, and social impact potential.',
       },
       {
-        stage: 'Stage 4: Technical Round (Harness)',
-        percent: '15%',
-        summary: '70% automated hidden test verification + 30% Engineering Review explaining traces and test design.',
-      },
-      {
-        stage: 'Stage 5: Grand Finale & Demo Day',
+        stage: 'Stage 4: Grand Finale & Demo Day',
         percent: '70%',
         summary: 'Working MVP, architectural depth, 20-point on-site diff verification, community impact, and live pitching.',
       },
     ],
     principles: [
       {
-        title: 'Graded by Hidden Test Suites',
+        title: 'Graded by ICPC Standard Test Suites',
         description:
-          'Eliminating subjectivity: Technical rounds execute hidden test cases with identical business logic but alternate data to test true generalization.',
+          'Eliminating subjectivity: Algorithmic qualification evaluates code automatically via public and hidden tests adhering to international standards.',
       },
       {
         title: 'Trace Review & Code Ownership',
@@ -345,9 +333,9 @@ export const enContent: CompetitionContent = {
       },
       {
         id: 'faq-6',
-        question: 'How does the Technical Round differ from the Grand Finale?',
+        question: 'How does the Grand Finale take place?',
         answer:
-          'In the Technical Round, you DO NOT build your own project. You receive a buggy benchmark agent created by the organizers and must diagnose and fix its harness. In the Grand Finale, you build and pitch your own team project.',
+          'At the Grand Finale (Stage 4), teams participate in an on-site 2-hour Build Sprint to integrate live surprise constraints onto their prepared baseline, followed by direct pitching and demo before the evaluation committee.',
       },
       {
         id: 'faq-7',
@@ -381,66 +369,10 @@ export const enContent: CompetitionContent = {
       },
       {
         step: '03',
-        title: 'Submit Video Pitch',
-        desc: 'Record a video ≤ 3 minutes submitted via Google Drive by 23:59 on September 28 addressing 6 core questions.',
+        title: 'Submit Proposal Profile',
+        desc: 'Prepare and submit your solution proposal profile via the official form before the registration deadline.',
       },
     ],
-    proposalQuestionsCard: {
-      badge: 'PROPOSAL VIDEO STANDARDS',
-      title: '6 Core Questions for Your Idea Video (Stage 1)',
-      subtitle:
-        'Deadline 23:59 on September 28, 2026. The ≤ 3-minute video must decisively address these 6 questions for evaluation:',
-      questions: [
-        {
-          id: 'q1',
-          order: '01',
-          question: 'What is the problem and who is suffering from it?',
-          intent: 'Identify specific target beneficiaries and verified real-world pain points',
-          scoringTip:
-            'Avoid generic statements; provide a concrete user persona and situational context.',
-        },
-        {
-          id: 'q2',
-          order: '02',
-          question: 'How are they managing the problem today?',
-          intent: 'Analyze current workarounds and workflow bottlenecks',
-          scoringTip:
-            'Highlight the specific limitations of manual or traditional processes that the AI Agent resolves.',
-        },
-        {
-          id: 'q3',
-          order: '03',
-          question: 'What concrete actions will the Agent execute (and what tools are needed)?',
-          intent: '[Key Technical Rubric] Detail the tool catalog and operational loop',
-          scoringTip:
-            'High scoring area: Do not just say "AI does everything". List 5–7 specific APIs/tools and state transitions.',
-        },
-        {
-          id: 'q4',
-          order: '04',
-          question: 'What must the Agent NEVER be allowed to do?',
-          intent: '[Key Safety Rubric] Establish safety bounds and Harness Guardrails',
-          scoringTip:
-            'High scoring area: State clear barriers (never delete student records, never commit without explicit approval).',
-        },
-        {
-          id: 'q5',
-          order: '05',
-          question: 'If the Agent fails or hallucinates, what are the user consequences?',
-          intent: 'Operational risk awareness and damage mitigation architecture',
-          scoringTip:
-            'Demonstrate graceful fallback, confidence scoring, and seamless human-in-the-loop escalation.',
-        },
-        {
-          id: 'q6',
-          order: '06',
-          question: 'Where is data sourced, and how trustworthy is it?',
-          intent: 'Data provenance, privacy constraints, and validity checks',
-          scoringTip:
-            'Enforce 100% Mock Data for sensitive records and include an automatic TTL filter for outdated rules.',
-        },
-      ],
-    },
     ctaText: 'Open Official Registration Form',
   },
   trainingDetails: {
@@ -494,62 +426,9 @@ export const enContent: CompetitionContent = {
       desc: 'Each finalist team gets 45 minutes of direct architecture review with industry mentors to unblock technical hurdles before Demo Day.',
     },
   },
-  stage4Challenge: {
-    badge: 'STAGE 4 TECHNICAL CHALLENGE',
-    title: 'Harness Engineering Challenge',
-    targetAgent: 'Student Support Resolution Agent',
-    baselineScore: '~42.5 / 100 points',
-    description:
-      'Teams receive source code for an Agent with 6 intentional business logic and security bugs. The mission is to establish a robust Harness, patch flaws, write independent tests, and survive a Live Incident.',
-    intentionalFlaws: [
-      {
-        id: 'flaw-1',
-        name: 'Outdated Regulations Retrieval',
-        risk: 'Agent quotes expired institutional rules, misinforming students on exam eligibility.',
-        resolution: 'Add temporal validity metadata and status filters to the retrieval pipeline.',
-      },
-      {
-        id: 'flaw-2',
-        name: 'Unprotected Mutation Gate',
-        risk: 'Agent mutates student records or files appeals without human-in-the-loop confirmation.',
-        resolution: 'Require explicit user approval gates before invoking state-changing tools.',
-      },
-      {
-        id: 'flaw-3',
-        name: 'Infinite Loop on Tool Error',
-        risk: 'External API 500 errors cause runaway retry loops that rapidly exhaust token budgets.',
-        resolution: 'Implement Max Retries = 3 with a Circuit Breaker and operator fallback notification.',
-      },
-      {
-        id: 'flaw-4',
-        name: 'Cross-Student Data Leakage',
-        risk: 'User queries cross boundaries and access other students private records in the same session.',
-        resolution: 'Enforce strict Session ID scoping, PII tokenization, and context isolation.',
-      },
-      {
-        id: 'flaw-5',
-        name: 'Prompt Injection Vulnerability',
-        risk: 'Adversarial user inputs override system directives and execute unauthorized tools.',
-        resolution: 'Isolate system instructions from untrusted user content with input guardrails.',
-      },
-      {
-        id: 'flaw-6',
-        name: 'Missing Execution Traces',
-        risk: 'Lack of execution logs prevents verification and automated regression testing.',
-        resolution: 'Emit structured JSON traces with token metrics for every tool invocation.',
-      },
-    ],
-    liveIncident: {
-      title: 'Live Incident Scenario',
-      scenario:
-        'During the contest, the committee will trigger a coordinated network incident (mass API timeouts) to evaluate resilience.',
-      evaluationCriteria:
-        'The Agent must gracefully degrade, avoid unhandled crashes, notify the student, and escalate to staff without failing silently.',
-    },
-  },
-  stage5RunOfShow: {
+  stage4RunOfShow: {
     badge: 'OCTOBER 31 GRAND FINAL SCHEDULE',
-    title: 'Grand Final Run-of-Show Timeline',
+    title: 'Grand Final Run-of-Show Timeline (Stage 4)',
     subtitle:
       'High-tempo, fully transparent execution featuring the on-site 2-hour Build Sprint and 20-point Git Diff audit.',
     timeline: [
@@ -569,14 +448,14 @@ export const enContent: CompetitionContent = {
         time: '08:10 – 10:10',
         activity: '2-Hour Live Build Sprint',
         details:
-          '120 minutes of continuous on-site programming to integrate surprise constraints into the baseline locked on Oct 28. Evaluated via Git Diff!',
+          '120 minutes of continuous on-site programming to integrate surprise constraints into the prepared baseline. Evaluated via Git Diff!',
         highlight: true,
       },
       {
         time: '10:10',
         activity: 'Code Freeze & Full Submission',
         details:
-          'Repositories are frozen. Teams submit GitHub Link, Web Demo, Impact Report, ≤ 3m Demo Video, and Presentation Slides.',
+          'Repositories are frozen. Teams submit GitHub Link, Web Demo, Impact Report, AI evaluation artifacts, and Presentation Slides.',
       },
       {
         time: '10:10 – 10:30',
@@ -594,7 +473,7 @@ export const enContent: CompetitionContent = {
         time: '12:00 – 12:15',
         activity: 'Judges Deliberation & Scoring Tally',
         details:
-          'Secretariat computes combined scores across all 3 rounds: 15% Round 1 + 15% Round 2 + 70% Round 3.',
+          'The Secretariat and Jury compile and consolidate final evaluation results according to contest regulations.',
       },
       {
         time: '12:15 – 12:45',
@@ -617,62 +496,7 @@ export const enContent: CompetitionContent = {
     subMotto: 'What will you have to build, and what will you finally deliver?',
     author: 'Core Philosophy – AI for Impact 2026 Handbook',
   },
-  stageComparison: {
-    badge: 'CLEAR DISTINCTION',
-    title: 'Two Different Products – Do Not Confuse',
-    subtitle: 'The fundamental difference between the Technical Challenge and the Grand Final',
-    intro:
-      'In the Technical Challenge, teams do not build a product from scratch. Instead, they receive a pre-built flawed AI Agent and must diagnose and fix it. Only in the Grand Final do teams build their own solution.',
-    columns: {
-      aspect: 'Comparison Metric',
-      technicalRound: 'Technical Challenge (Oct 17)',
-      finalRound: 'Grand Final & Demo Day (Oct 31)',
-    },
-    rows: [
-      {
-        aspect: 'Problem Domain',
-        technicalRound:
-          'Universal for all teams: Student Support Resolution Agent (academic regulations & ticket triage).',
-        finalRound: 'Unique to each team, based on the proposal registered in Stage 1.',
-      },
-      {
-        aspect: 'Starting Point',
-        technicalRound:
-          'A working private repository containing at least 6 deliberate bugs (baseline score ~42.5/100).',
-        finalRound: 'A baseline prepared at home and locked at 23:59 on October 28.',
-      },
-      {
-        aspect: 'Core Objective',
-        technicalRound:
-          'Diagnose bugs, repair the agent control harness, harden security, handle API timeouts, and verify with metrics.',
-        finalRound:
-          'During a 2-hour Build Sprint: finalize the MVP and integrate an unannounced surprise constraint on-site.',
-      },
-      {
-        aspect: 'Deliverables',
-        technicalRound:
-          'Fixed repository + at least 10 custom automated test cases + trace report + 6-metric improvement report.',
-        finalRound:
-          '4-part submission package: Functional MVP link + Impact Report + AI Evaluation Evidence + Video (≤ 3m) & Slide deck.',
-      },
-      {
-        aspect: 'Evaluation Method',
-        technicalRound:
-          '70% automated hidden test suite + 30% Engineering Review (defending 2 randomly designated execution traces).',
-        finalRound:
-          '100% Academic Jury evaluation across 6 criteria, including 20 points reserved for on-site work via git diff.',
-      },
-      {
-        aspect: 'Scoring Weight',
-        technicalRound:
-          '15% of total competition score (Qualifying Top 15 teams to the Grand Final).',
-        finalRound:
-          '70% of total competition score (Determining the Champion with same-day awards ceremony).',
-      },
-    ],
-    conclusion:
-      'The Technical Challenge exists for a practical reason: if you have never repaired a broken Agent, you will not know where your own Agent breaks when building from scratch.',
-  },
+
   agentAnatomy: {
     badge: 'SYSTEM ANATOMY',
     title: 'The Five Mandatory Layers of an AI Agent',
@@ -911,19 +735,12 @@ export const enContent: CompetitionContent = {
           stage: 'Stage 3 (Training)',
           action: 'Attended 3 hands-on workshops, fixed 3 baseline bugs, and submitted required test suites.',
           outcome:
-            'Elevated baseline score by over 15 percentage points, securing technical round eligibility.',
+            'Mastered harness engineering techniques and prepared the baseline repository for the Grand Finale.',
         },
         {
-          stage: 'Stage 4 (Technical Round)',
+          stage: 'Stage 4 (Grand Final)',
           action:
-            'Received flawed agent (42.5/100), repaired 6 bugs in priority sequence, handled live API timeout.',
-          outcome:
-            'Reached 91.50/100 public score, defended 2 traces, and qualified into the Top 15 Grand Final.',
-        },
-        {
-          stage: 'Stage 5 (Grand Final)',
-          action:
-            'Locked baseline at 23:59 Oct 28. On Oct 31, integrated surprise constraint: conflicting destination data and elderly personas.',
+            'Prepared baseline thoroughly. On Oct 31, integrated surprise constraint: conflicting destination data and elderly personas.',
           outcome: 'Completed on-site integration in 2 hours, delivered compelling pitch, and won top podium award.',
         },
       ],
@@ -935,13 +752,13 @@ export const enContent: CompetitionContent = {
     badge: 'SCORING MATRIX',
     title: 'Comprehensive & Empirical Evaluation Rubric',
     subtitle:
-      'Harmonizing automated hidden test execution, technical engineering review, and on-site sprint capability.',
-    formula: 'Final Score = (15% × Concept Round) + (15% × Technical Challenge) + (70% × Grand Final)',
+      'Harmonizing automated test execution, technical engineering review, and on-site sprint capability.',
+    formula: 'Final Score = (30% × Concept Round) + (70% × Grand Final)',
     rounds: [
       {
         roundId: 'round-1',
-        title: 'Stage 1: Concept Proposal & Video Pitch',
-        weight: '15% overall weight',
+        title: 'Stage 1: Concept Proposal',
+        weight: '30% overall weight',
         totalPoints: 100,
         criteria: [
           {
@@ -965,59 +782,19 @@ export const enContent: CompetitionContent = {
             description: 'Empirical measurement metrics and practical verification methods.',
           },
           {
-            name: 'Presentation quality (Video ≤ 3m)',
+            name: 'Solution proposal documentation quality',
             points: 10,
-            description: 'Coherent video answering the 6 mandatory questions with persuasive logic.',
+            description: 'Structured proposal dossier with rigorous logical analysis.',
           },
         ],
       },
       {
         roundId: 'round-4',
-        title: 'Stage 4: Technical Challenge (Harness Engineering)',
-        weight: '15% overall weight',
-        totalPoints: 100,
-        notes:
-          'Technical Round Score = (70% × Automated Hidden Tests) + (30% × Engineering Review). Selects Top 15 teams.',
-        criteria: [
-          {
-            name: 'Automated hidden test suite performance (70%)',
-            points: 70,
-            description:
-              'Task completion accuracy, active policy citation, write approval gates, injection defense, timeout resilience, token efficiency.',
-          },
-          {
-            name: 'Defense of 2 random execution traces (Review)',
-            points: 10,
-            description:
-              'Entire team articulates the Agent reasoning chain and tool selection decisions in detail.',
-          },
-          {
-            name: 'Suite of ≥ 10 custom automated test cases (Review)',
-            points: 8,
-            description:
-              'Test coverage across happy paths, boundary conditions, error recovery, and security vectors.',
-          },
-          {
-            name: 'Quantitative metric improvement report (Review)',
-            points: 7,
-            description:
-              'Tabular comparison tracking the 6 benchmark metrics relative to the initial baseline.',
-          },
-          {
-            name: 'Technical depth and individual member contribution (Review)',
-            points: 5,
-            description:
-              'Every member proves mastery of the codebase without reliance on a single author.',
-          },
-        ],
-      },
-      {
-        roundId: 'round-5',
-        title: 'Stage 5: Grand Final – 2-Hour Sprint & Demo Day',
+        title: 'Stage 4: Grand Final – 2-Hour Sprint & Demo Day',
         weight: '70% overall weight',
         totalPoints: 100,
         notes:
-          'Baseline locked at 23:59 on October 28. Judges inspect git diffs to award 20 points reserved for on-site implementation.',
+          'Judges inspect git diffs to award 20 points reserved for on-site implementation during the 2-hour Build Sprint.',
         criteria: [
           {
             name: 'Functional Product (Working Prototype / MVP)',
@@ -1060,14 +837,14 @@ export const enContent: CompetitionContent = {
     ],
     principles: [
       {
-        title: 'Hidden Test Validation',
+        title: 'ICPC Standard Test Validation',
         description:
-          'Eliminates hardcoded branching: Hidden tests share identical business logic but use randomized identifiers and inputs.',
+          'Eliminates hardcoded branching: Algorithmic qualification evaluates code automatically via public and hidden tests.',
       },
       {
-        title: 'Independent Trace Audit',
+        title: 'Source Code & Prompt Audit',
         description:
-          'Prevents uncomprehended AI code generation: Judges require engineers to trace decision cycles step-by-step.',
+          'Transparent development lifecycle: Judges evaluate prompt logs, git commits, and true system ownership.',
       },
       {
         title: 'On-Site Git Diff Verification',

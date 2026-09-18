@@ -11,7 +11,7 @@ describe('Site Configuration & Schema Validation', () => {
     const start = Date.parse(siteConfig.registration.opensAt);
     const end = Date.parse(siteConfig.registration.closesAt);
     const finalRound = Date.parse(
-      siteConfig.stages.find((stage) => stage.id === 'stage-5')!.startsAt
+      siteConfig.stages.find((stage) => stage.id === 'stage-4')!.startsAt
     );
 
     expect(start).toBeLessThan(end);

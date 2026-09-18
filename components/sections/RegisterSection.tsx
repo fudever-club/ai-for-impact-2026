@@ -49,49 +49,6 @@ export const RegisterSection: React.FC<RegisterSectionProps> = ({ locale, conten
             ))}
           </div>
 
-          {/* 6 Core Proposal Questions Card */}
-          {content.register.proposalQuestionsCard && (
-            <div className="mb-10 p-6 sm:p-8 rounded-2xl bg-white/90 border border-orange-200 text-left shadow-card">
-              <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                <Badge variant="orange">{content.register.proposalQuestionsCard.badge}</Badge>
-                <span className="text-xs font-mono text-slate-500 font-semibold">Video ≤ 3 phút • Hạn chót: 28/09/2026</span>
-              </div>
-              <h3 className="font-display font-bold text-xl sm:text-2xl text-slate-900 mb-2">
-                {content.register.proposalQuestionsCard.title}
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 mb-6 leading-relaxed">
-                {content.register.proposalQuestionsCard.subtitle}
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {content.register.proposalQuestionsCard.questions.map((q) => (
-                  <div
-                    key={q.id}
-                    className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 hover:border-brand-orange/40 hover:bg-orange-50/20 transition-all flex flex-col justify-between"
-                  >
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="font-mono text-xs font-black text-brand-orange px-2 py-0.5 rounded bg-orange-100/70 border border-orange-200">
-                          {q.order}
-                        </span>
-                        <span className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-semibold line-clamp-1">
-                          {q.intent}
-                        </span>
-                      </div>
-                      <h4 className="font-display font-bold text-sm text-slate-900 mb-2 leading-snug">
-                        {q.question}
-                      </h4>
-                    </div>
-                    <div className="pt-2 border-t border-slate-200/60 mt-2">
-                      <p className="text-[11px] text-slate-600 italic leading-relaxed">
-                        💡 <span className="font-medium text-slate-700">Mẹo:</span> {q.scoringTip}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
 
           {/* CTA & Deadline */}
           <div className="space-y-4">

@@ -25,7 +25,9 @@ interface JourneySectionProps {
 }
 
 export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content }) => {
-  const [activeDeepDive, setActiveDeepDive] = useState<'stage3' | 'stage4' | 'stage5'>('stage3');
+  const [activeDeepDive, setActiveDeepDive] = useState<'stage3' | 'stage4'>('stage3');
+
+  const finalRunOfShow = content.stage4RunOfShow ?? content.stage5RunOfShow;
 
   return (
     <section id="journey" className="py-24 relative overflow-hidden bg-slate-50/50">
@@ -40,18 +42,18 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
           subtitle={content.journey.subtitle}
         />
 
-        {/* 5-Stage Interactive Timeline Path */}
+        {/* 4-Stage Interactive Timeline Path */}
         <div className="mb-16">
           <JourneyPath stages={content.journey.stages} />
         </div>
 
-        {/* Deep Dive Section Heading & Interactive Tabs */}
-        <div className="mb-10 text-center max-w-2xl mx-auto">
+        {/* Deep-dive Tabs Header */}
+        <div className="text-center mb-10">
           <span className="text-xs font-mono uppercase tracking-widest text-brand-orange font-bold block mb-2">
             CHUYÊN SÂU TỪNG CHẶNG
           </span>
           <h3 className="font-display font-black text-xl sm:text-2xl text-slate-900 mb-6">
-            Chi tiết Chuyên môn & Thử thách Kỹ thuật
+            Chi tiết Chuyên môn & Lịch trình Thi đấu
           </h3>
 
           <div className="inline-flex p-1.5 rounded-2xl bg-slate-200/60 border border-slate-200 shadow-xs max-w-full overflow-x-auto gap-1">
@@ -76,27 +78,15 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
                   : 'text-slate-600 hover:text-slate-900'
               }`}
             >
-              <Terminal className="w-4 h-4 text-brand-orange" />
-              <span>Chặng 4: Thử thách Sửa Agent</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveDeepDive('stage5')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-display font-bold transition-all whitespace-nowrap flex items-center gap-2 ${
-                activeDeepDive === 'stage5'
-                  ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
-            >
               <Clock className="w-4 h-4 text-emerald-600" />
-              <span>Chặng 5: Lịch Chung kết 31/10</span>
+              <span>Chặng 4: Lịch Chung kết 31/10</span>
             </button>
           </div>
         </div>
 
         {/* DEEP-DIVE BLOCK 1: Stage 3 Training Workshops */}
         {content.trainingDetails && (
-          <div className={`mb-20 glass-card p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-card ${activeDeepDive === 'stage3' ? 'block' : 'hidden'}`}>
+          <div className={`mb-20 glass-card p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-card transition-all ${activeDeepDive === 'stage3' ? 'block animate-fade-in-up' : 'hidden'}`}>
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <div>
                 <Badge variant="blue">{content.trainingDetails.badge}</Badge>
@@ -199,112 +189,25 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
           </div>
         )}
 
-        {/* DEEP-DIVE BLOCK 2: Stage 4 Harness Engineering Challenge */}
-        {content.stage4Challenge && (
-          <div className={`mb-20 glass-card p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-card ${activeDeepDive === 'stage4' ? 'block' : 'hidden'}`}>
+        {/* DEEP-DIVE BLOCK 2: Stage 4 Grand Finale Run-of-Show Timeline */}
+        {finalRunOfShow && (
+          <div className={`mb-20 glass-card p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-card transition-all ${activeDeepDive === 'stage4' ? 'block animate-fade-in-up' : 'hidden'}`}>
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-              <div className="flex items-center gap-2">
-                <Badge variant="orange">{content.stage4Challenge.badge}</Badge>
-                <span className="text-xs font-mono text-slate-500 font-semibold">17/10/2026 • 70% Test ẩn + 30% Review</span>
-              </div>
-              <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 border border-orange-200 text-brand-orange text-xs font-mono font-bold">
-                <Flame className="w-3.5 h-3.5" />
-                <span>Baseline: {content.stage4Challenge.baselineScore}</span>
-              </div>
-            </div>
-
-            <h3 className="font-display text-2xl sm:text-3xl font-black text-slate-900 mb-2">
-              {content.stage4Challenge.title}
-            </h3>
-            <p className="text-sm font-mono text-slate-700 font-medium mb-4">
-              Hệ thống mục tiêu: <span className="text-brand-orange font-bold">{content.stage4Challenge.targetAgent}</span>
-            </p>
-            <p className="text-sm text-slate-600 mb-8 max-w-3xl leading-relaxed">
-              {content.stage4Challenge.description}
-            </p>
-
-            {/* 6 Intentional Flaws Grid */}
-            <div className="mb-8">
-              <h4 className="font-display font-bold text-base text-slate-900 mb-4 flex items-center gap-2">
-                <Terminal className="w-4 h-4 text-brand-orange" />
-                <span>Danh mục 06 Lỗi Cố ý Phải Khắc phục (Built-in Flaws):</span>
-              </h4>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {content.stage4Challenge.intentionalFlaws.map((flaw, fIdx) => (
-                  <div
-                    key={flaw.id}
-                    className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-xs flex flex-col justify-between hover:border-brand-orange/40 transition-all"
-                  >
-                    <div>
-                      <div className="flex items-center gap-2 mb-2">
-                        <span className="w-5 h-5 rounded-full bg-slate-900 text-white font-mono text-[10px] flex items-center justify-center font-bold">
-                          {fIdx + 1}
-                        </span>
-                        <h5 className="font-display font-bold text-xs sm:text-sm text-slate-900">
-                          {flaw.name}
-                        </h5>
-                      </div>
-                      <p className="text-xs text-red-600/90 mb-2 leading-relaxed bg-red-50/50 p-2 rounded-lg border border-red-100">
-                        ⚠️ <span className="font-medium">Rủi ro:</span> {flaw.risk}
-                      </p>
-                    </div>
-                    <div className="pt-2 border-t border-slate-100">
-                      <p className="text-xs text-blue-700 leading-relaxed bg-blue-50/40 p-2 rounded-lg border border-blue-100">
-                        ✅ <span className="font-semibold">Giải pháp:</span> {flaw.resolution}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Live Incident Scenario Alert */}
-            {content.stage4Challenge.liveIncident && (
-              <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-amber-50/90 via-orange-50/60 to-white border border-amber-200/90 shadow-card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="flex items-start sm:items-center gap-3.5">
-                  <div className="w-10 h-10 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-brand-orange shrink-0 mt-0.5 sm:mt-0 shadow-xs">
-                    <ShieldAlert className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <span className="text-[10px] font-mono text-brand-orange uppercase tracking-wider font-bold block mb-0.5">
-                      TÌNH HUỐNG THỬ THÁCH ĐỘT XUẤT
-                    </span>
-                    <h4 className="font-display font-bold text-sm sm:text-base text-slate-900">
-                      {content.stage4Challenge.liveIncident.title}
-                    </h4>
-                    <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                      {content.stage4Challenge.liveIncident.scenario}
-                    </p>
-                  </div>
-                </div>
-                <div className="sm:max-w-xs text-xs text-slate-700 bg-white/90 p-3 rounded-xl border border-amber-200 shrink-0 shadow-xs">
-                  <span className="text-brand-orange font-bold block mb-1">Chuẩn nghiệm thu:</span>
-                  {content.stage4Challenge.liveIncident.evaluationCriteria}
-                </div>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* DEEP-DIVE BLOCK 3: Stage 5 Run-of-Show Timeline */}
-        {content.stage5RunOfShow && (
-          <div className={`mb-20 glass-card p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-card ${activeDeepDive === 'stage5' ? 'block' : 'hidden'}`}>
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-              <Badge variant="orange">{content.stage5RunOfShow.badge}</Badge>
+              <Badge variant="orange">{finalRunOfShow.badge}</Badge>
               <span className="text-xs font-mono text-slate-500 font-semibold">
                 Thứ Bảy, 31/10/2026 • Trực tiếp tại Đại học FPT Đà Nẵng
               </span>
             </div>
 
             <h3 className="font-display text-2xl sm:text-3xl font-black text-slate-900 mb-2">
-              {content.stage5RunOfShow.title}
+              {finalRunOfShow.title}
             </h3>
             <p className="text-sm text-slate-600 mb-8 max-w-3xl leading-relaxed">
-              {content.stage5RunOfShow.subtitle}
+              {finalRunOfShow.subtitle}
             </p>
 
             <div className="divide-y divide-slate-100 bg-white rounded-2xl border border-slate-200/80 shadow-xs overflow-hidden">
-              {content.stage5RunOfShow.timeline.map((item, tIdx) => (
+              {finalRunOfShow.timeline.map((item, tIdx) => (
                 <div
                   key={tIdx}
                   className={`p-4 sm:p-5 grid grid-cols-12 gap-4 items-center transition-colors ${

@@ -38,6 +38,8 @@ Khi làm việc trên dự án này, Agent kích hoạt và tuân thủ các ski
 | Tên Skill | Vị trí | Mục đích & Phạm vi áp dụng |
 | :--- | :--- | :--- |
 | **`ui-ux-pro-max`** | `.agents/skills/ui-ux-pro-max/` & Global | Thiết kế giao diện cao cấp, bảng màu 60-30-10, ghép cặp typography, nhịp điệu khoảng cách, kiểm duyệt tương phản WCAG 2.2 AA. |
+| **`impeccable`** | `.agents/skills/impeccable/` | Tinh chỉnh thẩm mỹ tinh hoa, nhịp thở giao diện, micro-interactions, layout contracts và loại bỏ hoàn toàn các lỗi thiết kế thô kệch. |
+| **`motion-design`** | `.agents/skills/motion-design/` | Thiết kế chuyển động mượt mà, đường cong gia tốc tự nhiên (cubic-bezier expo/spring), GPU-accelerated 60-120fps, và hỗ trợ reduced motion. |
 | **`frontend-ui-engineering`** | Global | Xây dựng component React/Tailwind chuẩn production, quản lý responsive, trạng thái focus/hover, và khả năng tiếp cận a11y. |
 | **`aiforimpact-workflow`** | `.agents/skills/aiforimpact-workflow/` | Quy trình phát triển đặc thù của dự án: đồng bộ SSOT, build tĩnh Next.js, deploy Vercel Production, và ghi nhận tiến độ. |
 | **`agent-memory-hub`** | Global (`:8420`) | Giao tiếp với TencentDB Agent Memory Hub lưu trữ ngữ cảnh dài hạn, quyết định kiến trúc và nhật ký phiên làm việc cho tenant `aiforimpact`. |

@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Database, Wrench, Globe, Flame, Cpu } from 'lucide-react';
 
 export const AgentNetworkVisual: React.FC = () => {

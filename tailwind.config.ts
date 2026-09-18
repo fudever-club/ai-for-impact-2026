@@ -11,8 +11,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-space-grotesk)', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['var(--font-inter)', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
         mono: ['var(--font-jetbrains-mono)', 'monospace'],
       },
       colors: {
@@ -98,6 +98,11 @@ const config: Config = {
         'pulse-glow-orange': 'pulseGlowOrange 3s ease-in-out infinite',
         float: 'float 5s ease-in-out infinite',
         shimmer: 'shimmer 3s ease-in-out infinite',
+      },
+      transitionTimingFunction: {
+        'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
+        'smooth': 'cubic-bezier(0.25, 0.8, 0.25, 1)',
+        'spring': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
       },
     },
   },

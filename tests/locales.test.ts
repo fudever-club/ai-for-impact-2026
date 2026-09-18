@@ -24,7 +24,7 @@ describe('Bilingual Content Parity & Completeness', () => {
     expect(getCompetitionViewModel('en').journey.stages.map((stage) => stage.id)).toEqual(
       expectedIds
     );
-    expect(expectedIds).toEqual(['stage-1', 'stage-2', 'stage-3', 'stage-4', 'stage-5']);
+    expect(expectedIds).toEqual(['stage-1', 'stage-2', 'stage-3', 'stage-4']);
   });
 
   it('has matching theme records', () => {

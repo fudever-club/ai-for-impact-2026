@@ -128,7 +128,7 @@ describe('validated operational content', () => {
 });
 
 describe('production competition view-model', () => {
-  it('keeps all five stages while withholding only stage-3 schedule facts', async () => {
+  it('keeps all four stages while withholding only stage-3 schedule facts', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
     if (!viewModelModule) return;
@@ -146,7 +146,6 @@ describe('production competition view-model', () => {
       'stage-2',
       'stage-3',
       'stage-4',
-      'stage-5',
     ]);
     const withheldScheduleStage = viewModel.journey.stages.find(
       (stage: UnknownRecord) => stage.id === 'stage-3'
@@ -434,15 +433,14 @@ describe('production competition view-model', () => {
     }
   });
 
-  it('provides structured stage comparison between stage-4 and stage-5', async () => {
+  it('omits stage comparison after technical round removal', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
     if (!viewModelModule) return;
 
     for (const locale of ['vi', 'en'] as const) {
       const viewModel = viewModelModule.getCompetitionViewModel(locale);
-      expect(viewModel.stageComparison.rows.length).toBeGreaterThanOrEqual(5);
-      expect(viewModel.stageComparison.rows.some((r: UnknownRecord) => r.aspect.toLowerCase().includes('bài toán') || r.aspect.toLowerCase().includes('problem'))).toBe(true);
+      expect(viewModel.stageComparison).toBeUndefined();
     }
   });
 
@@ -460,15 +458,15 @@ describe('production competition view-model', () => {
     }
   });
 
-  it('provides comprehensive scoring rubric with formula and 3 rounds', async () => {
+  it('provides comprehensive scoring rubric with formula and 2 rounds', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
     if (!viewModelModule) return;
 
     for (const locale of ['vi', 'en'] as const) {
       const viewModel = viewModelModule.getCompetitionViewModel(locale);
-      expect(viewModel.comprehensiveScoring.rounds).toHaveLength(3);
-      expect(viewModel.comprehensiveScoring.formula).toContain('15%');
+      expect(viewModel.comprehensiveScoring.rounds).toHaveLength(2);
+      expect(viewModel.comprehensiveScoring.formula).toContain('30%');
       expect(viewModel.comprehensiveScoring.formula).toContain('70%');
     }
   });
@@ -484,19 +482,14 @@ describe('production competition view-model', () => {
     expect(stage2Milestone?.outcome).toContain('Top 24');
   });
 
-  it('provides 6 core questions for video proposals in both locales', async () => {
+  it('omits proposal questions card after video requirement removal', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
     if (!viewModelModule) return;
 
     for (const locale of ['vi', 'en'] as const) {
       const viewModel = viewModelModule.getCompetitionViewModel(locale);
-      expect(viewModel.register.proposalQuestionsCard).toBeDefined();
-      expect(viewModel.register.proposalQuestionsCard?.questions).toHaveLength(6);
-      viewModel.register.proposalQuestionsCard?.questions.forEach((q: UnknownRecord) => {
-        expect(q.scoringTip).toBeTruthy();
-        expect(q.intent).toBeTruthy();
-      });
+      expect(viewModel.register.proposalQuestionsCard).toBeUndefined();
     }
   });
 
@@ -513,28 +506,26 @@ describe('production competition view-model', () => {
     }
   });
 
-  it('provides stage-4 challenge details with 6 intentional flaws and live incident', async () => {
+  it('omits stage-4 challenge details after technical round removal', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
     if (!viewModelModule) return;
 
     for (const locale of ['vi', 'en'] as const) {
       const viewModel = viewModelModule.getCompetitionViewModel(locale);
-      expect(viewModel.stage4Challenge).toBeDefined();
-      expect(viewModel.stage4Challenge?.intentionalFlaws).toHaveLength(6);
-      expect(viewModel.stage4Challenge?.liveIncident).toBeDefined();
+      expect(viewModel.stage4Challenge).toBeUndefined();
     }
   });
 
-  it('provides stage-5 run-of-show timeline for October 31', async () => {
+  it('provides stage-4 run-of-show timeline for October 31', async () => {
     const viewModelModule = await loadViewModelModule();
     expect(viewModelModule).toBeDefined();
     if (!viewModelModule) return;
 
     for (const locale of ['vi', 'en'] as const) {
       const viewModel = viewModelModule.getCompetitionViewModel(locale);
-      expect(viewModel.stage5RunOfShow).toBeDefined();
-      expect(viewModel.stage5RunOfShow?.timeline.length).toBeGreaterThanOrEqual(6);
+      expect(viewModel.stage4RunOfShow).toBeDefined();
+      expect(viewModel.stage4RunOfShow?.timeline.length).toBeGreaterThanOrEqual(6);
     }
   });
 });

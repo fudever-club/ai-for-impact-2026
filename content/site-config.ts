@@ -52,15 +52,6 @@ export const siteConfig: SiteConfig = {
     {
       id: 'stage-4',
       sequence: 4,
-      startsAt: '2026-10-17T08:00:00+07:00',
-      endsAt: '2026-10-17T12:00:00+07:00',
-      theme: 'technical',
-      approval: 'approved',
-      scheduleApproval: 'approved',
-    },
-    {
-      id: 'stage-5',
-      sequence: 5,
       startsAt: '2026-10-31T08:00:00+07:00',
       theme: 'impact',
       approval: 'approved',

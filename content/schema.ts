@@ -562,6 +562,15 @@ export const CompetitionContentSchema = z
       .strict()
       .optional(),
     stage4Challenge: Stage4ChallengeDetailSchema.optional(),
+    stage4RunOfShow: z
+      .object({
+        badge: NonEmptyString,
+        title: NonEmptyString,
+        subtitle: NonEmptyString,
+        timeline: z.array(Stage5ScheduleItemSchema),
+      })
+      .strict()
+      .optional(),
     stage5RunOfShow: z
       .object({
         badge: NonEmptyString,
@@ -588,16 +597,17 @@ export const CompetitionContentSchema = z
         subtitle: NonEmptyString,
         intro: NonEmptyString,
         columns: z
-          .object({
-            aspect: NonEmptyString,
-            technicalRound: NonEmptyString,
-            finalRound: NonEmptyString,
-          })
-          .strict(),
+            .object({
+              aspect: NonEmptyString,
+              technicalRound: NonEmptyString,
+              finalRound: NonEmptyString,
+            })
+            .strict(),
         rows: z.array(StageComparisonRowSchema),
         conclusion: NonEmptyString,
       })
-      .strict(),
+      .strict()
+      .optional(),
     agentAnatomy: z
       .object({
         badge: NonEmptyString,

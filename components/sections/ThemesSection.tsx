@@ -111,44 +111,12 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
               </div>
             </div>
 
-            {/* 6 Core Video Questions */}
-            <div className="mb-8 p-6 rounded-xl bg-white border border-slate-200 shadow-xs">
-              <h4 className="font-display font-bold text-sm text-slate-900 mb-3 flex items-center justify-between">
-                <span>6 Câu hỏi cốt lõi đội phải trả lời trong Video Chặng 1</span>
-                <span className="text-xs font-normal text-slate-500 font-mono">Thời lượng ≤ 3 phút</span>
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {content.caseStudy.data.questions.map((q, qIdx) => (
-                  <div
-                    key={qIdx}
-                    className={`p-3 rounded-lg border text-xs flex items-start gap-2.5 ${
-                      q.isKey
-                        ? 'bg-orange-50/60 border-brand-orange/40 text-slate-900 font-medium'
-                        : 'bg-slate-50 border-slate-150 text-slate-600'
-                    }`}
-                  >
-                    <span className="font-mono font-bold text-slate-400 shrink-0 mt-0.5">
-                      0{qIdx + 1}.
-                    </span>
-                    <div className="space-y-0.5">
-                      <span>{q.q}</span>
-                      {q.isKey && (
-                        <span className="text-[10px] font-mono text-brand-orange font-bold block">
-                          ★ Câu ăn điểm – Hội đồng đánh giá cao ranh giới công cụ
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* 5-Stage Journey Progress */}
+            {/* 4-Stage Journey Progress */}
             <div className="space-y-3 mb-6">
               <h4 className="font-display font-bold text-sm text-slate-900 mb-2">
-                Hành trình tôi luyện qua 5 chặng của đội
+                Hành trình tôi luyện qua 4 chặng của đội
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 {content.caseStudy.data.milestones.map((m, mIdx) => (
                   <div
                     key={mIdx}

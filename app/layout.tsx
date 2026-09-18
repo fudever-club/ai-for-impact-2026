@@ -1,16 +1,10 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 
 const inter = Inter({
   subsets: ['latin', 'vietnamese'],
   variable: '--font-inter',
-  display: 'swap',
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin', 'vietnamese'],
-  variable: '--font-space-grotesk',
   display: 'swap',
 });
 
@@ -75,7 +69,7 @@ export default function RootLayout({
   return (
     <html lang="vi" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} font-sans bg-white text-slate-900 antialiased`}
+        className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-white text-slate-900 antialiased`}
       >
         {children}
       </body>

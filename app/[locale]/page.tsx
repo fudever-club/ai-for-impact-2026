@@ -8,7 +8,6 @@ import { SiteHeader } from '../../components/layout/SiteHeader';
 import { HeroSection } from '../../components/sections/HeroSection';
 import { AboutSection } from '../../components/sections/AboutSection';
 import { JourneySection } from '../../components/sections/JourneySection';
-import { StageComparisonSection } from '../../components/sections/StageComparisonSection';
 import { AgentAnatomySection } from '../../components/sections/AgentAnatomySection';
 import { ProgrammingChallengeSection } from '../../components/sections/ProgrammingChallengeSection';
 import { ThemesSection } from '../../components/sections/ThemesSection';
@@ -111,7 +110,6 @@ export default function LocalePage({ params }: LocalePageProps) {
         <AboutSection locale={locale} content={content} />
         <JourneySection locale={locale} content={content} />
         <ProgrammingChallengeSection locale={locale} content={content} />
-        <StageComparisonSection locale={locale} content={content} />
         <AgentAnatomySection locale={locale} content={content} />
         <ThemesSection locale={locale} content={content} />
         <TeamRolesSection locale={locale} content={content} />

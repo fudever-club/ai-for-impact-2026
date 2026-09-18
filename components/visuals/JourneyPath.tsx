@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { CompetitionStage } from '../../content/types';
 import { Badge } from '../ui/Badge';
 import { Calendar } from 'lucide-react';

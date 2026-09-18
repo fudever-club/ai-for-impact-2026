@@ -67,8 +67,8 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
                   <MapPin className="w-3.5 h-3.5 text-brand-orange shrink-0" />
                   <span>
                     {locale === 'vi'
-                      ? 'Campus Đà Nẵng • Khu đô thị FPT City, Q. Ngũ Hành Sơn, TP. Đà Nẵng'
-                      : 'Da Nang Campus • FPT City Urban Area, Ngu Hanh Son Dist, Da Nang'}
+                      ? 'Campus Đà Nẵng • Khu đô thị FPT City, P. Ngũ Hành Sơn, TP. Đà Nẵng'
+                      : 'Da Nang Campus • FPT City Urban Area, Ngu Hanh Son Ward, Da Nang'}
                   </span>
                 </p>
               </div>
