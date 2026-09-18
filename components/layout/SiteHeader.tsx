@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Locale, CompetitionViewModel } from '../../content/types';
 import { Button } from '../ui/Button';
-import { Menu, X, Sparkles, ExternalLink } from 'lucide-react';
+import { FptSymbol } from '../icons/FptSymbol';
+import { Menu, X, ExternalLink } from 'lucide-react';
 
 interface SiteHeaderProps {
   locale: Locale;
@@ -38,8 +39,8 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-lg"
         >
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange via-orange-500 to-blue-600 p-0.5 flex items-center justify-center shadow-md shadow-brand-orange/25 group-hover:shadow-glow-orange group-hover:scale-105 transition-all duration-300">
-            <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-brand-orange group-hover:rotate-12 transition-transform duration-300" />
+            <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center px-1">
+              <FptSymbol className="w-6 h-auto transition-transform duration-300 group-hover:scale-105" />
             </div>
           </div>
           <div className="flex flex-col">
