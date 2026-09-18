@@ -29,6 +29,11 @@
    - **Biểu tượng Favicon & Tab Trình duyệt**: Bắt buộc dùng bộ biểu tượng FPT 3 màu vector (`#08509F`, `#F27123`, `#51B748`) trên nền squircle trắng (`app/favicon.ico`, `app/icon.svg`, `public/icon.svg`, `public/apple-touch-icon.png`) do `scripts/build-favicons.mjs` biên dịch. Tuyệt đối không để sót favicon CodeMosaic cũ hay file ảnh tùy tiện.
    - **Khu vực Đơn vị Tổ chức (`#organization`)**: Hiển thị thẻ trung tâm đối xứng (`max-w-2xl mx-auto`), trang trọng, rõ ràng (Huy hiệu vai trò, Logo FPTU, Tên trường, Campus Đà Nẵng). Tuyệt đối không chèn các thẻ phụ tiếp thị sáo rỗng (cliché).
 
+4. **Lộ trình 4 Chặng & Hệ sinh thái Hỗ trợ Thí sinh**:
+   - **4 Chặng thi đấu chuẩn hóa**: Chặng 1 Đăng ký & Đề xuất Ý tưởng (không video), Chặng 2 Tư duy Lập trình ICPC, Chặng 3 Huấn luyện Thực chiến, Chặng 4 Chung kết & Demo Day (tích hợp Build Sprint 02 giờ).
+   - **Tinh giản Barem trên Web**: Tuyệt đối không đưa barem chi tiết 11 tiêu chí, thẻ phần trăm trọng số `30%/70%` hay banner công thức điểm lên landing page công khai. Toàn bộ giải đáp do BTC phụ trách qua Nhóm Zalo chính thức (`/icons/zalo.svg`) và file Sổ tay Thí sinh sạch (`So_tay_thi_sinh_AI-for-Impact-2026.docx`, không để lộ hậu tố `V4`).
+   - **Hệ thống Font Chữ Tinh gọn**: Duy trì đúng 2 font Google: `Inter` (Display/Sans) và `JetBrains Mono` (Code/Badges). Đã loại bỏ hoàn toàn `Space Grotesk`.
+
 ---
 
 ## 2. Hệ thống Kỹ năng Agent (Active Skills)
@@ -66,8 +71,12 @@ npm test
 npm run build
 ```
 
-Sau khi build thành công, xuất bản trực tiếp lên hệ thống Vercel Production:
+Sau khi build thành công, xuất bản lên hệ thống Production:
 ```bash
+# Push lên nhánh main (Kích hoạt CI Quality Gate & Tự động Deploy Vercel Production)
+git push origin main
+
+# Hoặc deploy trực tiếp qua CLI (nếu có token):
 npx vercel --prod --yes
 ```
 

@@ -45,13 +45,13 @@ flowchart TD
     subgraph UI_Sections["Tầng Giao Diện Người Dùng (Components)"]
         Header["SiteHeader (Brand Lockup + Nav)"]
         Hero["HeroSection (2026 + Shimmer CTA + Countdown)"]
-        Journey["JourneySection (5 Chặng thi tuần tự)"]
+        Journey["JourneySection (4 Chặng thi tuần tự)"]
         Challenge["ProgrammingChallengeSection (Terminal ICPC + Svgl)"]
         Themes["ThemesSection (5 Chủ đề tác động xã hội)"]
-        Evaluation["EvaluationSection (Tiêu chí 15% - 15% - 70%)"]
+        Evaluation["EvaluationSection (3 Nguyên tắc + Kênh Hỗ trợ Zalo/Sổ tay)"]
         Prizes["PrizesSection (Podium Quán quân + Withheld Gates)"]
         FAQ["FAQSection (Accordion tiếp cận a11y)"]
-        Register["RegisterSection (Quy trình 3 bước + CTA)"]
+        Register["RegisterSection (Quy trình 3 bước trực tuyến + CTA)"]
         Organizers["OrganizersSection (Thẻ FPTU Đối xứng max-w-2xl)"]
         Footer["SiteFooter (Huy hiệu FU-DEVER + Liên kết SSOT)"]
 
@@ -82,23 +82,22 @@ AIforImpact/
 │   ├── favicon.ico                # Favicon nhị phân đa độ phân giải FPT 3 màu (12.7 KB)
 │   ├── icon.svg                   # Vector SVG icon chính thức
 │   ├── icon.png                   # PNG icon 64x64
-│   ├── globals.css                # CSS Variables, Utility Classes, Shimmer keyframes
-│   └── layout.tsx                 # Root layout (Fonts Google: Inter, Space Grotesk, JetBrains Mono)
+│   ├── globals.css                # CSS Variables, Utility Classes, Shimmer keyframes, Easing Tokens
+│   └── layout.tsx                 # Root layout (Fonts Google: Inter, JetBrains Mono)
 ├── components/                    # Thành phần Giao diện
 │   ├── icons/                     # Vector icons nội bộ (FptSymbol.tsx)
 │   ├── layout/                    # Thành phần Khung (SiteHeader, SiteFooter)
 │   ├── sections/                  # Các khối nội dung chính của landing page
 │   │   ├── HeroSection.tsx        # Hero với Countdown & CTA Shimmer
 │   │   ├── AboutSection.tsx       # Bối cảnh & Mục tiêu AI for Impact
-│   │   ├── JourneySection.tsx     # 5 Chặng thi tuần tự
+│   │   ├── JourneySection.tsx     # 4 Chặng thi tuần tự
 │   │   ├── ProgrammingChallengeSection.tsx # Terminal ICPC Compiler Specs & Svgl
-│   │   ├── StageComparisonSection.tsx      # Bảng đối soát Vòng Kỹ thuật vs Chung kết
 │   │   ├── AgentAnatomySection.tsx         # 4 Lớp giải phẫu AI Agent & Ranh giới MVP
 │   │   ├── ThemesSection.tsx      # 5 Lĩnh vực bài toán tác động xã hội
 │   │   ├── TeamRolesSection.tsx   # Phân vai chiến thuật đội hình 4-5 thành viên
-│   │   ├── EvaluationSection.tsx  # Cơ cấu chấm điểm (15-15-70)
+│   │   ├── EvaluationSection.tsx  # 3 Nguyên tắc cốt lõi, Kênh Hỗ trợ Zalo & Sổ tay Thí sinh
 │   │   ├── PrizesSection.tsx      # Bục trao giải thưởng
-│   │   ├── RegisterSection.tsx    # Hướng dẫn đăng ký & 6 câu hỏi video ý tưởng
+│   │   ├── RegisterSection.tsx    # Hướng dẫn đăng ký 3 bước trực tuyến (không video)
 │   │   ├── FAQSection.tsx         # Câu hỏi thường gặp
 │   │   └── OrganizersSection.tsx  # Thẻ FPTU Đối xứng max-w-2xl (Clean Centered Showcase)
 │   ├── ui/                        # Các nguyên tử UI dùng chung (Button, Card, Badge, Accordion)
@@ -108,6 +107,11 @@ AIforImpact/
 │   ├── site-config.ts             # SINGLE SOURCE OF TRUTH (Toàn bộ sự thật vận hành)
 │   ├── schema.ts                  # Zod validation schemas
 │   ├── types.ts                   # TypeScript interfaces định nghĩa cấu trúc dữ liệu
+├── .agents/skills/                # Hệ thống Kỹ năng Agent Chuyên biệt
+│   ├── aiforimpact-workflow/      # Quy trình phát triển, SSOT & phát hành
+│   ├── motion-design/             # Kỹ thuật chuyển động mượt mà & Easing curves
+│   ├── impeccable/                # Tinh chỉnh thẩm mỹ tinh hoa & Layout contracts
+│   └── ui-ux-pro-max/             # Thiết kế giao diện & WCAG 2.2 AA accessibility
 │   └── view-model.ts              # Xử lý nội suy dữ liệu và logic bục giải thưởng
 ├── docs/                          # Tài liệu Kỹ thuật & ADR
 │   ├── decisions/                 # Architecture Decision Records (ADR-001, 002, 003, 004)

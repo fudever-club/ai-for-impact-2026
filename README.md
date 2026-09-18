@@ -34,7 +34,7 @@ Hệ thống được xây dựng trên nền tảng **Next.js 14 App Router** v
 ## 🌟 Tính năng Nổi bật
 
 - 🎨 **Clean Tech Light Design System**: Nền trắng tinh khôi kết hợp các lớp kính mờ `.glass-card` phủ sương sang trọng, điểm xuyết sắc cam FPT rực rỡ (`#FF6B00`) và xanh công nghệ hiện đại (`#2563EB`).
-- ⚡ **Single Source of Truth (SSOT)**: 100% sự thật vận hành (lịch trình 5 chặng, hạn nộp hồ sơ, Top 24, cơ cấu giải thưởng) được quy tụ tại [`content/site-config.ts`](./content/site-config.ts), tự động nội suy token mẫu qua [`content/view-model.ts`](./content/view-model.ts). Tuyệt đối không hardcode văn bản.
+- ⚡ **Single Source of Truth (SSOT)**: 100% sự thật vận hành (lịch trình 4 chặng, hạn nộp hồ sơ, Top 24, cơ cấu giải thưởng) được quy tụ tại [`content/site-config.ts`](./content/site-config.ts), tự động nội suy token mẫu qua [`content/view-model.ts`](./content/view-model.ts). Tuyệt đối không hardcode văn bản.
 - 💻 **Clean Tech Light IDE Window**: Cửa sổ môi trường lập trình ICPC với mặt kính trắng mờ (`bg-white/95 backdrop-blur-md`), thanh tiêu đề Mac Titlebar thanh lịch, nút copy lệnh biên dịch và bộ SVG vector chính hãng từ [Svgl](https://svgl.app/) (C, C++, Java, Python).
 - ⏳ **Bộ đếm Ngược Realtime (Countdown)**: Đồng bộ tự động thời hạn đóng cổng đăng ký, tự động chuyển đổi trạng thái khi hết hạn mà không cần can thiệp mã nguồn.
 - 🛡️ **Kiểm định Chất lượng Nghiêm ngặt**: 52 unit tests bao phủ 100% logic ngày tháng, tính toàn vẹn SSOT, nội suy token và cấu trúc giải thưởng.
@@ -117,7 +117,7 @@ AIforImpact/
 │   ├── ARCHITECTURE.md            # Tài liệu Kiến trúc Hệ thống chi tiết
 │   ├── CODE_AUDIT.md              # Báo cáo kiểm định chất lượng 5 trục
 │   ├── LOCKED_FACTS.md            # Hồ sơ khóa dữ liệu thực tế cuộc thi
-│   ├── decisions/                 # Architecture Decision Records (ADR-001, ADR-002, ADR-003, ADR-004)
+│   ├── decisions/                 # Architecture Decision Records (ADR-0001 đến ADR-0005)
 │   ├── references/raw_materials/  # Tài liệu kế hoạch gốc, thể lệ Word (.docx) & ghi chú
 │   └── archive/scratch/           # Lưu trữ tài liệu phân tích kỹ thuật
 ├── public/                        # Tài nguyên Tĩnh & SVG Icons (Svgl)

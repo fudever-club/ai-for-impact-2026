@@ -65,86 +65,66 @@ Mỗi đội chọn 01 trong 05 nhóm chủ đề sau:
 
 ---
 
-## 5. Lộ trình 5 Chặng thi (The 5-Stage Journey)
+## 5. Lộ trình 4 Chặng thi Chuẩn hóa (The 4-Stage Journey)
 
-### Chặng 1: Đăng ký & Nộp Video Ý tưởng (14/09 – 25/09/2026)
-- **Hình thức:** Đăng ký qua Google Form trực tuyến.
-- **Thời hạn nhận đơn:** Mở từ **14/09/2026** đến hết **23h59:59 ngày 25/09/2026** (Cập nhật gia hạn chính thức từ BTC).
-- **Nội dung:** Nhận thể lệ, 5 nhóm chủ đề. Nộp **01 video ≤ 3 phút** mô tả ý tưởng trên Google Drive.
-- **6 Câu hỏi cốt lõi video phải trả lời:**
-  1. Vấn đề là gì và ai đang chịu vấn đề đó?
-  2. Hôm nay họ đang xoay xở bằng cách nào?
-  3. Agent sẽ làm được những hành động cụ thể nào (cần những công cụ gì)? *(Ăn điểm)*
-  4. Agent tuyệt đối không được làm gì? *(Ăn điểm)*
-  5. Nếu Agent trả lời sai thì hậu quả với người dùng là gì?
-  6. Lấy dữ liệu ở đâu và dữ liệu đó đáng tin đến mức nào?
-- **Lưu ý hiển thị**: Hộp ghi chú sản phẩm đầu ra được ẩn trên giao diện theo chỉ đạo BTC.
+Theo chỉ đạo điều chỉnh chính thức từ Ban Tổ chức (ThS. Lê Thiện Nhật Quang), lộ trình cuộc thi được chuẩn hóa thành **4 Chặng thi đấu** (loại bỏ Vòng Kỹ thuật ngày 17/10, tích hợp phần thử thách lập trình trực tiếp vào ngày Chung kết 31/10):
+
+### Chặng 1: Đăng ký & Đề xuất Ý tưởng (14/09 – 25/09/2026)
+- **Hình thức:** Đăng ký trực tuyến qua Google Form.
+- **Thời hạn nhận đơn:** Mở từ **14/09/2026** đến hết **23h59:59 ngày 25/09/2026** (Gia hạn chính thức từ BTC).
+- **Yêu cầu nộp bài:** Nhận thể lệ, chọn 1 trong 5 nhóm chủ đề. Nộp hồ sơ đội thi và Bản mô tả ý tưởng/kiến trúc giải pháp (Vấn đề, Khách hàng mục tiêu, Ranh giới Agent, Tác động xã hội).
+- **Quy chế Video Ý tưởng:** **ĐÃ HỦY BỎ HOÀN TOÀN** theo chỉ đạo BTC (*"Bỏ phần video ý tưởng luôn"*). Thí sinh không phải quay video ở chặng này.
 
 ### Chặng 2: Vòng loại – Tư duy Lập trình ICPC (Thứ Sáu, 02/10/2026)
 - **Thời gian:** 08h00 – 12h00 (Thời lượng: **240 phút**).
-- **Hình thức:** Trực tiếp tại Trường Đại học FPT Đà Nẵng.
-- **Quy chế Thiết bị (One-Laptop Rule):** Mỗi đội **chỉ được sử dụng 01 laptop duy nhất** có kết nối mạng của BTC, đã cài sẵn công cụ lập trình và trình duyệt web (Chrome, Firefox, Edge). Được mang laptop dự phòng tắt nguồn để thay thế nếu máy chính hỏng.
+- **Hình thức:** Thi đấu trực tiếp tại Trường Đại học FPT Đà Nẵng.
+- **Quy chế Thiết bị (One-Laptop Rule):** Mỗi đội **chỉ được sử dụng 01 laptop duy nhất** có kết nối mạng của BTC, đã cài sẵn công cụ lập trình và trình duyệt web (Chrome, Firefox, Edge). Được mang laptop dự phòng tắt nguồn để thay thế nếu máy chính gặp sự cố phần cứng.
 - **Ngôn ngữ & Trình biên dịch (Chuẩn ICPC Global 2024 - Khai thác SVG từ Svgl):**
   - C (gcc 14.2.0, `-std=c99 -O2`, `/icons/c.svg`)
   - C++ (g++ 14.2.0, `-std=c++20 -O2`, `/icons/cpp.svg`)
   - Java 8 (javac 1.8.0) & Java 19 (javac 19.0.2, `/icons/java.svg`)
   - Python 3 (3.12.6, `-m compileall -q`, `/icons/python.svg`)
 - **Chủ đề Thuật toán:** Sắp xếp, Tìm kiếm, Quy hoạch động, Cây, Đồ thị, Số học, Hình học, Tham lam, Lý thuyết trò chơi, Pathfinding (A*, Dijkstra), Grid Map, PID Control.
-- **Cách chấm:** Hệ thống tự động chấm theo bộ test case ẩn và hiện. Đúng toàn bộ test = 1 điểm. Xếp hạng theo điểm và tổng thời gian giải (penalty).
-- **Kết quả:** Chọn ra **Top 24 đội** bước vào giai đoạn Training và Vòng Kỹ thuật.
+- **Cách chấm:** Hệ thống máy chấm tự động theo bộ test case ẩn và hiện chuẩn ICPC. Đúng toàn bộ test = 1 điểm. Xếp hạng theo điểm và tổng thời gian giải (penalty).
+- **Kết quả:** Ban Giám khảo chọn ra **Top 24 đội** xuất sắc nhất bước vào giai đoạn Huấn luyện và Vòng Chung kết.
 
-### Chặng 3: Giai đoạn Training Chuyên sâu (07/10, 08/10, 09/10/2026)
-- **03 Buổi thực hành (Đã tinh giản khung giờ chi tiết trên giao diện công khai theo chỉ đạo BTC):**
-  - **Buổi 1 (Ngày 07/10):** *Hiểu và sửa một AI Agent* (ThS. Trần Thị Tố Tâm). Nắm 5 lớp Model - Tool - Agent loop - Harness - Evaluation. Thực hành sửa baseline nâng tối thiểu 15 điểm phần trăm.
-  - **Buổi 2 (Ngày 08/10):** *Evaluation, Security và Recovery*. Chống prompt injection, bảo vệ dữ liệu, timeout, retry, trace & log (Tham khảo: `learnharness.org`). Nộp: 08 ca test, 02 ca bảo mật, 01 ca timeout, 01 trace report.
-  - **Buổi 3 (Ngày 09/10):** *Mock Run & Deployment* (ThS. Lê Thiện Nhật Quang & Mentors). Chạy thử mock contest nộp bài; học deploy hosting, đóng gói demo container (`/icons/docker.svg`). Nộp bài hợp lệ + 1 bản demo online.
-- **Mentoring Checkpoint (21/10 – 22/10):** Dành riêng cho Top 15 đội vào Chung kết (45 phút/đội với mentor chuyên môn).
+### Chặng 3: Chương trình Huấn luyện Thực chiến (07/10 – 09/10/2026)
+- **03 Buổi thực hành chuyên sâu (Đã tinh giản khung giờ chi tiết trên giao diện công khai theo chỉ đạo BTC):**
+  - **Buổi 1 (Ngày 07/10):** *Hiểu và sửa một AI Agent* (ThS. Trần Thị Tố Tâm). Nắm 5 lớp Model - Tool - Agent loop - Harness - Evaluation.
+  - **Buổi 2 (Ngày 08/10):** *Evaluation, Security và Recovery*. Chống Prompt Injection, bảo vệ dữ liệu PII, timeout, retry, trace & log (Tham khảo: `learnharness.org`).
+  - **Buổi 3 (Ngày 09/10):** *Mock Run & Deployment* (ThS. Lê Thiện Nhật Quang & Mentors). Chạy thử mock contest nộp bài; học deploy hosting, đóng gói demo container (`/icons/docker.svg`).
+- **Mentoring Checkpoint:** Buổi cố vấn chuyên môn 1-1 đồng hành cùng các đội hoàn thiện sản phẩm trước thềm Chung kết.
 
-### Chặng 4: Vòng Kỹ thuật – Harness Engineering Challenge (Thứ Bảy, 17/10/2026)
-- **Đặc trưng:** Các đội **không xây sản phẩm từ đầu** mà nhận một Agent có sẵn lỗi (Student Support Resolution Agent – baseline ~42.5/100).
-- **Bài toán chung:** Hỗ trợ sinh viên tra quy chế, kiểm tra điểm danh, điều kiện dự thi, tạo yêu cầu phúc tra, chuyển ticket cho cán bộ.
-- **Nhiệm vụ:** Sửa 6 lỗi cố ý, thêm approval gate, lọc quy định hết hạn, viết tối thiểu 10 ca kiểm thử của riêng đội, xử lý sự cố trực tiếp (Live Incident: API timeout đồng loạt).
-- **Hình thức chấm:** **70% Chấm tự động (bộ test case ẩn)** + **30% Engineering Review** (Giám khảo chỉ định 2 trace bất kỳ yêu cầu cả 4 thành viên giải thích).
-- **Trọng số:** **15% tổng điểm toàn cuộc thi**.
-- **Kết quả:** Chọn ra **Top 15 đội** vào Vòng Chung kết.
-
-### Chặng 5: Vòng Chung kết – Build Sprint 02 Giờ & Demo Day (Thứ Bảy, 31/10/2026)
-- **Đặc trưng:** Xây dựng sản phẩm riêng của chính đội mình theo ý tưởng đã đăng ký.
-- **Cơ chế Chốt bản nền (Baseline Lock) – CỰC KỲ QUAN TRỌNG:**
-  - Chuẩn bị trước tại nhà từ khi công bố Top 15.
-  - **Hạn chốt bản nền:** Đúng **23h59 ngày 28/10/2026**, toàn bộ mã nguồn phải đẩy lên repository BTC và gắn nhãn baseline; sau đó repository bị khóa.
+### Chặng 4: Vòng Chung kết & Trình diễn Sản phẩm (Thứ Bảy, 31/10/2026)
+- **Đặc trưng:** Xây dựng và hoàn thiện sản phẩm AI Agent của chính đội mình giải quyết bài toán thực tế đã đăng ký.
+- **Cơ chế Khóa mã nguồn Baseline (Baseline Code Freeze):**
+  - Chuẩn bị trước mã nguồn tại nhà.
+  - **Hạn chốt bản nền:** Đúng **23h59 ngày 28/10/2026**, toàn bộ mã nguồn phải đẩy lên repository do BTC cấp và gắn nhãn phiên bản nền; sau đó repository bị khóa.
   - **Ràng buộc bổ sung tại chỗ:** Sáng 31/10, BTC công bố ràng buộc mới mà không đội nào biết trước (nhóm người dùng mới, quy tắc an toàn mới, hoặc dữ liệu lỗi).
-  - **Chấm thi tại chỗ (20 điểm):** Ban Giám khảo có bản đối chiếu git diff giữa bản nền ngày 28/10 và bản nộp cuối sau 2 giờ thi để chấm riêng phần viết tại chỗ!
+  - **Chấm thi tại chỗ (20 điểm):** Ban Giám khảo chấm điểm dựa trên bản đối chiếu Git Diff giữa mã nguồn ngày 28/10 và bản nộp cuối sau 2 giờ thi để đánh giá trực tiếp năng lực lập trình tại chỗ!
 - **Lịch trình ngày 31/10:**
   - 08h00 – 10h10: Build Sprint (02 giờ liên tục tích hợp ràng buộc bổ sung).
   - 10h10: Freeze code và nộp toàn bộ hồ sơ (Repo + Link demo + Báo cáo tác động + Minh chứng đánh giá + Video ≤ 3p + Slide).
   - 10h30 – 12h00: Demo Day & Pitching (Mỗi đội 08 phút demo + 04 phút phản biện).
+  - 12h00 – 12h15: Hội ý Ban Giám khảo & Thư ký tổng hợp điểm theo quy chế thi.
   - 12h15 – 12h45: Công bố kết quả, trao giải và bế mạc trong ngày.
-- **Trọng số:** **70% tổng điểm toàn cuộc thi**.
 
 ---
 
-## 6. Cơ cấu Chấm điểm Toàn diện (Scoring Weights)
+## 6. Cơ cấu Đánh giá & Hệ sinh thái Hỗ trợ Thí sinh (Evaluation & Candidate Support)
 
-$$\text{Tổng điểm} = 15\% \times \text{Vòng Ý tưởng} + 15\% \times \text{Vòng Kỹ thuật} + 70\% \times \text{Vòng Chung kết}$$
+### 3 Nguyên tắc Đánh giá Cốt lõi:
+1. **Chấm tự động bằng Test Case chuẩn ICPC**: Khách quan, minh bạch, loại bỏ hoàn toàn cảm tính.
+2. **Kiểm tra Trace Log & Năng lực Làm chủ**: Thí sinh giải trình luồng tư duy và gọi tools của Agent, chứng minh thực sự làm chủ mã nguồn.
+3. **Sản phẩm phải chạy thực tế (No Fake Demo)**: Ban Giám khảo trực tiếp thao tác và kiểm tra qua link demo chạy thật trên môi trường thực.
 
-### Chi tiết Thang điểm:
-1. **Vòng Ý tưởng (100 điểm):**
-   - Tính cấp thiết và rõ ràng của vấn đề: 25đ
-   - Tính sáng tạo và khả thi của giải pháp: 25đ
-   - Mức độ ứng dụng AI/Agent: 25đ
-   - Tác động xã hội dự kiến: 15đ
-   - Chất lượng trình bày (slide/video): 10đ
-2. **Vòng Kỹ thuật (100 điểm):**
-   - 70% Điểm chấm tự động bằng bộ test ẩn (kết quả thực tế, dẫn nguồn, guardrails, timeout recovery).
-   - 30% Engineering Review (giải thích 2 trace: 30đ; 10 test tự viết: 25đ; báo cáo số liệu: 25đ; đóng góp thành viên: 20đ).
-3. **Vòng Chung kết (100 điểm):**
-   - Sản phẩm hoạt động được (Prototype/MVP chạy thật): 20đ
-   - Chiều sâu kỹ thuật AI/Agent (quản lý ngữ cảnh, guardrails): 20đ
-   - **Phần thực hiện tại chỗ (đối chiếu bản nền 28/10 & ràng buộc bổ sung): 20đ**
-   - Minh chứng dữ liệu và quy trình đánh giá AI: 15đ
-   - Báo cáo tác động & đối tượng thụ hưởng: 15đ
-   - Demo và thuyết trình (8 phút demo + 4 phút phản biện): 10đ
+### Tinh giản Barem Điểm trên Landing Page:
+- Theo chỉ đạo trực tiếp của Ban Tổ chức (*"Cũng bỏ luôn em, sẽ có nhóm support riêng nên ko cần thiết đưa hết lên web"*), các thẻ phần trăm trọng số `30%/70%`, công thức điểm tổng và bảng phân rã barem 11 tiêu chí chi tiết đã được **gỡ bỏ hoàn toàn khỏi giao diện landing page công khai**.
+- Điều này giúp trang web giữ vững phong cách Clean Tech Light tinh gọn, hiện đại, không gây quá tải nhận thức cho thí sinh.
+
+### Kênh Hỗ trợ Chuyên biệt & Sổ tay Hướng dẫn:
+- **Kênh Zalo Hỗ trợ Thí sinh:** Nhóm Zalo chính thức (`https://zalo.me/g/ukzv6t0i6ctyj16lfrum`) trang bị logo vector Zalo chính hãng, nơi Ban Tổ chức giải đáp 24/7 toàn bộ thắc mắc về thể lệ, barem điểm và kỹ thuật nộp bài.
+- **Sổ tay Thí sinh:** Phân phối trực tiếp qua file tải về [`So_tay_thi_sinh_AI-for-Impact-2026.docx`](file:///c:/Users/ADMIN/_Project/AIforImpact/public/docs/So_tay_thi_sinh_AI-for-Impact-2026_V4.docx), nhãn nút hiển thị chuẩn mực **"Tải Sổ tay Thí sinh"** (loại bỏ hoàn toàn hậu tố phiên bản nội bộ `V4`).
 
 ---
 
@@ -193,4 +173,5 @@ Theo Kế hoạch Sự kiện V6 (dòng 425–449):
 | **v1.1** | 18/09/2026 | Gia hạn đăng ký đến 23:59:59 ngày 25/09/2026; tích hợp link Nhóm Zalo hỗ trợ (`zalo.me`); cập nhật lịch training 07/10, 08/10, 09/10; ẩn quy mô và ghi chú sản phẩm đầu ra; ánh xạ CNAME `AI.Impact.fptu.vn`. | Chỉ đạo trực tiếp từ BTC |
 | **v1.2** | 18/09/2026 | Bổ sung Biểu tượng FPT 3 màu vector tại Header; tích hợp bộ SVG Svgl chuẩn hãng (C, Gemini, DeepSeek, HuggingFace, Docker, Zalo). | Quyết định BTC & ADR-0003 |
 | **v1.3** | 18/09/2026 | Tái cấu trúc khu vực Đơn vị Tổ chức thành thẻ trung tâm đối xứng (`max-w-2xl mx-auto`), loại bỏ các thẻ phụ cliché; thay thế toàn bộ favicon CodeMosaic bằng bộ icon FPT 3 màu đa độ phân giải (`scripts/build-favicons.mjs`); xóa bỏ dead code `lib/i18n.ts`. | Quyết định BTC & ADR-0004 |
+| **v1.4** | 18/09/2026 | Rút gọn lộ trình từ 5 thành 4 chặng chính thức (hủy Vòng Kỹ thuật 17/10, tích hợp vào Chung kết); hủy bỏ yêu cầu video ý tưởng Chặng 1; gỡ bỏ barem 11 tiêu chí, thẻ trọng số và banner công thức khỏi web landing page; tích hợp vector logo Zalo chính hãng; chuẩn hóa nút tải Sổ tay không để lộ hậu tố phiên bản nội bộ `(V4)`; rút gọn typography về 2 font (Inter & JetBrains Mono) và triển khai motion design system. | Quyết định BTC & ADR-0005 |
 

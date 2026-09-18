@@ -3,22 +3,23 @@
 > **Dự án:** AI for Impact 2026 – Agentic Innovation Challenge  
 > **Đơn vị chủ quản:** Trường Đại học FPT Đà Nẵng (`AI.Impact.fptu.vn`)  
 > **Phương pháp kiểm định:** Multi-Axis Code Quality Review (5 Trục chất lượng), Impeccable Craft Floor, UI/UX Pro Max, Doubt-Driven Development  
-> **Ngày lập báo cáo:** 18/09/2026 (Cập nhật phiên bản Kiểm định v1.3)  
+> **Ngày lập báo cáo:** 18/09/2026 (Cập nhật phiên bản Kiểm định v1.4)  
 > **Trạng thái phê duyệt:** **APPROVED — PRODUCTION READY**  
 
 ---
 
 ## 1. Tóm tắt Điều hành (Executive Summary)
 
-Đợt kiểm định toàn diện mã nguồn được thực hiện nhằm đánh giá hệ thống sau khi chuyển đổi hoàn toàn từ nền tảng CodeMosaic 2025 sang **AI for Impact 2026**, tinh giản giao diện tiếng Việt chuẩn hóa, tái cấu trúc thẻ Đơn vị Tổ chức đối xứng và thay thế toàn bộ bộ nhận diện Favicon trình duyệt. Đợt kiểm tra bao trùm 100% các tệp nguồn TypeScript, module cấu hình SSOT, hệ thống component hiển thị, cơ chế render SSG và bộ kiểm thử tự động.
+Đợt kiểm định toàn diện mã nguồn v1.4 được thực hiện nhằm đánh giá hệ thống sau đợt tái cấu trúc quy mô lớn theo chỉ đạo trực tiếp từ Ban Tổ chức: rút gọn lộ trình thành **4 Chặng thi đấu** (loại bỏ Vòng Kỹ thuật 17/10, gộp vào Chung kết), hủy bỏ yêu cầu video ý tưởng Chặng 1, tinh giản mục Cơ chế Đánh giá (gỡ bỏ barem 11 tiêu chí, thẻ trọng số và công thức tính điểm), thiết lập Thẻ Hỗ trợ Thí sinh với vector Zalo chính hãng, chuẩn hóa nút tải Sổ tay không để lộ hậu tố phiên bản `(V4)`, rút gọn typography về 2 font (`Inter` & `JetBrains Mono`) và triển khai hệ thống chuyển động mượt mà (Motion Design).
 
 ### Chỉ số Đo lường Chính:
 - **Tỷ lệ Pass Kiểm thử:** 52/52 tests (100% pass rate across 4 test suites: `config.test.ts`, `content-model.test.ts`, `dates.test.ts`, `schema.test.ts`).
 - **Kiểm tra Kiểu dữ liệu TypeScript:** 0 lỗi (`tsc --noEmit`, `strict: true`).
-- **Kiểm tra Chuẩn mã nguồn ESLint:** 0 cảnh báo / 0 lỗi.
-- **First Load JS Bundle:** 157 kB (ngân sách trần: < 200 kB).
+- **Kiểm tra Chuẩn mã nguồn ESLint:** 0 cảnh báo / 0 lỗi (`next lint`).
+- **First Load JS Bundle:** **148 kB** (giảm thêm 9 kB sau khi loại bỏ state co giãn barem, trần quy định: < 200 kB).
 - **Bộ Nhận diện Tab Trình duyệt:** 100% Biểu tượng FPT 3 màu vector trên nền squircle trắng (`app/favicon.ico`, `app/icon.svg`, `public/icon.svg`, `public/apple-touch-icon.png`).
-- **Điểm Impeccable Craft Floor:** Loại bỏ 100% AI gradient-text, loại bỏ các thẻ phụ cliché; thẻ đơn vị tổ chức đạt tỷ lệ cân đối hoàn hảo.
+- **Điểm Impeccable Craft Floor:** Loại bỏ 100% AI gradient-text; thẻ đơn vị tổ chức đối xứng; giao diện landing page thoáng đãng, sạch sẽ, không quá tải con số barem.
+- **Hệ thống Font Chữ Tinh gọn:** 2 fonts duy nhất (`Inter` cho display/sans, `JetBrains Mono` cho code/badges), loại bỏ hoàn toàn `Space Grotesk`.
 
 ---
 
@@ -30,7 +31,8 @@
 | :--- | :--- | :--- | :---: |
 | **Cổng Phê duyệt (Approval Gate)** | Thông tin giải thưởng (`siteConfig.prizes`) và đơn vị tổ chức (`siteConfig.organizers`) chưa được ban hành chính thức phải giữ nguyên `approval: 'withheld'`. | Module `prize-podium.ts` và các view component lọc chính xác, không làm rò rỉ giải thưởng hoặc đơn vị chưa phê duyệt ra ngoài giao diện. | **ĐẠT** |
 | **Bảo vệ Bục Trao giải (Prize Podium)** | Khi cơ cấu giải bị ẩn một phần, giải Nhì không được phép nhảy lên chiếm bục Vô địch do lỗi mảng. | `prize-podium.ts` trích xuất giải Nhất, Nhì, Ba bằng ID ngữ nghĩa cố định (`first`, `second`, `third`) thay vì lấy theo chỉ mục mảng `[0]`. | **ĐẠT** |
-| **Đồng bộ Lịch trình 5 Chặng** | Trạng thái hiển thị chặng thi và phê duyệt ngày thi không được nhập nhằng. | Hệ thống tách riêng `status` của chặng và cờ phê duyệt ngày `dateApproval`. Giữ đúng cấu trúc tuần tự 5 chặng thi mà không rò rỉ ngày chưa ký duyệt. | **ĐẠT** |
+| **Đồng bộ Lịch trình 4 Chặng** | Rút gọn chính xác từ 5 thành 4 chặng thi tuần tự (Chặng 1 Đăng ký & Ý tưởng, Chặng 2 Thi Thuật toán ICPC, Chặng 3 Training, Chặng 4 Chung kết). | Module `view-model.ts` và `JourneySection.tsx` đồng bộ chuẩn xác 4 chặng; gỡ bỏ hoàn toàn Vòng Kỹ thuật 17/10 cũ và component `StageComparisonSection`. | **ĐẠT** |
+| **Bỏ Yêu cầu Video Chặng 1** | Không để sót câu chữ hay form nộp video 3 phút ở vòng mở đầu. | Loại bỏ hoàn toàn khối 6 câu hỏi video khỏi `RegisterSection.tsx`, `ThemesSection.tsx`, và case-study milestones. | **ĐẠT** |
 | **Kiểm định Schema Dữ liệu** | Schema từ chối các URL scheme nguy hiểm và ngày không hợp lệ. | Sử dụng Zod schema trong `content/schema.ts` chặn đứng các giao thức `javascript:`, `data:`, `ftp:`, bảo vệ an toàn tuyệt đối. | **ĐẠT** |
 
 ---
@@ -41,6 +43,11 @@
 | :--- | :--- | :--- |
 | **Loại bỏ Gradient Text ("AI Slop")** | Trước đây một số thẻ tiêu đề và số liệu dùng `bg-clip-text text-transparent bg-gradient-to-r`. Áp dụng kỹ năng `impeccable`, toàn bộ đã được chuẩn hóa về màu đơn sắc (solid colors): xanh công nghệ `text-blue-600` và cam FPT `text-brand-orange`. | **XUẤT SẮC** |
 | **Tái cấu trúc Thẻ Đơn vị Tổ chức Đối xứng** | Tinh giản giao diện khi chỉ có duy nhất Trường Đại học FPT Đà Nẵng: chuyển từ lưới lệch sang thẻ trung tâm đối xứng (`max-w-2xl mx-auto`), loại bỏ hoàn toàn các thẻ phụ cliché/marketing sáo rỗng. | **XUẤT SẮC** |
+| **Tinh giản Section Cơ chế Đánh giá** | Gỡ bỏ hoàn toàn bảng barem 11 tiêu chí phức tạp, các thẻ phần trăm 30%/70% và banner công thức tính điểm trên landing page theo chỉ đạo BTC, tránh quá tải nhận thức cho thí sinh. | **XUẤT SẮC** |
+| **Tích hợp Vector Logo Zalo Chính Hãng** | Thay thế icon MessageCircle generic bằng file vector chuẩn hãng `/icons/zalo.svg` trên nút hỗ trợ Zalo tại `#evaluation`, đồng bộ nhận diện với `FAQSection` và `SiteFooter`. | **XUẤT SẮC** |
+| **Chuẩn hóa Nút Tải Sổ tay Thí sinh** | Loại bỏ hoàn toàn chữ `(V4)` khỏi nhãn nút bấm; chuẩn hóa tên file tải về thành `So_tay_thi_sinh_AI-for-Impact-2026.docx` (sạch đẹp, trang trọng, không để lộ phiên bản nội bộ). | **XUẤT SẮC** |
+| **Hợp nhất Hệ thống Typography 2 Font** | Loại bỏ `Space_Grotesk` để triệt tiêu lỗi lệch dấu tiếng Việt trên tiêu đề lớn; chuẩn hóa 2 font duy nhất: `Inter` (Display/Sans) và `JetBrains Mono` (Code/Badges). | **XUẤT SẮC** |
+| **Chuyển động Mượt mà (Motion Design)** | Triển khai animation co giãn accordion mượt mà bằng CSS Grid `0fr -> 1fr` với `--ease-out-expo` và `--ease-spring`, không gây giật lag (Zero Layout Reflow). | **XUẤT SẮC** |
 | **Độ ổn định của Icon & Ảnh** | Gỡ bỏ toàn bộ hiệu ứng `group-hover:scale-110` trên thẻ `<img>` của logo compiler trong `ProgrammingChallengeSection.tsx`. Hình ảnh ngồi tĩnh vững chãi, nhường phản hồi tương tác cho đường viền container. | **XUẤT SẮC** |
 | **Bộ Nhận diện Tab Trình duyệt (Favicon)** | Xóa bỏ hoàn toàn favicon CodeMosaic cũ (113.7 KB). Xây dựng kịch bản biên dịch `scripts/build-favicons.mjs` tạo bộ icon FPT 3 màu đa độ phân giải (12.7 KB ICO, SVG, Apple Touch Icon). | **XUẤT SẮC** |
 | **Dọn dẹp Mã nguồn Thừa (Dead Code)** | Xóa bỏ file `lib/i18n.ts` (689 dòng code thừa từ CodeMosaic), gỡ bỏ các script render nháp tạm thời, duy trì thư mục gốc hoàn toàn sạch sẽ. | **XUẤT SẮC** |
