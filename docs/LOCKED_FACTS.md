@@ -20,16 +20,16 @@
 | **Tên miền website** | `AI.Impact.fptu.vn` | Kế hoạch V6 & SSOT |
 | **Địa điểm tổ chức** | Trường Đại học FPT Đà Nẵng | Kế hoạch V6 (dòng 1, 17) |
 | **Thời gian tổng thể** | Gần 7 tuần: Từ **14/09/2026** đến **31/10/2026** | Sổ tay V4 (dòng 6), Kế hoạch V6 (dòng 16) |
-| **Quy chuẩn Logo** | **KHÔNG CÓ LOGO CHÍNH THỨC** (chỉ dùng Typographic Brand Lockup `AI FOR IMPACT 2026` + Logo Đại học FPT Đà Nẵng) | Quyết định BTC & Invariant |
+| **Quy chuẩn Logo** | **KHÔNG CÓ LOGO CHÍNH THỨC** (chỉ dùng Typographic Brand Lockup `AI FOR IMPACT 2026` + Biểu tượng FPT vector 3 màu + Logo Trường Đại học FPT Đà Nẵng) | Quyết định BTC & Invariant |
 
 ---
 
 ## 2. Đơn vị Chỉ đạo & Tổ chức (Organizing Bodies)
 
-1. **Đơn vị chỉ đạo & Đăng cai:** Trường Đại học FPT Đà Nẵng.
+1. **Đơn vị chỉ đạo & Đăng cai:** Trường Đại học FPT Đà Nẵng (Logo chính thức: `/brand/fpt-university.png`).
 2. **Đơn vị điều phối & Thường trực:** Phòng Hợp tác Quốc tế & Phát triển Cá nhân (ICPDP FPTU Đà Nẵng).
    - Email: `icpdp.dn@fe.edu.vn`
-   - Fanpage: `https://www.facebook.com/profile.php?id=61565495577626`
+   - Kênh hỗ trợ thí sinh chính thức (Zalo): `https://zalo.me/g/ukzv6t0i6ctyj16lfrum`
 3. **Hội đồng Chuyên môn & Trưởng ban Đề thi:** Bộ môn Kỹ thuật Phần mềm (BM SE - FPTU Đà Nẵng).
    - ThS. Trần Thị Tố Tâm (Giảng viên phụ trách Training Buổi 1)
    - ThS. Lê Thiện Nhật Quang (Giảng viên phụ trách Training Buổi 3)
@@ -47,7 +47,7 @@
   3. *Evaluation & Safety:* Bộ ca kiểm thử, ràng buộc an toàn, đo chỉ số.
   4. *Product & Impact:* Vấn đề người dùng, báo cáo tác động, video và thuyết trình.
   *(Nếu đội 5 người: bổ sung thêm 1 bạn phụ trách giao diện và dựng bản demo).*
-- **Số lượng dự kiến:** ~200 sinh viên (khoảng 40 – 50 đội đăng ký).
+- **Lưu ý hiển thị**: Thông số quy mô tổng thể được bảo lưu nội bộ theo chỉ đạo của BTC, ẩn khỏi giao diện công khai để tinh giản trải nghiệm người dùng.
 - **Nguyên tắc Dữ liệu An toàn:** 100% vòng thi kỹ thuật dùng dữ liệu giả lập (mock data); tuyệt đối không dùng dữ liệu sinh viên thật hay hệ thống đang vận hành của Nhà trường.
 
 ---
@@ -65,8 +65,9 @@ Mỗi đội chọn 01 trong 05 nhóm chủ đề sau:
 
 ## 5. Lộ trình 5 Chặng thi (The 5-Stage Journey)
 
-### Chặng 1: Đăng ký & Nộp Video Ý tưởng (14/09 – 23/09/2026)
+### Chặng 1: Đăng ký & Nộp Video Ý tưởng (14/09 – 25/09/2026)
 - **Hình thức:** Đăng ký qua Google Form trực tuyến.
+- **Thời hạn nhận đơn:** Mở từ **14/09/2026** đến hết **23h59:59 ngày 25/09/2026** (Cập nhật gia hạn chính thức từ BTC).
 - **Nội dung:** Nhận thể lệ, 5 nhóm chủ đề. Nộp **01 video ≤ 3 phút** mô tả ý tưởng trên Google Drive.
 - **6 Câu hỏi cốt lõi video phải trả lời:**
   1. Vấn đề là gì và ai đang chịu vấn đề đó?
@@ -75,26 +76,26 @@ Mỗi đội chọn 01 trong 05 nhóm chủ đề sau:
   4. Agent tuyệt đối không được làm gì? *(Ăn điểm)*
   5. Nếu Agent trả lời sai thì hậu quả với người dùng là gì?
   6. Lấy dữ liệu ở đâu và dữ liệu đó đáng tin đến mức nào?
-- **Hạn chót:** Mở đơn 14/09 – 23/09/2026; hạn cuối nhận video trên form là **23h59 ngày 28/09/2026**.
+- **Lưu ý hiển thị**: Hộp ghi chú sản phẩm đầu ra được ẩn trên giao diện theo chỉ đạo BTC.
 
 ### Chặng 2: Vòng loại – Tư duy Lập trình ICPC (Thứ Sáu, 02/10/2026)
 - **Thời gian:** 08h00 – 12h00 (Thời lượng: **240 phút**).
 - **Hình thức:** Trực tiếp tại Trường Đại học FPT Đà Nẵng.
 - **Quy chế Thiết bị (One-Laptop Rule):** Mỗi đội **chỉ được sử dụng 01 laptop duy nhất** có kết nối mạng của BTC, đã cài sẵn công cụ lập trình và trình duyệt web (Chrome, Firefox, Edge). Được mang laptop dự phòng tắt nguồn để thay thế nếu máy chính hỏng.
-- **Ngôn ngữ & Trình biên dịch (Chuẩn ICPC Global 2024):**
-  - C (gcc 14.2.0, `-std=c99 -O2`)
-  - C++ (g++ 14.2.0, `-std=c++20 -O2`)
-  - Java 8 (javac 1.8.0) & Java 19 (javac 19.0.2)
-  - Python 3 (3.12.6, `-m compileall -q`)
+- **Ngôn ngữ & Trình biên dịch (Chuẩn ICPC Global 2024 - Khai thác SVG từ Svgl):**
+  - C (gcc 14.2.0, `-std=c99 -O2`, `/icons/c.svg`)
+  - C++ (g++ 14.2.0, `-std=c++20 -O2`, `/icons/cpp.svg`)
+  - Java 8 (javac 1.8.0) & Java 19 (javac 19.0.2, `/icons/java.svg`)
+  - Python 3 (3.12.6, `-m compileall -q`, `/icons/python.svg`)
 - **Chủ đề Thuật toán:** Sắp xếp, Tìm kiếm, Quy hoạch động, Cây, Đồ thị, Số học, Hình học, Tham lam, Lý thuyết trò chơi, Pathfinding (A*, Dijkstra), Grid Map, PID Control.
 - **Cách chấm:** Hệ thống tự động chấm theo bộ test case ẩn và hiện. Đúng toàn bộ test = 1 điểm. Xếp hạng theo điểm và tổng thời gian giải (penalty).
 - **Kết quả:** Chọn ra **Top 24 đội** bước vào giai đoạn Training và Vòng Kỹ thuật.
 
 ### Chặng 3: Giai đoạn Training Chuyên sâu (07/10, 08/10, 09/10/2026)
-- **03 Buổi thực hành (180 phút/buổi):**
-  - **Buổi 1 (Thứ Tư, 07/10):** *Hiểu và sửa một AI Agent* (ThS. Trần Thị Tố Tâm). Nắm 5 lớp Model - Tool - Agent loop - Harness - Evaluation. Thực hành sửa baseline nâng tối thiểu 15 điểm phần trăm.
-  - **Buổi 2 (Thứ Năm, 08/10):** *Evaluation, Security và Recovery*. Chống prompt injection, bảo vệ dữ liệu, timeout, retry, trace & log (Tham khảo: `learnharness.org`). Nộp: 08 ca test, 02 ca bảo mật, 01 ca timeout, 01 trace report.
-  - **Buổi 3 (Thứ Sáu, 09/10):** *Mock Run & Deployment* (ThS. Lê Thiện Nhật Quang & Mentors). Chạy thử mock contest nộp bài; học deploy hosting, đóng gói demo. Nộp bài hợp lệ + 1 bản demo online.
+- **03 Buổi thực hành (Đã tinh giản khung giờ chi tiết trên giao diện công khai theo chỉ đạo BTC):**
+  - **Buổi 1 (Ngày 07/10):** *Hiểu và sửa một AI Agent* (ThS. Trần Thị Tố Tâm). Nắm 5 lớp Model - Tool - Agent loop - Harness - Evaluation. Thực hành sửa baseline nâng tối thiểu 15 điểm phần trăm.
+  - **Buổi 2 (Ngày 08/10):** *Evaluation, Security và Recovery*. Chống prompt injection, bảo vệ dữ liệu, timeout, retry, trace & log (Tham khảo: `learnharness.org`). Nộp: 08 ca test, 02 ca bảo mật, 01 ca timeout, 01 trace report.
+  - **Buổi 3 (Ngày 09/10):** *Mock Run & Deployment* (ThS. Lê Thiện Nhật Quang & Mentors). Chạy thử mock contest nộp bài; học deploy hosting, đóng gói demo container (`/icons/docker.svg`). Nộp bài hợp lệ + 1 bản demo online.
 - **Mentoring Checkpoint (21/10 – 22/10):** Dành riêng cho Top 15 đội vào Chung kết (45 phút/đội với mentor chuyên môn).
 
 ### Chặng 4: Vòng Kỹ thuật – Harness Engineering Challenge (Thứ Bảy, 17/10/2026)

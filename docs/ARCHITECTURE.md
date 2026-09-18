@@ -135,7 +135,7 @@ AIforImpact/
 ### Lớp phủ & Chiều sâu (Elevation & Surfaces):
 - `.glass-card`: Lớp kính mờ trắng phủ sương `rgba(255, 255, 255, 0.92)` với bóng đổ `shadow-card` và hiệu ứng hover `shadow-card-hover`.
 - `.glass-card-orange`: Gradient cam ấm nhẹ `from-orange-50/80 via-amber-50/40 to-white` dành riêng cho giải Vô địch và CTA Đăng ký.
-- **Developer Console Terminal:** Vùng hiển thị cấu hình kỹ thuật ICPC với màu nền `bg-slate-900`, tạo điểm nhấn công nghệ độc đáo và tương phản cao ngay trên nền trang sáng.
+- **Clean Tech Light IDE Window:** Khung hiển thị môi trường lập trình ICPC và cấu hình compiler với bề mặt kính trắng mờ phủ sương cao cấp (`bg-white/95 backdrop-blur-md`), thanh điều hướng Mac Titlebar trang nhã và nút sao chép lệnh biên dịch tức thì, hòa hợp 100% với ngôn ngữ thiết kế chung.
 
 ---
 
@@ -143,9 +143,13 @@ AIforImpact/
 
 1. **Cuộc thi KHÔNG CÓ LOGO CHÍNH THỨC:**
    - Tuyệt đối không tự tạo hoặc sử dụng logo ảnh giả lập.
-   - Sử dụng **Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`)** kết hợp nhận diện đơn vị chủ trì là Trường Đại học FPT Đà Nẵng.
+   - Nhận diện cuộc thi sử dụng **Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`)** kết hợp **Biểu tượng FPT 3 màu vector chuẩn nhận diện** tại Header, logo **Trường Đại học FPT Đà Nẵng** tại mục Đơn vị chủ trì, và huy hiệu bản quyền **CLB Lập Trình FU-DEVER** ([`fudever.com`](https://fudever.com)) tại Footer.
 2. **Khai thác Logo Công nghệ từ [Svgl](https://svgl.app/):**
-   - Các biểu tượng C++, Java, Python, OpenAI, Claude được lưu trữ và tối ưu hóa dưới dạng vector SVG tại `public/icons/`.
+   - Hệ thống vector sắc nét chuẩn công nghiệp tại `public/icons/`:
+     - Compilers ICPC: C (`c.svg`), C++ (`cpp.svg`), Java (`java.svg`), Python (`python.svg`).
+     - AI Models & Frameworks: OpenAI (`openai.svg`), Claude (`claude.svg`), Gemini (`gemini.svg`), DeepSeek (`deepseek.svg`), Hugging Face (`huggingface.svg`).
+     - Deployment: Docker (`docker.svg`).
+     - Candidate Support: Zalo (`zalo.svg`).
 
 ---
 
@@ -176,15 +180,17 @@ npm run typecheck
 # 2. Kiểm tra chuẩn mã nguồn ESLint (0 cảnh báo / lỗi)
 npm run lint
 
-# 3. Chạy 100% bộ kiểm thử tự động Vitest (42/42 tests pass)
+# 3. Chạy 100% bộ kiểm thử tự động Vitest (52/52 tests pass)
 npm test
 
-# 4. Biên dịch xuất bản tĩnh Next.js (Static Export)
+# 4. Biên dịch xuất bản tĩnh Next.js Static Export
 npm run build
 ```
 
-Sau khi build thành công, đồng bộ kết quả ra thư mục `out/`:
+Sau khi hoàn tất kiểm tra, triển khai bản phát hành trực tiếp lên hạ tầng sản xuất:
 ```bash
-robocopy .worktrees\implementation\out out /E /PURGE
+# Triển khai Vercel Production
+npx vercel --prod --yes
 ```
-Cổng live preview phục vụ tại: **`http://localhost:3000/vi`**.
+
+Bản phân phối tĩnh hoàn tất tại thư mục `out/`, cổng live preview tại: **`http://localhost:3000/vi`**.

@@ -35,7 +35,7 @@ Hệ thống được xây dựng trên nền tảng **Next.js 14 App Router** v
 
 - 🎨 **Clean Tech Light Design System**: Nền trắng tinh khôi kết hợp các lớp kính mờ `.glass-card` phủ sương sang trọng, điểm xuyết sắc cam FPT rực rỡ (`#FF6B00`) và xanh công nghệ hiện đại (`#2563EB`).
 - ⚡ **Single Source of Truth (SSOT)**: 100% sự thật vận hành (lịch trình 5 chặng, hạn nộp hồ sơ, Top 24, cơ cấu giải thưởng) được quy tụ tại [`content/site-config.ts`](./content/site-config.ts), tự động nội suy token mẫu qua [`content/view-model.ts`](./content/view-model.ts). Tuyệt đối không hardcode văn bản.
-- 💻 **Developer Console Terminal**: Khu vực cấu hình môi trường lập trình ICPC (`bg-slate-900`) hiển thị compiler specs (C++20, Java 21, Python 3.12) sắc nét với bộ SVG vector từ [Svgl](https://svgl.app/).
+- 💻 **Clean Tech Light IDE Window**: Cửa sổ môi trường lập trình ICPC với mặt kính trắng mờ (`bg-white/95 backdrop-blur-md`), thanh tiêu đề Mac Titlebar thanh lịch, nút copy lệnh biên dịch và bộ SVG vector chính hãng từ [Svgl](https://svgl.app/) (C, C++, Java, Python).
 - ⏳ **Bộ đếm Ngược Realtime (Countdown)**: Đồng bộ tự động thời hạn đóng cổng đăng ký, tự động chuyển đổi trạng thái khi hết hạn mà không cần can thiệp mã nguồn.
 - 🛡️ **Kiểm định Chất lượng Nghiêm ngặt**: 52 unit tests bao phủ 100% logic ngày tháng, tính toàn vẹn SSOT, nội suy token và cấu trúc giải thưởng.
 - 🧠 **TencentDB Agent Memory Central Hub**: Tích hợp bộ nhớ dài hạn L0–L3 cho AI Agents (`http://127.0.0.1:8420`, tenant `aiforimpact`), bảo toàn vĩnh viễn các quyết định kiến trúc và ngữ cảnh dự án.
@@ -116,13 +116,13 @@ AIforImpact/
 ├── docs/                          # Kho Tài liệu Kỹ thuật & Lưu trữ
 │   ├── ARCHITECTURE.md            # Tài liệu Kiến trúc Hệ thống chi tiết
 │   ├── CODE_AUDIT.md              # Báo cáo kiểm định chất lượng 5 trục
-│   ├── decisions/                 # Architecture Decision Records (ADR-001, ADR-002)
+│   ├── decisions/                 # Architecture Decision Records (ADR-001, ADR-002, ADR-003)
 │   ├── references/raw_materials/  # Tài liệu kế hoạch gốc, thể lệ Word (.docx) & ghi chú
 │   └── archive/scratch/           # Lưu trữ tài liệu phân tích kỹ thuật
 ├── public/                        # Tài nguyên Tĩnh & SVG Icons (Svgl)
 │   ├── brand/                     # Logo FU-DEVER, FPT University, Posters
 │   ├── docs/                      # Sổ tay thí sinh chính thức (.docx)
-│   └── icons/                     # Vector SVGL (Python, Java, C++, Claude, OpenAI)
+│   └── icons/                     # Vector SVGL (C, C++, Java, Python, Gemini, DeepSeek, Claude, OpenAI, Docker, Zalo)
 ├── tests/                         # Vitest Test Suites (52 tests passed 100%)
 ├── AGENTS.md                      # Chỉ thị Bất biến & Quy chuẩn Vận hành Agent
 ├── README.md                      # Tài liệu dự án (Tài liệu này)
@@ -136,7 +136,7 @@ AIforImpact/
 
 1. **Cuộc thi KHÔNG CÓ LOGO CHÍNH THỨC**:
    - Tuyệt đối không tự ý tạo, import, suy đoán hoặc sử dụng file ảnh logo giả lập cho cuộc thi.
-   - Nhận diện cuộc thi sử dụng thuần túy **Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`)** kết hợp nhận diện đơn vị chủ trì là **Trường Đại học FPT Đà Nẵng** và đơn vị công nghệ **CLB FU-DEVER**.
+   - Nhận diện cuộc thi sử dụng thuần túy **Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`)** kết hợp **Biểu tượng FPT 3 màu vector chuẩn nhận diện** tại Header, logo chính thức **Trường Đại học FPT Đà Nẵng** và đơn vị bảo trợ công nghệ **CLB Lập Trình FU-DEVER** ([`fudever.com`](https://fudever.com)).
 2. **Ngôn ngữ Giao diện**: Giao diện tiếng Việt chuẩn hóa, đã tinh giản bỏ nút chuyển đổi ngôn ngữ để tạo trải nghiệm tập trung.
 3. **Bảo tồn Dữ liệu (SSOT)**: Không hardcode bất kỳ con số vận hành nào trực tiếp trong JSX; toàn bộ phải đi qua `site-config.ts`.
 

@@ -19,13 +19,13 @@
    - **Bảng màu**: Nền trắng tinh khôi (`#FFFFFF`) kết hợp các dải phân tầng Porcelain/Slate (`#F8FAFC`, `#F1F5F9`). Chữ Deep Slate tương phản cao (`#0F172A`, `#334155`, `#64748B`).
    - **Điểm nhấn thương hiệu**: Sắc cam FPT rực rỡ (`#FF6B00`, hover `#EA580C`) và xanh công nghệ hiện đại (`#2563EB`).
    - **Thẻ bề mặt**: Kính mờ trắng phủ sương `.glass-card` (`rgba(255, 255, 255, 0.92)` kèm viền `border-slate-200` và bóng đa tầng `shadow-card`, `shadow-card-hover`). Thẻ giải Vô địch và CTA Đăng ký dùng gradient ấm `.glass-card-orange`.
-   - **Khu vực Kỹ thuật**: Developer Console Terminal (`bg-slate-900`) hiển thị cấu hình compiler ICPC với syntax highlight sắc nét.
+   - **Khu vực Kỹ thuật**: Clean Tech Light IDE Window (`bg-white/95 backdrop-blur-md`) hiển thị cấu hình compiler ICPC với Mac Titlebar thanh lịch, nút copy lệnh và logo chính hãng.
    - **Thư viện SVG Logo**: Toàn bộ logo thương hiệu, ngôn ngữ lập trình, AI framework và công cụ công nghệ được ưu tiên khai thác chuẩn xác từ [Svgl](https://svgl.app/) (được lưu tại `public/icons/`).
    - **Ngôn ngữ**: Giao diện tiếng Việt chuẩn hóa, đã tinh giản bỏ nút chuyển đổi ngôn ngữ.
 
 3. **Nhận diện Thương hiệu & Logo (Competition Brand Invariant)**:
    - **Cuộc thi này KHÔNG CÓ LOGO CHÍNH THỨC**: Tuyệt đối không tự ý tạo, import, suy đoán hoặc sử dụng file ảnh logo giả lập cho cuộc thi. File cũ `public/images/logo.png` không phải logo cuộc thi và đã bị loại bỏ hoàn toàn khỏi dự án.
-   - **Quy cách nhận diện**: Nhận diện cuộc thi sử dụng thuần túy Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`) kết hợp nhận diện đơn vị chủ trì & đăng cai tổ chức là Trường Đại học FPT Đà Nẵng.
+   - **Quy cách nhận diện**: Nhận diện cuộc thi sử dụng thuần túy Brand Lockup dạng chữ cao cấp (`AI FOR IMPACT 2026`) kết hợp **Biểu tượng FPT 3 màu vector chuẩn nhận diện** (`FptSymbol.tsx`) tại Header, logo Trường Đại học FPT Đà Nẵng tại mục Đơn vị chủ trì, và huy hiệu bản quyền CLB FU-DEVER ([`fudever.com`](https://fudever.com)) tại Footer.
 
 ---
 
@@ -37,9 +37,9 @@ Khi làm việc trên dự án này, Agent kích hoạt và tuân thủ các ski
 | :--- | :--- | :--- |
 | **`ui-ux-pro-max`** | `.agents/skills/ui-ux-pro-max/` & Global | Thiết kế giao diện cao cấp, bảng màu 60-30-10, ghép cặp typography, nhịp điệu khoảng cách, kiểm duyệt tương phản WCAG 2.2 AA. |
 | **`frontend-ui-engineering`** | Global | Xây dựng component React/Tailwind chuẩn production, quản lý responsive, trạng thái focus/hover, và khả năng tiếp cận a11y. |
-| **`aiforimpact-workflow`** | `.agents/skills/aiforimpact-workflow/` | Quy trình phát triển đặc thù của dự án: đồng bộ SSOT, build tĩnh Next.js, cập nhật cổng Live 3000, và ghi nhận tiến độ. |
+| **`aiforimpact-workflow`** | `.agents/skills/aiforimpact-workflow/` | Quy trình phát triển đặc thù của dự án: đồng bộ SSOT, build tĩnh Next.js, deploy Vercel Production, và ghi nhận tiến độ. |
 | **`agent-memory-hub`** | Global (`:8420`) | Giao tiếp với TencentDB Agent Memory Hub lưu trữ ngữ cảnh dài hạn, quyết định kiến trúc và nhật ký phiên làm việc cho tenant `aiforimpact`. |
-| **`test-driven-development`** | Global | Duy trì 100% tỷ lệ pass của 42+ unit & parity tests trong thư mục `tests/` trước khi đóng task. |
+| **`test-driven-development`** | Global | Duy trì 100% tỷ lệ pass của 52 unit & parity tests trong thư mục `tests/` trước khi đóng task. |
 | **`code-review-and-quality`** | Global | Thẩm định đa trục: bảo mật, tương thích trình duyệt, không rò rỉ gate phê duyệt, và First Load JS < 200 kB. |
 
 ---
@@ -55,16 +55,16 @@ npm run typecheck
 # 2. Kiểm tra chuẩn mã nguồn ESLint (0 cảnh báo / lỗi)
 npm run lint
 
-# 3. Chạy toàn bộ bộ kiểm thử đơn vị & SSOT
+# 3. Chạy toàn bộ bộ kiểm thử đơn vị & SSOT (52 bài kiểm thử)
 npm test
 
 # 4. Biên dịch xuất bản tĩnh Next.js Static Export
 npm run build
 ```
 
-Sau khi build thành công, đồng bộ bản xuất bản tĩnh ra thư mục `out/` phục vụ cổng preview:
+Sau khi build thành công, xuất bản trực tiếp lên hệ thống Vercel Production:
 ```bash
-robocopy .worktrees\implementation\out out /E /PURGE
+npx vercel --prod --yes
 ```
 
 ---
