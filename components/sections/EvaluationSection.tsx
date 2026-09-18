@@ -85,11 +85,11 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
               )}
               <a
                 href={content.documents.handbookUrl || '/docs/So_tay_thi_sinh_AI-for-Impact-2026_V4.docx'}
-                download="So_tay_thi_sinh_AI-for-Impact-2026_V4.docx"
+                download="So_tay_thi_sinh_AI-for-Impact-2026.docx"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-display font-bold text-xs sm:text-sm shadow-2xs hover:shadow-xs hover:-translate-y-0.5 transition-all duration-200"
               >
                 <FileText className="w-4 h-4 text-brand-orange" />
-                <span>{locale === 'vi' ? 'Tải Sổ tay Thí sinh (V4)' : 'Download Handbook (V4)'}</span>
+                <span>{locale === 'vi' ? 'Tải Sổ tay Thí sinh' : 'Download Handbook'}</span>
                 <Download className="w-3.5 h-3.5 text-slate-400" />
               </a>
             </div>
