@@ -190,15 +190,30 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
               </p>
               <div className="flex flex-wrap items-center gap-2 pt-1">
                 <span className="text-[11px] font-mono text-slate-500 font-medium">Hỗ trợ tự do:</span>
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium">
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium hover:border-slate-300 transition-colors">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/icons/openai.svg" alt="OpenAI" className="w-3.5 h-3.5 object-contain" />
                   <span>OpenAI / ChatGPT</span>
                 </div>
-                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium">
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium hover:border-slate-300 transition-colors">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src="/icons/claude.svg" alt="Claude" className="w-3.5 h-3.5 object-contain" />
                   <span>Anthropic Claude</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium hover:border-slate-300 transition-colors">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/icons/gemini.svg" alt="Gemini" className="w-3.5 h-3.5 object-contain" />
+                  <span>Google Gemini</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium hover:border-slate-300 transition-colors">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/icons/deepseek.svg" alt="DeepSeek" className="w-3.5 h-3.5 object-contain" />
+                  <span>DeepSeek</span>
+                </div>
+                <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-100/80 border border-slate-200 text-xs text-slate-700 font-medium hover:border-slate-300 transition-colors">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/icons/huggingface.svg" alt="Hugging Face" className="w-3.5 h-3.5 object-contain" />
+                  <span>Hugging Face</span>
                 </div>
               </div>
             </div>

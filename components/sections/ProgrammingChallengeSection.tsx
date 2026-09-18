@@ -171,6 +171,7 @@ export const ProgrammingChallengeSection: React.FC<ProgrammingChallengeSectionPr
                 {content.programmingChallenge.languages.map((lang, idx) => {
                   const iconSrc =
                     lang.name.includes('C++') ? '/icons/cpp.svg' :
+                    lang.name.startsWith('C') ? '/icons/c.svg' :
                     lang.name.includes('Java') ? '/icons/java.svg' :
                     lang.name.includes('Python') || lang.name.includes('PyPy') ? '/icons/python.svg' :
                     null;

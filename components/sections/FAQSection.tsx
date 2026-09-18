@@ -3,7 +3,7 @@ import { Locale, CompetitionViewModel } from '../../content/types';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Accordion } from '../ui/Accordion';
 import { Button } from '../ui/Button';
-import { MessageCircle, Mail } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 interface FAQSectionProps {
   locale: Locale;
@@ -33,7 +33,10 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
               size="md"
               href={content.contact.supportGroupUrl}
               external
-              icon={<MessageCircle className="w-4 h-4 text-blue-600" />}
+              icon={
+                /* eslint-disable-next-line @next/next/no-img-element */
+                <img src="/icons/zalo.svg" alt="Zalo" className="w-4 h-4 object-contain" />
+              }
             >
               {content.faq.contactBtn}
             </Button>
