@@ -112,9 +112,8 @@ AIforImpact/
 │   ├── motion-design/             # Kỹ thuật chuyển động mượt mà & Easing curves
 │   ├── impeccable/                # Tinh chỉnh thẩm mỹ tinh hoa & Layout contracts
 │   └── ui-ux-pro-max/             # Thiết kế giao diện & WCAG 2.2 AA accessibility
-│   └── view-model.ts              # Xử lý nội suy dữ liệu và logic bục giải thưởng
 ├── docs/                          # Tài liệu Kỹ thuật & ADR
-│   ├── decisions/                 # Architecture Decision Records (ADR-001, 002, 003, 004)
+│   ├── decisions/                 # Architecture Decision Records (ADR-0001 đến ADR-0006)
 │   ├── ARCHITECTURE.md            # Tài liệu Kiến trúc Hệ thống này
 │   ├── CODE_AUDIT.md              # Báo cáo kiểm định chất lượng mã nguồn
 │   └── LOCKED_FACTS.md            # Hồ sơ khóa dữ liệu thực tế cuộc thi
@@ -127,11 +126,12 @@ AIforImpact/
 │   └── icons/                     # SVG Icons chuẩn hãng từ Svgl (C, C++, Java, Python, Gemini, DeepSeek, Docker, Zalo)
 ├── scripts/                       # Kịch bản tự động hóa
 │   └── build-favicons.mjs         # Trình biên dịch đa kích thước Favicon FPT (@resvg/resvg-js)
-├── tests/                         # Bộ kiểm thử tự động Vitest (52/52 pass 100%)
+├── tests/                         # Bộ kiểm thử tự động Vitest (57/57 pass 100%)
 │   ├── config.test.ts             # Kiểm thử toàn vẹn SSOT
 │   ├── content-model.test.ts      # Kiểm thử nội suy biến mẫu & mutation
 │   ├── dates.test.ts              # Kiểm thử định dạng thời gian & múi giờ
-│   └── locales.test.ts            # Kiểm thử tính đối sánh ngôn ngữ
+│   ├── locales.test.ts            # Kiểm thử tính đối sánh ngôn ngữ
+│   └── responsive.test.ts         # Kiểm thử hợp đồng responsive di động & tablet
 ├── AGENTS.md                      # Chỉ thị vận hành Agent & Quy chuẩn Bất biến
 ├── next.config.js                 # Cấu hình Next.js Static Export
 ├── tailwind.config.ts             # Định nghĩa Design System Tokens

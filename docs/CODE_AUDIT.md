@@ -13,7 +13,7 @@
 Đợt kiểm định toàn diện mã nguồn v1.4 được thực hiện nhằm đánh giá hệ thống sau đợt tái cấu trúc quy mô lớn theo chỉ đạo trực tiếp từ Ban Tổ chức: rút gọn lộ trình thành **4 Chặng thi đấu** (loại bỏ Vòng Kỹ thuật 17/10, gộp vào Chung kết), hủy bỏ yêu cầu video ý tưởng Chặng 1, tinh giản mục Cơ chế Đánh giá (gỡ bỏ barem 11 tiêu chí, thẻ trọng số và công thức tính điểm), thiết lập Thẻ Hỗ trợ Thí sinh với vector Zalo chính hãng, chuẩn hóa nút tải Sổ tay không để lộ hậu tố phiên bản `(V4)`, rút gọn typography về 2 font (`Inter` & `JetBrains Mono`) và triển khai hệ thống chuyển động mượt mà (Motion Design).
 
 ### Chỉ số Đo lường Chính:
-- **Tỷ lệ Pass Kiểm thử:** 52/52 tests (100% pass rate across 4 test suites: `config.test.ts`, `content-model.test.ts`, `dates.test.ts`, `schema.test.ts`).
+- **Tỷ lệ Pass Kiểm thử:** 57/57 tests (100% pass rate across 5 test suites: `config.test.ts`, `content-model.test.ts`, `dates.test.ts`, `locales.test.ts`, `responsive.test.ts`).
 - **Kiểm tra Kiểu dữ liệu TypeScript:** 0 lỗi (`tsc --noEmit`, `strict: true`).
 - **Kiểm tra Chuẩn mã nguồn ESLint:** 0 cảnh báo / 0 lỗi (`next lint`).
 - **First Load JS Bundle:** **148 kB** (giảm thêm 9 kB sau khi loại bỏ state co giãn barem, trần quy định: < 200 kB).
@@ -95,7 +95,7 @@
 - **Kích thước Bundle:**
   - Shared JS: 79.4 kB
   - Page specific: 77.6 kB
-  - **First Load JS tổng cộng: ~157 kB** (vượt xa mục tiêu đặt ra < 200 kB).
+  - **First Load JS tổng cộng: 148 kB** (vượt xa mục tiêu đặt ra < 200 kB).
 - **Tài sản Đồ họa:**
   - Thay thế các thư viện icon nặng bằng các vector SVG tinh gọn từ [Svgl](https://svgl.app/) đặt tại `public/icons/`.
   - Bộ favicon nhị phân nén chuẩn từ `@resvg/resvg-js` chỉ còn 12.7 KB (giảm 90% so với 113.7 KB).

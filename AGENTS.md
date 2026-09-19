@@ -48,7 +48,7 @@ Khi làm việc trên dự án này, Agent kích hoạt và tuân thủ các ski
 | **`frontend-ui-engineering`** | Global | Xây dựng component React/Tailwind chuẩn production, quản lý responsive, trạng thái focus/hover, và khả năng tiếp cận a11y. |
 | **`aiforimpact-workflow`** | `.agents/skills/aiforimpact-workflow/` | Quy trình phát triển đặc thù của dự án: đồng bộ SSOT, build tĩnh Next.js, deploy Vercel Production, và ghi nhận tiến độ. |
 | **`agent-memory-hub`** | Global (`:8420`) | Giao tiếp với TencentDB Agent Memory Hub lưu trữ ngữ cảnh dài hạn, quyết định kiến trúc và nhật ký phiên làm việc cho tenant `aiforimpact`. |
-| **`test-driven-development`** | Global | Duy trì 100% tỷ lệ pass của 52 unit & parity tests trong thư mục `tests/` trước khi đóng task. |
+| **`test-driven-development`** | Global | Duy trì 100% tỷ lệ pass của 57 unit, responsive & parity tests trong thư mục `tests/` trước khi đóng task. |
 | **`code-review-and-quality`** | Global | Thẩm định đa trục: bảo mật, tương thích trình duyệt, không rò rỉ gate phê duyệt, và First Load JS < 200 kB. |
 
 ---
@@ -64,7 +64,7 @@ npm run typecheck
 # 2. Kiểm tra chuẩn mã nguồn ESLint (0 cảnh báo / lỗi)
 npm run lint
 
-# 3. Chạy toàn bộ bộ kiểm thử đơn vị & SSOT (52 bài kiểm thử)
+# 3. Chạy toàn bộ bộ kiểm thử đơn vị, responsive & SSOT (57 bài kiểm thử)
 npm test
 
 # 4. Biên dịch xuất bản tĩnh Next.js Static Export
@@ -106,7 +106,7 @@ node c:/Users/ADMIN/_Project/agent-memory-hub/connectors/memory_cli.mjs recall "
    - Khi tái cấu trúc hoặc tinh giản tính năng, bắt buộc xóa bỏ các file không còn sử dụng (như `LanguageSwitcher.tsx` khi chỉ dùng tiếng Việt).
    - Dọn sạch các import thừa trong JSX/TSX để giữ mã nguồn gọn gàng.
 3. **Chuẩn Cấu hình Kiểm thử**:
-   - File cấu hình Vitest bắt buộc là `vitest.config.mts` (ESM mode với `import.meta.url`) để loại bỏ hoàn toàn cảnh báo `configLoader: 'native'`. Duy trì 100% 52 bài kiểm thử tự động.
+   - File cấu hình Vitest bắt buộc là `vitest.config.mts` (ESM mode với `import.meta.url`) để loại bỏ hoàn toàn cảnh báo `configLoader: 'native'`. Duy trì 100% 57 bài kiểm thử tự động.
 
 ---
 
