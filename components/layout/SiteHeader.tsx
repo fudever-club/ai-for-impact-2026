@@ -36,18 +36,18 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
         {/* Brand Lockup */}
         <Link
           href={`/${locale}`}
-          className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-lg"
+          className="flex items-center gap-2.5 sm:gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-orange rounded-lg min-w-0"
         >
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-orange via-orange-500 to-blue-600 p-0.5 flex items-center justify-center shadow-md shadow-brand-orange/25 group-hover:shadow-glow-orange group-hover:scale-105 transition-all duration-300">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-brand-orange via-orange-500 to-blue-600 p-0.5 flex items-center justify-center shrink-0 shadow-md shadow-brand-orange/25 group-hover:shadow-glow-orange group-hover:scale-105 transition-all duration-300">
             <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center px-1">
-              <FptSymbol className="w-6 h-auto transition-transform duration-300 group-hover:scale-105" />
+              <FptSymbol className="w-5 sm:w-6 h-auto transition-transform duration-300 group-hover:scale-105" />
             </div>
           </div>
-          <div className="flex flex-col">
-            <span className="font-display font-black text-base sm:text-lg tracking-wider text-slate-900 leading-tight">
+          <div className="flex flex-col min-w-0">
+            <span className="font-display font-black text-sm sm:text-base lg:text-lg tracking-wider text-slate-900 leading-tight truncate">
               AI FOR IMPACT <span className="text-brand-orange drop-shadow-xs">2026</span>
             </span>
-            <span className="text-[10px] font-mono font-semibold tracking-widest text-slate-500 uppercase">
+            <span className="text-[9px] sm:text-[10px] font-mono font-semibold tracking-wider sm:tracking-widest text-slate-500 uppercase truncate">
               {content.hero.eyebrow}
             </span>
           </div>
@@ -79,8 +79,8 @@ export const SiteHeader: React.FC<SiteHeaderProps> = ({ locale, content }) => {
           </Button>
         </div>
 
-        {/* Mobile controls */}
-        <div className="flex items-center sm:hidden">
+        {/* Mobile & Tablet menu controls */}
+        <div className="flex items-center lg:hidden">
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}

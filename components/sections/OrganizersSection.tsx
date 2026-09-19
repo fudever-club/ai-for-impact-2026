@@ -13,7 +13,7 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
   const isSingle = content.organizers.items.length === 1;
 
   return (
-    <section id="organization" className="py-20 relative bg-slate-50/70 border-t border-slate-200/80">
+    <section id="organization" className="py-16 sm:py-20 relative bg-slate-50/70 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={content.organizers.badge}
@@ -28,20 +28,20 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
             {content.organizers.items.map((org) => (
               <div
                 key={org.id}
-                className="glass-card p-8 sm:p-12 rounded-3xl border border-slate-200/90 shadow-card hover:shadow-card-hover transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden group"
+                className="glass-card p-5 sm:p-10 lg:p-12 rounded-3xl border border-slate-200/90 shadow-card hover:shadow-card-hover transition-all duration-300 text-center flex flex-col items-center relative overflow-hidden group"
               >
                 {/* Ambient Soft Glow Behind Card */}
                 <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-80 h-44 bg-gradient-to-b from-brand-orange/10 via-blue-500/5 to-transparent rounded-full blur-2xl pointer-events-none" />
 
                 {/* Role Pill Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50/90 border border-blue-200/80 text-blue-700 text-xs font-semibold mb-6 shadow-2xs">
+                <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-blue-50/90 border border-blue-200/80 text-blue-700 text-[11px] sm:text-xs font-semibold mb-5 sm:mb-6 shadow-2xs">
                   <Building2 className="w-3.5 h-3.5 text-brand-orange" />
                   <span>{org.role}</span>
                 </div>
 
                 {/* Official Logo Frame */}
                 {org.logo ? (
-                  <div className="relative h-20 sm:h-24 w-64 sm:w-72 mb-6 flex items-center justify-center">
+                  <div className="relative h-16 sm:h-24 w-52 sm:w-72 mb-5 sm:mb-6 flex items-center justify-center">
                     <Image
                       src={org.logo}
                       alt={org.name}
@@ -58,12 +58,12 @@ export const OrganizersSection: React.FC<OrganizersSectionProps> = ({ locale, co
                 )}
 
                 {/* Institution Name */}
-                <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-900 tracking-tight mb-3">
+                <h3 className="font-display font-black text-xl sm:text-2xl lg:text-3xl text-slate-900 tracking-tight mb-2 sm:mb-3">
                   {org.name}
                 </h3>
 
                 {/* Location / Campus Detail */}
-                <p className="text-xs sm:text-sm font-mono text-slate-500 flex items-center justify-center gap-1.5">
+                <p className="text-[11px] sm:text-sm font-mono text-slate-500 flex items-center justify-center gap-1.5">
                   <MapPin className="w-3.5 h-3.5 text-brand-orange shrink-0" />
                   <span>
                     {locale === 'vi'

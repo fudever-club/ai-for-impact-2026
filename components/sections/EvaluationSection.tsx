@@ -11,7 +11,7 @@ interface EvaluationSectionProps {
 
 export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, content }) => {
   return (
-    <section id="evaluation" className="py-24 relative bg-white border-t border-slate-200/80">
+    <section id="evaluation" className="py-16 sm:py-20 lg:py-24 relative bg-white border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={content.evaluation.badge}
@@ -21,11 +21,11 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
         />
 
         {/* 3 Core Principles */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-10 sm:mb-12">
           {content.evaluation.principles.map((pr, idx) => (
             <div
               key={idx}
-              className="p-6 sm:p-7 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/80 hover:border-blue-400 hover:shadow-card-hover transition-all duration-300 space-y-3 group"
+              className="p-5 sm:p-7 rounded-2xl bg-slate-50/80 hover:bg-white border border-slate-200/80 hover:border-blue-400 hover:shadow-card-hover transition-all duration-300 space-y-3 group"
             >
               <div className="flex items-center gap-2.5 text-blue-600">
                 <CheckCircle2 className="w-5 h-5 text-blue-600 shrink-0 group-hover:scale-110 transition-transform duration-200" />
@@ -43,15 +43,15 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
         {/* Support Channel & Technical Guidance */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Dedicated Support Channel & Official Handbook */}
-          <div className="glass-card-orange p-6 sm:p-8 rounded-2xl flex flex-col justify-between border border-orange-200/90 shadow-card hover:shadow-card-hover transition-all duration-300">
+          <div className="glass-card-orange p-5 sm:p-7 lg:p-8 rounded-2xl flex flex-col justify-between border border-orange-200/90 shadow-card hover:shadow-card-hover transition-all duration-300">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-xl bg-orange-100/80 border border-orange-200 flex items-center justify-center text-brand-orange shrink-0 shadow-2xs">
-                  <Headphones className="w-6 h-6" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-orange-100/80 border border-orange-200 flex items-center justify-center text-brand-orange shrink-0 shadow-2xs">
+                  <Headphones className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
                   <Badge variant="orange">HỖ TRỢ THÍ SINH</Badge>
-                  <h4 className="font-display font-bold text-lg text-slate-900 mt-1">
+                  <h4 className="font-display font-bold text-base sm:text-lg text-slate-900 mt-1">
                     {locale === 'vi'
                       ? 'Kênh Hỗ trợ & Sổ tay Hướng dẫn'
                       : 'Support Channel & Candidate Handbook'}
@@ -65,13 +65,13 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
               </p>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3 pt-6 border-t border-orange-200/60 mt-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-6 border-t border-orange-200/60 mt-6">
               {content.contact.supportGroupUrl && (
                 <a
                   href={content.contact.supportGroupUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-brand-orange text-white font-display font-bold text-xs sm:text-sm hover:bg-orange-600 shadow-sm hover:shadow-card hover:-translate-y-0.5 transition-all duration-200 group"
+                  className="inline-flex items-center justify-center gap-2.5 px-4 py-2.5 rounded-xl bg-brand-orange text-white font-display font-bold text-xs sm:text-sm hover:bg-orange-600 shadow-sm hover:shadow-card hover:-translate-y-0.5 transition-all duration-200 group w-full sm:w-auto"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -86,7 +86,7 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
               <a
                 href={content.documents.handbookUrl || '/docs/So_tay_thi_sinh_AI-for-Impact-2026_V4.docx'}
                 download="So_tay_thi_sinh_AI-for-Impact-2026.docx"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-display font-bold text-xs sm:text-sm shadow-2xs hover:shadow-xs hover:-translate-y-0.5 transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-display font-bold text-xs sm:text-sm shadow-2xs hover:shadow-xs hover:-translate-y-0.5 transition-all duration-200 w-full sm:w-auto"
               >
                 <FileText className="w-4 h-4 text-brand-orange" />
                 <span>{locale === 'vi' ? 'Tải Sổ tay Thí sinh' : 'Download Handbook'}</span>
@@ -96,7 +96,7 @@ export const EvaluationSection: React.FC<EvaluationSectionProps> = ({ locale, co
           </div>
 
           {/* AI Tools Policy Notice with Svgl icons */}
-          <div className="glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between border border-blue-200/80 shadow-card hover:shadow-card-hover hover:border-blue-400 transition-all duration-300">
+          <div className="glass-card p-5 sm:p-7 lg:p-8 rounded-2xl flex flex-col justify-between border border-blue-200/80 shadow-card hover:shadow-card-hover hover:border-blue-400 transition-all duration-300">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0 shadow-2xs">

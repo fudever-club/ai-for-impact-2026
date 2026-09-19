@@ -19,7 +19,7 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
   };
 
   return (
-    <section id="themes" className="py-24 relative">
+    <section id="themes" className="py-16 sm:py-20 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={content.themes.badge}
@@ -28,42 +28,42 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
           subtitle={content.themes.subtitle}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7">
           {content.themes.items.map((item, idx) => (
             <div
               key={item.id}
-              className={`glass-card p-7 sm:p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/50 border border-slate-200/90 shadow-card hover:shadow-card-hover flex flex-col justify-between ${
+              className={`glass-card p-5 sm:p-7 lg:p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:border-brand-orange/50 border border-slate-200/90 shadow-card hover:shadow-card-hover flex flex-col justify-between ${
                 idx === 4 ? 'md:col-span-2 lg:col-span-1' : ''
               }`}
             >
               <div>
-                <div className="w-14 h-14 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-xs flex items-center justify-center mb-6">
-                  {iconMap[item.icon] || <Sparkles className="w-7 h-7 text-brand-cyan" />}
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-slate-50 border border-slate-200/80 shadow-xs flex items-center justify-center mb-5 sm:mb-6">
+                  {iconMap[item.icon] || <Sparkles className="w-6 h-6 sm:w-7 sm:h-7 text-brand-cyan" />}
                 </div>
 
-                <div className="text-xs font-mono text-blue-600 font-semibold uppercase tracking-wider mb-2">
+                <div className="text-[11px] sm:text-xs font-mono text-blue-600 font-semibold uppercase tracking-wider mb-2">
                   CHỦ ĐỀ 0{idx + 1}
                 </div>
 
-                <h3 className="font-display text-xl font-bold text-slate-900 mb-3 leading-snug">
+                <h3 className="font-display text-lg sm:text-xl font-bold text-slate-900 mb-2 sm:mb-3 leading-snug">
                   {item.title}
                 </h3>
 
-                <p className="text-sm text-slate-600 leading-relaxed mb-6">
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-5 sm:mb-6">
                   {item.description}
                 </p>
               </div>
 
               {item.examples && (
-                <div className="pt-4 border-t border-slate-100 space-y-2">
-                  <span className="text-xs font-mono text-slate-500 block">
+                <div className="pt-3.5 sm:pt-4 border-t border-slate-100 space-y-2">
+                  <span className="text-[11px] sm:text-xs font-mono text-slate-500 block">
                     Gợi ý hướng bài toán:
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {item.examples.map((ex, exIdx) => (
                       <span
                         key={exIdx}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-sans bg-slate-50 text-slate-700 border border-slate-200/80 font-medium"
+                        className="px-2 sm:px-2.5 py-1 rounded-md text-[10px] sm:text-[11px] font-sans bg-slate-50 text-slate-700 border border-slate-200/80 font-medium"
                       >
                         • {ex}
                       </span>
@@ -77,12 +77,12 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
 
         {/* Realistic Case Study: Team Đi Cùng */}
         {content.caseStudy && (
-          <div className="mt-16 glass-card p-8 sm:p-10 rounded-2xl border border-slate-200 shadow-card bg-gradient-to-b from-slate-50/70 via-white to-orange-50/20">
-            <div className="max-w-3xl mb-8">
+          <div className="mt-12 sm:mt-16 glass-card p-5 sm:p-8 lg:p-10 rounded-2xl border border-slate-200 shadow-card bg-gradient-to-b from-slate-50/70 via-white to-orange-50/20">
+            <div className="max-w-3xl mb-6 sm:mb-8">
               <Badge variant="orange" className="mb-2">
                 {content.caseStudy.badge}
               </Badge>
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 mb-2">
+              <h3 className="font-display font-bold text-xl sm:text-2xl lg:text-3xl text-slate-900 mb-2">
                 {content.caseStudy.title}
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
@@ -91,9 +91,9 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
             </div>
 
             {/* Problem & Proposal Card */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-              <div className="p-5 rounded-xl bg-white border border-slate-200/80 shadow-xs space-y-2">
-                <span className="text-[11px] font-mono font-bold text-slate-400 uppercase block">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+              <div className="p-4 sm:p-5 rounded-xl bg-white border border-slate-200/80 shadow-xs space-y-2">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold text-slate-400 uppercase block">
                   Vấn đề thực tiễn (Pain Point)
                 </span>
                 <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
@@ -101,8 +101,8 @@ export const ThemesSection: React.FC<ThemesSectionProps> = ({ locale, content })
                 </p>
               </div>
 
-              <div className="p-5 rounded-xl bg-orange-50/50 border border-orange-200/70 shadow-xs space-y-2">
-                <span className="text-[11px] font-mono font-bold text-brand-orange uppercase block">
+              <div className="p-4 sm:p-5 rounded-xl bg-orange-50/50 border border-orange-200/70 shadow-xs space-y-2">
+                <span className="text-[10px] sm:text-[11px] font-mono font-bold text-brand-orange uppercase block">
                   Giải pháp AI Agent đề xuất
                 </span>
                 <p className="text-xs sm:text-sm text-slate-800 leading-relaxed font-medium">

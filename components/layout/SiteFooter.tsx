@@ -23,7 +23,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
             <p className="text-sm text-slate-600 max-w-md leading-relaxed">
               {content.footer.disclaimer}
             </p>
-            <div className="flex items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 pt-2">
               <a
                 href={content.contact.supportGroupUrl}
                 target="_blank"
@@ -56,7 +56,7 @@ export const SiteFooter: React.FC<SiteFooterProps> = ({ locale, content }) => {
                     href={link.href}
                     target={link.href.startsWith('http') ? '_blank' : undefined}
                     rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    download={link.href.endsWith('.docx') ? 'So_tay_thi_sinh_AI-for-Impact-2026_V4.docx' : undefined}
+                    download={link.href.endsWith('.docx') ? 'So_tay_thi_sinh_AI-for-Impact-2026.docx' : undefined}
                     className="hover:text-brand-orange transition-colors inline-flex items-center gap-1.5 group font-medium"
                   >
                     <span>{link.label}</span>

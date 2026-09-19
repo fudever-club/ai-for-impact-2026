@@ -30,7 +30,7 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
   const finalRunOfShow = content.stage4RunOfShow ?? content.stage5RunOfShow;
 
   return (
-    <section id="journey" className="py-24 relative overflow-hidden bg-slate-50/50">
+    <section id="journey" className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-slate-50/50">
       {/* Background radial accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-blue/5 rounded-full blur-[160px] pointer-events-none -z-10" />
 
@@ -43,12 +43,12 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
         />
 
         {/* 4-Stage Interactive Timeline Path */}
-        <div className="mb-16">
+        <div className="mb-12 sm:mb-16">
           <JourneyPath stages={content.journey.stages} />
         </div>
 
         {/* Deep-dive Tabs Header */}
-        <div className="text-center mb-10">
+        <div className="text-center mb-8 sm:mb-10">
           <span className="text-xs font-mono uppercase tracking-widest text-brand-orange font-bold block mb-2">
             CHUYÊN SÂU TỪNG CHẶNG
           </span>
@@ -56,11 +56,11 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
             Chi tiết Chuyên môn & Lịch trình Thi đấu
           </h3>
 
-          <div className="inline-flex p-1.5 rounded-2xl bg-slate-200/60 border border-slate-200 shadow-xs max-w-full overflow-x-auto gap-1">
+          <div className="flex flex-col sm:inline-flex sm:flex-row p-1.5 rounded-2xl bg-slate-200/60 border border-slate-200 shadow-xs max-w-full gap-1 w-full sm:w-auto">
             <button
               type="button"
               onClick={() => setActiveDeepDive('stage3')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-display font-bold transition-all whitespace-nowrap flex items-center gap-2 ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-display font-bold transition-all justify-center whitespace-nowrap flex items-center gap-2 ${
                 activeDeepDive === 'stage3'
                   ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80'
                   : 'text-slate-600 hover:text-slate-900'
@@ -72,7 +72,7 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
             <button
               type="button"
               onClick={() => setActiveDeepDive('stage4')}
-              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-display font-bold transition-all whitespace-nowrap flex items-center gap-2 ${
+              className={`px-4 py-2.5 rounded-xl text-xs sm:text-sm font-display font-bold transition-all justify-center whitespace-nowrap flex items-center gap-2 ${
                 activeDeepDive === 'stage4'
                   ? 'bg-white text-slate-900 shadow-sm border border-slate-200/80'
                   : 'text-slate-600 hover:text-slate-900'
@@ -86,11 +86,11 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
 
         {/* DEEP-DIVE BLOCK 1: Stage 3 Training Workshops */}
         {content.trainingDetails && (
-          <div className={`mb-20 glass-card p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-card transition-all ${activeDeepDive === 'stage3' ? 'block animate-fade-in-up' : 'hidden'}`}>
+          <div className={`mb-16 sm:mb-20 glass-card p-5 sm:p-8 lg:p-10 rounded-3xl border border-slate-200/90 shadow-card transition-all ${activeDeepDive === 'stage3' ? 'block animate-fade-in-up' : 'hidden'}`}>
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <div>
                 <Badge variant="blue">{content.trainingDetails.badge}</Badge>
-                <h3 className="font-display text-2xl sm:text-3xl font-black text-slate-900 mt-2">
+                <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 mt-2">
                   {content.trainingDetails.title}
                 </h3>
               </div>
@@ -191,7 +191,7 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
 
         {/* DEEP-DIVE BLOCK 2: Stage 4 Grand Finale Run-of-Show Timeline */}
         {finalRunOfShow && (
-          <div className={`mb-20 glass-card p-6 sm:p-10 rounded-3xl border border-slate-200/90 shadow-card transition-all ${activeDeepDive === 'stage4' ? 'block animate-fade-in-up' : 'hidden'}`}>
+          <div className={`mb-16 sm:mb-20 glass-card p-5 sm:p-8 lg:p-10 rounded-3xl border border-slate-200/90 shadow-card transition-all ${activeDeepDive === 'stage4' ? 'block animate-fade-in-up' : 'hidden'}`}>
             <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
               <Badge variant="orange">{finalRunOfShow.badge}</Badge>
               <span className="text-xs font-mono text-slate-500 font-semibold">
@@ -199,10 +199,10 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
               </span>
             </div>
 
-            <h3 className="font-display text-2xl sm:text-3xl font-black text-slate-900 mb-2">
+            <h3 className="font-display text-xl sm:text-2xl lg:text-3xl font-black text-slate-900 mb-2">
               {finalRunOfShow.title}
             </h3>
-            <p className="text-sm text-slate-600 mb-8 max-w-3xl leading-relaxed">
+            <p className="text-sm text-slate-600 mb-6 sm:mb-8 max-w-3xl leading-relaxed">
               {finalRunOfShow.subtitle}
             </p>
 
@@ -210,7 +210,7 @@ export const JourneySection: React.FC<JourneySectionProps> = ({ locale, content 
               {finalRunOfShow.timeline.map((item, tIdx) => (
                 <div
                   key={tIdx}
-                  className={`p-4 sm:p-5 grid grid-cols-12 gap-4 items-center transition-colors ${
+                  className={`p-3.5 sm:p-5 grid grid-cols-12 gap-1.5 sm:gap-4 items-start sm:items-center transition-colors ${
                     item.highlight
                       ? 'bg-orange-50/30 hover:bg-orange-50/50'
                       : 'hover:bg-slate-50/50'

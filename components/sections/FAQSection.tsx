@@ -12,7 +12,7 @@ interface FAQSectionProps {
 
 export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
   return (
-    <section id="faq" className="py-24 relative bg-slate-50/50 border-t border-slate-200/80">
+    <section id="faq" className="py-16 sm:py-20 lg:py-24 relative bg-slate-50/50 border-t border-slate-200/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge={content.faq.badge}
@@ -25,14 +25,15 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
         <Accordion items={content.faq.items} />
 
         {/* Contact Help Bar */}
-        <div className="mt-16 text-center space-y-3">
+        <div className="mt-12 sm:mt-16 text-center space-y-3">
           <p className="text-sm text-slate-600">{content.faq.moreHelp}</p>
-          <div className="flex items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-md mx-auto">
             <Button
               variant="outline"
               size="md"
               href={content.contact.supportGroupUrl}
               external
+              className="w-full sm:w-auto justify-center shadow-xs"
               icon={
                 /* eslint-disable-next-line @next/next/no-img-element */
                 <img src="/icons/zalo.svg" alt="Zalo" className="w-4 h-4 object-contain" />
@@ -44,6 +45,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ locale, content }) => {
               variant="ghost"
               size="md"
               href={`mailto:${content.contact.email}`}
+              className="w-full sm:w-auto justify-center border border-slate-200/60 sm:border-transparent"
               icon={<Mail className="w-4 h-4 text-brand-orange" />}
             >
               {content.contact.email}

@@ -57,69 +57,70 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
 
             {/* Main Event Title Lockup */}
             <div className="space-y-2">
-              <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.08]">
+              <h1 className="font-display text-3xl sm:text-6xl lg:text-7xl font-black tracking-tight text-slate-900 leading-[1.08]">
                 AI FOR <span className="text-blue-600">IMPACT</span>
-                <span className="block text-brand-orange text-3xl sm:text-5xl lg:text-6xl mt-1 tracking-tight">2026</span>
+                <span className="block text-brand-orange text-2xl sm:text-5xl lg:text-6xl mt-1 tracking-tight">2026</span>
               </h1>
-              <p className="font-display text-xl sm:text-2xl font-semibold text-slate-700 tracking-wide">
+              <p className="font-display text-lg sm:text-2xl font-semibold text-slate-700 tracking-wide">
                 {content.hero.tagline}
               </p>
             </div>
 
             {/* Sub-tagline */}
-            <p className="text-base sm:text-lg text-slate-600 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-lg text-slate-600 max-w-xl leading-relaxed">
               {content.hero.subTagline}
             </p>
 
             {/* Registration Countdown & Status Card */}
-            <div className="w-full max-w-xl glass-card-orange p-4 sm:p-5 rounded-2xl border-2 border-brand-orange/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-card hover:shadow-card-hover transition-all duration-300">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 rounded-xl bg-brand-orange text-white flex items-center justify-center shrink-0 shadow-md shadow-brand-orange/30">
-                  <Clock className="w-5 h-5 animate-pulse" />
+            <div className="w-full max-w-xl glass-card-orange p-3.5 sm:p-5 rounded-2xl border-2 border-brand-orange/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-card hover:shadow-card-hover transition-all duration-300">
+              <div className="flex items-center gap-2.5 sm:gap-3">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-brand-orange text-white flex items-center justify-center shrink-0 shadow-md shadow-brand-orange/30">
+                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 animate-pulse" />
                 </div>
                 <div>
-                  <span className="text-xs font-mono font-bold uppercase text-brand-orange block tracking-wider">
+                  <span className="text-[11px] sm:text-xs font-mono font-bold uppercase text-brand-orange block tracking-wider">
                     {statusText}
                   </span>
-                  <span className="text-xs text-slate-500 font-medium">
+                  <span className="text-[11px] sm:text-xs text-slate-500 font-medium">
                     {content.hero.daysLeftText}:
                   </span>
                 </div>
               </div>
 
               {countdown.status === 'open' && (
-                <div className="flex items-center gap-1 sm:gap-1.5 font-mono font-black text-slate-900">
-                  <div className="bg-white px-2 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[46px] sm:min-w-[52px]">
-                    <span className="text-brand-orange font-black text-lg sm:text-xl block leading-tight">{countdown.daysRemaining}</span>
-                    <span className="text-[9px] text-slate-500 block font-bold tracking-wider">NGÀY</span>
+                <div className="flex items-center justify-between sm:justify-end gap-1 sm:gap-1.5 font-mono font-black text-slate-900 w-full sm:w-auto">
+                  <div className="bg-white px-1.5 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center flex-1 sm:flex-none min-w-0 sm:min-w-[52px]">
+                    <span className="text-brand-orange font-black text-base sm:text-xl block leading-tight">{countdown.daysRemaining}</span>
+                    <span className="text-[8px] sm:text-[9px] text-slate-500 block font-bold tracking-wider">NGÀY</span>
                   </div>
-                  <span className="text-brand-orange font-bold text-base sm:text-lg">:</span>
-                  <div className="bg-white px-2 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[46px] sm:min-w-[52px]">
-                    <span className="text-slate-900 font-bold text-lg sm:text-xl block leading-tight">{String(countdown.hoursRemaining).padStart(2, '0')}</span>
-                    <span className="text-[9px] text-slate-500 block font-bold tracking-wider">GIỜ</span>
+                  <span className="text-brand-orange font-bold text-sm sm:text-lg shrink-0">:</span>
+                  <div className="bg-white px-1.5 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center flex-1 sm:flex-none min-w-0 sm:min-w-[52px]">
+                    <span className="text-slate-900 font-bold text-base sm:text-xl block leading-tight">{String(countdown.hoursRemaining).padStart(2, '0')}</span>
+                    <span className="text-[8px] sm:text-[9px] text-slate-500 block font-bold tracking-wider">GIỜ</span>
                   </div>
-                  <span className="text-brand-orange font-bold text-base sm:text-lg">:</span>
-                  <div className="bg-white px-2 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center min-w-[46px] sm:min-w-[52px]">
-                    <span className="text-slate-900 font-bold text-lg sm:text-xl block leading-tight">{String(countdown.minutesRemaining).padStart(2, '0')}</span>
-                    <span className="text-[9px] text-slate-500 block font-bold tracking-wider">PHÚT</span>
+                  <span className="text-brand-orange font-bold text-sm sm:text-lg shrink-0">:</span>
+                  <div className="bg-white px-1.5 sm:px-3 py-1.5 rounded-xl border border-orange-200 shadow-xs text-center flex-1 sm:flex-none min-w-0 sm:min-w-[52px]">
+                    <span className="text-slate-900 font-bold text-base sm:text-xl block leading-tight">{String(countdown.minutesRemaining).padStart(2, '0')}</span>
+                    <span className="text-[8px] sm:text-[9px] text-slate-500 block font-bold tracking-wider">PHÚT</span>
                   </div>
-                  <span className="text-brand-orange font-bold text-base sm:text-lg">:</span>
-                  <div className="bg-white px-2 sm:px-3 py-1.5 rounded-xl border border-orange-300 shadow-xs text-center min-w-[46px] sm:min-w-[52px] ring-1 ring-brand-orange/20">
-                    <span className="text-brand-orange font-black text-lg sm:text-xl block leading-tight">{String(countdown.secondsRemaining).padStart(2, '0')}</span>
-                    <span className="text-[9px] text-brand-orange block font-bold tracking-wider">GIÂY</span>
+                  <span className="text-brand-orange font-bold text-sm sm:text-lg shrink-0">:</span>
+                  <div className="bg-white px-1.5 sm:px-3 py-1.5 rounded-xl border border-orange-300 shadow-xs text-center flex-1 sm:flex-none min-w-0 sm:min-w-[52px] ring-1 ring-brand-orange/20">
+                    <span className="text-brand-orange font-black text-base sm:text-xl block leading-tight">{String(countdown.secondsRemaining).padStart(2, '0')}</span>
+                    <span className="text-[8px] sm:text-[9px] text-brand-orange block font-bold tracking-wider">GIÂY</span>
                   </div>
                 </div>
               )}
             </div>
 
             {/* Dual CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-2 w-full sm:w-auto">
               <Button
                 variant="primary"
                 size="lg"
                 href={content.registration.url}
                 external
                 icon={<ExternalLink className="w-4 h-4" />}
+                className="w-full sm:w-auto justify-center"
               >
                 {content.hero.registerCta}
               </Button>
@@ -128,30 +129,31 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ locale, content }) => 
                 size="lg"
                 href="#journey"
                 icon={<ArrowRight className="w-4 h-4 text-brand-orange" />}
+                className="w-full sm:w-auto justify-center"
               >
                 {content.hero.journeyCta}
               </Button>
             </div>
 
             {/* Quick Stats Strip */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-slate-200/80 w-full">
-              <div className="p-3 rounded-xl bg-orange-50/70 border border-orange-200/80 hover:border-brand-orange hover:-translate-y-0.5 transition-all flex flex-col justify-between">
-                <span className="block font-display font-black text-lg sm:text-xl text-brand-orange tracking-tight leading-snug">
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-6 border-t border-slate-200/80 w-full">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-orange-50/70 border border-orange-200/80 hover:border-brand-orange hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+                <span className="block font-display font-black text-sm sm:text-xl text-brand-orange tracking-tight leading-snug">
                   {content.hero.quickStats.duration}
                 </span>
-                <span className="text-xs text-brand-orange font-semibold mt-1">Thời lượng thi</span>
+                <span className="text-[10px] sm:text-xs text-brand-orange font-semibold mt-0.5 sm:mt-1">Thời lượng thi</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-blue-400 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
-                <span className="block font-display font-black text-lg sm:text-xl text-blue-600 tracking-tight leading-snug">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-blue-400 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+                <span className="block font-display font-black text-sm sm:text-xl text-blue-600 tracking-tight leading-snug">
                   {content.hero.quickStats.stages}
                 </span>
-                <span className="text-xs text-slate-500 font-medium mt-1">Hành trình</span>
+                <span className="text-[10px] sm:text-xs text-slate-500 font-medium mt-0.5 sm:mt-1">Hành trình</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-emerald-400 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
-                <span className="block font-display font-black text-lg sm:text-xl text-emerald-600 tracking-tight leading-snug">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50/70 border border-slate-200/60 hover:border-emerald-400 hover:-translate-y-0.5 transition-all flex flex-col justify-between">
+                <span className="block font-display font-black text-sm sm:text-xl text-emerald-600 tracking-tight leading-snug">
                   5 Nhóm
                 </span>
-                <span className="text-xs text-slate-500 font-medium mt-1">Chủ đề bài toán</span>
+                <span className="text-[10px] sm:text-xs text-slate-500 font-medium mt-0.5 sm:mt-1">Chủ đề bài toán</span>
               </div>
             </div>
 
